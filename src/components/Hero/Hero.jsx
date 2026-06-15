@@ -27,7 +27,7 @@ export default function Hero() {
 
           <div className="hero__cta">
             <a href="#work" className="btn-primary">View Case Studies</a>
-            <a href="/resume.pdf" className="btn-secondary">Download Resume</a>
+            <a href={`${import.meta.env.BASE_URL}resume.pdf`} className="btn-secondary" download>Download Resume</a>
             <a href={`mailto:${profile.email}`} className="btn-secondary">Contact</a>
           </div>
 

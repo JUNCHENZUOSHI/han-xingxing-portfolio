@@ -164,7 +164,7 @@ export default function Home() {
               <a href={`mailto:${profile.email}`} className="btn-primary">
                 {profile.email}
               </a>
-              <a href="/resume.pdf" className="btn-secondary">
+              <a href={`${import.meta.env.BASE_URL}resume.pdf`} className="btn-secondary" download>
                 Download Resume (PDF)
               </a>
               <span className="contact-cta__meta">

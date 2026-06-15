@@ -5,6 +5,7 @@ import Home from './pages/Home/Home';
 import CaseDetail from './pages/CaseDetail/CaseDetail';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
+import Resume from './pages/Resume/Resume';
 
 function PageLayout({ children }) {
   return (
@@ -48,6 +49,14 @@ export default function App() {
         element={
           <PageLayout>
             <Contact />
+          </PageLayout>
+        }
+      />
+      <Route
+        path="/resume"
+        element={
+          <PageLayout>
+            <Resume />
           </PageLayout>
         }
       />

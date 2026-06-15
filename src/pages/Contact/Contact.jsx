@@ -65,7 +65,7 @@ export default function Contact() {
               <p className="contact-resume__text">
                 Detailed work history, quantified results, and full case context.
               </p>
-              <a href="/resume.pdf" className="btn-primary" download>
+              <a href={`${import.meta.env.BASE_URL}resume.pdf`} className="btn-primary" download>
                 Download Resume (PDF)
               </a>
             </div>

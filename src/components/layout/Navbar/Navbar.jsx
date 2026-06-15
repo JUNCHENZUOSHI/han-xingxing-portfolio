@@ -9,7 +9,7 @@ export default function Navbar() {
         <Link to="/" className="navbar__brand">{profile.name}</Link>
         <div className="navbar__links">
           <NavLink to="/" end className="nav-link">Work</NavLink>
-          <a href="/resume.pdf" className="nav-link">Resume</a>
+          <NavLink to="/resume" className="nav-link">Resume</NavLink>
           <a href={`mailto:${profile.email}`} className="nav-link" aria-label="Contact">✉</a>
         </div>
       </div>

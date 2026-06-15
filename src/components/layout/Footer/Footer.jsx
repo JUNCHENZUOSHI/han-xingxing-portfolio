@@ -15,7 +15,7 @@ export default function Footer() {
             <span>📍 {profile.location} · {profile.status}</span>
           </div>
           <div className="footer__actions">
-            <a href="/resume.pdf" className="text-link">Download Resume (PDF)</a>
+            <a href={`${import.meta.env.BASE_URL}resume.pdf`} className="text-link" download>Download Resume (PDF)</a>
           </div>
           <p className="footer__copy">© 2026 {profile.name}</p>
         </div>
