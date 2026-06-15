@@ -1,16 +1,36 @@
-import { createContext, useContext, useState, useCallback } from 'react';
+import { createContext, useContext, useState, useCallback, useEffect } from 'react';
 import zh from './zh.json';
+import zhTW from './zh-TW.json';
 import en from './en.json';
 
-const translations = { zh, en };
+const translations = { zh, 'zh-TW': zhTW, en };
+
+const LANG_META = {
+  zh:    { label: '简体中文', short: '中', icon: '🇨🇳' },
+  'zh-TW': { label: '繁體中文', short: '繁', icon: '🇹🇼' },
+  en:    { label: 'English',   short: 'EN', icon: '🇺🇸' },
+};
+
+const LANG_ORDER = ['zh', 'zh-TW', 'en'];
+
 const I18nContext = createContext();
 
 export function I18nProvider({ children }) {
-  const [lang, setLang] = useState('zh');
+  const [lang, setLang] = useState(() => {
+    try { return localStorage.getItem('portfolio-lang') || 'zh'; }
+    catch { return 'zh'; }
+  });
 
-  const toggleLang = useCallback(() => {
-    setLang((l) => (l === 'zh' ? 'en' : 'zh'));
+  const changeLang = useCallback((l) => {
+    setLang(l);
+    try { localStorage.setItem('portfolio-lang', l); } catch {}
   }, []);
+
+  // Sync <html lang> and <title>
+  useEffect(() => {
+    document.documentElement.lang = lang === 'zh-TW' ? 'zh-Hant' : lang;
+    document.title = `${translations[lang].common.name} — AI-Native Product Designer`;
+  }, [lang]);
 
   const t = useCallback(
     (path, vars) => {
@@ -30,7 +50,7 @@ export function I18nProvider({ children }) {
   );
 
   return (
-    <I18nContext.Provider value={{ lang, toggleLang, t }}>
+    <I18nContext.Provider value={{ lang, setLang: changeLang, t, LANG_META, LANG_ORDER }}>
       {children}
     </I18nContext.Provider>
   );
@@ -42,4 +62,4 @@ export function useI18n() {
   return ctx;
 }
 
-export { zh, en };
+export { zh, zhTW, en };

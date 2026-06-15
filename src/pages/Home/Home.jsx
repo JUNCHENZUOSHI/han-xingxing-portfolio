@@ -4,132 +4,120 @@ import { profile } from '../../data/profile';
 import { cases, caseOrder } from '../../data/cases';
 import Hero from '../../components/Hero/Hero';
 import CaseCard from '../../components/CaseCard/CaseCard';
-import CapabilityCard from '../../components/CapabilityCard/CapabilityCard';
 import './Home.css';
 
 export default function Home() {
   const { t } = useI18n();
-  const trans = t('home.transition') || ['深度', '可迁移性', '宽度'];
 
   return (
     <>
-      {/* Hero — flush white module */}
-      <section className="section section--flush">
-        <Hero />
-      </section>
+      {/* ── Hero — white bg ── */}
+      <Hero />
 
-      {/* Transition Guide — thin module */}
-      <section className="section transition-guide">
-        <p className="transition-guide__text">
-          <span className="transition-guide__item">{trans[0]}</span>
-          <span className="transition-guide__sep">→</span>
-          <span className="transition-guide__item">{trans[1]}</span>
-          <span className="transition-guide__sep">→</span>
-          <span className="transition-guide__item">{trans[2]}</span>
-        </p>
-      </section>
-
-      {/* Featured Cases */}
-      <section className="section" id="work">
-        <h2 className="section-heading">{t('home.featuredCases')}</h2>
-        <CaseCard caseData={cases.sidekick} variant="featured" />
-      </section>
-
-      {/* All Cases */}
-      <section className="section">
-        <h2 className="section-heading">{t('home.allCases')}</h2>
-        <div className="case-grid">
-          {caseOrder.map((slug) => (
-            <CaseCard key={slug} caseData={cases[slug]} variant="standard" />
-          ))}
+      {/* ── Featured Case — #f5f5f7 ── */}
+      <section className="section section--alt" id="work">
+        <div className="container">
+          <span className="section-label">{t('home.featuredCases')}</span>
+          <CaseCard caseData={cases.sidekick} variant="featured" />
         </div>
       </section>
 
-      {/* Capabilities */}
+      {/* ── What I Do — white bg ── */}
       <section className="section">
-        <h2 className="section-heading">{t('home.capabilities')}</h2>
-        <div className="capability-grid capability-grid--5">
-          {profile.homeCapabilities.map((cap) => (
-            <CapabilityCard
-              key={cap.title}
-              title={cap.title}
-              description={cap.description}
-              items={cap.items}
-            />
-          ))}
+        <div className="container">
+          <span className="section-label">What I Do</span>
+          <h2 className="section-heading">{t('home.capabilities')}</h2>
+          <div className="capability-list">
+            {profile.homeCapabilities.map((cap) => (
+              <div className="capability-item" key={cap.title}>
+                <h3 className="capability-item__title">{cap.title}</h3>
+                <p className="capability-item__desc">{cap.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* About Preview */}
+      {/* ── All Cases — #f5f5f7 ── */}
+      <section className="section section--alt">
+        <div className="container">
+          <span className="section-label">{t('home.allCases')}</span>
+          <div className="case-grid">
+            {caseOrder.map((slug) => (
+              <CaseCard key={slug} caseData={cases[slug]} variant="standard" />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── About — white bg ── */}
       <section className="section">
-        <h2 className="section-heading">{t('home.about')}</h2>
-        <div className="about-preview">
-          <div className="about-preview__intro">
+        <div className="container">
+          <span className="section-label">{t('home.about')}</span>
+          <div className="about-preview">
             <p className="about-preview__text">
               {t('home.aboutText', { years: profile.yearsOfExperience })}
             </p>
-          </div>
-          <div className="about-preview__columns">
-            <div className="about-preview__col">
-              <h3 className="about-preview__col-title">{t('home.industries')}</h3>
-              <ul className="about-preview__list">
-                {profile.industries.map((ind) => <li key={ind}>{ind}</li>)}
-              </ul>
-            </div>
-            <div className="about-preview__col">
-              <h3 className="about-preview__col-title">{t('home.workingStyle')}</h3>
-              <p className="about-preview__col-text">{profile.workingStyleSummary}</p>
-              <Link to="/about" className="text-link">
-                {t('home.moreAbout')}
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Experience */}
-      <section className="section">
-        <h2 className="section-heading">{t('home.experience')}</h2>
-        <div className="experience-list">
-          {profile.experience.map((exp, i) => (
-            <div key={i}>
-              {i > 0 && <hr className="divider divider--subtle" />}
-              <div className="experience-item">
-                <div className="experience-item__meta">
-                  <span className="experience-item__period">{exp.period}</span>
-                  <span className="experience-item__location">{exp.location}</span>
-                </div>
-                <div className="experience-item__body">
-                  <h3 className="experience-item__role">{exp.role}</h3>
-                  <p className="experience-item__company">{exp.company}</p>
-                  <p className="experience-item__desc">
-                    {exp.highlights.slice(0, 2).join('。')}。
-                  </p>
-                </div>
+            <div className="about-preview__columns">
+              <div className="about-preview__col">
+                <h3 className="about-preview__col-title">{t('home.industries')}</h3>
+                <ul className="about-preview__list">
+                  {profile.industries.map((ind) => <li key={ind}>{ind}</li>)}
+                </ul>
+              </div>
+              <div className="about-preview__col">
+                <h3 className="about-preview__col-title">{t('home.workingStyle')}</h3>
+                <p className="about-preview__col-text">{profile.workingStyleSummary}</p>
+                <Link to="/about" className="text-link">{t('home.moreAbout')}</Link>
               </div>
             </div>
-          ))}
+          </div>
         </div>
-        <p className="experience-status">
-          {profile.location} · {profile.status}
-        </p>
       </section>
 
-      {/* Contact CTA */}
+      {/* ── Experience — #f5f5f7 ── */}
+      <section className="section section--alt">
+        <div className="container">
+          <span className="section-label">{t('home.experience')}</span>
+          <div className="experience-list">
+            {profile.experience.map((exp, i) => (
+              <div key={i}>
+                {i > 0 && <hr className="divider divider--subtle" />}
+                <div className="experience-item">
+                  <div className="experience-item__meta">
+                    <span className="experience-item__period">{exp.period}</span>
+                    <span className="experience-item__location">{exp.location}</span>
+                  </div>
+                  <div className="experience-item__body">
+                    <h3 className="experience-item__role">{exp.role}</h3>
+                    <p className="experience-item__company">{exp.company}</p>
+                    <p className="experience-item__desc">
+                      {exp.highlights.slice(0, 2).join('。')}。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="experience-status">{profile.location} · {profile.status}</p>
+        </div>
+      </section>
+
+      {/* ── Contact CTA — white bg ── */}
       <section className="section contact-cta">
-        <div className="contact-cta__inner">
-          <h2 className="contact-cta__heading">{t('home.letsTalk')}</h2>
-          <p className="contact-cta__subtitle">{t('home.letsTalkSub')}</p>
-          <div className="contact-cta__actions">
-            <a href={`mailto:${profile.email}`} className="btn-primary">
-              {profile.email}
-            </a>
-            <a href={`${import.meta.env.BASE_URL}resume.pdf`} className="btn-secondary" download>
-              {t('home.downloadResumePdf')}
-            </a>
-            <span className="contact-cta__meta">
-              {profile.location} · {profile.phone} · {profile.status}
-            </span>
+        <div className="container">
+          <div className="contact-cta__inner">
+            <h2 className="contact-cta__heading">{t('home.letsTalk')}</h2>
+            <p className="contact-cta__subtitle">{t('home.letsTalkSub')}</p>
+            <div className="contact-cta__actions">
+              <a href={`mailto:${profile.email}`} className="btn-primary">{profile.email}</a>
+              <a href={`${import.meta.env.BASE_URL}resume.pdf`} className="btn-secondary" download>
+                {t('home.downloadResumePdf')}
+              </a>
+              <span className="contact-cta__meta">
+                {profile.location} · {profile.phone} · {profile.status}
+              </span>
+            </div>
           </div>
         </div>
       </section>

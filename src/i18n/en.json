@@ -1,4 +1,8 @@
 {
+  "common": {
+    "name": "Han Xingxing",
+    "nameEn": "Han Xingxing"
+  },
   "nav": {
     "work": "Work",
     "resume": "Resume",

@@ -19,7 +19,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--alt">
         <div className="container">
           <div className="contact-grid">
             <div className="contact-item">
@@ -56,7 +56,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section section--alt">
         <div className="container">
           <div className="contact-links">
             <Link to="/" className="btn-secondary">{t('contact.viewCases')}</Link>

@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="footer__actions">
           <a href={`${import.meta.env.BASE_URL}resume.pdf`} className="text-link">{t('footer.downloadResume')}</a>
         </div>
-        <p className="footer__copy">&copy; 2026 {profile.name}</p>
+        <p className="footer__copy">&copy; 2026 {t('common.name')}</p>
       </div>
     </footer>
   );

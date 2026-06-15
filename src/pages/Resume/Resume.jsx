@@ -93,10 +93,10 @@ export default function Resume() {
           Print Header — visible only when printing
           ═══════════════════════════════════════════════════════════ */}
       <header className="resume-print-header">
-        <h1>{profile.nameZh} · {profile.name}</h1>
+        <h1>{t('common.name')}</h1>
         <p>
           {resumeData.targetPosition} · {resumeData.salaryExpectation} · {resumeData.targetCity}
-          &nbsp;|&nbsp; {resumeData.gender} · {profile.age}岁 · {profile.phone} · {profile.email}
+          &nbsp;|&nbsp; {resumeData.gender} · {profile.age}{t('common.name') === 'Han Xingxing' ? '' : '岁'} · {profile.phone} · {profile.email}
         </p>
       </header>
 
@@ -104,7 +104,7 @@ export default function Resume() {
           Screen Header
           ═══════════════════════════════════════════════════════════ */}
       <header className="resume-header no-print">
-        <h1 className="resume-header__name">{profile.nameZh}</h1>
+        <h1 className="resume-header__name">{t('common.name')}</h1>
         <p className="resume-header__title">
           {resumeData.targetPosition}&nbsp;&nbsp;·&nbsp;&nbsp;
           {profile.yearsOfExperience}年工作经验&nbsp;&nbsp;·&nbsp;&nbsp;

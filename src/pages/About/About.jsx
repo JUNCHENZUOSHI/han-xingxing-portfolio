@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useI18n } from '../../i18n/context';
 import { profile } from '../../data/profile';
-import CapabilityCard from '../../components/CapabilityCard/CapabilityCard';
 import './About.css';
 
 export default function About() {
@@ -9,35 +8,32 @@ export default function About() {
 
   return (
     <>
+      {/* Hero */}
       <section className="section">
         <div className="container">
           <div className="about-hero">
-            <span className="tag tag--accent">{profile.title}</span>
-            <h1 className="about-hero__name">{profile.name}</h1>
+            <span className="section-label">{profile.title}</span>
+            <h1 className="about-hero__name">{t('common.name')}</h1>
             <p className="about-hero__tagline">{profile.tagline}</p>
           </div>
         </div>
       </section>
 
-      {/* Introduction */}
-      <section className="section">
+      {/* Introduction — #f5f5f7 */}
+      <section className="section section--alt">
         <div className="container">
           <h2 className="section-heading">{t('about.heading')}</h2>
           <div className="text-container">
-            <p className="case-text">
-              {t('about.intro', { years: profile.yearsOfExperience })}
-            </p>
+            <p className="about-text">{t('about.intro', { years: profile.yearsOfExperience })}</p>
             <div className="about-keywords">
-              {profile.keywords.slice(0, 5).map((kw) => (
-                <span className="tag" key={kw}>{kw}</span>
-              ))}
+              {profile.keywords.slice(0, 5).map((kw) => <span className="tag" key={kw}>{kw}</span>)}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Career Narrative */}
-      <section className="section section">
+      {/* Career Narrative — white */}
+      <section className="section">
         <div className="container">
           <h2 className="section-heading">{t('about.careerNarrative')}</h2>
           <div className="text-container">
@@ -56,8 +52,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* Experience */}
-      <section className="section">
+      {/* Experience — #f5f5f7 */}
+      <section className="section section--alt">
         <div className="container">
           <h2 className="section-heading">{t('home.experience')}</h2>
           <div className="experience-list">
@@ -78,7 +74,7 @@ export default function About() {
                     {exp.metrics.length > 0 && (
                       <div className="about-metrics">
                         {exp.metrics.map((m, k) => (
-                          <span className="metric-value" key={k}>{m.label}: {m.value}</span>
+                          <span className="about-metric" key={k}>{m.label}: {m.value}</span>
                         ))}
                       </div>
                     )}
@@ -99,29 +95,29 @@ export default function About() {
         </div>
       </section>
 
-      {/* Capabilities */}
-      <section className="section section">
+      {/* What I Do — white */}
+      <section className="section">
         <div className="container">
           <h2 className="section-heading">{t('about.capabilities')}</h2>
-          <div className="capability-grid capability-grid--5">
+          <div className="capability-list">
             {profile.homeCapabilities.map((cap) => (
-              <CapabilityCard key={cap.title} title={cap.title} description={cap.description} items={cap.items} />
+              <div className="capability-item" key={cap.title}>
+                <h3 className="capability-item__title">{cap.title}</h3>
+                <p className="capability-item__desc">{cap.description}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Skills & Evidence */}
-      <section className="section">
+      {/* Skills — #f5f5f7 */}
+      <section className="section section--alt">
         <div className="container">
           <h2 className="section-heading">Skills &amp; Evidence</h2>
           <div className="text-container">
             <table className="case-table">
               <thead>
-                <tr>
-                  <th>{t('about.capabilities')}</th>
-                  <th>Evidence</th>
-                </tr>
+                <tr><th>{t('about.capabilities')}</th><th>Evidence</th></tr>
               </thead>
               <tbody>
                 {profile.skills.map((s, i) => (
@@ -133,8 +129,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* Working Style */}
-      <section className="section section">
+      {/* Working Style — white */}
+      <section className="section">
         <div className="container">
           <h2 className="section-heading">{t('about.whatImNot')}</h2>
           <div className="text-container">
@@ -153,8 +149,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section">
+      {/* CTA — #f5f5f7 */}
+      <section className="section section--alt">
         <div className="container">
           <div className="about-cta">
             <p className="about-cta__text">{profile.location} · {profile.status}</p>

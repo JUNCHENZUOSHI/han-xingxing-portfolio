@@ -1,4 +1,8 @@
 {
+  "common": {
+    "name": "韩星星",
+    "nameEn": "Han Xingxing"
+  },
   "nav": {
     "work": "作品",
     "resume": "简历",

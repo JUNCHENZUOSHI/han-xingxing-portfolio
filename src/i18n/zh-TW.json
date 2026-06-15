@@ -1,0 +1,122 @@
+{
+  "common": {
+    "name": "韓星星",
+    "nameEn": "Han Xingxing"
+  },
+  "nav": {
+    "work": "作品",
+    "resume": "履歷",
+    "contact": "郵箱"
+  },
+  "hero": {
+    "viewCases": "查看案例",
+    "downloadResume": "下載履歷",
+    "contact": "聯絡我",
+    "scrollHint": "↓ 向下滑動瀏覽案例"
+  },
+  "home": {
+    "transition": ["深度", "可遷移性", "寬度"],
+    "featuredCases": "精選案例",
+    "allCases": "全部案例",
+    "capabilities": "能力矩陣",
+    "about": "關於我",
+    "aboutText": "{years} 年 B 端產品設計經驗，專注 Enterprise SaaS 與 AI 產品體驗設計。具備從業務洞察、產品策略、互動設計到設計系統建設的全鏈路設計能力。",
+    "industries": "行業經驗",
+    "workingStyle": "工作方式",
+    "moreAbout": "了解更多 →",
+    "experience": "工作經歷",
+    "letsTalk": "交流一下",
+    "letsTalkSub": "目前在尋找 Senior Product Designer / AI Product Designer 機會",
+    "downloadResumePdf": "下載履歷 (PDF)"
+  },
+  "capabilities": {
+    "uxStrategy": {
+      "title": "UX 策略",
+      "desc": "將業務目標拆解為設計策略，建立從用戶體驗到商業結果的量化閉環。",
+      "items": ["產品策略與商業目標對齊", "用戶旅程與資訊架構設計", "數據驅動設計決策", "跨團隊設計推動"]
+    },
+    "enterpriseSaaS": {
+      "title": "企業級 SaaS",
+      "desc": "專注 B 端複雜業務系統設計，6 年以上企業級產品經驗。",
+      "items": ["複雜業務流程抽象", "企業級產品體驗優化", "多角色權限與配置型產品", "從策略到交付的全鏈路設計"]
+    },
+    "aiProduct": {
+      "title": "AI 產品體驗",
+      "desc": "將生成式 AI 能力轉化為可理解、可度量、可規模化落地的產品體驗。",
+      "items": ["AI 互動模式基線制定", "AI 體驗度量體系設計", "Prompt 驅動產品策略", "AI 錯誤兜底與可解釋性"]
+    },
+    "designSystem": {
+      "title": "設計體系",
+      "desc": "從 0 到 1 搭建設計系統，建立 AI 可生成/可理解的雙向語義體系。",
+      "items": ["Design Token 體系設計", "語義化組件系統（60+ 組件）", "DesignOps 與協作規範", "國際化多市場適配"]
+    },
+    "growthDesign": {
+      "title": "增長設計",
+      "desc": "通過設計驅動轉化率提升與業務增長，建立體驗與業務指標聯動機制。",
+      "items": ["轉化率優化與 A/B 測試", "跨文化市場增長策略", "體驗指標與業務 KPI 關聯", "數據反饋驅動持續迭代"]
+    }
+  },
+  "about": {
+    "heading": "關於我",
+    "intro": "{years} 年 B 端 SaaS 產品設計經驗，目前專注於 AI 產品體驗設計。背景橫跨企業級低代碼平台與跨境電商 SaaS，具備從複雜系統到全球化產品的全鏈路設計能力。",
+    "careerNarrative": "職業脈絡",
+    "capabilities": "核心能力",
+    "whatImNot": "我不是什麼樣的設計師",
+    "coreValue": "我的價值",
+    "slack": "額外資訊",
+    "education": "教育背景",
+    "contact": "聯絡方式",
+    "downloadResume": "下載履歷 (PDF)"
+  },
+  "contact": {
+    "heading": "聯絡方式",
+    "subtitle": "目前在尋找 {roles} 機會。",
+    "email": "郵箱",
+    "phone": "電話",
+    "location": "所在地",
+    "availability": "狀態",
+    "resumeHeading": "履歷",
+    "resumeText": "詳細工作經歷、量化成果與完整案例背景。",
+    "downloadResume": "下載履歷 (PDF)",
+    "viewCases": "查看案例",
+    "aboutMe": "關於我"
+  },
+  "resume": {
+    "strengths": "個人優勢",
+    "strengthSummary": "6年資深B端/SaaS產品設計專家，擅長以AI驅動業務增長，主導複雜系統與全球化產品的全鏈路策略與設計體系構建。",
+    "strength1Title": "業務主導與增長結果導向",
+    "strength1Desc": "擁有6年B端/SaaS全鏈路經驗，深度理解業務模型與增長槓桿。尤其在跨境電商與Shopify生態中，成功主導以AI（如Shopify Sidekick）驅動業務增長的策略，能將設計目標與業務KPI（如轉化率、效率、GMV）強關聯，實現從體驗優化到商業增長的閉環驅動。",
+    "strength2Title": "數據驅動與AI賦能決策",
+    "strength2Desc": "精通用戶研究，擅長將ChatGPT/Claude/Gemini及Shopify Sidekick等AI工具深度融入洞察與決策流程。具備高數據敏感度，能主導構建涵蓋AI輸出質量、用戶行為及業務結果的多層度量體系，通過數據驗證提升方案確定性，並建立可持續的AI能力調優閉環。",
+    "strength3Title": "設計體系治理與資產化建設",
+    "strength3Desc": "主導Design System的搭建與跨端落地，所構建的體系全面支持AI生成邏輯與國際化擴展。通過組件抽象、規範沉澱，推動團隊從「人力驅動」轉向「體系驅動」，為全球化業務的快速迭代提供穩定基礎設施。",
+    "strength4Title": "全鏈路體驗設計與交付落地",
+    "strength4Desc": "具備從業務洞察到高保真交付的全鏈路能力。擅長將如Shopify Sidekick等複雜AI能力抽象、轉化為直觀高效的商家工作流，並與產研團隊深度協作，確保智能體驗的高質量落地與業務目標同步。",
+    "experience": "工作經歷",
+    "achievements": "核心成果與價值量化",
+    "responsibilities": "關鍵職責與能力沉澱",
+    "education": "教育經歷",
+    "downloadPdf": "下載履歷 (PDF)",
+    "downloadHint": "需要 PDF 版本？"
+  },
+  "footer": {
+    "downloadResume": "下載履歷 (PDF)"
+  },
+  "case": {
+    "back": "← 返回案例列表",
+    "context": "專案背景",
+    "challenge": "核心挑戰",
+    "approach": "設計策略",
+    "solution": "解決方案",
+    "impact": "成果與影響",
+    "role": "我的角色",
+    "team": "團隊",
+    "timeline": "時間線",
+    "skills": "相關能力"
+  },
+  "lang": {
+    "zh": "中",
+    "zh-TW": "繁",
+    "en": "EN"
+  }
+}

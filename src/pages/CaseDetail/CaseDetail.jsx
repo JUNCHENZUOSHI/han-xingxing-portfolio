@@ -69,7 +69,7 @@ export default function CaseDetail() {
       </section>
 
       {/* ── 01 Background ── */}
-      <section className="section">
+      <section className="section section--alt">
         <div className="container">
           <h2 className="section-heading">
             <span className="section-heading__number">01</span>{t('case.context')}
@@ -118,7 +118,7 @@ export default function CaseDetail() {
       </section>
 
       {/* ── 03 My Role ── */}
-      <section className="section">
+      <section className="section section--alt">
         <div className="container">
           <h2 className="section-heading">
             <span className="section-heading__number">03</span>{t('case.role')}
@@ -223,7 +223,7 @@ export default function CaseDetail() {
       </section>
 
       {/* ── 05 Key Decisions ── */}
-      <section className="section">
+      <section className="section section--alt">
         <div className="container">
           <h2 className="section-heading">
             <span className="section-heading__number">05</span>{t('case.solution')}
@@ -300,7 +300,7 @@ export default function CaseDetail() {
       </section>
 
       {/* ── 07 Reflection ── */}
-      <section className="section">
+      <section className="section section--alt">
         <div className="container">
           <h2 className="section-heading">
             <span className="section-heading__number">07</span>Reflection

@@ -1,60 +1,52 @@
 /* ═══════════════════════════════════════════════════
-   Design Tokens — Apple-style
-   Typography: SF Pro system stack, generous scale
-   Color: Apple grays, minimal accent
-   Spacing: generous whitespace
+   Design Tokens — Apple + Linear
+   95% B&W · 5% Blue (#2563EB)
    ═══════════════════════════════════════════════════ */
 
 :root {
-  /* ── Color: Apple palette ── */
-  --color-bg:              #FFFFFF;
-  --color-bg-alt:          #F5F5F7;
-  --color-surface:         #FAFAFA;
-  --color-border:          #D2D2D7;
-  --color-border-subtle:   #E8E8ED;
-  --color-text:            #1D1D1F;
-  --color-text-secondary:  #86868B;
-  --color-text-tertiary:   #AEAEB2;
-  --color-text-inverse:    #FFFFFF;
+  /* ── Color ── */
+  --color-bg:          #FFFFFF;
+  --color-bg-alt:      #F5F5F7;
+  --color-text:        #1D1D1F;
+  --color-text-secondary: #6E6E73;
+  --color-text-tertiary:  #86868B;
+  --color-border:      rgba(0,0,0,0.06);
+  --color-border-strong: rgba(0,0,0,0.12);
 
-  --color-accent:          #0071E3;
-  --color-accent-hover:    #0077ED;
-  --color-accent-subtle:   #F5F5FF;
+  --color-accent:      #2563EB;
+  --color-accent-hover: #1D4ED8;
 
-  --color-positive:        #30B158;
-  --color-caution:         #FF9F0A;
-  --color-critical:        #FF453A;
-
-  /* ── Typography: SF Pro system stack ── */
+  /* ── Typography — Apple scale ── */
   --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
                "PingFang SC", "Hiragino Sans GB", "Noto Sans SC",
                "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono: "SF Mono", "Menlo", "Monaco", "Courier New", monospace;
 
-  /* ── Typography Scale (Apple-style) ── */
-  --text-hero:      3.5rem;     /* 56px — hero headline */
-  --text-h1:        3rem;       /* 48px */
-  --text-h2:        2.5rem;     /* 40px — section heading */
-  --text-h3:        2rem;       /* 32px */
-  --text-h4:        1.5rem;     /* 24px */
-  --text-body:      1.0625rem;  /* 17px — Apple body */
-  --text-small:     0.9375rem;  /* 15px */
-  --text-caption:   0.8125rem;  /* 13px */
-  --text-nav:       0.875rem;   /* 14px */
+  /* Display: Hero name, 72–88px */
+  --text-display: clamp(4.5rem, 8vw, 5.5rem);  /* 72–88px */
+  /* Heading: Section titles, 48px */
+  --text-heading: 3rem;                          /* 48px */
+  /* Title: Card titles, 32px */
+  --text-title:   2rem;                          /* 32px */
+  /* Body: 19px (Apple body) */
+  --text-body:    1.1875rem;                     /* 19px */
+  /* Caption: 14px */
+  --text-caption: 0.875rem;                      /* 14px */
+  --text-small:   0.8125rem;                     /* 13px */
+  --text-nav:     0.875rem;                      /* 14px */
 
-  /* ── Line Height ── */
-  --leading-hero:     1.1;
-  --leading-heading:  1.15;
-  --leading-body:     1.47059;  /* Apple standard */
-  --leading-small:    1.5;
+  /* Leading */
+  --leading-display: 0.95;
+  --leading-heading: 1.1;
+  --leading-title:   1.15;
+  --leading-body:    1.47059;
 
-  /* ── Font Weight ── */
+  /* Weight — only 3 */
   --weight-normal:   400;
   --weight-medium:   500;
-  --weight-semibold: 600;
   --weight-bold:     700;
 
-  /* ── Spacing (Apple generous) ── */
+  /* ── Spacing ── */
   --space-4:   0.25rem;
   --space-8:   0.5rem;
   --space-12:  0.75rem;
@@ -70,16 +62,9 @@
   --space-96:  6rem;
   --space-120: 7.5rem;
 
-  /* Semantic spacing */
-  --section-pad:    var(--space-80);
-  --section-gap:    var(--space-56);
-  --card-pad:       var(--space-32);
-  --card-gap:       var(--space-24);
-
-  /* ── Module (Apple-style stacked modules) ── */
-  --module-bg:      rgba(0,0,0,0.03);
-  --module-gap:     16px;
-  --module-pad:     var(--space-56);
+  /* Section padding: 160px desktop / 96px mobile */
+  --section-pad: var(--space-120);
+  --section-pad-mobile: var(--space-96);
 
   /* ── Layout ── */
   --max-width:      1024px;
@@ -87,24 +72,28 @@
   --nav-height:     52px;
 
   /* ── Radius ── */
-  --radius-sm:   6px;
-  --radius-md:   12px;
-  --radius-lg:   18px;
-  --radius-xl:   24px;
+  --radius-sm:   8px;
+  --radius-md:   16px;
+  --radius-lg:   28px;
   --radius-full: 980px;
 
   /* ── Shadow ── */
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.06);
-  --shadow-lg: 0 8px 30px rgba(0,0,0,0.08);
+  --shadow-card: 0 20px 60px rgba(0,0,0,0.08);
 
   /* ── Transition ── */
   --transition-fast: 200ms ease;
   --transition-base: 350ms ease;
-  --transition-slow: 500ms ease;
 
-  /* ── Z-Index ── */
+  /* ── Z ── */
   --z-base:     1;
   --z-sticky:   100;
   --z-overlay:  200;
+}
+
+/* ── Mobile overrides ── */
+@media (max-width: 767px) {
+  :root {
+    --section-pad: var(--section-pad-mobile);
+  }
 }
