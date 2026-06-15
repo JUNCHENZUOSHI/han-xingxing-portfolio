@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
+import { useI18n } from '../../i18n/context';
 import { profile } from '../../data/profile';
 import CapabilityCard from '../../components/CapabilityCard/CapabilityCard';
 import './About.css';
 
 export default function About() {
+  const { t } = useI18n();
+
   return (
     <>
-      {/* ============================================================
-          1. Hero Mini
-          ============================================================ */}
       <section className="section">
         <div className="container">
           <div className="about-hero">
@@ -19,26 +19,14 @@ export default function About() {
         </div>
       </section>
 
-      {/* ============================================================
-          2. Introduction
-          Profile §2 + §3.2 narrative
-          ============================================================ */}
+      {/* Introduction */}
       <section className="section">
         <div className="container">
-          <h2 className="section-heading">Introduction</h2>
+          <h2 className="section-heading">{t('about.heading')}</h2>
           <div className="text-container">
             <p className="case-text">
-              {profile.subtitle} — 专注于企业级 SaaS、跨境电商平台、低代码平台
-              及 AI 产品体验设计。{profile.yearsOfExperience} 年产品设计经验，
-              具备从业务洞察、产品策略、交互设计、设计系统建设到设计落地的
-              从策略到交付的全链路设计能力。
+              {t('about.intro', { years: profile.yearsOfExperience })}
             </p>
-            <p className="case-text">
-              长期参与复杂业务系统和国际化产品建设，能够在体验目标与商业目标之间
-              建立有效连接。擅长将生成式 AI、智能决策系统和自动化能力转化为
-              可理解、可执行、可规模化落地的产品体验。
-            </p>
-
             <div className="about-keywords">
               {profile.keywords.slice(0, 5).map((kw) => (
                 <span className="tag" key={kw}>{kw}</span>
@@ -48,12 +36,10 @@ export default function About() {
         </div>
       </section>
 
-      {/* ============================================================
-          3. Career Narrative (profile.md §3.2 — 3-segment story)
-          ============================================================ */}
-      <section className="section">
+      {/* Career Narrative */}
+      <section className="section section--alt">
         <div className="container">
-          <h2 className="section-heading">Career Narrative</h2>
+          <h2 className="section-heading">{t('about.careerNarrative')}</h2>
           <div className="text-container">
             <div className="about-narrative">
               {profile.narrative.map((chapter, i) => (
@@ -70,13 +56,10 @@ export default function About() {
         </div>
       </section>
 
-      {/* ============================================================
-          4. Experience Timeline
-          Full highlights + metrics (not truncated like Home)
-          ============================================================ */}
+      {/* Experience */}
       <section className="section">
         <div className="container">
-          <h2 className="section-heading">Experience</h2>
+          <h2 className="section-heading">{t('home.experience')}</h2>
           <div className="experience-list">
             {profile.experience.map((exp, i) => (
               <div key={i}>
@@ -90,16 +73,12 @@ export default function About() {
                     <h3 className="experience-item__role">{exp.role}</h3>
                     <p className="experience-item__company">{exp.company}</p>
                     <ul className="about-highlights">
-                      {exp.highlights.map((h, j) => (
-                        <li key={j}>{h}</li>
-                      ))}
+                      {exp.highlights.map((h, j) => <li key={j}>{h}</li>)}
                     </ul>
                     {exp.metrics.length > 0 && (
                       <div className="about-metrics">
                         {exp.metrics.map((m, k) => (
-                          <span className="metric-value" key={k}>
-                            {m.label}: {m.value}
-                          </span>
+                          <span className="metric-value" key={k}>{m.label}: {m.value}</span>
                         ))}
                       </div>
                     )}
@@ -110,7 +89,7 @@ export default function About() {
             <hr className="divider divider--subtle" />
             <div className="experience-item">
               <div className="experience-item__meta">
-                <span className="experience-item__period">Education</span>
+                <span className="experience-item__period">{t('about.education')}</span>
               </div>
               <div className="experience-item__body">
                 <h3 className="experience-item__role">{profile.education}</h3>
@@ -120,45 +99,33 @@ export default function About() {
         </div>
       </section>
 
-      {/* ============================================================
-          5. Capabilities Overview
-          ============================================================ */}
-      <section className="section">
+      {/* Capabilities */}
+      <section className="section section--alt">
         <div className="container">
-          <h2 className="section-heading">Capabilities</h2>
+          <h2 className="section-heading">{t('about.capabilities')}</h2>
           <div className="capability-grid capability-grid--5">
             {profile.homeCapabilities.map((cap) => (
-              <CapabilityCard
-                key={cap.title}
-                title={cap.title}
-                description={cap.description}
-                items={cap.items}
-              />
+              <CapabilityCard key={cap.title} title={cap.title} description={cap.description} items={cap.items} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* ============================================================
-          6. Skills & Evidence
-          ============================================================ */}
+      {/* Skills & Evidence */}
       <section className="section">
         <div className="container">
-          <h2 className="section-heading">Skills & Evidence</h2>
+          <h2 className="section-heading">Skills &amp; Evidence</h2>
           <div className="text-container">
             <table className="case-table">
               <thead>
                 <tr>
-                  <th>能力维度</th>
-                  <th>量化证据</th>
+                  <th>{t('about.capabilities')}</th>
+                  <th>Evidence</th>
                 </tr>
               </thead>
               <tbody>
                 {profile.skills.map((s, i) => (
-                  <tr key={i}>
-                    <td>{s.name}</td>
-                    <td>{s.evidence}</td>
-                  </tr>
+                  <tr key={i}><td>{s.name}</td><td>{s.evidence}</td></tr>
                 ))}
               </tbody>
             </table>
@@ -166,26 +133,18 @@ export default function About() {
         </div>
       </section>
 
-      {/* ============================================================
-          7. Working Style
-          ============================================================ */}
-      <section className="section">
+      {/* Working Style */}
+      <section className="section section--alt">
         <div className="container">
-          <h2 className="section-heading">Working Style</h2>
+          <h2 className="section-heading">{t('about.whatImNot')}</h2>
           <div className="text-container">
             <table className="case-table">
               <thead>
-                <tr>
-                  <th>我不是</th>
-                  <th>我的核心价值在于</th>
-                </tr>
+                <tr><th>Not</th><th>{t('about.coreValue')}</th></tr>
               </thead>
               <tbody>
                 {profile.notStatements.map((ns, i) => (
-                  <tr key={i}>
-                    <td>{ns.not}</td>
-                    <td>{ns.value}</td>
-                  </tr>
+                  <tr key={i}><td>{ns.not}</td><td>{ns.value}</td></tr>
                 ))}
               </tbody>
             </table>
@@ -194,18 +153,15 @@ export default function About() {
         </div>
       </section>
 
-      {/* ============================================================
-          8. CTA
-          ============================================================ */}
+      {/* CTA */}
       <section className="section">
         <div className="container">
           <div className="about-cta">
-            <p className="about-cta__text">
-              {profile.location} · {profile.status}
-            </p>
+            <p className="about-cta__text">{profile.location} · {profile.status}</p>
             <div className="about-cta__actions">
-              <Link to="/" className="btn-primary">View Case Studies</Link>
+              <Link to="/" className="btn-primary">{t('contact.viewCases')}</Link>
               <a href={`mailto:${profile.email}`} className="btn-secondary">{profile.email}</a>
+              <a href={`${import.meta.env.BASE_URL}resume.pdf`} className="btn-secondary" download>{t('about.downloadResume')}</a>
             </div>
           </div>
         </div>

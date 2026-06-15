@@ -1,7 +1,10 @@
+import { useI18n } from '../../i18n/context';
 import { profile } from '../../data/profile';
 import './Hero.css';
 
 export default function Hero() {
+  const { t } = useI18n();
+
   return (
     <section className="section hero">
       <div className="container">
@@ -26,12 +29,12 @@ export default function Hero() {
           </div>
 
           <div className="hero__cta">
-            <a href="#work" className="btn-primary">View Case Studies</a>
-            <a href={`${import.meta.env.BASE_URL}resume.pdf`} className="btn-secondary" download>Download Resume</a>
-            <a href={`mailto:${profile.email}`} className="btn-secondary">Contact</a>
+            <a href="#work" className="btn-primary">{t('hero.viewCases')}</a>
+            <a href={`${import.meta.env.BASE_URL}resume.pdf`} className="btn-secondary" download>{t('hero.downloadResume')}</a>
+            <a href={`mailto:${profile.email}`} className="btn-secondary">{t('hero.contact')}</a>
           </div>
 
-          <p className="hero__scroll-hint">↓ Scroll to explore cases</p>
+          <p className="hero__scroll-hint">{t('hero.scrollHint')}</p>
         </div>
       </div>
     </section>

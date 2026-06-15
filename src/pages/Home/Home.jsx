@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useI18n } from '../../i18n/context';
 import { profile } from '../../data/profile';
 import { cases, caseOrder } from '../../data/cases';
 import Hero from '../../components/Hero/Hero';
@@ -7,45 +8,38 @@ import CapabilityCard from '../../components/CapabilityCard/CapabilityCard';
 import './Home.css';
 
 export default function Home() {
+  const { t } = useI18n();
+  const trans = t('home.transition') || ['深度', '可迁移性', '宽度'];
+
   return (
     <>
-      {/* ============================================================
-          Module 1: Hero
-          Name · One-line Positioning · Capability Tags · Contact CTA
-          ============================================================ */}
       <Hero />
 
-      {/* ============================================================
-          Module 2: Transition Guide
-          ============================================================ */}
+      {/* ── Transition Guide ── */}
       <section className="section transition-guide">
         <div className="container">
           <p className="transition-guide__text">
-            <span className="transition-guide__item">深度</span>
+            <span className="transition-guide__item">{trans[0]}</span>
             <span className="transition-guide__sep">→</span>
-            <span className="transition-guide__item">可迁移性</span>
+            <span className="transition-guide__item">{trans[1]}</span>
             <span className="transition-guide__sep">→</span>
-            <span className="transition-guide__item">宽度</span>
+            <span className="transition-guide__item">{trans[2]}</span>
           </p>
         </div>
       </section>
 
-      {/* ============================================================
-          Module 3: Featured Cases (3 projects)
-          Shopify AI / Low-code AI / Design System & Globalization
-          ============================================================ */}
+      {/* ── Featured Cases ── */}
       <section className="section" id="work">
         <div className="container">
-          <h2 className="section-heading">Featured Cases</h2>
-
-          {/* Featured: Case 01 — Sidekick AI (full-width) */}
+          <h2 className="section-heading">{t('home.featuredCases')}</h2>
           <CaseCard caseData={cases.sidekick} variant="featured" />
         </div>
       </section>
 
+      {/* ── All Cases ── */}
       <section className="section">
         <div className="container">
-          <h2 className="section-heading">All Cases</h2>
+          <h2 className="section-heading">{t('home.allCases')}</h2>
           <div className="case-grid">
             {caseOrder.map((slug) => (
               <CaseCard key={slug} caseData={cases[slug]} variant="standard" />
@@ -54,14 +48,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============================================================
-          Module 4: Capabilities (5)
-          UX Strategy · Enterprise SaaS · AI Product Experience
-          · Design System · Growth Design
-          ============================================================ */}
-      <section className="section">
+      {/* ── Capabilities ── */}
+      <section className="section section--alt">
         <div className="container">
-          <h2 className="section-heading">Capabilities</h2>
+          <h2 className="section-heading">{t('home.capabilities')}</h2>
           <div className="capability-grid capability-grid--5">
             {profile.homeCapabilities.map((cap) => (
               <CapabilityCard
@@ -75,41 +65,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============================================================
-          Module 5: About Preview
-          Experience · Industries · Working Style
-          ============================================================ */}
+      {/* ── About Preview ── */}
       <section className="section">
         <div className="container">
-          <h2 className="section-heading">About</h2>
+          <h2 className="section-heading">{t('home.about')}</h2>
           <div className="about-preview">
             <div className="about-preview__intro">
               <p className="about-preview__text">
-                {profile.yearsOfExperience} 年 B 端产品设计经验，专注
-                Enterprise SaaS 与 AI 产品体验设计。具备从业务洞察、产品策略、
-                交互设计到设计系统建设的全链路设计能力。
+                {t('home.aboutText', { years: profile.yearsOfExperience })}
               </p>
-              <div className="about-preview__tags">
-                {profile.keywords.slice(0, 4).map((kw) => (
-                  <span className="tag" key={kw}>{kw}</span>
-                ))}
-              </div>
             </div>
-
             <div className="about-preview__columns">
               <div className="about-preview__col">
-                <h3 className="about-preview__col-title">Industries</h3>
+                <h3 className="about-preview__col-title">{t('home.industries')}</h3>
                 <ul className="about-preview__list">
-                  {profile.industries.map((ind) => (
-                    <li key={ind}>{ind}</li>
-                  ))}
+                  {profile.industries.map((ind) => <li key={ind}>{ind}</li>)}
                 </ul>
               </div>
               <div className="about-preview__col">
-                <h3 className="about-preview__col-title">Working Style</h3>
+                <h3 className="about-preview__col-title">{t('home.workingStyle')}</h3>
                 <p className="about-preview__col-text">{profile.workingStyleSummary}</p>
                 <Link to="/about" className="text-link" style={{ marginTop: 'var(--space-8)' }}>
-                  More about me →
+                  {t('home.moreAbout')}
                 </Link>
               </div>
             </div>
@@ -117,12 +94,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ============================================================
-          Module 6: Experience Timeline
-          ============================================================ */}
-      <section className="section">
+      {/* ── Experience ── */}
+      <section className="section section--alt">
         <div className="container">
-          <h2 className="section-heading">Experience</h2>
+          <h2 className="section-heading">{t('home.experience')}</h2>
           <div className="experience-list">
             {profile.experience.map((exp, i) => (
               <div key={i}>
@@ -144,28 +119,23 @@ export default function Home() {
             ))}
           </div>
           <p className="experience-status">
-            📍 {profile.location} · {profile.status}
+            {profile.location} · {profile.status}
           </p>
         </div>
       </section>
 
-      {/* ============================================================
-          Module 7: Contact CTA
-          Email · Resume · Location + Availability
-          ============================================================ */}
+      {/* ── Contact CTA ── */}
       <section className="section contact-cta">
         <div className="container">
           <div className="contact-cta__inner">
-            <h2 className="contact-cta__heading">Let&rsquo;s talk</h2>
-            <p className="contact-cta__subtitle">
-              Currently available for Senior Product Designer / AI Product Designer opportunities.
-            </p>
+            <h2 className="contact-cta__heading">{t('home.letsTalk')}</h2>
+            <p className="contact-cta__subtitle">{t('home.letsTalkSub')}</p>
             <div className="contact-cta__actions">
               <a href={`mailto:${profile.email}`} className="btn-primary">
                 {profile.email}
               </a>
               <a href={`${import.meta.env.BASE_URL}resume.pdf`} className="btn-secondary" download>
-                Download Resume (PDF)
+                {t('home.downloadResumePdf')}
               </a>
               <span className="contact-cta__meta">
                 {profile.location} · {profile.phone} · {profile.status}

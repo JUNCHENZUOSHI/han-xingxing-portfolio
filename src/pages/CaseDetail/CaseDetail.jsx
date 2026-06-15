@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { useI18n } from '../../i18n/context';
 import { getCase, caseOrder } from '../../data/cases';
 import './CaseDetail.css';
 
@@ -18,6 +19,7 @@ function ConfidenceMarker({ state, note, children }) {
 }
 
 export default function CaseDetail() {
+  const { t } = useI18n();
   const { slug } = useParams();
   const caseData = getCase(slug);
 
@@ -26,7 +28,7 @@ export default function CaseDetail() {
       <section className="section">
         <div className="container">
           <p>Case not found.</p>
-          <Link to="/" className="text-link">← Back to Home</Link>
+          <Link to="/" className="text-link">{t('case.back')}</Link>
         </div>
       </section>
     );
@@ -70,7 +72,7 @@ export default function CaseDetail() {
       <section className="section">
         <div className="container">
           <h2 className="section-heading">
-            <span className="section-heading__number">01</span>Background
+            <span className="section-heading__number">01</span>{t('case.context')}
           </h2>
           <div className="text-container">
             <ConfidenceMarker state={caseData.background.state} note={caseData.background.note}>
@@ -98,7 +100,7 @@ export default function CaseDetail() {
       <section className="section">
         <div className="container">
           <h2 className="section-heading">
-            <span className="section-heading__number">02</span>Challenge
+            <span className="section-heading__number">02</span>{t('case.challenge')}
           </h2>
           <div className="text-container">
             <ConfidenceMarker state={caseData.challenge.state}>
@@ -119,7 +121,7 @@ export default function CaseDetail() {
       <section className="section">
         <div className="container">
           <h2 className="section-heading">
-            <span className="section-heading__number">03</span>My Role
+            <span className="section-heading__number">03</span>{t('case.role')}
           </h2>
           <div className="text-container">
             <div className="case-meta-grid">
@@ -176,7 +178,7 @@ export default function CaseDetail() {
       <section className="section">
         <div className="container">
           <h2 className="section-heading">
-            <span className="section-heading__number">04</span>Design Approach
+            <span className="section-heading__number">04</span>{t('case.approach')}
           </h2>
           <div className="text-container">
             {caseData.designApproach.state === 'empty' && (
@@ -224,7 +226,7 @@ export default function CaseDetail() {
       <section className="section">
         <div className="container">
           <h2 className="section-heading">
-            <span className="section-heading__number">05</span>Key Decisions
+            <span className="section-heading__number">05</span>{t('case.solution')}
           </h2>
 
           {caseData.decisionsNote && (
@@ -274,7 +276,7 @@ export default function CaseDetail() {
       <section className="section">
         <div className="container">
           <h2 className="section-heading">
-            <span className="section-heading__number">06</span>Outcome
+            <span className="section-heading__number">06</span>{t('case.impact')}
           </h2>
           <div className="text-container">
             <h3 className="case-h3">Quantitative Results</h3>

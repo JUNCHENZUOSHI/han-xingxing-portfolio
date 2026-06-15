@@ -9,6 +9,16 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- SPA redirect recovery: restore path after 404.html redirect on GitHub Pages -->
+    <script>
+      (function(){
+        var redir = sessionStorage.getItem('redirect');
+        if (redir && redir !== '/han-xingxing-portfolio' && redir !== '/han-xingxing-portfolio/') {
+          sessionStorage.removeItem('redirect');
+          history.replaceState(null, '', redir + location.search);
+        }
+      })();
+    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

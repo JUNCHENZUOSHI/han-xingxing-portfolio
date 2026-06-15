@@ -1,0 +1,117 @@
+{
+  "nav": {
+    "work": "作品",
+    "resume": "简历",
+    "contact": "✉"
+  },
+  "hero": {
+    "viewCases": "查看案例",
+    "downloadResume": "下载简历",
+    "contact": "联系我",
+    "scrollHint": "↓ 向下滚动浏览案例"
+  },
+  "home": {
+    "transition": ["深度", "可迁移性", "宽度"],
+    "featuredCases": "精选案例",
+    "allCases": "全部案例",
+    "capabilities": "能力矩阵",
+    "about": "关于我",
+    "aboutText": "{years} 年 B 端产品设计经验，专注 Enterprise SaaS 与 AI 产品体验设计。具备从业务洞察、产品策略、交互设计到设计系统建设的全链路设计能力。",
+    "industries": "行业经验",
+    "workingStyle": "工作方式",
+    "moreAbout": "了解更多 →",
+    "experience": "工作经历",
+    "letsTalk": "交流一下",
+    "letsTalkSub": "目前在寻找 Senior Product Designer / AI Product Designer 机会",
+    "downloadResumePdf": "下载简历 (PDF)"
+  },
+  "capabilities": {
+    "uxStrategy": {
+      "title": "UX 策略",
+      "desc": "将业务目标拆解为设计策略，建立从用户体验到商业结果的量化闭环。",
+      "items": ["产品策略与商业目标对齐", "用户旅程与信息架构设计", "数据驱动设计决策", "跨团队设计推动"]
+    },
+    "enterpriseSaaS": {
+      "title": "企业级 SaaS",
+      "desc": "专注 B 端复杂业务系统设计，6 年以上企业级产品经验。",
+      "items": ["复杂业务流程抽象", "企业级产品体验优化", "多角色权限与配置型产品", "从策略到交付的全链路设计"]
+    },
+    "aiProduct": {
+      "title": "AI 产品体验",
+      "desc": "将生成式 AI 能力转化为可理解、可度量、可规模化落地的产品体验。",
+      "items": ["AI 交互模式基线制定", "AI 体验度量体系设计", "Prompt 驱动产品策略", "AI 错误兜底与可解释性"]
+    },
+    "designSystem": {
+      "title": "设计体系",
+      "desc": "从 0 到 1 搭建设计系统，建立 AI 可生成/可理解的双向语义体系。",
+      "items": ["Design Token 体系设计", "语义化组件系统（60+ 组件）", "DesignOps 与协作规范", "国际化多市场适配"]
+    },
+    "growthDesign": {
+      "title": "增长设计",
+      "desc": "通过设计驱动转化率提升与业务增长，建立体验与业务指标联动机制。",
+      "items": ["转化率优化与 A/B 测试", "跨文化市场增长策略", "体验指标与业务 KPI 关联", "数据反馈驱动持续迭代"]
+    }
+  },
+  "about": {
+    "heading": "关于我",
+    "intro": "{years} 年 B 端 SaaS 产品设计经验，目前专注于 AI 产品体验设计。背景横跨企业级低代码平台与跨境电商 SaaS，具备从复杂系统到全球化产品的全链路设计能力。",
+    "careerNarrative": "职业脉络",
+    "capabilities": "核心能力",
+    "whatImNot": "我不是什么样的设计师",
+    "coreValue": "我的价值",
+    "slack": "额外信息",
+    "education": "教育背景",
+    "contact": "联系方式",
+    "downloadResume": "下载简历 (PDF)"
+  },
+  "contact": {
+    "heading": "联系方式",
+    "subtitle": "目前在寻找 {roles} 机会。",
+    "email": "邮箱",
+    "phone": "电话",
+    "location": "所在地",
+    "availability": "状态",
+    "resumeHeading": "简历",
+    "resumeText": "详细工作经历、量化成果与完整案例背景。",
+    "downloadResume": "下载简历 (PDF)",
+    "viewCases": "查看案例",
+    "aboutMe": "关于我"
+  },
+  "resume": {
+    "strengths": "个人优势",
+    "strengthSummary": "6年资深B端/SaaS产品设计专家，擅长以AI驱动业务增长，主导复杂系统与全球化产品的全链路策略与设计体系构建。",
+    "strength1Title": "业务主导与增长结果导向",
+    "strength1Desc": "拥有6年B端/SaaS全链路经验，深度理解业务模型与增长杠杆。尤其在跨境电商与Shopify生态中，成功主导以AI（如Shopify Sidekick）驱动业务增长的策略，能将设计目标与业务KPI（如转化率、效率、GMV）强关联，实现从体验优化到商业增长的闭环驱动。",
+    "strength2Title": "数据驱动与AI赋能决策",
+    "strength2Desc": "精通用户研究，擅长将ChatGPT/Claude/Gemini及Shopify Sidekick等AI工具深度融入洞察与决策流程。具备高数据敏感度，能主导构建涵盖AI输出质量、用户行为及业务结果的多层度量体系，通过数据验证提升方案确定性，并建立可持续的AI能力调优闭环。",
+    "strength3Title": "设计体系治理与资产化建设",
+    "strength3Desc": "主导Design System的搭建与跨端落地，所构建的体系全面支持AI生成逻辑与国际化扩展。通过组件抽象、规范沉淀，推动团队从\"人力驱动\"转向\"体系驱动\"，为全球化业务的快速迭代提供稳定基础设施。",
+    "strength4Title": "全链路体验设计与交付落地",
+    "strength4Desc": "具备从业务洞察到高保真交付的全链路能力。擅长将如Shopify Sidekick等复杂AI能力抽象、转化为直观高效的商家工作流，并与产研团队深度协作，确保智能体验的高质量落地与业务目标同步。",
+    "experience": "工作经历",
+    "achievements": "核心成果与价值量化",
+    "responsibilities": "关键职责与能力沉淀",
+    "education": "教育经历",
+    "downloadPdf": "下载简历 (PDF)",
+    "downloadHint": "需要 PDF 版本？"
+  },
+  "footer": {
+    "downloadResume": "下载简历 (PDF)"
+  },
+  "case": {
+    "back": "← 返回案例列表",
+    "context": "项目背景",
+    "challenge": "核心挑战",
+    "approach": "设计策略",
+    "solution": "解决方案",
+    "impact": "成果与影响",
+    "role": "我的角色",
+    "team": "团队",
+    "timeline": "时间线",
+    "skills": "相关能力"
+  },
+  "lang": {
+    "zh": "中",
+    "en": "EN"
+  }
+}
