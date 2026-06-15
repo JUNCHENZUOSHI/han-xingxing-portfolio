@@ -87,6 +87,7 @@ const resumeData = {
 
 export default function Resume() {
   return (
+    <section className="section">
     <div className="resume-page">
       {/* ═══════════════════════════════════════════════════════════
           Print Header — visible only when printing
@@ -206,5 +207,6 @@ export default function Resume() {
         </div>
       </section>
     </div>
+    </section>
   );
 }

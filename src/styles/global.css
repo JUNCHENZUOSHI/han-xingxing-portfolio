@@ -38,13 +38,20 @@ ul, ol { list-style: none; }
   padding: 0 var(--space-24);
 }
 
+/* Apple-style modules: subtle gray bg, 16px gap, generous internal padding */
 .section {
-  padding-top: var(--section-pad);
-  padding-bottom: var(--section-pad);
+  background: var(--module-bg);
+  padding: var(--module-pad) var(--space-24);
+  margin-bottom: var(--module-gap);
 }
 
-.section--alt {
-  background: var(--color-bg-alt);
+.section:last-child {
+  margin-bottom: 0;
+}
+
+/* Flush variant — white bg, used for hero */
+.section--flush {
+  background: transparent;
 }
 
 .text-container {

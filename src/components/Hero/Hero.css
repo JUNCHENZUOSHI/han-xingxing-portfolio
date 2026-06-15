@@ -1,8 +1,9 @@
-/* Hero — Apple Style */
+/* Hero — Apple Style, white bg module */
 .hero {
-  padding-top: var(--space-80);
-  padding-bottom: var(--space-64);
   text-align: center;
+  padding-top: var(--space-80);
+  padding-bottom: var(--space-80);
+  background: transparent;
 }
 .hero__content { max-width: var(--max-width-text); margin: 0 auto; }
 .hero__name {
@@ -24,7 +25,7 @@
 .hero__trust-label { font-size: var(--text-small); color: var(--color-text-secondary); }
 .hero__tags { display: flex; justify-content: center; gap: var(--space-8); flex-wrap: wrap; margin-bottom: var(--space-40); }
 .hero__cta { display: flex; justify-content: center; gap: var(--space-16); flex-wrap: wrap; }
-.hero__scroll-hint { margin-top: var(--space-56); font-size: var(--text-caption); color: var(--color-text-tertiary); }
+.hero__scroll-hint { margin-top: var(--space-32); font-size: var(--text-caption); color: var(--color-text-tertiary); }
 
 @media (max-width: 767px) {
   .hero { padding-top: var(--space-48); padding-bottom: var(--space-40); }

@@ -12,7 +12,9 @@ function PageLayout({ children }) {
     <>
       <Navbar />
       <main>{children}</main>
-      <Footer />
+      <footer>
+        <Footer />
+      </footer>
     </>
   );
 }

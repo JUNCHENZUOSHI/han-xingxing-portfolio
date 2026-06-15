@@ -37,7 +37,7 @@ export default function About() {
       </section>
 
       {/* Career Narrative */}
-      <section className="section section--alt">
+      <section className="section section">
         <div className="container">
           <h2 className="section-heading">{t('about.careerNarrative')}</h2>
           <div className="text-container">
@@ -100,7 +100,7 @@ export default function About() {
       </section>
 
       {/* Capabilities */}
-      <section className="section section--alt">
+      <section className="section section">
         <div className="container">
           <h2 className="section-heading">{t('about.capabilities')}</h2>
           <div className="capability-grid capability-grid--5">
@@ -134,7 +134,7 @@ export default function About() {
       </section>
 
       {/* Working Style */}
-      <section className="section section--alt">
+      <section className="section section">
         <div className="container">
           <h2 className="section-heading">{t('about.whatImNot')}</h2>
           <div className="text-container">

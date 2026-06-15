@@ -6,7 +6,6 @@
 .resume-page {
   max-width: 840px;
   margin: 0 auto;
-  padding: var(--space-16) var(--space-8);
   font-size: 15px;
   line-height: 1.75;
   color: var(--color-text);
