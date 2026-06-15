@@ -1,0 +1,159 @@
+/* ── About Hero ── */
+.about-hero {
+  max-width: var(--max-width-text);
+}
+
+.about-hero__name {
+  font-size: var(--text-h1);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-h1);
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  margin: var(--space-16) 0;
+}
+
+.about-hero__tagline {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-24) 0;
+}
+
+/* ── Keywords ── */
+.about-keywords {
+  display: flex;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+  margin-top: var(--space-24);
+}
+
+/* ── Career Narrative ── */
+.about-narrative {
+  max-width: var(--max-width-text);
+}
+
+.about-narrative__chapter {
+  padding: var(--space-24) 0;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.about-narrative__chapter:first-child {
+  padding-top: 0;
+}
+
+.about-narrative__chapter:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.about-narrative__period {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-16);
+  margin-bottom: var(--space-16);
+}
+
+.about-narrative__timeline {
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  font-weight: var(--weight-semibold);
+  color: var(--color-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.about-narrative__label {
+  font-size: var(--text-caption);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.about-narrative__story {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* ── Capability Grid (component from CapabilityCard, grid only) ── */
+.capability-grid--5 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-card-gap);
+}
+
+/* ── Highlights ── */
+.about-highlights {
+  margin: var(--space-8) 0 0 0;
+  padding-left: var(--space-24);
+  list-style: disc;
+}
+
+.about-highlights li {
+  font-size: var(--text-small);
+  line-height: var(--leading-small);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+/* ── Metrics ── */
+.about-metrics {
+  display: flex;
+  gap: var(--space-24);
+  flex-wrap: wrap;
+  margin-top: var(--space-16);
+}
+
+/* ── Core Value ── */
+.about-core-value {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-text-primary);
+  font-weight: var(--weight-medium);
+  margin-top: var(--space-32);
+  padding: var(--space-24);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+/* ── CTA ── */
+.about-cta {
+  max-width: var(--max-width-text);
+  padding: var(--space-32);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.about-cta__text {
+  font-size: var(--text-small);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-24) 0;
+}
+
+.about-cta__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-24);
+  flex-wrap: wrap;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1023px) {
+  .capability-grid--5 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .capability-grid--5 {
+    grid-template-columns: 1fr;
+  }
+
+  .about-cta__actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

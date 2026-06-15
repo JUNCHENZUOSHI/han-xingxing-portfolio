@@ -1,0 +1,39 @@
+import { profile } from '../../data/profile';
+import './Hero.css';
+
+export default function Hero() {
+  return (
+    <section className="section hero">
+      <div className="container">
+        <div className="hero__content">
+          <span className="tag tag--accent">{profile.title}</span>
+          <h1 className="hero__name">{profile.name}</h1>
+          <p className="hero__statement">{profile.tagline}</p>
+
+          <div className="hero__trust">
+            {profile.trustHooks.map((hook) => (
+              <div className="hero__trust-item" key={hook.label}>
+                <span className="hero__trust-number">{hook.number}</span>
+                <span className="hero__trust-label">{hook.label}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="hero__tags">
+            {profile.specialization.map((spec) => (
+              <span className="tag" key={spec}>{spec}</span>
+            ))}
+          </div>
+
+          <div className="hero__cta">
+            <a href="#work" className="btn-primary">View Case Studies</a>
+            <a href="/resume.pdf" className="btn-secondary">Download Resume</a>
+            <a href={`mailto:${profile.email}`} className="btn-secondary">Contact</a>
+          </div>
+
+          <p className="hero__scroll-hint">↓ Scroll to explore cases</p>
+        </div>
+      </div>
+    </section>
+  );
+}
