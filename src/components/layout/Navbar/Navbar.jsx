@@ -13,7 +13,7 @@ export default function Navbar() {
         <div className="navbar__links">
           <NavLink to="/" end className="nav-link">{t('nav.work')}</NavLink>
           <NavLink to="/resume" className="nav-link">{t('nav.resume')}</NavLink>
-          <a href={`mailto:${profile.email}`} className="nav-link" aria-label="Contact">{t('nav.contact')}</a>
+          <a href={`mailto:${profile.email}`} className="nav-link">{t('nav.contact')}</a>
           <button className="lang-switcher" onClick={toggleLang} aria-label="Switch language">
             <span className={lang === 'zh' ? 'lang-switcher__active' : ''}>中</span>
             <span className="lang-switcher__sep">/</span>
