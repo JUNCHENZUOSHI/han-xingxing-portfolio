@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
-import { useI18n } from '../../i18n/context';
+import { useI18n, useProfileData } from '../../i18n/context';
 import { profile } from '../../data/profile';
 import './Contact.css';
 
 export default function Contact() {
   const { t } = useI18n();
+  const pd = useProfileData();
 
   return (
     <>
@@ -13,7 +14,7 @@ export default function Contact() {
           <div className="contact-hero">
             <h1 className="case-title">{t('contact.heading')}</h1>
             <p className="case-subtitle">
-              {t('contact.subtitle', { roles: profile.targetRoles.slice(0, 2).join(' / ') })}
+              {t('contact.subtitle', { roles: pd.targetRoles.slice(0, 2).join(' / ') })}
             </p>
           </div>
         </div>

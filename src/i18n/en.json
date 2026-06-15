@@ -1,121 +1,176 @@
 {
-  "common": {
-    "name": "Han Xingxing",
-    "nameEn": "Han Xingxing"
-  },
-  "nav": {
-    "work": "Work",
-    "resume": "Resume",
-    "contact": "Email"
-  },
-  "hero": {
-    "viewCases": "View Case Studies",
-    "downloadResume": "Download Resume",
-    "contact": "Contact",
-    "scrollHint": "↓ Scroll to explore cases"
-  },
+  "common": {"name": "Han Xingxing", "nameEn": "Han Xingxing"},
+  "nav": {"work": "Work", "resume": "Resume", "contact": "Email"},
+  "hero": {"viewCases": "View Case Studies", "downloadResume": "Download Resume", "contact": "Contact", "scrollHint": "↓ Scroll to explore cases"},
   "home": {
     "transition": ["Depth", "Transferability", "Breadth"],
-    "featuredCases": "Featured Cases",
-    "allCases": "All Cases",
-    "capabilities": "Capabilities",
-    "about": "About",
+    "featuredCases": "Featured Cases", "allCases": "All Cases",
+    "capabilities": "Capabilities", "about": "About",
     "aboutText": "{years} years in B2B product design, specializing in Enterprise SaaS & AI product experience — from business insight and product strategy to interaction design and design system infrastructure.",
-    "industries": "Industries",
-    "workingStyle": "Working Style",
-    "moreAbout": "More about me →",
-    "experience": "Experience",
+    "industries": "Industries", "workingStyle": "Working Style",
+    "moreAbout": "More about me →", "experience": "Experience",
     "letsTalk": "Let's talk",
     "letsTalkSub": "Currently available for Senior Product Designer / AI Product Designer opportunities.",
     "downloadResumePdf": "Download Resume (PDF)"
   },
-  "capabilities": {
-    "uxStrategy": {
-      "title": "UX Strategy",
-      "desc": "Translate business goals into design strategy, building a measurable loop from user experience to business outcomes.",
-      "items": ["Product strategy & business alignment", "User journey & IA design", "Data-driven design decisions", "Cross-team design advocacy"]
-    },
-    "enterpriseSaaS": {
-      "title": "Enterprise SaaS",
-      "desc": "Specialized in complex B2B system design with 6+ years of enterprise product experience.",
-      "items": ["Complex workflow abstraction", "Enterprise UX optimization", "Multi-role permissions & configurable products", "Full-cycle design from strategy to delivery"]
-    },
-    "aiProduct": {
-      "title": "AI Product Experience",
-      "desc": "Transform generative AI capabilities into understandable, measurable, and scalable product experiences.",
-      "items": ["AI interaction pattern baselines", "AI experience metrics framework", "Prompt-driven product strategy", "AI fallback & explainability design"]
-    },
-    "designSystem": {
-      "title": "Design System",
-      "desc": "Built design systems from scratch — establishing a bidirectional semantic system that AI can generate and understand.",
-      "items": ["Design Token architecture", "Semantic component system (60+ components)", "DesignOps & collaboration standards", "International multi-market adaptation"]
-    },
-    "growthDesign": {
-      "title": "Growth Design",
-      "desc": "Drive conversion and business growth through design, bridging experience metrics with business KPIs.",
-      "items": ["Conversion optimization & A/B testing", "Cross-cultural growth strategy", "Experience-to-KPI linkage", "Data-feedback iterative cycles"]
-    }
-  },
   "about": {
     "heading": "About",
     "intro": "{years} years in B2B SaaS product design, currently focused on AI product experience. My background spans enterprise low-code platforms and cross-border e-commerce SaaS — full-cycle design capability from complex systems to global products.",
-    "careerNarrative": "Career Narrative",
-    "capabilities": "Core Capabilities",
-    "whatImNot": "What I'm Not",
-    "coreValue": "My Core Value",
-    "slack": "Additional Info",
-    "education": "Education",
-    "contact": "Contact",
-    "downloadResume": "Download Resume (PDF)"
+    "careerNarrative": "Career Narrative", "capabilities": "Core Capabilities",
+    "whatImNot": "What I'm Not", "coreValue": "My Core Value",
+    "education": "Education", "downloadResume": "Download Resume (PDF)"
   },
   "contact": {
     "heading": "Contact",
     "subtitle": "Currently available for {roles} opportunities.",
-    "email": "Email",
-    "phone": "Phone",
-    "location": "Location",
-    "availability": "Availability",
-    "resumeHeading": "Resume",
+    "email": "Email", "phone": "Phone", "location": "Location",
+    "availability": "Availability", "resumeHeading": "Resume",
     "resumeText": "Detailed work history, quantified results, and full case context.",
     "downloadResume": "Download Resume (PDF)",
-    "viewCases": "View Case Studies",
-    "aboutMe": "About Me"
+    "viewCases": "View Case Studies", "aboutMe": "About Me"
   },
   "resume": {
     "strengths": "Key Strengths",
     "strengthSummary": "6-year B2B/SaaS product design expert, proficient in driving business growth with AI. Led full-cycle strategy and design system construction for complex, global products.",
-    "strength1Title": "Business-Led & Growth-Outcome Oriented",
-    "strength1Desc": "6 years of B2B/SaaS full-cycle experience, deeply understanding business models and growth levers. Particularly in cross-border e-commerce and the Shopify ecosystem, successfully led AI-driven growth strategies (e.g., Shopify Sidekick), linking design goals directly to business KPIs (conversion rate, efficiency, GMV) to drive closed-loop growth from experience optimization to business impact.",
-    "strength2Title": "Data-Driven & AI-Empowered Decision Making",
-    "strength2Desc": "Proficient in user research, adept at deeply integrating AI tools like ChatGPT/Claude/Gemini and Shopify Sidekick into insight and decision workflows. High data sensitivity — capable of building multi-layered measurement systems covering AI output quality, user behavior, and business results, boosting decision certainty through data validation and establishing sustainable AI capability optimization loops.",
-    "strength3Title": "Design System Governance & Asset Building",
-    "strength3Desc": "Led Design System construction and cross-platform implementation, with full support for AI generation logic and international expansion. Through component abstraction and specification accumulation, drove team transformation from 'people-driven' to 'system-driven', providing stable infrastructure for rapid global business iteration.",
-    "strength4Title": "Full-Cycle Experience Design & Delivery",
-    "strength4Desc": "Full-cycle capability from business insight to high-fidelity delivery. Skilled at abstracting complex AI capabilities (e.g., Shopify Sidekick) into intuitive, efficient merchant workflows, collaborating deeply with product and engineering teams to ensure high-quality delivery of intelligent experiences aligned with business goals.",
-    "experience": "Experience",
-    "achievements": "Key Achievements & Quantified Impact",
+    "experience": "Experience", "achievements": "Key Achievements & Quantified Impact",
     "responsibilities": "Key Responsibilities & Capability Development",
-    "education": "Education",
-    "downloadPdf": "Download Resume (PDF)",
+    "education": "Education", "downloadPdf": "Download Resume (PDF)",
     "downloadHint": "Need a PDF version?"
   },
-  "footer": {
-    "downloadResume": "Download Resume (PDF)"
-  },
+  "footer": {"downloadResume": "Download Resume (PDF)"},
   "case": {
-    "back": "← Back to Case Studies",
-    "context": "Background",
-    "challenge": "Core Challenge",
-    "approach": "Design Approach",
-    "solution": "Solution",
-    "impact": "Impact & Results",
-    "role": "My Role",
-    "team": "Team",
-    "timeline": "Timeline",
-    "skills": "Relevant Skills"
+    "back": "← Back to Case Studies", "context": "Background",
+    "challenge": "Core Challenge", "approach": "Design Approach",
+    "solution": "Solution", "impact": "Impact & Results",
+    "role": "My Role", "team": "Team", "timeline": "Timeline", "skills": "Relevant Skills"
   },
-  "lang": {
-    "zh": "中",
-    "en": "EN"
+  "lang": {"zh": "中", "en": "EN"},
+  "profileData": {
+    "title": "AI-Native Product Designer",
+    "subtitle": "B2B AI Product Designer",
+    "tagline": "Integrating AI capabilities, complex business systems, and commercial goals into scalable, measurable product experiences.",
+    "specialization": ["Enterprise SaaS", "AI Product Experience", "Growth-Oriented Design", "Design System Thinking"],
+    "targetRoles": ["Senior Product Designer", "AI Product Designer", "Senior UX Designer"],
+    "status": "Available now",
+    "education": "Nanjing University · Human Resources · Bachelor's · 2018–2022",
+    "yearsOfExperience": "6–7",
+    "trustHooks": [
+      {"number": "6 yrs", "label": "Enterprise B2B"},
+      {"number": "2", "label": "AI Products 0→1"},
+      {"number": "60+", "label": "Design System Components"}
+    ],
+    "narrative": [
+      {"period": "2019–2023", "label": "Complex Systems Design", "story": "At an enterprise software company, started with a low-code platform and learned to abstract complex enterprise workflows into usable product experiences."},
+      {"period": "2023–Present", "label": "AI Product Design", "story": "At a cross-border e-commerce SaaS company, embedded generative AI into the product, closing the loop from AI capability abstraction to business outcomes."},
+      {"period": "Now–Future", "label": "System Builder", "story": "Beyond individual AI features — building AI experience measurement systems, semantic design systems, and cross-team collaboration mechanisms."}
+    ],
+    "industries": ["Enterprise SaaS (6–7 yrs)", "Cross-border E-commerce / Shopify (2–3 yrs)", "AI Products / Agent / Copilot", "Low-code Platforms (~4 yrs)", "Complex Configurable Enterprise Products"],
+    "workingStyleSummary": "Product-thinking driven, not visual-driven. Strategic thinking, not pure execution. Transforming complex AI capabilities into measurable, scalable product experience systems.",
+    "keywords": ["B2B AI Product Designer", "B2B SaaS", "Enterprise Product", "Shopify Ecosystem", "AI Product Design", "Design System", "Data-Driven Design", "Growth Experience", "Human-AI Collaboration", "Intelligent Workflow"],
+    "experience": [
+      {
+        "period": "2023 – Present",
+        "role": "Senior Interaction Designer",
+        "company": "Cross-border E-commerce SaaS Platform",
+        "location": "Shanghai",
+        "highlights": ["Led Shopify Sidekick AI capability integration & experience upgrade", "Drove AI-powered growth experience development", "Established experience ↔ business metrics linkage", "Built design system and international design standards", "Drove product transformation from process tools to intelligent growth platform"],
+        "metrics": [
+          {"label": "Creative Preparation Efficiency", "value": "↑25%", "note": "~60% contributed by AI automation"},
+          {"label": "Per-Asset Production Cycle", "value": "↓4h"},
+          {"label": "First-Purchase Conversion Rate", "value": "↑8%"},
+          {"label": "Component Reuse Rate", "value": "70%"},
+          {"label": "International Iteration Cycle", "value": "↓30%"}
+        ]
+      },
+      {
+        "period": "2019 – 2023",
+        "role": "Interaction Designer",
+        "company": "Enterprise Low-Code Platform",
+        "location": "Shanghai",
+        "highlights": ["Led AI-driven low-code experience upgrade", "Built intelligent experience design system", "Drove semantic component system construction", "Established AI quality assessment framework", "Drove AI product capability scaled deployment"],
+        "metrics": [
+          {"label": "Typical App Build Efficiency", "value": "↑30–45%"},
+          {"label": "Smart Template Recommendation Hit Rate", "value": "70%+"},
+          {"label": "NPS/CSAT", "value": "↑10–15%"},
+          {"label": "Critical Task Completion Rate", "value": "↑15%+"},
+          {"label": "User Error Rate", "value": "↓20%"},
+          {"label": "AI-Generated UI Accuracy", "value": "↑25–30%"},
+          {"label": "Design-Dev Consistency", "value": "↑30%"},
+          {"label": "Cross-Team Collaboration Efficiency", "value": "↑20–25%"},
+          {"label": "Semantic Design System Coverage", "value": "60+"}
+        ]
+      }
+    ],
+    "homeCapabilities": [
+      {"title": "UX Strategy", "description": "Translate business goals into design strategy, building a measurable loop from user experience to business outcomes.", "items": ["Product strategy & business alignment", "User journey & IA design", "Data-driven design decisions", "Cross-team design advocacy"]},
+      {"title": "Enterprise SaaS", "description": "Specialized in complex B2B system design with 6+ years of enterprise product experience.", "items": ["Complex workflow abstraction", "Enterprise UX optimization", "Multi-role permissions & configurable products", "Full-cycle design from strategy to delivery"]},
+      {"title": "AI Product Experience", "description": "Transform generative AI capabilities into understandable, measurable, and scalable product experiences.", "items": ["AI interaction pattern baselines", "AI experience metrics framework", "Prompt-driven product strategy", "AI fallback & explainability design"]},
+      {"title": "Design System", "description": "Built design systems from scratch — establishing a bidirectional semantic system that AI can generate and understand.", "items": ["Design Token architecture", "Semantic component system (60+ components)", "DesignOps & collaboration standards", "International multi-market adaptation"]},
+      {"title": "Growth Design", "description": "Drive conversion and business growth through design, bridging experience metrics with business KPIs.", "items": ["Conversion optimization & A/B testing", "Cross-cultural growth strategy", "Experience-to-KPI linkage", "Data-feedback iterative cycles"]}
+    ],
+    "skills": [
+      {"name": "Complex System Abstraction", "evidence": "60+ component semantic design system"},
+      {"name": "AI Product Design", "evidence": "Efficiency ↑25%, cycle ↓4h"},
+      {"name": "Data-Driven Design", "evidence": "4-tier AI experience assessment framework"},
+      {"name": "International Design", "evidence": "International iteration cycle ↓30%"},
+      {"name": "DesignOps", "evidence": "Built from scratch, 70% reuse rate"},
+      {"name": "Stakeholder Communication", "evidence": "Cross PM × FE × AI Lab, collaboration efficiency ↑20–25%"}
+    ],
+    "notStatements": [
+      {"not": "Not just a UI designer", "value": "Product thinking · Business understanding · System design"},
+      {"not": "Visual design is not my core competency", "value": "AI experience design · Complex system design"},
+      {"not": "Not a pure execution designer", "value": "Strategic thinking · Data-driven decisions"},
+      {"not": "Not limited to page-level delivery", "value": "Design system building · Cross-team advocacy"}
+    ],
+    "coreValue": "My value lies in transforming complex AI capabilities into understandable, measurable, and scalable product experience systems — not in producing beautiful interfaces."
+  },
+  "resumeData": {
+    "targetPosition": "UX/Interaction Designer",
+    "salaryExpectation": "30–60K",
+    "targetCity": "Shanghai",
+    "gender": "Male",
+    "yearsExpLabel": "years experience",
+    "salaryLabel": "Expected salary: ",
+    "ageLabel": "",
+    "strengthSummary": "6-year B2B/SaaS product design expert, proficient in driving business growth with AI. Led full-cycle strategy and design system construction for complex, global products.",
+    "strengths": [
+      {"title": "Business-Led & Growth-Outcome Oriented", "desc": "6 years of B2B/SaaS full-cycle experience, deeply understanding business models and growth levers. Particularly in cross-border e-commerce and the Shopify ecosystem, successfully led AI-driven growth strategies (e.g., Shopify Sidekick), linking design goals directly to business KPIs (conversion rate, efficiency, GMV) to drive closed-loop growth from experience optimization to business impact."},
+      {"title": "Data-Driven & AI-Empowered Decision Making", "desc": "Proficient in user research, adept at deeply integrating AI tools like ChatGPT/Claude/Gemini and Shopify Sidekick into insight and decision workflows. High data sensitivity — capable of building multi-layered measurement systems covering AI output quality, user behavior, and business results."},
+      {"title": "Design System Governance & Asset Building", "desc": "Led Design System construction and cross-platform implementation, with full support for AI generation logic and international expansion. Through component abstraction and specification accumulation, drove team transformation from 'people-driven' to 'system-driven'."},
+      {"title": "Full-Cycle Experience Design & Delivery", "desc": "Full-cycle capability from business insight to high-fidelity delivery. Skilled at abstracting complex AI capabilities (e.g., Shopify Sidekick) into intuitive, efficient merchant workflows, collaborating deeply with product and engineering teams."}
+    ],
+    "experience": [
+      {
+        "company": "EdDigital (Shanghai) Digital Technology Co., Ltd.",
+        "role": "Senior Interaction Designer",
+        "period": "2023.06 – Present",
+        "summary": "Led full-cycle experience design for a Shopify merchant cross-border e-commerce marketing SaaS platform. Systematically embedded Shopify Sidekick's generative AI, strategic suggestions, and automation capabilities into key growth workflows — advertising creative, product optimization, and store operations.",
+        "achievements": [
+          {"title": "AI-Driven Efficiency & Cost Optimization (Efficiency + ROI + Sidekick)", "desc": "Leveraging Shopify Sidekick's generative capabilities and smart suggestion mechanisms, led the ad creative automation project: creative preparation efficiency improved 25% (AI contributed ~60%), per-asset production cycle reduced by ~4 hours."},
+          {"title": "Global Design Driving Revenue Growth (International + GMV)", "desc": "Led high-conversion Shopify template system with cross-cultural validation and multi-market data: first-purchase conversion rate ↑8%, driving early GMV growth in North America and Southeast Asia."},
+          {"title": "Experience Infrastructure Empowering Organizational Collaboration (DesignOps + Multi-language)", "desc": "Built company-level B2B design system from scratch with full AI generation support: 70% component reuse rate, international iteration cycle reduced by 30%."}
+        ],
+        "responsibilities": [
+          "Abstracted Shopify Sidekick's three core AI capabilities (content generation, strategic suggestions, automation) into a reusable AI capability model, systematically embedded into ad creation, product optimization, and workflow automation.",
+          "Built a design & AI experience assessment system with cross-tier metrics monitoring Sidekick's real business contribution: AI quality layer, experience behavior layer, continuous optimization loop.",
+          "Led construction and governance of a multi-language, multi-market B2B design system fully compatible with AI-generated interfaces, text variants, and layout automation."
+        ]
+      },
+      {
+        "company": "Shanghai Boke Information Technology Co., Ltd.",
+        "role": "Interaction Designer",
+        "period": "2019.10 – 2023.06",
+        "summary": "Led intelligent experience strategy, AI capability planning, and end-to-end delivery for the company's core low-code platform. Using generative AI, semantic models, and data systems as foundations, abstracted complex enterprise configurations into scalable, reusable platform capabilities.",
+        "achievements": [
+          {"title": "AI-Driven Build Efficiency (Core Business KPI)", "desc": "Introduced generative AI and behavioral intent recognition, reconstructing the 'page build → component selection → logic configuration' pipeline: build efficiency ↑30–45%, smart template hit rate 70%+, NPS/CSAT ↑10–15%."},
+          {"title": "Built Platform-Level Intelligent Experience System (Design × AI Scorecard)", "desc": "Established AI capability inventory, metrics system (Precision, Coverage, Confidence) and explainability rules linked to business KPIs: critical task completion rate ↑15%+, user error rate ↓20%."},
+          {"title": "Intelligent Design System (AI Generation × Component Architecture)", "desc": "Upgraded design system to a bidirectional semantic system ('AI-generatable / AI-understandable') covering 60+ components: AI-generated UI accuracy ↑25–30%, design-dev consistency ↑30%."},
+          {"title": "Cross-Team AI Strategy Execution (PM × FE × AI Lab)", "desc": "Led platform-level AI experience strategy and interaction pattern baselines, built AI safety and feedback mechanisms: overall cross-team collaboration efficiency ↑20–25%."}
+        ]
+      }
+    ],
+    "education": {"school": "Nanjing University", "degree": "Bachelor's", "major": "Human Resources", "period": "2018 – 2022"},
+    "achievementsLabel": "Key Achievements & Quantified Impact",
+    "responsibilitiesLabel": "Key Responsibilities & Capability Development"
   }
 }

@@ -1,9 +1,9 @@
-import { useI18n } from '../../i18n/context';
-import { profile } from '../../data/profile';
+import { useI18n, useProfileData } from '../../i18n/context';
 import './Hero.css';
 
 export default function Hero() {
   const { t } = useI18n();
+  const profile = useProfileData();
 
   return (
     <section className="hero">
