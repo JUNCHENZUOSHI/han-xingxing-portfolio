@@ -7,10 +7,9 @@ export default function Hero() {
 
   return (
     <section className="hero">
-      <img
-        src={`${import.meta.env.BASE_URL}hero-bg.svg`}
-        alt=""
+      <div
         className="hero__bg"
+        style={{ backgroundImage: `url(${import.meta.env.BASE_URL}hero-bg.svg)` }}
         aria-hidden="true"
       />
       <div className="hero__content">
