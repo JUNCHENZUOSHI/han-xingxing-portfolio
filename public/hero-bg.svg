@@ -1,414 +1,207 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440" height="900" preserveAspectRatio="xMidYMid slice">
+
   <defs>
 
-    <!-- Blur filters -->
-    <filter id="blur-xl">
-      <feGaussianBlur stdDeviation="64"/>
-    </filter>
-    <filter id="blur-lg">
-      <feGaussianBlur stdDeviation="32"/>
-    </filter>
-    <filter id="blur-sm">
-      <feGaussianBlur stdDeviation="3"/>
+    <!-- Atmospheric blur — distance only -->
+    <filter id="blur-subtle">
+      <feGaussianBlur stdDeviation="100"/>
     </filter>
 
-    <!-- Dot grid -->
-    <pattern id="dots" x="0" y="0" width="36" height="36" patternUnits="userSpaceOnUse">
-      <circle cx="18" cy="18" r="0.5" fill="#D1D5DB" opacity="0.35"/>
+    <!-- Dot grid — barely visible -->
+    <pattern id="grid" x="0" y="0" width="44" height="44" patternUnits="userSpaceOnUse">
+      <circle cx="22" cy="22" r="0.35" fill="#D1D5DB" opacity="0.25"/>
     </pattern>
-
-    <!-- Subtle glows for atmospheric depth -->
-    <radialGradient id="glow-a" cx="50%" cy="50%" r="50%">
-      <stop offset="0%"   stop-color="#9CA3AF" stop-opacity="0.10"/>
-      <stop offset="100%" stop-color="#9CA3AF" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="glow-b" cx="50%" cy="50%" r="50%">
-      <stop offset="0%"   stop-color="#D1D5DB" stop-opacity="0.08"/>
-      <stop offset="100%" stop-color="#D1D5DB" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="glow-blue-a" cx="50%" cy="50%" r="50%">
-      <stop offset="0%"   stop-color="#2563EB" stop-opacity="0.05"/>
-      <stop offset="100%" stop-color="#2563EB" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="glow-blue-b" cx="50%" cy="50%" r="50%">
-      <stop offset="0%"   stop-color="#2563EB" stop-opacity="0.035"/>
-      <stop offset="100%" stop-color="#2563EB" stop-opacity="0"/>
-    </radialGradient>
 
   </defs>
 
-  <!-- ═══════════════════════════════════════════ -->
-  <!-- LAYER 1 · Background + texture             -->
-  <!-- ═══════════════════════════════════════════ -->
+  <!-- ════════════════════════════════════ -->
+  <!-- Background                            -->
+  <!-- ════════════════════════════════════ -->
   <rect width="1440" height="900" fill="#FAFAFA"/>
-  <rect width="1440" height="900" fill="url(#dots)"/>
+  <rect width="1440" height="900" fill="url(#grid)"/>
 
-  <!-- ═══════════════════════════════════════════ -->
-  <!-- LAYER 2 · Atmospheric depth (blurred)       -->
-  <!-- ═══════════════════════════════════════════ -->
-  <g filter="url(#blur-xl)">
-    <circle cx="180"  cy="140"  r="300" fill="url(#glow-a)"/>
-    <circle cx="1280" cy="160"  r="260" fill="url(#glow-a)"/>
-    <circle cx="160"  cy="720"  r="280" fill="url(#glow-b)"/>
-    <circle cx="1300" cy="740"  r="240" fill="url(#glow-b)"/>
-  </g>
-  <g filter="url(#blur-lg)">
-    <circle cx="120"  cy="420"  r="220" fill="url(#glow-blue-a)"/>
-    <circle cx="1340" cy="480"  r="180" fill="url(#glow-blue-b)"/>
+  <!-- ════════════════════════════════════ -->
+  <!-- Depth — ultra soft blurred grays       -->
+  <!-- ════════════════════════════════════ -->
+  <g filter="url(#blur-subtle)">
+    <circle cx="200"  cy="180"  r="280" fill="#E5E7EB" opacity="0.16"/>
+    <circle cx="1280" cy="140"  r="240" fill="#E5E7EB" opacity="0.12"/>
+    <circle cx="180"  cy="720"  r="260" fill="#E5E7EB" opacity="0.14"/>
+    <circle cx="1300" cy="760"  r="200" fill="#E5E7EB" opacity="0.10"/>
   </g>
 
-  <!-- ═══════════════════════════════════════════ -->
-  <!-- LAYER 3 · Editorial framing                  -->
-  <!-- ═══════════════════════════════════════════ -->
-  <g fill="none" stroke="#E5E7EB" stroke-width="0.5" opacity="0.45">
-    <!-- Top-left corner bracket -->
-    <path d="M 52,84 L 52,52 L 84,52"/>
-    <!-- Bottom-right corner bracket -->
-    <path d="M 1388,848 L 1388,816 L 1356,816"/>
-  </g>
-  <!-- Subtle left-edge rule -->
-  <line x1="52" y1="440" x2="160" y2="440" stroke="#E5E7EB" stroke-width="0.5" opacity="0.4"/>
+  <!-- ════════════════════════════════════ -->
+  <!-- Topology — thin, sparse, purposeful    -->
+  <!-- ════════════════════════════════════ -->
+  <g fill="none" stroke="#D1D5DB" stroke-width="0.6">
 
-  <!-- ═══════════════════════════════════════════ -->
-  <!-- LAYER 4 · Topology ﹣ gray connections       -->
-  <!-- ═══════════════════════════════════════════ -->
-  <g fill="none" stroke="#E5E7EB" stroke-width="0.8" opacity="0.65">
-
-    <!-- ── Left-upper cluster (hub-and-spoke + mesh) ── -->
+    <!-- Top-left cluster -->
     <path d="
-      M 84,104  L 164,64
-      M 84,104  L 104,184
-      M 84,104  L 44,204
-      M 164,64  L 264,104
-      M 164,64  L 204,164
-      M 264,104 L 204,164
-      M 264,104 L 324,184
-      M 264,104 L 304,64
-      M 204,164 L 144,244
-      M 204,164 L 284,244
-      M 204,164 L 104,184
-      M 104,184 L 144,244
-      M 104,184 L 44,204
-      M 144,244 L 104,324
-      M 144,244 L 224,304
-      M 284,244 L 224,304
-      M 284,244 L 324,184
-      M 284,244 L 364,204
-      M 324,184 L 364,204
-      M 104,324 L 64,384
-      M 104,324 L 184,364
-      M 224,304 L 184,364
-      M 224,304 L 304,344
-      M 364,204 L 404,264
-      M 364,204 L 424,164
-    "/>
+      M 80,140   L 160,80   L 240,120
+      M 160,80   L 160,180
+      M 80,140   L 80,220
+      M 160,180  L 80,220   L 80,300
+      M 160,180  L 240,220  L 280,180
+      M 240,120  L 280,180  L 260,280
+      M 240,220  L 300,300  L 260,280
+      "/>
 
-    <!-- ── Right-upper cluster (structured mesh) ── -->
+    <!-- Top-right cluster -->
     <path d="
-      M 1184,84  L 1284,54
-      M 1184,84  L 1124,144
-      M 1284,54  L 1364,104
-      M 1284,54  L 1324,164
-      M 1364,104 L 1324,164
-      M 1364,104 L 1404,184
-      M 1324,164 L 1244,204
-      M 1324,164 L 1404,244
-      M 1124,144 L 1244,204
-      M 1124,144 L 1084,204
-      M 1244,204 L 1184,284
-      M 1244,204 L 1304,284
-      M 1404,184 L 1404,244
-      M 1404,244 L 1364,304
-      M 1404,244 L 1304,284
-      M 1304,284 L 1364,304
-      M 1184,284 L 1124,344
-      M 1184,284 L 1244,354
-      M 1084,204 L 1044,264
-    "/>
+      M 1360,110 L 1280,70  L 1200,120
+      M 1280,70  L 1280,180
+      M 1360,110 L 1360,200
+      M 1280,180 L 1360,200 L 1380,280
+      M 1280,180 L 1200,220 L 1160,180
+      M 1200,120 L 1160,180 L 1180,260
+      M 1200,220 L 1120,300 L 1180,260
+      "/>
 
-    <!-- ── Bottom-left cluster ── -->
+    <!-- Bottom-left cluster -->
     <path d="
-      M 64,584  L 164,544
-      M 64,584  L 84,664
-      M 64,584  L 44,644
-      M 164,544 L 264,584
-      M 164,544 L 204,644
-      M 264,584 L 204,644
-      M 264,584 L 344,624
-      M 204,644 L 144,724
-      M 204,644 L 284,704
-      M 84,664  L 144,724
-      M 84,664  L 44,724
-      M 144,724 L 104,804
-      M 144,724 L 224,784
-      M 284,704 L 224,784
-      M 284,704 L 344,744
-      M 344,624 L 384,684
-      M 104,804 L 64,844
-      M 104,804 L 184,844
-      M 224,784 L 184,844
-      M 224,784 L 304,824
-    "/>
+      M 100,640  L 160,600  L 220,640
+      M 160,600  L 160,690
+      M 100,640  L 80,720
+      M 160,690  L 80,720   L 100,780
+      M 160,690  L 240,730  L 280,690
+      M 220,640  L 280,690  L 260,770
+      M 240,730  L 280,790  L 260,770
+      "/>
 
-    <!-- ── Bottom-right cluster ── -->
+    <!-- Bottom-right cluster -->
     <path d="
-      M 1144,604 L 1244,564
-      M 1144,604 L 1084,664
-      M 1244,564 L 1344,604
-      M 1244,564 L 1284,664
-      M 1344,604 L 1284,664
-      M 1344,604 L 1404,644
-      M 1284,664 L 1204,724
-      M 1284,664 L 1364,724
-      M 1084,664 L 1204,724
-      M 1084,664 L 1044,724
-      M 1204,724 L 1144,804
-      M 1204,724 L 1284,784
-      M 1364,724 L 1284,784
-      M 1364,724 L 1404,784
-      M 1144,804 L 1084,844
-      M 1144,804 L 1224,854
-      M 1284,784 L 1224,854
-      M 1284,784 L 1364,834
-    "/>
+      M 1340,660 L 1280,620 L 1220,670
+      M 1280,620 L 1280,710
+      M 1340,660 L 1360,740
+      M 1280,710 L 1360,740 L 1340,800
+      M 1280,710 L 1220,750 L 1160,710
+      M 1220,670 L 1160,710 L 1180,790
+      M 1220,750 L 1160,790 L 1180,790
+      "/>
 
-    <!-- ── Cross-cluster spanning links ── -->
+    <!-- Sparse bridges — just a few -->
     <path d="
-      M 44,204  L 44,644
-      M 44,644  L 44,724
-      M 64,384  L 44,644
-      M 304,344 L 344,624
-      M 404,264 L 444,324
-      M 424,164 L 504,124
-      M 444,324 L 504,384
-      M 444,324 L 524,284
-      M 1404,184 L 1404,644
-      M 1044,264 L 1004,344
-      M 1124,344 L 1084,664
-      M 1364,304 L 1344,604
-      M 504,124 L 604,84
-      M 504,124 L 564,164
-      M 604,84  L 724,54
-      M 604,84  L 684,144
-      M 724,54  L 844,74
-      M 724,54  L 764,134
-      M 844,74  L 944,94
-      M 844,74  L 884,144
-      M 504,384 L 564,444
-      M 504,384 L 544,504
-      M 564,444 L 624,504
-      M 524,284 L 584,224
-      M 584,224 L 664,184
-      M 664,184 L 764,134
-      M 684,144 L 764,204
-      M 884,144 L 944,184
-      M 944,94  L 1024,124
-      M 944,184 L 1024,204
-      M 1024,124 L 1084,204
-      M 1024,124 L 1044,84
-      M 464,784 L 524,724
-      M 464,784 L 524,844
-      M 524,724 L 604,684
-      M 524,724 L 584,764
-      M 604,684 L 684,644
-      M 604,684 L 664,744
-      M 684,644 L 764,684
-      M 684,644 L 744,604
-      M 764,684 L 844,714
-      M 764,684 L 804,624
-      M 844,714 L 924,734
-      M 844,714 L 884,654
-      M 924,734 L 1004,704
-      M 924,734 L 964,784
-      M 1004,704 L 1044,724
-      M 1004,704 L 1024,644
-      M 544,504 L 604,564
-      M 544,504 L 504,584
-      M 604,564 L 664,624
-      M 604,564 L 644,504
-      M 624,504 L 684,564
-      M 744,604 L 804,624
-      M 564,164 L 624,224
-      M 624,224 L 584,224
-      M 884,654 L 944,624
-      M 944,624 L 1004,584
-      M 1004,584 L 1044,624
-      M 1024,644 L 1044,624
-      M 524,844 L 584,884
-      M 584,884 L 684,864
-      M 684,864 L 784,874
-      M 784,874 L 884,854
-    "/>
-  </g>
+      M 80,220   L 80,720
+      M 1360,200  L 1360,740
+      M 280,180   L 420,120
+      M 1160,180  L 1020,120
+      M 300,300   L 380,400
+      M 1120,300  L 1060,400
+      "/>
 
-  <!-- ═══════════════════════════════════════════ -->
-  <!-- LAYER 5 · Topology ﹣ blue accent connections -->
-  <!-- ═══════════════════════════════════════════ -->
-  <g fill="none" stroke="#2563EB" stroke-width="1" opacity="0.30">
-    <!-- Primary blue hub: left-upper star -->
+    <!-- Mid-edge wisps -->
     <path d="
-      M 164,64  L 84,104
-      M 164,64  L 264,104
-      M 164,64  L 204,164
-      M 204,164 L 264,104
-      M 204,164 L 144,244
-      M 204,164 L 284,244
-    "/>
-  </g>
-  <g fill="none" stroke="#2563EB" stroke-width="0.8" opacity="0.22">
-    <!-- Secondary blue path: right-lower mesh -->
-    <path d="
-      M 1244,564 L 1284,664
-      M 1244,564 L 1344,604
-      M 1284,664 L 1344,604
-      M 1284,664 L 1204,724
-    "/>
-  </g>
-  <g fill="none" stroke="#2563EB" stroke-width="0.6" opacity="0.18">
-    <!-- Tertiary: mid-spanning accent chain -->
-    <path d="
-      M 604,84  L 684,144
-      M 684,144 L 764,204
-      M 764,204 L 844,264
-    "/>
+      M 520,100  L 580,140 L 660,110
+      M 880,100  L 840,140 L 760,110
+      M 420,820  L 500,840 L 580,800
+      M 1020,820 L 940,840 L 860,800
+      "/>
+
   </g>
 
-  <!-- ═══════════════════════════════════════════ -->
-  <!-- LAYER 6 · Nodes                             -->
-  <!-- ═══════════════════════════════════════════ -->
+  <!-- ════════════════════════════════════ -->
+  <!-- Nodes — small, restrained, geometric   -->
+  <!-- ════════════════════════════════════ -->
 
-  <!-- 6a. Small peripheral nodes -->
-  <g fill="#D1D5DB">
-    <!-- Left-upper fringes -->
-    <circle cx="44"  cy="204" r="2.5"/><circle cx="104" cy="184" r="2.5"/>
-    <circle cx="304" cy="64"  r="2.5"/><circle cx="324" cy="184" r="2.5"/>
-    <circle cx="364" cy="204" r="2.5"/><circle cx="424" cy="164" r="2.5"/>
-    <circle cx="404" cy="264" r="2.5"/><circle cx="64"  cy="384" r="2.5"/>
-    <circle cx="184" cy="364" r="2.5"/><circle cx="304" cy="344" r="2.5"/>
-    <!-- Right-upper fringes -->
-    <circle cx="1124" cy="144" r="2.5"/><circle cx="1084" cy="204" r="2.5"/>
-    <circle cx="1404" cy="184" r="2.5"/><circle cx="1404" cy="244" r="2.5"/>
-    <circle cx="1364" cy="304" r="2.5"/><circle cx="1304" cy="284" r="2.5"/>
-    <circle cx="1124" cy="344" r="2.5"/><circle cx="1244" cy="354" r="2.5"/>
-    <circle cx="1044" cy="264" r="2.5"/>
-    <!-- Bottom-left fringes -->
-    <circle cx="44"  cy="644" r="2.5"/><circle cx="44"  cy="724" r="2.5"/>
-    <circle cx="84"  cy="664" r="2.5"/><circle cx="344" cy="624" r="2.5"/>
-    <circle cx="344" cy="744" r="2.5"/><circle cx="384" cy="684" r="2.5"/>
-    <circle cx="64"  cy="844" r="2.5"/><circle cx="304" cy="824" r="2.5"/>
-    <!-- Bottom-right fringes -->
-    <circle cx="1144" cy="604" r="2.5"/><circle cx="1084" cy="664" r="2.5"/>
-    <circle cx="1404" cy="644" r="2.5"/><circle cx="1404" cy="784" r="2.5"/>
-    <circle cx="1364" cy="724" r="2.5"/><circle cx="1044" cy="724" r="2.5"/>
-    <circle cx="1084" cy="844" r="2.5"/><circle cx="1364" cy="834" r="2.5"/>
-    <!-- Top scattered -->
-    <circle cx="504"  cy="124" r="2.5"/><circle cx="764"  cy="134" r="2.5"/>
-    <circle cx="884"  cy="144" r="2.5"/><circle cx="1024" cy="124" r="2.5"/>
-    <circle cx="1044" cy="84"  r="2.5"/>
-    <!-- Mid scattered -->
-    <circle cx="444"  cy="324" r="2.5"/><circle cx="524"  cy="284" r="2.5"/>
-    <circle cx="584"  cy="224" r="2.5"/><circle cx="624"  cy="224" r="2.5"/>
-    <circle cx="664"  cy="184" r="2.5"/><circle cx="504"  cy="384" r="2.5"/>
-    <circle cx="564"  cy="444" r="2.5"/><circle cx="624"  cy="504" r="2.5"/>
-    <circle cx="684"  cy="564" r="2.5"/><circle cx="604"  cy="564" r="2.5"/>
-    <circle cx="644"  cy="504" r="2.5"/><circle cx="664"  cy="624" r="2.5"/>
-    <circle cx="544"  cy="504" r="2.5"/><circle cx="504"  cy="584" r="2.5"/>
-    <!-- Bottom scattered -->
-    <circle cx="464"  cy="784" r="2.5"/><circle cx="524"  cy="724" r="2.5"/>
-    <circle cx="584"  cy="764" r="2.5"/><circle cx="604"  cy="684" r="2.5"/>
-    <circle cx="664"  cy="744" r="2.5"/><circle cx="744"  cy="604" r="2.5"/>
-    <circle cx="804"  cy="624" r="2.5"/><circle cx="844"  cy="714" r="2.5"/>
-    <circle cx="924"  cy="734" r="2.5"/><circle cx="1004" cy="584" r="2.5"/>
-    <circle cx="1004" cy="704" r="2.5"/><circle cx="1024" cy="644" r="2.5"/>
-    <circle cx="1044" cy="624" r="2.5"/><circle cx="964"  cy="784" r="2.5"/>
-    <circle cx="944"  cy="624" r="2.5"/><circle cx="884"  cy="654" r="2.5"/>
-    <circle cx="524"  cy="844" r="2.5"/><circle cx="584"  cy="884" r="2.5"/>
-    <circle cx="684"  cy="864" r="2.5"/><circle cx="784"  cy="874" r="2.5"/>
-    <circle cx="884"  cy="854" r="2.5"/>
-    <!-- Top edge -->
-    <circle cx="604" cy="84"  r="2.5"/><circle cx="724" cy="54"  r="2.5"/>
-    <circle cx="844" cy="74"  r="2.5"/><circle cx="944" cy="94"  r="2.5"/>
-    <circle cx="684" cy="144" r="2.5"/><circle cx="764" cy="204" r="2.5"/>
-    <circle cx="844" cy="264" r="2.5"/><circle cx="944" cy="184" r="2.5"/>
-    <circle cx="1024"cy="204" r="2.5"/>
-    <!-- Mid left -->
-    <circle cx="564" cy="164" r="2.5"/>
+  <!-- Peripheral dots (r=2) -->
+  <g fill="#C7CDD6">
+    <!-- Top-left -->
+    <circle cx="80" cy="140" r="2"/><circle cx="240" cy="120" r="2"/>
+    <circle cx="80" cy="220" r="2"/><circle cx="280" cy="180" r="2"/>
+    <circle cx="240" cy="220" r="2"/><circle cx="260" cy="280" r="2"/>
+    <circle cx="80" cy="300" r="2"/><circle cx="300" cy="300" r="2"/>
+
+    <!-- Top-right -->
+    <circle cx="1360" cy="110" r="2"/><circle cx="1200" cy="120" r="2"/>
+    <circle cx="1360" cy="200" r="2"/><circle cx="1160" cy="180" r="2"/>
+    <circle cx="1200" cy="220" r="2"/><circle cx="1180" cy="260" r="2"/>
+    <circle cx="1380" cy="280" r="2"/><circle cx="1120" cy="300" r="2"/>
+
+    <!-- Bottom-left -->
+    <circle cx="100" cy="640" r="2"/><circle cx="220" cy="640" r="2"/>
+    <circle cx="80" cy="720" r="2"/><circle cx="280" cy="690" r="2"/>
+    <circle cx="240" cy="730" r="2"/><circle cx="260" cy="770" r="2"/>
+    <circle cx="100" cy="780" r="2"/><circle cx="280" cy="790" r="2"/>
+
+    <!-- Bottom-right -->
+    <circle cx="1340" cy="660" r="2"/><circle cx="1220" cy="670" r="2"/>
+    <circle cx="1360" cy="740" r="2"/><circle cx="1160" cy="710" r="2"/>
+    <circle cx="1220" cy="750" r="2"/><circle cx="1180" cy="790" r="2"/>
+    <circle cx="1340" cy="800" r="2"/><circle cx="1160" cy="790" r="2"/>
+
+    <!-- Mid-edge -->
+    <circle cx="520" cy="100" r="2"/><circle cx="580" cy="140" r="2"/>
+    <circle cx="660" cy="110" r="2"/><circle cx="880" cy="100" r="2"/>
+    <circle cx="840" cy="140" r="2"/><circle cx="760" cy="110" r="2"/>
+    <circle cx="420" cy="820" r="2"/><circle cx="500" cy="840" r="2"/>
+    <circle cx="580" cy="800" r="2"/><circle cx="1020" cy="820" r="2"/>
+    <circle cx="940" cy="840" r="2"/><circle cx="860" cy="800" r="2"/>
+    <circle cx="420" cy="120" r="2"/><circle cx="1020" cy="120" r="2"/>
+    <circle cx="380" cy="400" r="2"/><circle cx="1060" cy="400" r="2"/>
   </g>
 
-  <!-- 6b. Medium hub nodes -->
-  <g fill="#9CA3AF">
-    <circle cx="84"  cy="104" r="4"/><circle cx="264" cy="104" r="4"/>
-    <circle cx="144" cy="244" r="4"/><circle cx="284" cy="244" r="4"/>
-    <circle cx="104" cy="324" r="4"/><circle cx="224" cy="304" r="4"/>
-    <circle cx="1184" cy="84"  r="4"/><circle cx="1284" cy="54"  r="4"/>
-    <circle cx="1364" cy="104" r="4"/><circle cx="1244" cy="204" r="4"/>
-    <circle cx="1184" cy="284" r="4"/>
-    <circle cx="64"  cy="584" r="4"/><circle cx="164" cy="544" r="4"/>
-    <circle cx="264" cy="584" r="4"/><circle cx="144" cy="724" r="4"/>
-    <circle cx="284" cy="704" r="4"/><circle cx="104" cy="804" r="4"/>
-    <circle cx="224" cy="784" r="4"/>
-    <circle cx="1244" cy="564" r="4"/><circle cx="1344" cy="604" r="4"/>
-    <circle cx="1204" cy="724" r="4"/><circle cx="1284" cy="784" r="4"/>
-    <circle cx="1144" cy="804" r="4"/><circle cx="1224" cy="854" r="4"/>
+  <!-- Hub nodes (r=3) -->
+  <g fill="#AEB5C0">
+    <circle cx="160" cy="80" r="3"/><circle cx="160" cy="180" r="3"/>
+    <circle cx="1280" cy="70" r="3"/><circle cx="1280" cy="180" r="3"/>
+    <circle cx="160" cy="600" r="3"/><circle cx="160" cy="690" r="3"/>
+    <circle cx="1280" cy="620" r="3"/><circle cx="1280" cy="710" r="3"/>
   </g>
 
-  <!-- 6c. Blue accent nodes + glow rings -->
-  <g fill="#2563EB" opacity="0.8">
-    <circle cx="164" cy="64"  r="5.5"/>
-    <circle cx="204" cy="164" r="5"/>
+  <!-- Hollow ring nodes (r=4.5) -->
+  <g fill="none" stroke="#C7CDD6" stroke-width="0.9">
+    <circle cx="300" cy="300" r="4.5"/><circle cx="1120" cy="300" r="4.5"/>
+    <circle cx="280" cy="790" r="4.5"/><circle cx="1160" cy="790" r="4.5"/>
+    <circle cx="580" cy="140" r="4"/><circle cx="500" cy="840" r="4"/>
   </g>
-  <g fill="#2563EB" opacity="0.7">
-    <circle cx="1284" cy="664" r="5"/>
+
+  <!-- Diamonds -->
+  <g fill="#C7CDD6" opacity="0.7">
+    <rect x="157" y="77" width="5" height="5" transform="rotate(45,160,80)"/>
+    <rect x="1277" y="67" width="5" height="5" transform="rotate(45,1280,70)"/>
+    <rect x="157" y="597" width="5" height="5" transform="rotate(45,160,600)"/>
+    <rect x="1277" y="617" width="5" height="5" transform="rotate(45,1280,620)"/>
   </g>
+
+  <!-- ════════════════════════════════════ -->
+  <!-- Blue accents — just 3, barely there    -->
+  <!-- ════════════════════════════════════ -->
+
+  <!-- Top-left hub marker -->
   <g fill="#2563EB" opacity="0.55">
-    <circle cx="684" cy="144" r="4.5"/>
+    <circle cx="160" cy="80" r="4.5"/>
   </g>
-  <g fill="none" stroke="#2563EB" stroke-width="1" opacity="0.13">
-    <circle cx="164" cy="64"  r="9"/>
-    <circle cx="204" cy="164" r="8"/>
-    <circle cx="1284"cy="664" r="8.5"/>
-    <circle cx="684" cy="144" r="7.5"/>
+  <g fill="none" stroke="#2563EB" stroke-width="0.8" opacity="0.14">
+    <circle cx="160" cy="80" r="8"/>
   </g>
 
-  <!-- 6d. Ring nodes (hollow, geometric variety) -->
-  <g fill="none" stroke="#D1D5DB" stroke-width="1">
-    <circle cx="324"  cy="184" r="4.5"/><circle cx="64"   cy="384" r="4.5"/>
-    <circle cx="1404" cy="244" r="4.5"/><circle cx="1044" cy="264" r="4.5"/>
-    <circle cx="384"  cy="684" r="4.5"/><circle cx="1404" cy="784" r="4.5"/>
-    <circle cx="504"  cy="124" r="4.5"/><circle cx="944"  cy="94"  r="4.5"/>
-    <circle cx="584"  cy="224" r="4.5"/><circle cx="884"  cy="654" r="4.5"/>
-    <circle cx="684"  cy="864" r="4.5"/>
-  </g>
-
-  <!-- 6e. Diamond nodes -->
-  <g fill="#D1D5DB" opacity="0.75">
-    <rect x="101" y="321" width="5" height="5" transform="rotate(45,104,324)"/>
-    <rect x="1321" y="161" width="5" height="5" transform="rotate(45,1324,164)"/>
-    <rect x="141" y="721" width="5" height="5" transform="rotate(45,144,724)"/>
-    <rect x="1121" y="801" width="5" height="5" transform="rotate(45,1124,804)"/>
-    <rect x="601" y="561" width="5" height="5" transform="rotate(45,604,564)"/>
-    <rect x="921" y="731" width="5" height="5" transform="rotate(45,924,734)"/>
-    <rect x="681" y="141" width="5" height="5" transform="rotate(45,684,144)"/>
-  </g>
+  <!-- Bottom-right hub marker -->
   <g fill="#2563EB" opacity="0.45">
-    <rect x="1281" y="661" width="5" height="5" transform="rotate(45,1284,664)"/>
+    <circle cx="1280" cy="710" r="4"/>
+  </g>
+  <g fill="none" stroke="#2563EB" stroke-width="0.8" opacity="0.12">
+    <circle cx="1280" cy="710" r="7"/>
   </g>
 
-  <!-- ═══════════════════════════════════════════ -->
-  <!-- LAYER 7 · Geometric decor                    -->
-  <!-- ═══════════════════════════════════════════ -->
-  <g stroke="#E5E7EB" stroke-width="0.8" opacity="0.35">
-    <!-- Editorial ticks, bottom-right -->
-    <line x1="1340" y1="820" x2="1356" y2="820"/>
-    <line x1="1340" y1="828" x2="1356" y2="828"/>
-    <line x1="1340" y1="836" x2="1356" y2="836"/>
+  <!-- Mid-edge small accent -->
+  <g fill="#2563EB" opacity="0.4">
+    <circle cx="580" cy="140" r="3.5"/>
   </g>
-  <!-- Small rotated square, top-right -->
-  <rect x="1380" y="74" width="6" height="6" fill="none" stroke="#E5E7EB" stroke-width="0.7" opacity="0.35" transform="rotate(15,1383,77)"/>
-  <!-- Tiny cross marker, left edge -->
-  <g stroke="#E5E7EB" stroke-width="0.6" opacity="0.3">
-    <line x1="48" y1="436" x2="56" y2="444"/>
-    <line x1="56" y1="436" x2="48" y2="444"/>
+
+  <!-- Blue accent lines — just 4 -->
+  <g fill="none" stroke="#2563EB" stroke-width="0.6" opacity="0.16">
+    <path d="M 160,80 L 80,140"/>
+    <path d="M 160,80 L 240,120"/>
+    <path d="M 1280,710 L 1340,660"/>
+    <path d="M 1280,710 L 1220,670"/>
+  </g>
+
+  <!-- ════════════════════════════════════ -->
+  <!-- Editorial framing — near-invisible     -->
+  <!-- ════════════════════════════════════ -->
+  <g fill="none" stroke="#E5E7EB" stroke-width="0.5" opacity="0.35">
+    <path d="M 56,66 L 56,56 L 66,56"/>
+    <path d="M 1384,834 L 1384,844 L 1374,844"/>
   </g>
 
 </svg>
