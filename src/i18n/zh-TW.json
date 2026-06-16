@@ -44,6 +44,11 @@
     "solution": "解決方案", "impact": "成果與影響",
     "role": "我的角色", "team": "團隊", "timeline": "時間線", "skills": "相關能力"
   },
+  "caseTitles": {
+    "sidekick": "Sidekick AI 驅動廣告素材自動化",
+    "lowcode": "企業級低代碼平台智能體驗升級",
+    "template": "Design System & DesignOps 系統建設"
+  },
   "lang": {"zh": "中", "zh-TW": "繁", "en": "EN"},
   "profileData": {
     "title": "AI-Native Product Designer",

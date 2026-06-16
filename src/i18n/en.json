@@ -44,6 +44,11 @@
     "solution": "Solution", "impact": "Impact & Results",
     "role": "My Role", "team": "Team", "timeline": "Timeline", "skills": "Relevant Skills"
   },
+  "caseTitles": {
+    "sidekick": "Sidekick AI — Ad Creative Automation",
+    "lowcode": "Enterprise Low-Code Platform — AI-Powered Experience",
+    "template": "Design System & DesignOps — Scalable Infrastructure"
+  },
   "lang": {"zh": "中", "en": "EN"},
   "profileData": {
     "title": "AI-Native Product Designer",

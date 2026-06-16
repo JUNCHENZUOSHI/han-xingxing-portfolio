@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
+import { useI18n } from '../../i18n/context';
 import './CaseCard.css';
 
 export default function CaseCard({ caseData, variant = 'standard' }) {
+  const { t } = useI18n();
   const {
     slug,
     title,
@@ -63,7 +65,7 @@ export default function CaseCard({ caseData, variant = 'standard' }) {
             <span className="tag" key={tag}>{tag}</span>
           ))}
         </div>
-        <h3 className="case-card__title">{title}</h3>
+        <h3 className="case-card__title">{t(`caseTitles.${slug}`) || title}</h3>
         <p className={summaryClass}>{summary}</p>
         <div className="case-card__metrics">
           {metrics.slice(0, isFeatured ? 3 : 2).map((m) => (

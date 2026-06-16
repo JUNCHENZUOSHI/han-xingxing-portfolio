@@ -114,6 +114,11 @@
     "timeline": "时间线",
     "skills": "相关能力"
   },
+  "caseTitles": {
+    "sidekick": "Sidekick AI 驱动广告素材自动化",
+    "lowcode": "企业级低代码平台智能体验升级",
+    "template": "Design System & DesignOps 系统建设"
+  },
   "lang": {
     "zh": "中",
     "en": "EN"

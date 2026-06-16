@@ -57,7 +57,7 @@ export default function CaseDetail() {
             {caseData.narrativeHook && (
               <p className="case-narrative-hook">{caseData.narrativeHook}</p>
             )}
-            <h1 className="case-title">{caseData.title}</h1>
+            <h1 className="case-title">{t(`caseTitles.${slug}`) || caseData.title}</h1>
             <p className="case-subtitle">{caseData.summary}</p>
             <div className="case-tags">
               {caseData.tags.map((tag) => (
