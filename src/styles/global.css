@@ -49,13 +49,27 @@ ul, ol { list-style: none; }
 
 /* ── Typography ── */
 .section-label {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
   font-size: var(--text-caption);
   font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-caps);
   text-transform: uppercase;
   color: var(--color-text-secondary);
   margin-bottom: var(--space-16);
+}
+
+/* Subtle blue diamond — visual identity marker */
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background: var(--color-accent);
+  opacity: 0.25;
+  transform: rotate(45deg);
+  flex-shrink: 0;
 }
 
 .section-heading {
@@ -79,6 +93,30 @@ ul, ol { list-style: none; }
 /* ── Divider ── */
 .divider { border: none; margin: 0; }
 .divider--subtle { height: 1px; background: var(--color-border); }
+
+/* Topology divider: thin line + blue dot */
+.divider--topology {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    var(--color-border) 20%,
+    var(--color-border) 80%,
+    transparent 100%
+  );
+  margin: var(--space-16) 0;
+  position: relative;
+}
+.divider--topology::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: 4px; height: 4px;
+  background: var(--color-accent);
+  opacity: 0.2;
+  border-radius: 50%;
+}
 
 /* ── Buttons — visionOS Scale ── */
 .btn-primary {
@@ -155,6 +193,26 @@ ul, ol { list-style: none; }
   background: rgba(0,0,0,0.025);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
+}
+
+/* ── Section Accent Line (visual identity) ── */
+.section-accent {
+  width: 40px; height: 1px;
+  background: var(--color-accent);
+  opacity: 0.18;
+  margin-bottom: var(--space-40);
+}
+
+/* ── Brand Dot Cluster (3 dots in triangle, for footer/CTA) ── */
+.brand-dots {
+  display: flex; gap: 5px;
+  opacity: 0.2;
+}
+.brand-dots span {
+  width: 3.5px; height: 3.5px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  display: block;
 }
 
 /* ── Utility ── */
