@@ -2,206 +2,146 @@
 
   <defs>
 
-    <!-- Atmospheric blur — distance only -->
-    <filter id="blur-subtle">
-      <feGaussianBlur stdDeviation="100"/>
+    <!-- Depth blur — Apple Intelligence style soft diffusion -->
+    <filter id="mesh-xl">
+      <feGaussianBlur stdDeviation="120"/>
+    </filter>
+    <filter id="mesh-lg">
+      <feGaussianBlur stdDeviation="80"/>
+    </filter>
+    <filter id="mesh-md">
+      <feGaussianBlur stdDeviation="50"/>
+    </filter>
+    <filter id="mesh-sm">
+      <feGaussianBlur stdDeviation="28"/>
     </filter>
 
-    <!-- Dot grid — barely visible -->
-    <pattern id="grid" x="0" y="0" width="44" height="44" patternUnits="userSpaceOnUse">
-      <circle cx="22" cy="22" r="0.35" fill="#D1D5DB" opacity="0.25"/>
-    </pattern>
+    <!-- Very subtle grain texture -->
+    <filter id="texture">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" result="noise" />
+      <feColorMatrix type="saturate" values="0" in="noise" result="gray" />
+      <feComponentTransfer in="gray" result="faded">
+        <feFuncA type="linear" slope="0.02"/>
+      </feComponentTransfer>
+      <feComposite operator="in" in="faded" in2="SourceGraphic"/>
+      <feBlend mode="multiply" in2="SourceGraphic"/>
+    </filter>
 
   </defs>
 
-  <!-- ════════════════════════════════════ -->
-  <!-- Background                            -->
-  <!-- ════════════════════════════════════ -->
-  <rect width="1440" height="900" fill="#FAFAFA"/>
-  <rect width="1440" height="900" fill="url(#grid)"/>
+  <!-- ════════════════════════════════════════ -->
+  <!-- White canvas                             -->
+  <!-- ════════════════════════════════════════ -->
+  <rect width="1440" height="900" fill="#FCFCFD"/>
 
-  <!-- ════════════════════════════════════ -->
-  <!-- Depth — ultra soft blurred grays       -->
-  <!-- ════════════════════════════════════ -->
-  <g filter="url(#blur-subtle)">
-    <circle cx="200"  cy="180"  r="280" fill="#E5E7EB" opacity="0.16"/>
-    <circle cx="1280" cy="140"  r="240" fill="#E5E7EB" opacity="0.12"/>
-    <circle cx="180"  cy="720"  r="260" fill="#E5E7EB" opacity="0.14"/>
-    <circle cx="1300" cy="760"  r="200" fill="#E5E7EB" opacity="0.10"/>
+  <!-- Ultra-faint grain overlay -->
+  <rect width="1440" height="900" fill="#FCFCFD" filter="url(#texture)" opacity="0.6"/>
+
+  <!-- ════════════════════════════════════════ -->
+  <!-- Soft organic mesh — blurred blobs         -->
+  <!-- ════════════════════════════════════════ -->
+
+  <!-- Far depth — large diffuse gray forms -->
+  <g filter="url(#mesh-xl)">
+    <ellipse cx="180"  cy="160"  rx="320" ry="260" fill="#EBEDF0" opacity="0.55"/>
+    <ellipse cx="1300" cy="120"  rx="280" ry="240" fill="#EBEDF0" opacity="0.45"/>
+    <ellipse cx="200"  cy="760"  rx="300" ry="250" fill="#E8EBEE" opacity="0.50"/>
+    <ellipse cx="1280" cy="780"  rx="260" ry="220" fill="#EBEDF0" opacity="0.40"/>
   </g>
 
-  <!-- ════════════════════════════════════ -->
-  <!-- Topology — thin, sparse, purposeful    -->
-  <!-- ════════════════════════════════════ -->
-  <g fill="none" stroke="#D1D5DB" stroke-width="0.6">
-
-    <!-- Top-left cluster -->
-    <path d="
-      M 80,140   L 160,80   L 240,120
-      M 160,80   L 160,180
-      M 80,140   L 80,220
-      M 160,180  L 80,220   L 80,300
-      M 160,180  L 240,220  L 280,180
-      M 240,120  L 280,180  L 260,280
-      M 240,220  L 300,300  L 260,280
-      "/>
-
-    <!-- Top-right cluster -->
-    <path d="
-      M 1360,110 L 1280,70  L 1200,120
-      M 1280,70  L 1280,180
-      M 1360,110 L 1360,200
-      M 1280,180 L 1360,200 L 1380,280
-      M 1280,180 L 1200,220 L 1160,180
-      M 1200,120 L 1160,180 L 1180,260
-      M 1200,220 L 1120,300 L 1180,260
-      "/>
-
-    <!-- Bottom-left cluster -->
-    <path d="
-      M 100,640  L 160,600  L 220,640
-      M 160,600  L 160,690
-      M 100,640  L 80,720
-      M 160,690  L 80,720   L 100,780
-      M 160,690  L 240,730  L 280,690
-      M 220,640  L 280,690  L 260,770
-      M 240,730  L 280,790  L 260,770
-      "/>
-
-    <!-- Bottom-right cluster -->
-    <path d="
-      M 1340,660 L 1280,620 L 1220,670
-      M 1280,620 L 1280,710
-      M 1340,660 L 1360,740
-      M 1280,710 L 1360,740 L 1340,800
-      M 1280,710 L 1220,750 L 1160,710
-      M 1220,670 L 1160,710 L 1180,790
-      M 1220,750 L 1160,790 L 1180,790
-      "/>
-
-    <!-- Sparse bridges — just a few -->
-    <path d="
-      M 80,220   L 80,720
-      M 1360,200  L 1360,740
-      M 280,180   L 420,120
-      M 1160,180  L 1020,120
-      M 300,300   L 380,400
-      M 1120,300  L 1060,400
-      "/>
-
-    <!-- Mid-edge wisps -->
-    <path d="
-      M 520,100  L 580,140 L 660,110
-      M 880,100  L 840,140 L 760,110
-      M 420,820  L 500,840 L 580,800
-      M 1020,820 L 940,840 L 860,800
-      "/>
-
+  <!-- Mid depth — slightly warmer grays, gentle form -->
+  <g filter="url(#mesh-lg)">
+    <ellipse cx="300"  cy="280"  rx="200" ry="180" fill="#E3E6EC" opacity="0.40"/>
+    <ellipse cx="1180" cy="240"  rx="180" ry="200" fill="#E5E7EB" opacity="0.35"/>
+    <ellipse cx="160"  cy="580"  rx="190" ry="210" fill="#E3E6EC" opacity="0.38"/>
+    <ellipse cx="1320" cy="620"  rx="170" ry="190" fill="#E5E7EB" opacity="0.32"/>
   </g>
 
-  <!-- ════════════════════════════════════ -->
-  <!-- Nodes — small, restrained, geometric   -->
-  <!-- ════════════════════════════════════ -->
+  <!-- ════════════════════════════════════════ -->
+  <!-- Blue-tinted ambient blobs — barely there   -->
+  <!-- ════════════════════════════════════════ -->
 
-  <!-- Peripheral dots (r=2) -->
-  <g fill="#C7CDD6">
-    <!-- Top-left -->
-    <circle cx="80" cy="140" r="2"/><circle cx="240" cy="120" r="2"/>
-    <circle cx="80" cy="220" r="2"/><circle cx="280" cy="180" r="2"/>
-    <circle cx="240" cy="220" r="2"/><circle cx="260" cy="280" r="2"/>
-    <circle cx="80" cy="300" r="2"/><circle cx="300" cy="300" r="2"/>
-
-    <!-- Top-right -->
-    <circle cx="1360" cy="110" r="2"/><circle cx="1200" cy="120" r="2"/>
-    <circle cx="1360" cy="200" r="2"/><circle cx="1160" cy="180" r="2"/>
-    <circle cx="1200" cy="220" r="2"/><circle cx="1180" cy="260" r="2"/>
-    <circle cx="1380" cy="280" r="2"/><circle cx="1120" cy="300" r="2"/>
-
-    <!-- Bottom-left -->
-    <circle cx="100" cy="640" r="2"/><circle cx="220" cy="640" r="2"/>
-    <circle cx="80" cy="720" r="2"/><circle cx="280" cy="690" r="2"/>
-    <circle cx="240" cy="730" r="2"/><circle cx="260" cy="770" r="2"/>
-    <circle cx="100" cy="780" r="2"/><circle cx="280" cy="790" r="2"/>
-
-    <!-- Bottom-right -->
-    <circle cx="1340" cy="660" r="2"/><circle cx="1220" cy="670" r="2"/>
-    <circle cx="1360" cy="740" r="2"/><circle cx="1160" cy="710" r="2"/>
-    <circle cx="1220" cy="750" r="2"/><circle cx="1180" cy="790" r="2"/>
-    <circle cx="1340" cy="800" r="2"/><circle cx="1160" cy="790" r="2"/>
-
-    <!-- Mid-edge -->
-    <circle cx="520" cy="100" r="2"/><circle cx="580" cy="140" r="2"/>
-    <circle cx="660" cy="110" r="2"/><circle cx="880" cy="100" r="2"/>
-    <circle cx="840" cy="140" r="2"/><circle cx="760" cy="110" r="2"/>
-    <circle cx="420" cy="820" r="2"/><circle cx="500" cy="840" r="2"/>
-    <circle cx="580" cy="800" r="2"/><circle cx="1020" cy="820" r="2"/>
-    <circle cx="940" cy="840" r="2"/><circle cx="860" cy="800" r="2"/>
-    <circle cx="420" cy="120" r="2"/><circle cx="1020" cy="120" r="2"/>
-    <circle cx="380" cy="400" r="2"/><circle cx="1060" cy="400" r="2"/>
+  <!-- Primary blue whisper — top-left -->
+  <g filter="url(#mesh-md)">
+    <ellipse cx="220" cy="180" rx="140" ry="120" fill="#DBE4F7" opacity="0.45"/>
+    <ellipse cx="160" cy="140" rx="90"  ry="80"  fill="#C5D5F5" opacity="0.30"/>
   </g>
 
-  <!-- Hub nodes (r=3) -->
-  <g fill="#AEB5C0">
-    <circle cx="160" cy="80" r="3"/><circle cx="160" cy="180" r="3"/>
-    <circle cx="1280" cy="70" r="3"/><circle cx="1280" cy="180" r="3"/>
-    <circle cx="160" cy="600" r="3"/><circle cx="160" cy="690" r="3"/>
-    <circle cx="1280" cy="620" r="3"/><circle cx="1280" cy="710" r="3"/>
+  <!-- Secondary blue whisper — bottom-right -->
+  <g filter="url(#mesh-md)">
+    <ellipse cx="1240" cy="700" rx="130" ry="110" fill="#DBE4F7" opacity="0.38"/>
+    <ellipse cx="1300" cy="740" rx="80"  ry="70"  fill="#C5D5F5" opacity="0.25"/>
   </g>
 
-  <!-- Hollow ring nodes (r=4.5) -->
-  <g fill="none" stroke="#C7CDD6" stroke-width="0.9">
-    <circle cx="300" cy="300" r="4.5"/><circle cx="1120" cy="300" r="4.5"/>
-    <circle cx="280" cy="790" r="4.5"/><circle cx="1160" cy="790" r="4.5"/>
-    <circle cx="580" cy="140" r="4"/><circle cx="500" cy="840" r="4"/>
+  <!-- Tiny blue focal points -->
+  <g filter="url(#mesh-sm)">
+    <ellipse cx="200" cy="120" rx="50" ry="40" fill="#2563EB" opacity="0.08"/>
+    <ellipse cx="1260" cy="680" rx="45" ry="38" fill="#2563EB" opacity="0.07"/>
   </g>
 
-  <!-- Diamonds -->
-  <g fill="#C7CDD6" opacity="0.7">
-    <rect x="157" y="77" width="5" height="5" transform="rotate(45,160,80)"/>
-    <rect x="1277" y="67" width="5" height="5" transform="rotate(45,1280,70)"/>
-    <rect x="157" y="597" width="5" height="5" transform="rotate(45,160,600)"/>
-    <rect x="1277" y="617" width="5" height="5" transform="rotate(45,1280,620)"/>
+  <!-- ════════════════════════════════════════ -->
+  <!-- Flowing curves — elegant, minimal          -->
+  <!-- ════════════════════════════════════════ -->
+
+  <!-- Long gentle arc — top sweep -->
+  <g fill="none" stroke="#E5E7EB" stroke-width="0.6">
+    <path d="M 0,60 C 200,40 400,100 600,80 C 800,60 1000,100 1200,80 C 1300,70 1400,50 1440,40"/>
   </g>
 
-  <!-- ════════════════════════════════════ -->
-  <!-- Blue accents — just 3, barely there    -->
-  <!-- ════════════════════════════════════ -->
-
-  <!-- Top-left hub marker -->
-  <g fill="#2563EB" opacity="0.55">
-    <circle cx="160" cy="80" r="4.5"/>
-  </g>
-  <g fill="none" stroke="#2563EB" stroke-width="0.8" opacity="0.14">
-    <circle cx="160" cy="80" r="8"/>
+  <!-- Left flowing curve -->
+  <g fill="none" stroke="#E3E6EC" stroke-width="0.5">
+    <path d="M 40,200 C 60,300 30,450 70,550 C 110,650 60,750 40,820"/>
   </g>
 
-  <!-- Bottom-right hub marker -->
-  <g fill="#2563EB" opacity="0.45">
-    <circle cx="1280" cy="710" r="4"/>
-  </g>
-  <g fill="none" stroke="#2563EB" stroke-width="0.8" opacity="0.12">
-    <circle cx="1280" cy="710" r="7"/>
+  <!-- Right flowing curve -->
+  <g fill="none" stroke="#E3E6EC" stroke-width="0.5">
+    <path d="M 1400,180 C 1380,320 1400,460 1370,560 C 1340,660 1380,760 1400,840"/>
   </g>
 
-  <!-- Mid-edge small accent -->
-  <g fill="#2563EB" opacity="0.4">
-    <circle cx="580" cy="140" r="3.5"/>
+  <!-- Bottom edge sweep -->
+  <g fill="none" stroke="#E8EBEE" stroke-width="0.5">
+    <path d="M 0,840 C 300,860 600,820 900,840 C 1100,860 1300,830 1440,850"/>
   </g>
 
-  <!-- Blue accent lines — just 4 -->
-  <g fill="none" stroke="#2563EB" stroke-width="0.6" opacity="0.16">
-    <path d="M 160,80 L 80,140"/>
-    <path d="M 160,80 L 240,120"/>
-    <path d="M 1280,710 L 1340,660"/>
-    <path d="M 1280,710 L 1220,670"/>
+  <!-- Subtle S-curve mid-left -->
+  <g fill="none" stroke="#E8EBEE" stroke-width="0.45">
+    <path d="M 60,360 C 120,380 180,320 240,360 C 300,400 360,340 420,380"/>
   </g>
 
-  <!-- ════════════════════════════════════ -->
-  <!-- Editorial framing — near-invisible     -->
-  <!-- ════════════════════════════════════ -->
-  <g fill="none" stroke="#E5E7EB" stroke-width="0.5" opacity="0.35">
-    <path d="M 56,66 L 56,56 L 66,56"/>
-    <path d="M 1384,834 L 1384,844 L 1374,844"/>
+  <!-- Subtle S-curve mid-right -->
+  <g fill="none" stroke="#E8EBEE" stroke-width="0.45">
+    <path d="M 1380,400 C 1320,420 1260,360 1200,400 C 1140,440 1080,380 1020,420"/>
+  </g>
+
+  <!-- Single blue-toned flowing line -->
+  <g fill="none" stroke="#2563EB" stroke-width="0.5" opacity="0.12">
+    <path d="M 80,280 C 130,260 180,300 230,280 C 280,260 330,300 380,280"/>
+  </g>
+
+  <!-- ════════════════════════════════════════ -->
+  <!-- Very minimal dot anchors — 4 only          -->
+  <!-- ════════════════════════════════════════ -->
+
+  <g fill="#D1D5DB" opacity="0.5">
+    <circle cx="70"  cy="280" r="2.5"/>
+    <circle cx="340" cy="270" r="2.5"/>
+    <circle cx="1370" cy="410" r="2.5"/>
+    <circle cx="1070" cy="420" r="2.5"/>
+  </g>
+
+  <!-- Blue accent dots — just 2 -->
+  <g fill="#2563EB" opacity="0.35">
+    <circle cx="200" cy="280" r="2"/>
+  </g>
+  <g fill="none" stroke="#2563EB" stroke-width="0.6" opacity="0.10">
+    <circle cx="200" cy="280" r="6"/>
+  </g>
+
+  <g fill="#2563EB" opacity="0.28">
+    <circle cx="1240" cy="420" r="2"/>
+  </g>
+  <g fill="none" stroke="#2563EB" stroke-width="0.6" opacity="0.09">
+    <circle cx="1240" cy="420" r="6"/>
   </g>
 
 </svg>
