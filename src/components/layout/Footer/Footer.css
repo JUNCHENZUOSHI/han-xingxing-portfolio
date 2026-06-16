@@ -1,10 +1,30 @@
-/* Footer — Apple Style */
-.footer { padding: var(--space-32) 0; background: var(--color-bg-alt); font-size: var(--text-caption); color: var(--color-text-secondary); }
-.footer__inner { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--space-24); display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-16); }
-.footer__contact { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-8); }
+/* Footer — Apple visionOS */
+.footer {
+  padding: var(--space-40) 0;
+  background: var(--color-bg-alt);
+  font-size: var(--text-caption);
+  font-weight: var(--weight-medium);
+  color: var(--color-text-secondary);
+  letter-spacing: var(--tracking-body);
+}
+.footer__inner {
+  max-width: var(--max-width); margin: 0 auto;
+  padding: 0 var(--space-32);
+  display: flex; align-items: center; flex-wrap: wrap;
+  gap: var(--space-16);
+}
+.footer__contact {
+  display: flex; align-items: center; flex-wrap: wrap;
+  gap: var(--space-8);
+}
 .footer__sep { color: var(--color-border); user-select: none; }
 .footer__actions { margin-left: auto; }
-.footer__copy { width: 100%; margin-top: var(--space-8); color: var(--color-text-tertiary); font-size: var(--text-caption); }
+.footer__copy {
+  width: 100%; margin-top: var(--space-12);
+  color: var(--color-text-tertiary);
+  font-size: var(--text-caption);
+  letter-spacing: var(--tracking-body);
+}
 
 @media (max-width: 767px) {
   .footer__inner { flex-direction: column; align-items: flex-start; }
