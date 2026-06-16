@@ -68,6 +68,19 @@ export default function CaseDetail() {
         </div>
       </section>
 
+      {/* ── Hero Image ── */}
+      {caseData.coverImage && (
+        <section className="section" style={{ paddingTop: 0 }}>
+          <div className="container">
+            <img
+              src={`${import.meta.env.BASE_URL}${caseData.coverImage}`}
+              alt={caseData.title}
+              className="case-hero-img"
+            />
+          </div>
+        </section>
+      )}
+
       {/* ── 01 Background ── */}
       <section className="section section--alt">
         <div className="container">

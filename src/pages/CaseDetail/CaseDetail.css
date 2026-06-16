@@ -193,6 +193,14 @@
   font-style: italic;
 }
 
+/* ── Case Hero Image ── */
+.case-hero-img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  display: block;
+}
+
 /* ── Case Navigation ── */
 .case-nav {
   display: flex;

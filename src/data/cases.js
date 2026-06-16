@@ -36,6 +36,7 @@ export const cases = {
     industry: '跨境电商 SaaS',
     team: 'PM × 前端 × AI Lab',
     cardAccent: 'var(--card-accent-sidekick)',
+    coverImage: 'case-sidekick.jpeg',
 
     /* ── Narrative Hook (displayed on case detail header, not card) ── */
     narrativeHook:
@@ -273,6 +274,7 @@ export const cases = {
     industry: '企业软件 / 低代码平台',
     team: 'PM × 前端 × AI Lab',
     cardAccent: 'var(--card-accent-lowcode)',
+    coverImage: 'case-lowcode.jpeg',
 
     /* ── Summary ── */
     summary:
@@ -522,6 +524,7 @@ export const cases = {
     industry: '跨境电商 SaaS',
     team: '❓ 待确认',
     cardAccent: 'var(--card-accent-template)',
+    coverImage: 'case-template.png',
 
     /* ── Positioning ── */
     portfolioRole:

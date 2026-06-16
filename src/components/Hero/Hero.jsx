@@ -7,6 +7,12 @@ export default function Hero() {
 
   return (
     <section className="hero">
+      <img
+        src={`${import.meta.env.BASE_URL}hero-bg.svg`}
+        alt=""
+        className="hero__bg"
+        aria-hidden="true"
+      />
       <div className="hero__content">
         <span className="hero__label">{profile.title}</span>
         <h1 className="hero__name">{t('common.name')}</h1>

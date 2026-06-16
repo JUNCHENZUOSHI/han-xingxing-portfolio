@@ -9,6 +9,7 @@ export default function CaseCard({ caseData, variant = 'standard' }) {
     summary,
     nda,
     cardAccent,
+    coverImage,
     cardVisualPills,
     cardMetrics,
     featuredMetrics,
@@ -29,8 +30,15 @@ export default function CaseCard({ caseData, variant = 'standard' }) {
       className={`case-card${isFeatured ? ' case-card--featured' : ''}`}
       style={{ '--card-accent': cardAccent }}
     >
-      {cardVisualPills && cardVisualPills.length > 0 && (
-        <div className="case-card__visual">
+      <div className={`case-card__visual${coverImage ? ' case-card__visual--has-image' : ''}`}>
+        {coverImage ? (
+          <img
+            src={`${import.meta.env.BASE_URL}${coverImage}`}
+            alt=""
+            className="case-card__img"
+            loading="lazy"
+          />
+        ) : cardVisualPills && cardVisualPills.length > 0 ? (
           <div className="case-card__visual-inner">
             <div className="capability-pills">
               {cardVisualPills.map((pill) => (
@@ -41,8 +49,8 @@ export default function CaseCard({ caseData, variant = 'standard' }) {
               ))}
             </div>
           </div>
-        </div>
-      )}
+        ) : null}
+      </div>
 
       <div className="case-card__body">
         {nda && (

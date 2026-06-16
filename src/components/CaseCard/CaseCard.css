@@ -25,6 +25,17 @@
   overflow: hidden;
 }
 
+.case-card__visual--has-image {
+  background: none;
+}
+
+.case-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .case-card--featured .case-card__visual {
   aspect-ratio: 16 / 8;
 }
