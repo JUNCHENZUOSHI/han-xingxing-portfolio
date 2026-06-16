@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
-import { useI18n } from '../../i18n/context';
+import { useI18n, useCaseI18n } from '../../i18n/context';
 import './CaseCard.css';
 
 export default function CaseCard({ caseData, variant = 'standard' }) {
   const { t } = useI18n();
+  const caseI18n = useCaseI18n(caseData.slug);
   const {
     slug,
     title,
@@ -16,6 +17,11 @@ export default function CaseCard({ caseData, variant = 'standard' }) {
     cardMetrics,
     featuredMetrics,
   } = caseData;
+
+  const displayTitle = caseI18n.title || t(`caseTitles.${slug}`) || title;
+  const displaySummary = caseI18n.summary || summary;
+  const displayTags = caseI18n.tags || tags;
+  const displayNdaBadge = caseI18n.nda?.badge || nda?.badge;
 
   const isFeatured = variant === 'featured';
   const metrics = isFeatured && featuredMetrics.length > 0
@@ -57,16 +63,16 @@ export default function CaseCard({ caseData, variant = 'standard' }) {
       <div className="case-card__body">
         {nda && (
           <span className="badge badge--nda" style={{ marginBottom: 'var(--space-8)' }}>
-            {nda.badge}
+            {displayNdaBadge}
           </span>
         )}
         <div className="case-card__tags">
-          {tags.slice(0, isFeatured ? 4 : 2).map((tag) => (
+          {displayTags.slice(0, isFeatured ? 4 : 2).map((tag) => (
             <span className="tag" key={tag}>{tag}</span>
           ))}
         </div>
-        <h3 className="case-card__title">{t(`caseTitles.${slug}`) || title}</h3>
-        <p className={summaryClass}>{summary}</p>
+        <h3 className="case-card__title">{displayTitle}</h3>
+        <p className={summaryClass}>{displaySummary}</p>
         <div className="case-card__metrics">
           {metrics.slice(0, isFeatured ? 3 : 2).map((m) => (
             <span className="metric-value" key={m.label}>

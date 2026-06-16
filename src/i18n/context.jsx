@@ -141,4 +141,12 @@ export function useResumeData() {
   };
 }
 
+/** Returns translated case study content for a given case slug */
+export function useCaseI18n(slug) {
+  const { lang } = useI18n();
+  const raw = translations[lang];
+  const cd = raw.casesData?.[slug] || {};
+  return cd;
+}
+
 export { zh, zhTW, en };

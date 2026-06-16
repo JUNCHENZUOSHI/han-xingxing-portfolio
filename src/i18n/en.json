@@ -42,7 +42,27 @@
     "back": "← Back to Case Studies", "context": "Background",
     "challenge": "Core Challenge", "approach": "Design Approach",
     "solution": "Solution", "impact": "Impact & Results",
-    "role": "My Role", "team": "Team", "timeline": "Timeline", "skills": "Relevant Skills"
+    "role": "My Role", "team": "Team", "timeline": "Timeline", "skills": "Relevant Skills",
+    "responsibility": "Responsibility",
+    "contributionType": "Contribution Type",
+    "details": "Details",
+    "problem": "Problem",
+    "decision": "Decision",
+    "rationale": "Rationale",
+    "alternative": "Alternative",
+    "baselineMissing": "Baseline data missing; deltas are estimates",
+    "lessonsEmpty": "🚧 Project lessons and 'what I'd do differently' reflections pending.",
+    "competencyDimension": "Competency Dimension",
+    "evidenceStrength": "Evidence Strength",
+    "notes": "Notes",
+    "doesNotDemonstrate": "This case does not demonstrate:",
+    "previousCase": "← Previous Case",
+    "allCases": "All Cases",
+    "nextCase": "Next Case →",
+    "processPending": "🚧 Design process materials pending. The following is a generic design process framework; specific methods, key findings, and deliverables will be filled in once original materials are available.",
+    "pending": "🚧 Pending",
+    "processReconstructed": "Process description reconstructed from outcomes",
+    "contributionPending": "Contribution ratio pending owner confirmation"
   },
   "caseTitles": {
     "sidekick": "Sidekick AI — Ad Creative Automation",
@@ -177,5 +197,279 @@
     "education": {"school": "Nanjing University", "degree": "Bachelor's", "major": "Human Resources", "period": "2018 – 2022"},
     "achievementsLabel": "Key Achievements & Quantified Impact",
     "responsibilitiesLabel": "Key Responsibilities & Capability Development"
+  },
+  "casesData": {
+    "sidekick": {
+      "title": "Sidekick AI — Ad Creative Automation",
+      "tags": ["AI Product Design", "B2B", "Growth", "Cross-border E-commerce"],
+      "summary": "Merchant ad launch workflows typically take over 4 hours, and AI-generated creatives' ability to drive orders remains uncertain. This case abstracts Sidekick AI's three capability types (Content Generation / Strategic Suggestions / Automated Execution) into a reusable product model, while establishing a measurement feedback loop spanning AI quality and business outcomes — efficiency ↑25%, production cycle ↓4h, first-purchase conversion rate ↑8%.",
+      "narrativeHook": "A cross-border merchant's ad launch process requires 4 hours of manual operations — from product selection, creative generation, and placement configuration to going live. Sidekick AI can dramatically shorten this process. But the core question isn't 'how fast can AI generate?' but 'why would merchants trust that AI-generated creatives will bring orders?' This case tells the story of how I abstracted Sidekick's three AI capabilities into a reusable product model, while embedding trust mechanisms within that model — enabling merchants not just to use AI, but to depend on it.",
+      "nda": {"badge": "🔒 Anonymized"},
+      "portfolioRole": null,
+      "background": {
+        "why": "A typical cross-border merchant's ad launch scenario: a merchant needs to generate ad creatives for the same product adapted to both North American and Southeast Asian markets, with multiple creative variants for A/B testing per market. From product photography, copywriting, creative design to placement configuration, a single complete workflow averages over 4 hours. For active merchants listing 5–10 new products daily, this means 20–40 hours consumed by pure operational work each day — not yet counting post-launch performance monitoring and strategy adjustments. AI can generate creatives — but merchants repeatedly revise AI output, distrust AI suggestions, and ultimately manually override and redo everything. AI's presence hasn't truly unlocked efficiency.",
+        "targetUsers": "Shopify cross-border merchants, ad operations personnel. 🔮 Specific personas pending confirmation.",
+        "businessGoals": "Reduce labor costs and time costs of creative production through AI automation, improving overall ad campaign ROI.",
+        "constraints": [
+          "Must integrate within Shopify Sidekick's existing capability boundaries",
+          "Multi-language markets (at minimum Chinese + English)",
+          "❓ Technology / timeline / resource constraints pending confirmation"
+        ]
+      },
+      "challenge": {
+        "userProblem": "Ad creative production involves heavy repetitive work; from ideation to launch the cycle is long, causing slow merchant campaign starts.",
+        "businessProblem": "High labor costs; AI capabilities are not effectively utilized across the full ad launch workflow.",
+        "designChallenge": "Sidekick AI can generate creatives, offer strategic suggestions, and even automate execution — but merchants' first reaction to AI output is 'let me tweak it,' and their second is 'never mind, I'll do it myself.' The core design challenge isn't 'can AI do it,' but a dual trust problem: ① How can merchants trust that AI-generated creative quality won't harm their ad performance? ② How can the team (PM, AI Lab, Frontend) trust that this AI capability model can scale rather than being a one-off integration? The first question determines whether merchants will use it; the second determines whether the organization will continue investing."
+      },
+      "myRole": {
+        "note": "AI capability model, assessment framework, and automation workflows were led by me. PM provided business priorities and merchant requirement inputs; AI Lab validated Sidekick's technical capability boundaries and contributed to prompt tuning. Frontend team handled implementation. Team collaboration details will be refined as additional process materials are added.",
+        "responsibilities": [
+          {"task": "AI Capability Model Abstraction", "contribution": "Led independently", "detail": "Abstracted Sidekick's three AI capabilities (Content Generation / Strategic Suggestions / Automated Execution) into a reusable model"},
+          {"task": "AI Embedding Strategy", "contribution": "Led independently", "detail": "Systematically embedded AI into critical paths including ad creation, product optimization, and workflow automation"},
+          {"task": "AI Experience Assessment Framework", "contribution": "Led independently", "detail": "Built a cross-tier metrics framework (AI Quality Layer / Experience Behavior Layer / Business Outcome Layer)"},
+          {"task": "Continuous Optimization Loop", "contribution": "Led independently", "detail": "Established 'Issue Discovery → Data Diagnosis → AI Capability Fine-tuning → Incremental Launch' continuous delivery mechanism"},
+          {"task": "Ad Creative Automation Workflow", "contribution": "Led independently", "detail": "Redesigned the 'Creative Generation → Placement Configuration' pipeline"}
+        ]
+      },
+      "designApproach": {
+        "note": "The following process phases are reconstructed from confirmed design decisions and quantified outcomes. Specific methodological details, original research data, and interim deliverables are pending.",
+        "phases": [
+          {"title": "Research & Discovery", "summary": "Conducted efficiency analysis of cross-border merchants' full ad creative production workflow, identifying two core bottlenecks: 'long creative production cycles' and 'heavy repetitive placement configuration work.' Through merchant interviews and data analytics, quantified current creative preparation efficiency and ad ROI baselines."},
+          {"title": "Definition & Strategy", "summary": "Abstracted Sidekick AI's three capabilities (Content Generation / Strategic Suggestions / Automated Execution) into a reusable product capability model. Defined AI embedding strategy — identifying AI injection points across critical paths including ad creation, product optimization, and workflow automation. Designed the four-tier AI Experience Assessment Framework (AI Quality Layer / Experience Behavior Layer / Business Outcome Layer / Optimization Loop)."},
+          {"title": "Design & Iteration", "summary": "Redesigned the 'Creative Generation → Placement Configuration' pipeline, systematically embedding AI capabilities into key touchpoints. Established the 'Issue Discovery → Data Diagnosis → AI Capability Fine-tuning → Incremental Launch' continuous optimization loop. Iterated on AI interaction patterns across PM × FE × AI Lab."},
+          {"title": "Validation & Launch", "summary": "Tracked launch impact across three dimensions: creative preparation efficiency (↑25%, ~60% contributed by AI), per-asset production cycle (↓4h), and first-purchase conversion rate (↑8%). The four-tier assessment framework continuously monitors Sidekick's real business contribution."}
+        ]
+      },
+      "keyDecisions": [
+        {
+          "title": "Abstracted Sidekick AI's Three Capabilities into a Reusable Model",
+          "problem": "Merchants manually creating ad creatives average over 4 hours. AI can generate content, but embedding it feature-by-feature meant — today adding an 'AI Generate Copy' button on the ad creation page, tomorrow adding an 'AI Recommend Keywords' button on the product optimization page, next week adding an 'AI Suggest Bids' button in placement configuration. Three months later, the product had 7 scattered AI buttons, but ① merchants had no unified mental model of 'what AI can do for me,' ② each new scenario required designing AI interaction patterns from scratch, ③ maintaining 7 independent AI features made costs scale exponentially — AI Lab started questioning: 'Are we building one product or 7 features?'",
+          "decision": "Abstract Sidekick AI's three capabilities (Content Generation / Strategic Suggestions / Automated Execution) into a unified capability model — not designing 7 AI buttons, but defining 3 capability types so any business scenario can find an entry point within these 3 types. Content Generation addresses 'producing assets,' Strategic Suggestions addresses 'how to do it better,' Automated Execution addresses 'run this process for me.'",
+          "reason": "The capability model allows all AI features to share a single set of interaction patterns — once a merchant learns to use AI in one place, they can reuse the same mental model anywhere. New business scenarios only need to declare 'which capability type does this scenario need?' rather than designing interactions from scratch. AI Lab went from maintaining 7 independent feature codebases to maintaining 1 capability orchestration system — their response shifted from 'you're adding yet another AI feature' to 'which capability type does this scenario need? Just call it.' This was the moment the project upgraded from 'feature stacking' to 'platformization.'",
+          "alternative": {"text": "⚠️ Alternative approaches pending confirmation. Other options considered and reasons for rejection will be added once original materials are available."}
+        },
+        {
+          "title": "Established a Four-Tier AI Experience Assessment Framework",
+          "problem": "Once the capability model was built, the next question emerged immediately: how do we prove this model is truly driving business outcomes, not just making the product 'look like it has AI'? After each AI-generated creative, how much did the merchant modify? Did the modified version perform better or worse? If AI suggested a placement strategy but the merchant didn't adopt it — was it because the suggestion was poor, or because the merchant didn't trust it? Without quantified tracking from AI quality to business outcomes, the conversation between the AI team (AI Lab) and the business team (PM, Operations) was always: 'AI is powerful' vs. 'I don't see order growth.'",
+          "decision": "Establish a four-tier AI Experience Assessment Framework: AI Quality Layer (consistency rate, hallucination rate — monitoring AI's own output quality), Experience Behavior Layer (adoption rate, modification rate, modification magnitude — monitoring how merchants interact with AI output), Business Outcome Layer (conversion rate, ROI, efficiency gains — linking AI usage to business metrics), Optimization Loop Layer (anomaly detection → root cause analysis → fine-tuning → incremental validation — enabling issues at each layer to be traced back to the previous layer and fixed).",
+          "reason": "The tiered metrics framework solved the 'arguing' problem. When AI Lab said 'the model metrics look great' but PM said 'conversion hasn't improved,' the four-tier system allowed the team to diagnose layer by layer — is the model output quality actually poor (AI Quality Layer), or is the quality fine but merchants aren't adopting it (Experience Behavior Layer), or are merchants adopting it but the creatives are ineffective for the target market (Business Outcome Layer)? Each layer has independent metrics, each layer has independent optimization methods — no need for 'blind tuning.' After AI Lab invested in model optimization, they could see the adoption rate in the Experience Behavior Layer indeed rising — for the first time, the team could have data-based conversations instead of impression-based arguments.",
+          "alternative": {"text": "⚠️ Alternative approaches pending confirmation."}
+        }
+      ],
+      "outcome": {
+        "quantitative": [
+          {"label": "Creative Preparation Efficiency", "note": "~60% of the improvement contributed by AI automation"},
+          {"label": "Per-Asset Production Cycle", "note": ""}
+        ],
+        "qualitative": [
+          "Established a reusable AI capability model (Content Generation / Strategic Suggestions / Automated Execution)",
+          "Drove product transformation from traditional process-based operations to AI-intelligent growth path"
+        ],
+        "baselineNote": "Baseline (pre-redesign values) and measurement methods pending. All delta values sourced from resume; attribution confidence is weak. More detailed data context can be provided during interviews."
+      },
+      "competencies": [
+        {"dimension": "AI Product Design", "note": "AI capability model design + four-tier assessment framework + continuous optimization loop"},
+        {"dimension": "Complex System Abstraction", "note": "Three AI capability types modeled + critical path embedding strategy"},
+        {"dimension": "Data-Driven Design", "note": "Cross-tier metrics monitoring (AI Quality / Behavior / Business)"},
+        {"dimension": "Business Growth Orientation", "note": "AI → Efficiency → ROI closed loop"}
+      ],
+      "disclaimer": "This case does not demonstrate: user research process, visual design depth, prototyping capability, mobile design.",
+      "reflection": {
+        "methodology": [
+          "AI Capability Abstraction Model: Abstracted three AI capabilities (Content Generation / Strategic Suggestions / Automated Execution) into a reusable product capability model, transferable to any B2B product requiring AI integration",
+          "Four-Tier AI Experience Assessment Framework: AI Quality Layer → Experience Behavior Layer → Business Outcome Layer → Optimization Loop — tiered metrics enabling teams to precisely locate issues at the correct layer",
+          "Continuous Optimization Loop: 'Issue Discovery → Data Diagnosis → AI Capability Fine-tuning → Incremental Launch' continuous delivery mechanism"
+        ],
+        "note": "🚧 Project failures, conflicts, and lessons learned pending. For example: Were there any incorrect design directions? Were there major disagreements with PM/engineers and how were they resolved?"
+      }
+    },
+    "lowcode": {
+      "title": "Enterprise Low-Code Platform — AI-Powered Experience Upgrade",
+      "tags": ["AI Product Design", "Design System", "B2B", "Low-Code"],
+      "summary": "Built a platform-level AI experience measurement system and a 60+ component semantic design system from scratch. Upgraded the design system into a bidirectional semantic system that AI can both generate and understand.",
+      "narrativeHook": null,
+      "nda": {"badge": "🔒 Anonymized"},
+      "portfolioRole": null,
+      "background": {
+        "why": "Traditional low-code platforms' full pipeline — 'page building → component selection → logic configuration' — involved complex operations, resulting in low build efficiency for enterprise users and low smart template recommendation hit rates. AI output quality was uncontrollable and unmeasurable. The platform lacked a unified AI experience measurement framework and semantic design system.",
+        "targetUsers": "Enterprise business users (rapidly building business applications) and low-code platform developers (efficiently configuring complex business logic). 🔮 Whether formal personas exist is unconfirmed.",
+        "businessGoals": "Improve platform build efficiency, increase smart recommendation hit rate, reduce user error rate, and improve NPS/CSAT. ❓ Specific target values pending confirmation.",
+        "constraints": [
+          "❓ Technology / timeline / resource constraints pending confirmation"
+        ]
+      },
+      "challenge": {
+        "userProblem": "Enterprise business users face high cognitive load in component selection; low-code platform developers face long configuration chains and heavy repetitive operations.",
+        "businessProblem": "Platform build efficiency is low; AI output quality is uncontrollable; a unified AI experience measurement standard is lacking.",
+        "designChallenge": "How to establish a complete experience system spanning from底层 component semantics to upper-layer AI interaction patterns on an enterprise-grade low-code platform."
+      },
+      "myRole": {
+        "note": "AI experience strategy, Scorecard metrics framework, semantic design system, and error fallback mechanisms were led by me. PM provided business requirement priorities and coordinated cross-department resources. AI Lab handled model capability assessment and participated in Prompt Schema standardization. Frontend team handled component implementation and design system technical realization. Specific division ratios will be annotated once supplementary materials are available.",
+        "responsibilities": [
+          {"task": "AI Experience Strategy Development", "contribution": "Led independently", "detail": "Led platform-level AI experience strategy and interaction pattern baseline definition"},
+          {"task": "AI Scorecard Metrics Framework", "contribution": "Led independently", "detail": "Established AI capability inventory and cross-tier metrics framework (Precision/Coverage/Confidence)"},
+          {"task": "Semantic Design System", "contribution": "Led independently", "detail": "Upgraded design system into a bidirectional semantic system that AI can generate and understand, covering 60+ components"},
+          {"task": "Prompt Schema Standardization", "contribution": "Pending confirmation", "detail": "Prompt Schema standardization (possibly collaborative with AI Lab)"},
+          {"task": "AI Error Fallback Mechanism", "contribution": "Led independently", "detail": "Designed AI error fallback and explainability rules"},
+          {"task": "Cross-Team Advocacy", "contribution": "Drove / Coordinated", "detail": "Collaborated with PM × FE × AI Lab to implement intelligent transformation"},
+          {"task": "Prompt Template System", "contribution": "Led independently", "detail": "Systematically consolidated Prompt template library"},
+          {"task": "Commercialization Strategy", "contribution": "Pending confirmation", "detail": "AI feature tiering and value pricing model (involvement level unconfirmed)"}
+        ]
+      },
+      "designApproach": {
+        "note": "The following process phases are reconstructed from confirmed design decisions and quantified outcomes. Specific methodological details, original research data, and interim deliverables are pending.",
+        "phases": [
+          {"title": "Research & Discovery", "summary": "Conducted data analysis of the platform's existing build workflow, identifying two core efficiency bottlenecks: 'high cognitive load in component selection' and 'long configuration chains.' Established NPS/CSAT baseline through user satisfaction surveys (the benchmark for subsequent 10–15% improvement), and collected critical task completion rates and user error rates as quantified references."},
+          {"title": "Definition & Strategy", "summary": "Defined platform-level AI experience strategy: established the AI Scorecard three-dimensional metrics framework (Precision/Coverage/Confidence) as the AI quality measurement framework; planned the semantic design system upgrade path — evolving the existing component library from 'human-understandable' to a bidirectional semantic system that is 'AI-generatable / AI-understandable'; designed the Prompt template system classification architecture and AI error fallback mechanism rule framework."},
+          {"title": "Design & Iteration", "summary": "Drove semantic annotation and attribute structure standardization for 60+ components. Collaborated with AI Lab on Prompt Schema standardization and built the Prompt template library. Designed AI output confidence threshold rules and corresponding fallback interaction patterns (below threshold → manual confirmation flow / fallback to deterministic solution). Iterated across PM × FE × AI Lab for implementation."},
+          {"title": "Validation & Launch", "summary": "Tracked launch impact across three dimensions: critical task completion rate (↑15%+), user error rate (↓20%), AI-generated UI accuracy (↑25–30%). Monthly NPS/CSAT tracking confirmed satisfaction improvement. Design-dev consistency metrics and cross-team collaboration efficiency metrics measured design system's actual落地 impact."}
+        ]
+      },
+      "keyDecisions": [
+        {
+          "title": "Built AI Experience Measurement Framework (AI Scorecard) Rather Than Only Tracking Business Metrics",
+          "problem": "AI output quality was uncontrollable; there was no quantified tracking from AI quality to business outcomes. Looking only at NPS or business metrics couldn't identify whether the issue lay in the AI model or the interaction design.",
+          "decision": "Established the AI Scorecard cross-tier metrics framework, introducing AI-specific metrics such as Precision/Coverage/Confidence, forming an upper-lower layer tracking relationship with business metrics.",
+          "reason": "'Make AI experience effectiveness measurable and optimizations traceable.' The tiered metrics framework enables teams to precisely locate issues at the correct layer, avoiding blind optimization.",
+          "alternative": {"text": "⚠️ Alternative approaches pending confirmation. Why not just use NPS or business metrics directly?"}
+        },
+        {
+          "title": "Upgraded Design System to 'AI-Generatable / AI-Understandable' Bidirectional Semantic System",
+          "problem": "AI auto-generated UI accuracy was low; components lacked semantic annotation, preventing AI from understanding business context.",
+          "decision": "Through component semanticization, attribute structure standardization, and Prompt Schema normalization, upgraded the design system from 'human-understandable' to a bidirectional system that is 'AI-generatable / AI-understandable.'",
+          "reason": "AI auto-generated UI accuracy improved by ↑25–30%. Semantic components enable AI to generate context-matched interfaces based on business context rather than blindly assembling components.",
+          "alternative": {"text": "⚠️ Alternative approaches pending confirmation. Why not use a traditional component library + manual adaptation?"}
+        },
+        {
+          "title": "Built AI Error Fallback Mechanism",
+          "problem": "There is a conflict between AI output uncertainty and enterprise-grade stability requirements. Enterprise users cannot tolerate AI-generated results that are incorrect without any protective mechanism.",
+          "decision": "Built AI error fallback mechanism and explainability rules. When AI output confidence falls below threshold, automatically trigger manual confirmation flow or fallback to deterministic solution.",
+          "reason": "Error fallback mechanisms are a necessary condition for AI products to land in enterprise scenarios. AI features without fallback cannot build trust among enterprise users.",
+          "alternative": {"text": "⚠️ Alternative approaches pending confirmation. Why not rely on the model's own confidence score?"}
+        }
+      ],
+      "outcome": {
+        "quantitative": [
+          {"label": "Typical App Build Efficiency", "note": ""},
+          {"label": "Smart Template Recommendation Hit Rate", "note": ""},
+          {"label": "NPS/CSAT", "note": ""},
+          {"label": "Critical Task Completion Rate", "note": ""},
+          {"label": "User Error Rate", "note": ""},
+          {"label": "AI-Generated UI Accuracy", "note": ""},
+          {"label": "Design-Dev Consistency", "note": ""},
+          {"label": "Cross-Team Collaboration Efficiency", "note": ""},
+          {"label": "Semantic Design System Coverage", "note": ""}
+        ],
+        "qualitative": [
+          "Established the AI experience measurement framework (AI Scorecard) methodology",
+          "Consolidated Prompt template system and AI error fallback rules",
+          "Drove the design system's upgrade from traditional component library to AI-generatable bidirectional system"
+        ],
+        "baselineNote": "All 9 metrics lack baselines (pre-redesign values) and measurement methods. Attribution confidence is weak across all items. More detailed data context can be provided during interviews."
+      },
+      "competencies": [
+        {"dimension": "AI Product Design", "note": "AI Scorecard + Prompt Schema + Error Fallback — the strongest AI case in the portfolio"},
+        {"dimension": "Complex System Abstraction", "note": "Domain Schema + 60+ component semantic system"},
+        {"dimension": "Design System Governance", "note": "Built from scratch + AI-generatable/understandable bidirectional system"},
+        {"dimension": "Data-Driven Design", "note": "Four-tier metrics framework (AI Quality / Behavior / Business / Optimization Loop)"},
+        {"dimension": "Stakeholder Management", "note": "Cross PM × FE × AI Lab driving implementation"},
+        {"dimension": "Methodology Consolidation", "note": "Prompt template system + AI error fallback rules"}
+      ],
+      "disclaimer": "This case does not demonstrate: user research process, visual design depth, prototyping capability, mobile design.",
+      "reflection": {
+        "methodology": [
+          "AI Scorecard Metrics Framework: Precision/Coverage/Confidence three-dimensional AI quality measurement framework, transferable to any product scenario requiring AI output quality assessment",
+          "Semantic Design System Methodology: Upgraded the design system from 'human-understandable' to 'AI-generatable / AI-understandable' bidirectional semantic system, 60+ components standardized",
+          "AI Error Fallback Design Principles: When AI output confidence falls below threshold, automatically trigger manual confirmation flow or fallback to deterministic solution — a necessary condition for AI products landing in enterprise scenarios"
+        ],
+        "note": "🚧 Project failures, conflicts, and lessons learned pending. For example: Over the 4-year project, were there any directional pivots? What resistance was encountered during Prompt Schema standardization? What failed attempts occurred during AI commercialization strategy exploration?"
+      }
+    },
+    "template": {
+      "title": "Design System & DesignOps — Scalable Infrastructure",
+      "tags": ["Design System", "Internationalization", "Growth", "B2B"],
+      "summary": "Built a company-level B2B design system from scratch, establishing a multi-language, multi-market Design Token framework. Component reuse rate 70%, international design iteration cycle shortened by 30%. Cross-cultural validation (North America / Southeast Asia) drove template store conversion optimization.",
+      "narrativeHook": null,
+      "nda": {"badge": "🔒 Anonymized"},
+      "portfolioRole": "This case focuses on 'Internationalization × Design System' capability demonstration. Complementing Case 01 (AI Product Design) and Case 02 (Complex System Design), it showcases the designer's practice in cross-cultural market expansion and organizational-level design infrastructure.",
+      "background": {
+        "why": "Cross-border merchants lacked high-conversion templated store-building solutions; cultural preferences and consumption habits differed significantly across markets (North America / Southeast Asia), making it difficult to improve conversion rates. The company lacked a unified B2B design system to support multi-market business expansion.",
+        "targetUsers": "Shopify cross-border merchants (primarily North America / Southeast Asia). 🔮 Specific personas pending confirmation.",
+        "businessGoals": "Through the template store system + cross-cultural adaptation, improve merchant first-purchase conversion rate and drive platform GMV growth. Simultaneously build a reusable design system to support business expansion.",
+        "constraints": [
+          "Must be compatible with Shopify theme framework",
+          "Multi-market, multi-language adaptation",
+          "❓ Specific technology / resource constraints pending confirmation"
+        ]
+      },
+      "challenge": {
+        "userProblem": "Merchants lack high-conversion templated store-building solutions; cultural differences across markets make templates poorly通用.",
+        "businessProblem": "Conversion rates are difficult to improve. The company lacks a unified design system; each market reinvents the wheel.",
+        "designChallenge": "How to build an international Design Token framework that supports flexible cross-cultural adaptation while maintaining design consistency."
+      },
+      "myRole": {
+        "note": "Template store, Token framework, and design system were led by me. Cross-cultural validation involved collaboration with overseas market operations teams (specific division pending confirmation). Frontend team handled component library technical implementation and Shopify theme framework compatibility. Design system推广 to multi-product lines involved coordination with multi-team PMs.",
+        "responsibilities": [
+          {"task": "Template Store Design System", "contribution": "Led independently", "detail": "Built high-conversion template store system"},
+          {"task": "Cross-Cultural Design Validation", "contribution": "Led independently", "detail": "Cross-cultural validation + multi-market data feedback driving iteration"},
+          {"task": "International Token Framework", "contribution": "Led independently", "detail": "Established multi-language / multi-market Design Token framework"},
+          {"task": "Design System", "contribution": "Led independently", "detail": "Built company-level B2B design system from scratch (component reuse rate 70%)"},
+          {"task": "Sidekick Copy/Asset Adaptation", "contribution": "Pending confirmation", "detail": "Sidekick auto-adaptation of copy and assets for different markets (involvement level unconfirmed)"}
+        ]
+      },
+      "designApproach": {
+        "note": "The following process phases are reconstructed from confirmed design decisions and quantified outcomes. Specific methodological details, original cross-cultural validation data, and interim deliverables are pending.",
+        "phases": [
+          {"title": "Research & Discovery", "summary": "Conducted cross-market research on cross-border merchant store-building needs (primarily North America / Southeast Asia), identifying cultural differences in color preferences, typography density, and information hierarchy across key markets. Audited design consistency issues across the company's existing product lines, assessing the scope and priority of building a design system from scratch."},
+          {"title": "Definition & Strategy", "summary": "Defined the cross-cultural Design Token architecture (Foundation → Semantic → Component three-tier). Planned the company-level B2B design system's component scope and DesignOps collaboration workflow. Identified the template store as the design system's initial落地 scenario."},
+          {"title": "Design & Iteration", "summary": "Built the component library; iterated template store design through cross-cultural user validation. Established multi-market data feedback mechanisms, adjusting Token configurations based on per-market conversion data. Drove design system推广 from the single template store scenario to multiple product lines across the company."},
+          {"title": "Validation & Launch", "summary": "Tracked impact across three dimensions: component reuse rate (70%), international design iteration cycle (↓30%), first-purchase conversion rate (↑8%). Design-dev consistency improvement of 30% and cross-team collaboration efficiency gains served as auxiliary validation metrics for design system落地."}
+        ]
+      },
+      "keyDecisions": [
+        {
+          "title": "Built Cross-Cultural Design Token Framework Rather Than Single-Market Adaptation",
+          "problem": "Cultural preferences and consumption habits differ significantly across markets (North America / Southeast Asia). For example, North American markets prefer high contrast, generous white space, and cool color tones; Southeast Asian markets prefer warm tones, high information density, and promotion-heavy visual language. A single template cannot work across markets, while maintaining a separate design system per market would lead to exponentially growing maintenance costs.",
+          "decision": "Built a cross-cultural Design Token framework (Foundation → Semantic → Component three-tier architecture), parameterizing cultural differences as Token layer variables — color semantic Tokens (cool/warm tone mapping), typography density Tokens (compact/comfortable switching), information hierarchy Tokens (high/low density adaptation). Adding a new market only requires configuring a set of Token mappings rather than redesigning from scratch.",
+          "reason": "The Token framework shortened design iteration cycles for new markets by 30% while maintaining underlying component library consistency — component implementation code stays unchanged; only Token values change to achieve localization. This architecture also enables Sidekick AI to auto-generate adapted copy and assets based on per-market Token configurations.",
+          "alternative": {"text": "Also considered maintaining separate design branches per market. However, after actual parallel maintenance of 2 markets (North America + Southeast Asia), design drift between branches became severe — the same component exhibited different interaction behaviors across 2 markets, and syncing a single global change required 2x the time. This directly prompted the Tokenization decision."}
+        },
+        {
+          "title": "Built Company-Level Design System from Scratch",
+          "problem": "The company's multiple product lines (template store, ad platform, merchant dashboard) each maintained independent UIs; visual inconsistency caused high cognitive load for merchants switching between products. Each product line reinvented the wheel during cross-team collaboration — the same component had 3–4 different implementation versions across products.",
+          "decision": "Built a company-level B2B design system from scratch: defined unified specifications for 60+ components (including business components and base components), established the Foundation-Semantic-Component three-tier Token framework, formulated international adaptation standards, and established DesignOps workflows (design review / component release / version management). Validated with the template store as the initial落地 scenario before推广 to all product lines.",
+          "reason": "Component reuse rate reached 70% — meaning when adding a new business scenario, 70% of components could be directly reused from the system. Cross-team collaboration efficiency improved by 20–25%; design-dev consistency improved by 30%. With the design system handling routine component needs, designers could focus on higher-value work such as AI product design and experience optimization.",
+          "alternative": {"text": "Also considered gradual unification (renovating product line by product line). However, after assessment — the company had only 3 main product lines at the time; the cost of 'one-time refactoring' was lower than 'maintaining two sets of designs during the transition period for each product line.' Actual execution proved this judgment: 3 months to complete the core component library, 6 months to cover all product lines."}
+        }
+      ],
+      "outcome": {
+        "quantitative": [
+          {"label": "First-Purchase Conversion Rate", "note": ""},
+          {"label": "International Design Iteration Cycle", "note": ""},
+          {"label": "Component Reuse Rate", "note": ""}
+        ],
+        "qualitative": [
+          "Established cross-cultural design validation system (North America / Southeast Asia markets)",
+          "Built company-level B2B design system from scratch",
+          "Established multi-language / multi-market Design Token framework"
+        ],
+        "baselineNote": "Baseline data and measurement methods pending. All delta values sourced from resume; attribution confidence is weak."
+      },
+      "competencies": [
+        {"dimension": "International Design", "note": "Cross-cultural validation + Token framework + multi-market data closed loop"},
+        {"dimension": "Design System Implementation", "note": "Built design system from scratch + component reuse rate 70%"},
+        {"dimension": "Conversion Optimization", "note": "Conversion rate ↑8% (baseline needed)"},
+        {"dimension": "DesignOps", "note": "International iteration cycle ↓30% (baseline needed)"}
+      ],
+      "disclaimer": "This case does not demonstrate: AI product design depth, complex system abstraction capability, user research process, prototyping.",
+      "reflection": {
+        "methodology": [
+          "Cross-Cultural Design Token Framework: Parameterized cultural differences as Token layers (color semantics, typography density, information hierarchy); new market design iteration cycle shortened by 30%",
+          "Built Company-Level B2B Design System from Scratch: Component reuse rate 70%, cross-team collaboration efficiency ↑20–25%, design-dev consistency ↑30%",
+          "International DesignOps Workflow: Multi-market data feedback driving iteration, establishing the 'Localization Needs → Data Validation → Token Adjustment → Multi-Market Sync' workflow"
+        ],
+        "note": "🚧 Project failures, conflicts, and lessons learned pending. For example: Were there any cultural misjudgments during cross-cultural validation? What resistance was encountered during design system推广?"
+      }
+    }
   }
 }
