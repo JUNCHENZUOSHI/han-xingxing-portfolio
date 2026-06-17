@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════
-   Global — Apple visionOS Typography
+   Global — Apple.com Typography
    Minimal, B&W, generous whitespace, tight hierarchy
    ═══════════════════════════════════════════════════ */
 
@@ -13,9 +13,9 @@ html {
 
 body {
   font-family: var(--font-sans);
-  font-size: var(--text-body);
+  font-size: var(--text-body);          /* 19px */
   font-weight: var(--weight-normal);
-  line-height: var(--leading-body);
+  line-height: var(--leading-body);     /* 1.47059 */
   color: var(--color-text);
   background: var(--color-bg);
   letter-spacing: var(--tracking-body);
@@ -30,6 +30,31 @@ ul, ol { list-style: none; }
   outline-offset: 3px; border-radius: 4px;
 }
 
+/* ── Fade-up on scroll ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.8s ease both;
+}
+
+/* Staggered children */
+.animate-fade-up > *:nth-child(1) { animation-delay: 0.00s; }
+.animate-fade-up > *:nth-child(2) { animation-delay: 0.10s; }
+.animate-fade-up > *:nth-child(3) { animation-delay: 0.20s; }
+.animate-fade-up > *:nth-child(4) { animation-delay: 0.30s; }
+.animate-fade-up > *:nth-child(5) { animation-delay: 0.40s; }
+.animate-fade-up > *:nth-child(6) { animation-delay: 0.50s; }
+.animate-fade-up > *:nth-child(7) { animation-delay: 0.60s; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-fade-up > * { animation: none; }
+}
+
 /* ── Layout ── */
 .container {
   max-width: var(--max-width);
@@ -37,7 +62,6 @@ ul, ol { list-style: none; }
   padding: 0 var(--space-32);
 }
 
-/* Section — 160px padding, alternating backgrounds */
 .section {
   padding-top: var(--section-pad);
   padding-bottom: var(--section-pad);
@@ -48,11 +72,13 @@ ul, ol { list-style: none; }
 }
 
 /* ── Typography ── */
+
+/* Section label: 12px / 500 / caps */
 .section-label {
   display: flex;
   align-items: center;
-  gap: var(--space-10);
-  font-size: var(--text-caption);
+  gap: var(--space-8);
+  font-size: var(--text-caption);       /* 12px */
   font-weight: var(--weight-medium);
   letter-spacing: var(--tracking-caps);
   text-transform: uppercase;
@@ -60,23 +86,24 @@ ul, ol { list-style: none; }
   margin-bottom: var(--space-16);
 }
 
-/* Subtle blue diamond — visual identity marker */
+/* Blue diamond marker — visual identity */
 .section-label::before {
   content: '';
   display: inline-block;
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
   background: var(--color-accent);
-  opacity: 0.25;
+  opacity: 0.27;
   transform: rotate(45deg);
   flex-shrink: 0;
 }
 
+/* Section heading: H2 40px */
 .section-heading {
-  font-size: var(--text-heading);
+  font-size: var(--text-h2);
   font-weight: var(--weight-bold);
-  line-height: var(--leading-heading);
-  letter-spacing: var(--tracking-heading);
+  line-height: var(--leading-h2);
+  letter-spacing: var(--tracking-h2);
   color: var(--color-text);
   margin-bottom: var(--space-64);
 }
@@ -86,7 +113,7 @@ ul, ol { list-style: none; }
   color: var(--color-accent);
   font-weight: var(--weight-medium);
   transition: color var(--transition-fast);
-  font-size: var(--text-body);
+  font-size: var(--text-button);        /* 17px */
 }
 .text-link:hover { color: var(--color-accent-hover); }
 
@@ -94,16 +121,9 @@ ul, ol { list-style: none; }
 .divider { border: none; margin: 0; }
 .divider--subtle { height: 1px; background: var(--color-border); }
 
-/* Topology divider: thin line + blue dot */
 .divider--topology {
   height: 1px;
-  background: linear-gradient(
-    to right,
-    transparent 0%,
-    var(--color-border) 20%,
-    var(--color-border) 80%,
-    transparent 100%
-  );
+  background: linear-gradient(to right, transparent 0%, var(--color-border) 20%, var(--color-border) 80%, transparent 100%);
   margin: var(--space-16) 0;
   position: relative;
 }
@@ -118,47 +138,45 @@ ul, ol { list-style: none; }
   border-radius: 50%;
 }
 
-/* ── Buttons — visionOS Scale ── */
+/* ── Buttons — 17px ── */
 .btn-primary {
   display: inline-flex; align-items: center; justify-content: center;
   gap: var(--space-8);
-  font-size: 1rem; font-weight: var(--weight-medium);
+  font-size: var(--text-button); font-weight: var(--weight-medium);
   color: #FFFFFF;
   background: var(--color-accent);
-  padding: 16px 36px; border: none;
+  padding: 14px 32px; border: none;
   border-radius: var(--radius-full); cursor: pointer;
-  min-height: 52px; letter-spacing: var(--tracking-body);
-  transition: background var(--transition-fast);
+  min-height: 48px; letter-spacing: var(--tracking-body);
+  transition: background var(--transition-fast), transform var(--transition-fast);
 }
 .btn-primary:hover { background: var(--color-accent-hover); }
 
 .btn-secondary {
   display: inline-flex; align-items: center; justify-content: center;
   gap: var(--space-8);
-  font-size: 1rem; font-weight: var(--weight-medium);
+  font-size: var(--text-button); font-weight: var(--weight-medium);
   color: var(--color-accent);
   background: transparent;
-  padding: 16px 36px;
+  padding: 14px 32px;
   border: 1.5px solid var(--color-border-strong);
   border-radius: var(--radius-full); cursor: pointer;
-  min-height: 52px; letter-spacing: var(--tracking-body);
+  min-height: 48px; letter-spacing: var(--tracking-body);
   transition: border-color var(--transition-fast), color var(--transition-fast);
 }
-.btn-secondary:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-}
+.btn-secondary:hover { border-color: var(--color-accent); color: var(--color-accent); }
 
-/* ── Tag ── */
+/* ── Tag — 12px ── */
 .tag {
   display: inline-flex; align-items: center;
-  font-size: var(--text-caption); font-weight: var(--weight-medium);
+  font-size: var(--text-caption);       /* 12px */
+  font-weight: var(--weight-medium);
   color: var(--color-text-secondary);
   background: none;
-  padding: 3px 0;
+  padding: 2px 0;
 }
 
-/* ── Badge ── */
+/* ── Badge — 12px ── */
 .badge--nda {
   display: inline-flex; align-items: center;
   font-size: var(--text-caption);
@@ -166,28 +184,28 @@ ul, ol { list-style: none; }
   color: var(--color-text-secondary);
   background: rgba(0,0,0,0.04);
   border-radius: var(--radius-full);
-  padding: 5px 16px;
-  letter-spacing: var(--tracking-caps);
+  padding: 4px 14px;
+  letter-spacing: var(--tracking-caption);
 }
 
-/* ── Experience (shared) ── */
+/* ── Experience (shared) — 14px meta / 19px body ── */
 .experience-list { max-width: var(--max-width-text); }
 .experience-item {
   display: grid; grid-template-columns: 160px 1fr;
   gap: var(--space-32); padding: var(--space-32) 0;
 }
 .experience-item__meta { display: flex; flex-direction: column; gap: var(--space-4); }
-.experience-item__period { font-size: var(--text-caption); font-weight: var(--weight-medium); color: var(--color-text-secondary); }
-.experience-item__location { font-size: var(--text-caption); color: var(--color-text-tertiary); }
+.experience-item__period { font-size: var(--text-small); font-weight: var(--weight-medium); color: var(--color-text-secondary); }
+.experience-item__location { font-size: var(--text-small); color: var(--color-text-tertiary); }
 .experience-item__role { font-size: var(--text-body); font-weight: var(--weight-medium); color: var(--color-text); margin: 0 0 var(--space-4); }
-.experience-item__company { font-size: var(--text-caption); color: var(--color-text-secondary); margin: 0 0 var(--space-12); }
+.experience-item__company { font-size: var(--text-small); color: var(--color-text-secondary); margin: 0 0 var(--space-8); }
 .experience-item__desc { font-size: var(--text-body); line-height: var(--leading-body); color: var(--color-text-secondary); }
-.experience-status { margin-top: var(--space-24); font-size: var(--text-caption); color: var(--color-text-tertiary); }
+.experience-status { margin-top: var(--space-24); font-size: var(--text-small); color: var(--color-text-tertiary); }
 
 /* ── Content State Notes ── */
 .content-state { margin-bottom: var(--space-32); }
 .content-state__note {
-  font-size: var(--text-caption); line-height: var(--leading-body);
+  font-size: var(--text-small); line-height: var(--leading-body);
   color: var(--color-text-tertiary); font-style: italic;
   padding: var(--space-16) var(--space-24);
   background: rgba(0,0,0,0.025);
@@ -195,7 +213,7 @@ ul, ol { list-style: none; }
   border-radius: var(--radius-md);
 }
 
-/* ── Section Accent Line (visual identity) ── */
+/* ── Section Accent Line ── */
 .section-accent {
   width: 40px; height: 1px;
   background: var(--color-accent);
@@ -203,7 +221,7 @@ ul, ol { list-style: none; }
   margin-bottom: var(--space-40);
 }
 
-/* ── Brand Dot Cluster (3 dots in triangle, for footer/CTA) ── */
+/* ── Brand Dot Cluster ── */
 .brand-dots {
   display: flex; gap: 5px;
   opacity: 0.2;
@@ -221,12 +239,12 @@ ul, ol { list-style: none; }
 /* ── Text Container ── */
 .text-container { max-width: var(--max-width-text); }
 
-/* ── Case shared typography ── */
+/* ── Case shared typography (Apple.com scale) ── */
 .case-title {
-  font-size: var(--text-case-title);
+  font-size: var(--text-h1);
   font-weight: var(--weight-bold);
-  line-height: 1.05;
-  letter-spacing: -0.04em;
+  line-height: var(--leading-h1);
+  letter-spacing: var(--tracking-h1);
   color: var(--color-text);
   margin-bottom: var(--space-16);
 }
@@ -251,9 +269,9 @@ ul, ol { list-style: none; }
 }
 
 .case-h3 {
-  font-size: var(--text-title);
-  font-weight: var(--weight-bold);
-  letter-spacing: var(--tracking-title);
+  font-size: var(--text-h3);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-h3);
   color: var(--color-text);
   margin-bottom: var(--space-12);
   margin-top: var(--space-48);
@@ -268,7 +286,7 @@ ul, ol { list-style: none; }
 }
 
 .case-note {
-  font-size: var(--text-caption);
+  font-size: var(--text-small);
   color: var(--color-text-tertiary);
   font-style: italic;
   line-height: var(--leading-body);
@@ -300,6 +318,6 @@ ul, ol { list-style: none; }
 
 @media (max-width: 767px) {
   .experience-item { grid-template-columns: 1fr; gap: var(--space-8); }
-  .section-heading { font-size: clamp(2rem, 8vw, 2.75rem); }
+  .section-heading { font-size: clamp(1.75rem, 7vw, 2rem); }
   .container { padding: 0 var(--space-24); }
 }

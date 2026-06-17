@@ -1,4 +1,4 @@
-/* Case Card — Apple visionOS */
+/* Case Card — Apple.com */
 .case-card {
   display: block;
   background: #FFFFFF;
@@ -6,12 +6,12 @@
   border-radius: var(--radius-lg);
   text-decoration: none;
   overflow: hidden;
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, scale 0.35s ease;
 }
 
 .case-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-card);
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: var(--shadow-hover);
 }
 
 .case-card::before { display: none; }
@@ -39,32 +39,33 @@
   aspect-ratio: 16 / 8;
 }
 
-/* ── Body ── */
+/* ── Body — Apple.com card rhythm ── */
 .case-card__body {
-  padding: var(--space-28) var(--space-28) var(--space-36);
+  padding: 32px 32px 40px;
 }
 
+/* Image → Meta: 16px */
 .case-card__tags {
-  display: flex; gap: var(--space-10); flex-wrap: wrap;
-  margin-bottom: var(--space-20);
+  display: flex; gap: var(--space-8); flex-wrap: wrap;
+  margin-bottom: 16px;
 }
 
-/* Card title: 32px / 700 / -0.02em */
+/* Meta → Title: 8px */
 .case-card__title {
-  font-size: var(--text-title);
+  font-size: var(--text-h3);                       /* 28px */
   font-weight: var(--weight-bold);
-  line-height: var(--leading-title);
-  letter-spacing: var(--tracking-title);
+  line-height: var(--leading-h3);
+  letter-spacing: var(--tracking-h3);
   color: var(--color-text);
-  margin: 0 0 var(--space-12);
+  margin: 0 0 8px;                                 /* → gap = 8px */
 }
 
-/* Body: 21px / 1.7 */
+/* Title → Desc: 20px */
 .case-card__summary {
-  font-size: var(--text-body);
+  font-size: var(--text-body);                     /* 19px */
   line-height: var(--leading-body);
   color: var(--color-text-secondary);
-  margin: 0 0 var(--space-24);
+  margin: 0 0 20px;                                /* → gap = 20px */
   display: -webkit-box;
   -webkit-line-clamp: 2; -webkit-box-orient: vertical;
   overflow: hidden;
@@ -73,18 +74,19 @@
 
 .case-card__summary--expanded { -webkit-line-clamp: 3; }
 
+/* Desc → Metrics: 24px */
 .case-card__metrics {
   display: flex; gap: var(--space-20); flex-wrap: wrap;
-  margin-bottom: var(--space-20);
+  margin-bottom: 24px;                             /* → gap = 24px */
 }
 
+/* Metrics → CTA: 20px */
 .case-card__cta {
-  font-size: var(--text-body);
+  font-size: var(--text-button);                   /* 17px */
   font-weight: var(--weight-medium);
   color: var(--color-accent);
 }
 
 .case-card__cta:hover { color: var(--color-accent-hover); }
 
-/* ── Capability pills — removed, keeping for backward compat ── */
 .capability-pills { display: none; }

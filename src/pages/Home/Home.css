@@ -1,9 +1,9 @@
-/* Home — Apple visionOS page rhythm */
+/* Home — Apple.com page rhythm */
 
 /* ── Transition Guide ── */
 .transition-guide {
   text-align: center;
-  font-size: var(--text-caption);
+  font-size: var(--text-caption);                   /* 12px */
   color: var(--color-text-tertiary);
 }
 .transition-guide__word {
@@ -15,35 +15,34 @@
   color: var(--color-border);
 }
 
-/* ── Case Grid ── */
+/* ── Case Grid — 2 cols, min 360px ── */
 .case-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-32);
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-40);
 }
 
-/* ── What I Do (horizontal capability list) ── */
+/* ── What I Do — vertical layout ── */
 .capability-list {
-  display: flex; flex-direction: column; gap: var(--space-48);
+  display: flex; flex-direction: column; gap: var(--space-64);
   max-width: var(--max-width-text);
 }
 
 .capability-item {
-  display: grid; grid-template-columns: 220px 1fr;
-  gap: var(--space-40);
-  align-items: baseline;
+  display: flex; flex-direction: column;
+  gap: var(--space-12);
 }
 
 .capability-item__title {
-  font-size: var(--text-title);
+  font-size: var(--text-h3);                        /* 28px */
   font-weight: var(--weight-bold);
-  line-height: var(--leading-title);
-  letter-spacing: var(--tracking-title);
+  line-height: var(--leading-h3);
+  letter-spacing: var(--tracking-h3);
   color: var(--color-text);
 }
 
 .capability-item__desc {
-  font-size: var(--text-body);
+  font-size: var(--text-body);                      /* 19px */
   line-height: var(--leading-body);
   color: var(--color-text-secondary);
 }
@@ -59,7 +58,7 @@
   padding-top: var(--space-48); border-top: 1px solid var(--color-border);
 }
 .about-preview__col-title {
-  font-size: var(--text-caption); font-weight: var(--weight-medium);
+  font-size: var(--text-small); font-weight: var(--weight-medium);
   color: var(--color-text-secondary); letter-spacing: var(--tracking-caption);
   margin: 0 0 var(--space-24);
 }
@@ -76,13 +75,13 @@
 .contact-cta { text-align: center; }
 .contact-cta__inner { max-width: var(--max-width-text); margin: 0 auto; }
 .contact-cta__heading {
-  font-size: var(--text-heading); font-weight: var(--weight-bold);
-  line-height: var(--leading-heading); letter-spacing: var(--tracking-heading);
+  font-size: var(--text-h2); font-weight: var(--weight-bold);
+  line-height: var(--leading-h2); letter-spacing: var(--tracking-h2);
   margin: 0 0 var(--space-20);
 }
 .contact-cta__subtitle {
-  font-size: var(--text-subtitle); font-weight: var(--weight-normal);
-  line-height: var(--leading-subtitle);
+  font-size: var(--text-body-large); font-weight: var(--weight-normal);
+  line-height: var(--leading-body-large);
   color: var(--color-text-secondary); margin: 0 0 var(--space-48);
 }
 .contact-cta__actions {
@@ -90,16 +89,15 @@
   gap: var(--space-24); flex-wrap: wrap;
 }
 .contact-cta__meta {
-  font-size: var(--text-caption); color: var(--color-text-tertiary);
+  font-size: var(--text-small); color: var(--color-text-tertiary);
   width: 100%; margin-top: var(--space-20);
 }
 
 @media (max-width: 1023px) {
-  .case-grid { grid-template-columns: repeat(2, 1fr); }
+  .case-grid { gap: var(--space-32); }
 }
 @media (max-width: 767px) {
   .case-grid { grid-template-columns: 1fr; }
   .about-preview__columns { grid-template-columns: 1fr; }
   .contact-cta__actions { flex-direction: column; align-items: center; }
-  .capability-item { grid-template-columns: 1fr; gap: var(--space-8); }
 }

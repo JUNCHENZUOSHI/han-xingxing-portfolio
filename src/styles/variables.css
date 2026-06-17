@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════
-   Design Tokens — Apple visionOS Typography
+   Design Tokens — Apple.com Standard
    95% B&W · 5% Blue (#2563EB)
    ═══════════════════════════════════════════════════ */
 
@@ -16,53 +16,70 @@
   --color-accent:      #2563EB;
   --color-accent-hover: #1D4ED8;
 
-  /* ── Typography — Apple visionOS Scale ── */
+  /* ── Typography — Apple.com Scale ── */
 
-  /* Display: Hero name — 80px / 700 / 0.95 */
-  --text-display: clamp(4rem, 7vw, 5rem);           /*  64–80px  */
+  /* Font stack: SF Pro Display → SF Pro Text → PingFang SC */
+  --font-sans: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont,
+               "PingFang SC", "Hiragino Sans GB", "Noto Sans SC",
+               "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "Menlo", "Monaco", "Courier New", monospace;
 
-  /* Section Title — 56px / 700 / 1.05 */
-  --text-heading: clamp(2.75rem, 5vw, 3.5rem);      /*  44–56px  */
+  /* Display: 80px desktop / 72px mobile / 700 */
+  --text-display: clamp(4.5rem, 7.5vw, 5rem);         /*  72–80px  */
 
-  /* Case Title — 56–64px / 700 / tracking -0.04em */
-  --text-case-title: clamp(3rem, 5.5vw, 4rem);      /*  48–64px  */
+  /* H1: 56px / 700 / -0.03em */
+  --text-h1: clamp(2.75rem, 5vw, 3.5rem);             /*  44–56px  */
 
-  /* Subtitle — 32–48px / 400 / 1.2 */
-  --text-subtitle: clamp(1.75rem, 3.5vw, 3rem);     /*  28–48px  */
+  /* H2: 40px / 700 / -0.02em */
+  --text-h2: clamp(2rem, 4vw, 2.5rem);                /*  32–40px  */
 
-  /* Title: Card titles, 32px */
-  --text-title:   2rem;                              /*  32px     */
+  /* H3: 28px / 600 / -0.01em */
+  --text-h3: 1.75rem;                                  /*  28px     */
 
-  /* Body: 21px / 400 / 1.7 (Apple visionOS body) */
-  --text-body:    1.3125rem;                         /*  21px     */
+  /* BodyL: 21px / 400 / 1.5 */
+  --text-body-large: 1.3125rem;                        /*  21px     */
 
-  /* Caption: 14px / 500 */
-  --text-caption: 0.875rem;                          /*  14px     */
+  /* Body: 19px / 400 / 1.47059 */
+  --text-body: 1.1875rem;                              /*  19px     */
 
-  --text-small:   0.8125rem;                         /*  13px     */
-  --text-nav:     0.9375rem;                         /*  15px     */
+  /* Small: 14px / 400 */
+  --text-small: 0.875rem;                              /*  14px     */
 
-  /* Leading — visionOS */
-  --leading-display:    0.95;
-  --leading-heading:    1.05;
-  --leading-subtitle:   1.2;
-  --leading-title:      1.15;
-  --leading-body:       1.7;
+  /* Caption: 12px / 400 */
+  --text-caption: 0.75rem;                             /*  12px     */
+
+  /* Nav link: 14px */
+  --text-nav: 0.875rem;                                /*  14px     */
+
+  /* Button text: 17px */
+  --text-button: 1.0625rem;                            /*  17px     */
+
+  /* Leading */
+  --leading-display:    1.0;
+  --leading-h1:         1.1;
+  --leading-h2:         1.15;
+  --leading-h3:         1.25;
+  --leading-body-large: 1.5;
+  --leading-body:       1.47059;
+  --leading-small:      1.4;
+  --leading-caption:    1.33333;
 
   /* Tracking */
   --tracking-display:  -0.04em;
-  --tracking-heading:  -0.03em;
-  --tracking-title:    -0.02em;
+  --tracking-h1:       -0.03em;
+  --tracking-h2:       -0.02em;
+  --tracking-h3:       -0.01em;
   --tracking-body:     -0.01em;
-  --tracking-caption:   0.04em;
+  --tracking-caption:   0em;
   --tracking-caps:      0.06em;
 
-  /* Weight — only 3 */
+  /* Weight */
   --weight-normal:   400;
   --weight-medium:   500;
+  --weight-semibold: 600;
   --weight-bold:     700;
 
-  /* ── Spacing — visionOS Generous Scale ── */
+  /* ── Spacing — Apple.com Scale ── */
   --space-4:   0.25rem;
   --space-8:   0.5rem;
   --space-12:  0.75rem;
@@ -77,28 +94,27 @@
   --space-80:  5rem;
   --space-96:  6rem;
   --space-120: 7.5rem;
-  --space-140: 8.75rem;
-  --space-160: 10rem;                               /* 160px */
-  --space-200: 12.5rem;                             /* 200px */
+  --space-160: 10rem;
 
   /* Section padding: 160px desktop / 96px mobile */
   --section-pad: var(--space-160);
   --section-pad-mobile: var(--space-96);
 
-  /* ── Layout — visionOS Wider ── */
-  --max-width:      1120px;
-  --max-width-text: 720px;
-  --nav-height:     56px;
+  /* ── Layout ── */
+  --max-width:      1024px;
+  --max-width-text: 680px;
+  --nav-height:     52px;
 
   /* ── Radius ── */
   --radius-sm:   8px;
-  --radius-md:   16px;
-  --radius-lg:   28px;
+  --radius-md:   12px;
+  --radius-lg:   18px;
   --radius-full: 980px;
 
   /* ── Shadow ── */
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-sm:   0 1px 3px rgba(0,0,0,0.04);
   --shadow-card: 0 20px 60px rgba(0,0,0,0.08);
+  --shadow-hover: 0 24px 60px rgba(0,0,0,0.08);
 
   /* ── Transition ── */
   --transition-fast: 200ms ease;
@@ -110,7 +126,6 @@
   --z-overlay:  200;
 }
 
-/* ── Mobile overrides ── */
 @media (max-width: 767px) {
   :root {
     --section-pad: var(--section-pad-mobile);

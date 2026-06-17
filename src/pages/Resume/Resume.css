@@ -42,9 +42,9 @@
 
 /* ── Intro ── */
 .resume-intro {
-  font-size: var(--text-subtitle);
+  font-size: var(--text-body-large);              /* 21px */
   font-weight: var(--weight-medium);
-  line-height: var(--leading-subtitle);
+  line-height: var(--leading-body-large);
   color: var(--color-text);
   max-width: var(--max-width-text);
   margin-bottom: var(--space-80);
@@ -58,10 +58,10 @@
   max-width: var(--max-width-text);
 }
 .resume-strength__title {
-  font-size: var(--text-title);
+  font-size: var(--text-h3);                      /* 28px */
   font-weight: var(--weight-bold);
-  line-height: var(--leading-title);
-  letter-spacing: var(--tracking-title);
+  line-height: var(--leading-h3);
+  letter-spacing: var(--tracking-h3);
   color: var(--color-text);
   margin-bottom: var(--space-12);
 }
@@ -83,10 +83,10 @@
   margin-bottom: var(--space-32);
 }
 .resume-exp__company {
-  font-size: var(--text-title);
+  font-size: var(--text-h3);                      /* 28px */
   font-weight: var(--weight-bold);
-  line-height: var(--leading-title);
-  letter-spacing: var(--tracking-title);
+  line-height: var(--leading-h3);
+  letter-spacing: var(--tracking-h3);
   color: var(--color-text);
   margin-bottom: var(--space-8);
 }
@@ -197,9 +197,9 @@
   padding-bottom: var(--space-120);
 }
 .resume-download__text {
-  font-size: var(--text-subtitle);
+  font-size: var(--text-body-large);              /* 21px */
   font-weight: var(--weight-medium);
-  line-height: var(--leading-subtitle);
+  line-height: var(--leading-body-large);
   color: var(--color-text);
   margin-bottom: var(--space-40);
 }

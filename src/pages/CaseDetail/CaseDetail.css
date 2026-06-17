@@ -50,12 +50,12 @@
   margin-bottom: var(--space-40);
 }
 
-/* Case Title: 56–64px / 700 / -0.04em */
+/* Case Title: 56px H1 */
 .cd-hero__title {
-  font-size: var(--text-case-title);
+  font-size: var(--text-h1);
   font-weight: var(--weight-bold);
-  line-height: 1.05;
-  letter-spacing: -0.04em;
+  line-height: var(--leading-h1);
+  letter-spacing: var(--tracking-h1);
   color: var(--color-text);
   max-width: 960px;
   margin-bottom: var(--space-32);
@@ -135,14 +135,14 @@
   z-index: 0;
 }
 
-/* Section heading: 56px / 700 / 1.05 */
+/* Section heading: H2 40px */
 .cd-section-header__title {
   position: relative;
   z-index: 1;
-  font-size: var(--text-heading);
+  font-size: var(--text-h2);
   font-weight: var(--weight-bold);
-  line-height: var(--leading-heading);
-  letter-spacing: var(--tracking-heading);
+  line-height: var(--leading-h2);
+  letter-spacing: var(--tracking-h2);
   color: var(--color-text);
 }
 
@@ -183,11 +183,11 @@
    Sub-headings & Body Text — visionOS
    ═══════════════════════════════════════ */
 
-/* Subheading: 32px / 700 / -0.02em */
+/* Subheading: H3 28px */
 .cd-subheading {
-  font-size: var(--text-title);
+  font-size: var(--text-h3);
   font-weight: var(--weight-bold);
-  letter-spacing: var(--tracking-title);
+  letter-spacing: var(--tracking-h3);
   color: var(--color-text);
   margin-bottom: var(--space-20);
   margin-top: var(--space-56);
@@ -394,10 +394,10 @@
 }
 
 .cd-phase-card__title {
-  font-size: var(--text-title);
+  font-size: var(--text-h3);
   font-weight: var(--weight-bold);
   color: var(--color-text);
-  letter-spacing: var(--tracking-title);
+  letter-spacing: var(--tracking-h3);
   margin-bottom: var(--space-20);
 }
 
@@ -448,10 +448,10 @@
 }
 
 .cd-decision__title {
-  font-size: var(--text-title);
+  font-size: var(--text-h3);
   font-weight: var(--weight-bold);
-  line-height: var(--leading-title);
-  letter-spacing: var(--tracking-title);
+  line-height: var(--leading-h3);
+  letter-spacing: var(--tracking-h3);
   color: var(--color-text);
   margin: 0 0 var(--space-40) 0;
 }
@@ -612,7 +612,7 @@
 }
 
 .cd-competency-card__note {
-  font-size: var(--text-body);
+  font-size: var(--text-small);
   color: var(--color-text-secondary);
   line-height: var(--leading-body);
   letter-spacing: var(--tracking-body);
@@ -632,7 +632,7 @@
 }
 
 .cd-disclaimer p {
-  font-size: var(--text-body);
+  font-size: var(--text-small);
   color: var(--color-text-tertiary);
   font-style: italic;
   line-height: var(--leading-body);
@@ -673,7 +673,7 @@
 }
 
 .cd-nav__link {
-  font-size: var(--text-body);
+  font-size: var(--text-button);
   font-weight: var(--weight-medium);
   color: var(--color-accent);
   transition: color var(--transition-fast);

@@ -1,4 +1,4 @@
-/* Hero — Apple visionOS, 90vh, minimal + topology background */
+/* Hero — Apple.com, 90vh */
 .hero {
   min-height: 90vh;
   display: flex; align-items: center; justify-content: center;
@@ -8,7 +8,6 @@
   overflow: hidden;
 }
 
-/* Abstract topology background */
 .hero__bg {
   position: absolute;
   inset: 0;
@@ -20,38 +19,39 @@
 }
 
 .hero__content {
-  max-width: 880px;
+  max-width: 800px;
   position: relative;
   z-index: 1;
 }
 
+/* Eyebrow: 12px / 0.12em / caps */
 .hero__label {
   display: block;
-  font-size: var(--text-caption);
+  font-size: var(--text-caption);                 /* 12px */
   font-weight: var(--weight-medium);
-  letter-spacing: var(--tracking-caps);
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-text-secondary);
   margin-bottom: var(--space-24);
 }
 
-/* Display: 80px / 700 / 0.95 */
+/* H1: 72–80px / 700 / -0.04em */
 .hero__name {
-  font-size: var(--text-display);
+  font-size: var(--text-display);                 /* 72–80px */
   font-weight: var(--weight-bold);
-  line-height: var(--leading-display);
-  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-display);            /* 1.0 */
+  letter-spacing: var(--tracking-display);        /* -0.04em */
   color: var(--color-text);
   margin: 0 0 var(--space-32);
 }
 
-/* Subtitle: 32–48px / 400 / 1.2 */
+/* Subtitle: 32px / 400 / max-width 720px */
 .hero__statement {
-  font-size: var(--text-subtitle);
+  font-size: 2rem;                                /* 32px */
   font-weight: var(--weight-normal);
-  line-height: var(--leading-subtitle);
+  line-height: var(--leading-body-large);
   color: var(--color-text-secondary);
-  max-width: 780px;
+  max-width: 720px;
   margin: 0 auto var(--space-56);
 }
 
