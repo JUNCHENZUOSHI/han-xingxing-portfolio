@@ -23,6 +23,12 @@ function ConfidenceMarker({ state, note, children }) {
   );
 }
 
+function translatePhaseTitle(t, heading) {
+  const key = `case.phaseTitles.${heading}`;
+  const val = t(key);
+  return val === key ? heading : val;
+}
+
 export default function CaseDetail() {
   const { t } = useI18n();
   const { slug } = useParams();
@@ -86,7 +92,7 @@ export default function CaseDetail() {
   }));
 
   const phases = caseData.designApproach.phases.map((p, i) => ({
-    title: ci(`designApproach.phases.${i}.title`, p.title),
+    title: translatePhaseTitle(t, ci(`designApproach.phases.${i}.title`, p.title)),
     summary: ci(`designApproach.phases.${i}.summary`, p.summary),
     confidence: p.confidence,
   }));
@@ -181,16 +187,16 @@ export default function CaseDetail() {
           </div>
 
           <ConfidenceMarker state={caseData.background.state} note={caseData.background.note}>
-            <h3 className="cd-subheading">Why This Project</h3>
+            <h3 className="cd-subheading">{t('case.whyThisProject')}</h3>
             <p className="cd-text">{displayBackgroundWhy}</p>
 
-            <h3 className="cd-subheading">Target Users</h3>
+            <h3 className="cd-subheading">{t('case.targetUsers')}</h3>
             <p className="cd-text">{displayBackgroundTargetUsers}</p>
 
-            <h3 className="cd-subheading">Business Goals</h3>
+            <h3 className="cd-subheading">{t('case.businessGoals')}</h3>
             <p className="cd-text">{displayBackgroundBusinessGoals}</p>
 
-            <h3 className="cd-subheading">Constraints</h3>
+            <h3 className="cd-subheading">{t('case.constraints')}</h3>
             <ul className="cd-list">
               {displayBackgroundConstraints.map((c, i) => (
                 <li key={i}>{c}</li>
@@ -211,13 +217,13 @@ export default function CaseDetail() {
           </div>
 
           <ConfidenceMarker state={caseData.challenge.state}>
-            <h3 className="cd-subheading">User Problem</h3>
+            <h3 className="cd-subheading">{t('case.userProblem')}</h3>
             <p className="cd-text">{displayChallengeUserProblem}</p>
 
-            <h3 className="cd-subheading">Business Problem</h3>
+            <h3 className="cd-subheading">{t('case.businessProblem')}</h3>
             <p className="cd-text">{displayChallengeBusinessProblem}</p>
 
-            <h3 className="cd-subheading">Design Challenge</h3>
+            <h3 className="cd-subheading">{t('case.designChallenge')}</h3>
             <p className="cd-text">{displayChallengeDesignChallenge}</p>
           </ConfidenceMarker>
         </div>
@@ -236,24 +242,24 @@ export default function CaseDetail() {
           {/* Meta Grid — Glass Bar */}
           <div className="cd-meta-grid">
             <div className="cd-meta-grid__item">
-              <span className="cd-meta-grid__label">Role</span>
+              <span className="cd-meta-grid__label">{t('case.roleLabel')}</span>
               <span className="cd-meta-grid__value">{caseData.role}</span>
             </div>
             <div className="cd-meta-grid__item">
-              <span className="cd-meta-grid__label">Timeline</span>
+              <span className="cd-meta-grid__label">{t('case.timeline')}</span>
               <span className="cd-meta-grid__value">{caseData.timeline}</span>
             </div>
             <div className="cd-meta-grid__item">
-              <span className="cd-meta-grid__label">Platform</span>
+              <span className="cd-meta-grid__label">{t('case.platform')}</span>
               <span className="cd-meta-grid__value">{caseData.platform}</span>
             </div>
             <div className="cd-meta-grid__item">
-              <span className="cd-meta-grid__label">Team</span>
+              <span className="cd-meta-grid__label">{t('case.team')}</span>
               <span className="cd-meta-grid__value">{caseData.team}</span>
             </div>
           </div>
 
-          <h3 className="cd-subheading">Responsibilities</h3>
+          <h3 className="cd-subheading">{t('case.responsibilities')}</h3>
 
           {/* Responsibilities — Glass Card List */}
           <div className="cd-responsibilities">
@@ -312,7 +318,7 @@ export default function CaseDetail() {
                 >
                   <span className="cd-phase-card__number">{String(i + 1).padStart(2, '0')}</span>
                   <h3 className="cd-phase-card__title">
-                    Phase {i + 1}: {heading}
+                    {t('case.phaseLabel', { n: i + 1 })}: {heading}
                     {!isString && phase.confidence === 'inferred' && (
                       <span className="cd-field-mark" title={t('case.processReconstructed')}> 🔮</span>
                     )}
@@ -349,7 +355,7 @@ export default function CaseDetail() {
           <div className="cd-decisions">
             {keyDecisions.map((d) => (
               <div className="cd-decision" key={d.id}>
-                <span className="cd-decision__number">Decision {String(d.id).padStart(2, '0')}</span>
+                <span className="cd-decision__number">{t('case.decisionLabel', { n: String(d.id).padStart(2, '0') })}</span>
                 <h3 className="cd-decision__title">{d.title}</h3>
 
                 <div className="cd-decision__blocks">
@@ -391,7 +397,7 @@ export default function CaseDetail() {
             <h2 className="cd-section-header__title">{t('case.impact')}</h2>
           </div>
 
-          <h3 className="cd-subheading">Quantitative Results</h3>
+          <h3 className="cd-subheading">{t('case.quantitativeResults')}</h3>
 
           <div className="cd-metrics-grid">
             {outcomeQuant.map((m, i) => (
@@ -405,7 +411,7 @@ export default function CaseDetail() {
 
           <p className="cd-note" style={{ marginTop: 0 }}>{displayBaselineNote}</p>
 
-          <h3 className="cd-subheading">Qualitative Results</h3>
+          <h3 className="cd-subheading">{t('case.qualitativeResults')}</h3>
           <ul className="cd-qual-list">
             {outcomeQual.map((item, i) => (
               <li key={i}>{item}</li>
@@ -421,13 +427,13 @@ export default function CaseDetail() {
         <div className="container">
           <div className="cd-section-header">
             <span className="cd-section-header__number">07</span>
-            <h2 className="cd-section-header__title">Reflection</h2>
+            <h2 className="cd-section-header__title">{t('case.reflection')}</h2>
           </div>
 
           {/* Reusable Methodology */}
           {reflectionMethodology.length > 0 && (
             <>
-              <h3 className="cd-subheading">Reusable Methodology</h3>
+              <h3 className="cd-subheading">{t('case.reusableMethodology')}</h3>
               <ul className="cd-qual-list" style={{ marginBottom: 'var(--space-40)' }}>
                 {reflectionMethodology.map((item, i) => (
                   <li key={i}>{item}</li>
@@ -456,7 +462,7 @@ export default function CaseDetail() {
         <div className="container">
           <div className="cd-section-header">
             <span className="cd-section-header__number">08</span>
-            <h2 className="cd-section-header__title">What This Demonstrates</h2>
+            <h2 className="cd-section-header__title">{t('case.demonstrates')}</h2>
           </div>
 
           {/* Competency Grid */}
