@@ -739,7 +739,7 @@ export const cases = {
     industry: '跨境电商 SaaS',
     team: 'PM × 工程 × AI/ML × 用户研究',
     cardAccent: 'var(--card-accent-sidekick-agent)',
-    coverImage: 'case-sidekick-agent.svg',
+    coverImage: 'case-sidekick-agent.jpg',
 
     /* ── Positioning ── */
     portfolioRole:
