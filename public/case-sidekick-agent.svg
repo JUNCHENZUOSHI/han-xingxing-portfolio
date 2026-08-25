@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" font-family="-apple-system, 'PingFang SC', 'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#9E9EA3"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="1000" fill="#F5F5F7"/>
+
+  <!-- Title -->
+  <text x="80" y="168" font-size="72" font-weight="700" fill="#1D1D1F">Sidekick AI 智能体体验</text>
+  <text x="82" y="242" font-size="32" fill="#6E6E73">围绕商家业务目标，让 AI 参与完整工作流</text>
+
+  <!-- Interaction mainline: 触发 → 理解 → 规划 → 确认 → 执行 → 恢复 → 完成 -->
+  <!-- 7 nodes, width 180, height 116, gap 35, start x=65, y=400 -->
+  <g font-size="44" font-weight="600" text-anchor="middle">
+    <!-- node 0 触发 -->
+    <rect x="65"  y="400" width="180" height="116" rx="18" fill="#FFFFFF" stroke="#E2E2E6" stroke-width="1.5"/>
+    <text x="155" y="472" fill="#1D1D1F">触发</text>
+
+    <!-- arrow -->
+    <line x1="245" y1="458" x2="273" y2="458" stroke="#9E9EA3" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+    <!-- node 1 理解 -->
+    <rect x="280" y="400" width="180" height="116" rx="18" fill="#FFFFFF" stroke="#E2E2E6" stroke-width="1.5"/>
+    <text x="370" y="472" fill="#1D1D1F">理解</text>
+
+    <line x1="460" y1="458" x2="488" y2="458" stroke="#9E9EA3" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+    <!-- node 2 规划 -->
+    <rect x="495" y="400" width="180" height="116" rx="18" fill="#FFFFFF" stroke="#E2E2E6" stroke-width="1.5"/>
+    <text x="585" y="472" fill="#1D1D1F">规划</text>
+
+    <line x1="675" y1="458" x2="703" y2="458" stroke="#9E9EA3" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+    <!-- node 3 确认 (highlighted: human-in-the-loop) -->
+    <rect x="710" y="400" width="180" height="116" rx="18" fill="#EFF4FF" stroke="#2563EB" stroke-width="2.5"/>
+    <text x="800" y="472" fill="#2563EB">确认</text>
+
+    <line x1="890" y1="458" x2="918" y2="458" stroke="#9E9EA3" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+    <!-- node 4 执行 -->
+    <rect x="925" y="400" width="180" height="116" rx="18" fill="#FFFFFF" stroke="#E2E2E6" stroke-width="1.5"/>
+    <text x="1015" y="472" fill="#1D1D1F">执行</text>
+
+    <line x1="1105" y1="458" x2="1133" y2="458" stroke="#9E9EA3" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+    <!-- node 5 恢复 -->
+    <rect x="1140" y="400" width="180" height="116" rx="18" fill="#FFFFFF" stroke="#E2E2E6" stroke-width="1.5"/>
+    <text x="1230" y="472" fill="#1D1D1F">恢复</text>
+
+    <line x1="1320" y1="458" x2="1348" y2="458" stroke="#9E9EA3" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+    <!-- node 6 完成 -->
+    <rect x="1355" y="400" width="180" height="116" rx="18" fill="#FFFFFF" stroke="#E2E2E6" stroke-width="1.5"/>
+    <text x="1445" y="472" fill="#1D1D1F">完成</text>
+  </g>
+
+  <!-- Risk grading legend: R1–R4 -->
+  <g font-size="30" fill="#1D1D1F">
+    <text x="80" y="760" font-size="30" font-weight="700">风险分级确认 R1–R4</text>
+
+    <circle cx="84" cy="812" r="13" fill="#2C6E49"/>
+    <text x="112" y="823">R1 查询 · 只读</text>
+
+    <circle cx="404" cy="812" r="13" fill="#4A69BD"/>
+    <text x="432" y="823">R2 一般变更</text>
+
+    <circle cx="724" cy="812" r="13" fill="#E67E22"/>
+    <text x="752" y="823">R3 重要变更</text>
+
+    <circle cx="1044" cy="812" r="13" fill="#D64545"/>
+    <text x="1072" y="823">R4 高风险 · 强确认</text>
+  </g>
+</svg>

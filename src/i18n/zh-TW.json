@@ -1,14 +1,34 @@
 {
-  "common": {"name": "韓星星", "nameEn": "Han Xingxing"},
-  "nav": {"work": "作品", "resume": "履歷", "contact": "郵箱"},
-  "hero": {"viewCases": "查看案例", "downloadResume": "下載履歷", "contact": "聯絡我", "scrollHint": "↓ 向下滑動瀏覽案例"},
+  "common": {
+    "name": "韓星星",
+    "nameEn": "Han Xingxing"
+  },
+  "nav": {
+    "work": "作品",
+    "resume": "履歷",
+    "contact": "郵箱"
+  },
+  "hero": {
+    "viewCases": "查看案例",
+    "downloadResume": "下載履歷",
+    "contact": "聯絡我",
+    "scrollHint": "↓ 向下滑動瀏覽案例"
+  },
   "home": {
-    "transition": ["深度", "可遷移性", "寬度"],
-    "featuredCases": "精選案例", "allCases": "全部案例",
-    "capabilities": "能力矩陣", "about": "關於我",
+    "transition": [
+      "深度",
+      "可遷移性",
+      "寬度"
+    ],
+    "featuredCases": "精選案例",
+    "allCases": "全部案例",
+    "capabilities": "能力矩陣",
+    "about": "關於我",
     "aboutText": "{years} 年 B 端產品設計經驗，專注 Enterprise SaaS 與 AI 產品體驗設計。具備從業務洞察、產品策略、互動設計到設計系統建設的全鏈路設計能力。",
-    "industries": "行業經驗", "workingStyle": "工作方式",
-    "moreAbout": "了解更多 →", "experience": "工作經歷",
+    "industries": "行業經驗",
+    "workingStyle": "工作方式",
+    "moreAbout": "了解更多 →",
+    "experience": "工作經歷",
     "letsTalk": "交流一下",
     "letsTalkSub": "目前在尋找 Senior Product Designer / AI Product Designer 機會",
     "downloadResumePdf": "下載履歷 (PDF)"
@@ -16,33 +36,50 @@
   "about": {
     "heading": "關於我",
     "intro": "{years} 年 B 端 SaaS 產品設計經驗，目前專注於 AI 產品體驗設計。背景橫跨企業級低代碼平台與跨境電商 SaaS，具備從複雜系統到全球化產品的全鏈路設計能力。",
-    "careerNarrative": "職業脈絡", "capabilities": "核心能力",
-    "whatImNot": "我不是什麼樣的設計師", "coreValue": "我的價值",
-    "education": "教育背景", "downloadResume": "下載履歷 (PDF)"
+    "careerNarrative": "職業脈絡",
+    "capabilities": "核心能力",
+    "whatImNot": "我不是什麼樣的設計師",
+    "coreValue": "我的價值",
+    "education": "教育背景",
+    "downloadResume": "下載履歷 (PDF)"
   },
   "contact": {
     "heading": "聯絡方式",
     "subtitle": "目前在尋找 {roles} 機會。",
-    "email": "郵箱", "phone": "電話", "location": "所在地",
-    "availability": "狀態", "resumeHeading": "履歷",
+    "email": "郵箱",
+    "phone": "電話",
+    "location": "所在地",
+    "availability": "狀態",
+    "resumeHeading": "履歷",
     "resumeText": "詳細工作經歷、量化成果與完整案例背景。",
     "downloadResume": "下載履歷 (PDF)",
-    "viewCases": "查看案例", "aboutMe": "關於我"
+    "viewCases": "查看案例",
+    "aboutMe": "關於我"
   },
   "resume": {
     "strengths": "個人優勢",
     "strengthSummary": "6年資深B端/SaaS產品設計專家，擅長以AI驅動業務增長，主導複雜系統與全球化產品的全鏈路策略與設計體系構建。",
-    "experience": "工作經歷", "achievements": "核心成果與價值量化",
+    "experience": "工作經歷",
+    "achievements": "核心成果與價值量化",
     "responsibilities": "關鍵職責與能力沉澱",
-    "education": "教育經歷", "downloadPdf": "下載履歷 (PDF)",
+    "education": "教育經歷",
+    "downloadPdf": "下載履歷 (PDF)",
     "downloadHint": "需要 PDF 版本？"
   },
-  "footer": {"downloadResume": "下載履歷 (PDF)"},
+  "footer": {
+    "downloadResume": "下載履歷 (PDF)"
+  },
   "case": {
-    "back": "← 返回案例列表", "context": "專案背景",
-    "challenge": "核心挑戰", "approach": "設計策略",
-    "solution": "解決方案", "impact": "成果與影響",
-    "role": "我的角色", "team": "團隊", "timeline": "時間線", "skills": "相關能力",
+    "back": "← 返回案例列表",
+    "context": "專案背景",
+    "challenge": "核心挑戰",
+    "approach": "設計策略",
+    "solution": "解決方案",
+    "impact": "成果與影響",
+    "role": "我的角色",
+    "team": "團隊",
+    "timeline": "時間線",
+    "skills": "相關能力",
     "responsibility": "職責",
     "contributionType": "貢獻類型",
     "details": "具體內容",
@@ -67,44 +104,118 @@
   "caseTitles": {
     "sidekick": "Sidekick AI 驅動廣告素材自動化",
     "lowcode": "企業級低代碼平台智能體驗升級",
-    "template": "Design System & DesignOps 系統建設"
+    "template": "Design System & DesignOps 系統建設",
+    "sidekick-agent": "Sidekick AI 智能體體驗設計"
   },
-  "lang": {"zh": "中", "zh-TW": "繁", "en": "EN"},
+  "lang": {
+    "zh": "中",
+    "zh-TW": "繁",
+    "en": "EN"
+  },
   "profileData": {
     "title": "AI-Native Product Designer",
     "subtitle": "B2B AI Product Designer",
     "tagline": "將 AI 能力、複雜業務系統與商業目標整合為可規模化落地的產品體驗",
-    "specialization": ["Enterprise SaaS", "AI Product Experience", "Growth-Oriented Design", "Design System Thinking"],
-    "targetRoles": ["Senior Product Designer", "AI Product Designer", "Senior UX Designer"],
+    "specialization": [
+      "Enterprise SaaS",
+      "AI Product Experience",
+      "Growth-Oriented Design",
+      "Design System Thinking"
+    ],
+    "targetRoles": [
+      "Senior Product Designer",
+      "AI Product Designer",
+      "Senior UX Designer"
+    ],
     "status": "Available now",
     "education": "南京大學 · 人力資源管理 · 本科 · 2018–2022",
     "yearsOfExperience": "6–7",
     "trustHooks": [
-      {"number": "6年", "label": "B 端企業級經驗"},
-      {"number": "2個", "label": "AI 產品從 0 到 1 交付"},
-      {"number": "60+", "label": "組件設計系統"}
+      {
+        "number": "6年",
+        "label": "B 端企業級經驗"
+      },
+      {
+        "number": "2個",
+        "label": "AI 產品從 0 到 1 交付"
+      },
+      {
+        "number": "60+",
+        "label": "組件設計系統"
+      }
     ],
     "narrative": [
-      {"period": "2019–2023", "label": "複雜系統設計", "story": "在企業級軟體公司，從低代碼平台入手，理解了如何把企業級複雜業務流程抽象為可用的產品體驗"},
-      {"period": "2023–至今", "label": "AI 產品設計", "story": "在跨境電商 SaaS 公司，將生成式 AI 融入跨境電商 SaaS，從 AI 能力抽象到業務結果閉環"},
-      {"period": "現在–未來", "label": "體系推動者", "story": "不止做單個 AI 功能，而是建立 AI 體驗度量體系、語義設計系統、跨團隊協作機制"}
+      {
+        "period": "2019–2023",
+        "label": "複雜系統設計",
+        "story": "在企業級軟體公司，從低代碼平台入手，理解了如何把企業級複雜業務流程抽象為可用的產品體驗"
+      },
+      {
+        "period": "2023–至今",
+        "label": "AI 產品設計",
+        "story": "在跨境電商 SaaS 公司，將生成式 AI 融入跨境電商 SaaS，從 AI 能力抽象到業務結果閉環"
+      },
+      {
+        "period": "現在–未來",
+        "label": "體系推動者",
+        "story": "不止做單個 AI 功能，而是建立 AI 體驗度量體系、語義設計系統、跨團隊協作機制"
+      }
     ],
-    "industries": ["Enterprise SaaS (6–7 年)", "跨境電商 / Shopify 生態 (2–3 年)", "AI 產品 / Agent / Copilot", "低代碼平台 (~4 年)", "複雜配置型企業級產品"],
+    "industries": [
+      "Enterprise SaaS (6–7 年)",
+      "跨境電商 / Shopify 生態 (2–3 年)",
+      "AI 產品 / Agent / Copilot",
+      "低代碼平台 (~4 年)",
+      "複雜配置型企業級產品"
+    ],
     "workingStyleSummary": "產品思考驅動，非視覺表現驅動。策略思考，非單純執行。將複雜 AI 能力轉化為可度量、可增長的產品體驗體系。",
-    "keywords": ["B2B AI Product Designer", "B2B SaaS", "Enterprise Product", "Shopify Ecosystem", "AI Product Design", "Design System", "Data-Driven Design", "Growth Experience", "Human-AI Collaboration", "Intelligent Workflow"],
+    "keywords": [
+      "B2B AI Product Designer",
+      "B2B SaaS",
+      "Enterprise Product",
+      "Shopify Ecosystem",
+      "AI Product Design",
+      "Design System",
+      "Data-Driven Design",
+      "Growth Experience",
+      "Human-AI Collaboration",
+      "Intelligent Workflow"
+    ],
     "experience": [
       {
         "period": "2023 – 至今",
         "role": "互動設計專家",
         "company": "跨境電商 SaaS 平台",
         "location": "Shanghai",
-        "highlights": ["主導 Shopify Sidekick AI 能力融合與體驗升級", "推動 AI 驅動增長體驗建設", "建立體驗與業務指標聯動機制", "搭建設計系統和國際化設計規範", "推動產品從流程工具向智能增長平台轉型"],
+        "highlights": [
+          "主導 Shopify Sidekick AI 能力融合與體驗升級",
+          "推動 AI 驅動增長體驗建設",
+          "建立體驗與業務指標聯動機制",
+          "搭建設計系統和國際化設計規範",
+          "推動產品從流程工具向智能增長平台轉型"
+        ],
         "metrics": [
-          {"label": "創意準備效率", "value": "↑25%", "note": "AI 自動生成貢獻其中約 60% 增幅"},
-          {"label": "單次素材生產週期", "value": "↓4h"},
-          {"label": "客戶首次購買轉化率", "value": "↑8%"},
-          {"label": "組件復用率", "value": "70%"},
-          {"label": "國際化迭代週期", "value": "↓30%"}
+          {
+            "label": "創意準備效率",
+            "value": "↑25%",
+            "note": "AI 自動生成貢獻其中約 60% 增幅"
+          },
+          {
+            "label": "單次素材生產週期",
+            "value": "↓4h"
+          },
+          {
+            "label": "客戶首次購買轉化率",
+            "value": "↑8%"
+          },
+          {
+            "label": "組件復用率",
+            "value": "70%"
+          },
+          {
+            "label": "國際化迭代週期",
+            "value": "↓30%"
+          }
         ]
       },
       {
@@ -112,40 +223,148 @@
         "role": "互動設計師",
         "company": "企業級低代碼平台",
         "location": "Shanghai",
-        "highlights": ["主導 AI 驅動低代碼體驗升級", "建立智能體驗設計體系", "推動語義化組件系統建設", "建立 AI 質量評估框架", "推動 AI 產品能力規模化落地"],
+        "highlights": [
+          "主導 AI 驅動低代碼體驗升級",
+          "建立智能體驗設計體系",
+          "推動語義化組件系統建設",
+          "建立 AI 質量評估框架",
+          "推動 AI 產品能力規模化落地"
+        ],
         "metrics": [
-          {"label": "典型應用構建效率", "value": "↑30–45%"},
-          {"label": "智能模板推薦命中率", "value": "70%+"},
-          {"label": "NPS/CSAT 提升", "value": "↑10–15%"},
-          {"label": "關鍵任務完成率", "value": "↑15%+"},
-          {"label": "用戶錯誤率", "value": "↓20%"},
-          {"label": "AI 生成界面準確率", "value": "↑25–30%"},
-          {"label": "設計–研發一致性", "value": "↑30%"},
-          {"label": "產研協作效率", "value": "↑20–25%"},
-          {"label": "語義設計系統覆蓋組件", "value": "60+"}
+          {
+            "label": "典型應用構建效率",
+            "value": "↑30–45%"
+          },
+          {
+            "label": "智能模板推薦命中率",
+            "value": "70%+"
+          },
+          {
+            "label": "NPS/CSAT 提升",
+            "value": "↑10–15%"
+          },
+          {
+            "label": "關鍵任務完成率",
+            "value": "↑15%+"
+          },
+          {
+            "label": "用戶錯誤率",
+            "value": "↓20%"
+          },
+          {
+            "label": "AI 生成界面準確率",
+            "value": "↑25–30%"
+          },
+          {
+            "label": "設計–研發一致性",
+            "value": "↑30%"
+          },
+          {
+            "label": "產研協作效率",
+            "value": "↑20–25%"
+          },
+          {
+            "label": "語義設計系統覆蓋組件",
+            "value": "60+"
+          }
         ]
       }
     ],
     "homeCapabilities": [
-      {"title": "UX Strategy", "description": "將業務目標拆解為設計策略，建立從用戶體驗到商業結果的量化閉環。", "items": ["產品策略與商業目標對齊", "用戶旅程與資訊架構設計", "數據驅動設計決策", "跨團隊設計推動"]},
-      {"title": "Enterprise SaaS", "description": "專注 B 端複雜業務系統設計，6 年以上企業級產品經驗。", "items": ["複雜業務流程抽象", "企業級產品體驗優化", "多角色權限與配置型產品", "從策略到交付的全鏈路設計"]},
-      {"title": "AI Product Experience", "description": "將生成式 AI 能力轉化為可理解、可度量、可規模化落地的產品體驗。", "items": ["AI 互動模式基線制定", "AI 體驗度量體系設計", "Prompt 驅動產品策略", "AI 錯誤兜底與可解釋性"]},
-      {"title": "Design System", "description": "從 0 到 1 搭建設計系統，建立 AI 可生成/可理解的雙向語義體系。", "items": ["Design Token 體系設計", "語義化組件系統（60+ 組件）", "DesignOps 與協作規範", "國際化多市場適配"]},
-      {"title": "Growth Design", "description": "通過設計驅動轉化率提升與業務增長，建立體驗與業務指標聯動機制。", "items": ["轉化率優化與 A/B 測試", "跨文化市場增長策略", "體驗指標與業務 KPI 關聯", "數據反饋驅動持續迭代"]}
+      {
+        "title": "UX Strategy",
+        "description": "將業務目標拆解為設計策略，建立從用戶體驗到商業結果的量化閉環。",
+        "items": [
+          "產品策略與商業目標對齊",
+          "用戶旅程與資訊架構設計",
+          "數據驅動設計決策",
+          "跨團隊設計推動"
+        ]
+      },
+      {
+        "title": "Enterprise SaaS",
+        "description": "專注 B 端複雜業務系統設計，6 年以上企業級產品經驗。",
+        "items": [
+          "複雜業務流程抽象",
+          "企業級產品體驗優化",
+          "多角色權限與配置型產品",
+          "從策略到交付的全鏈路設計"
+        ]
+      },
+      {
+        "title": "AI Product Experience",
+        "description": "將生成式 AI 能力轉化為可理解、可度量、可規模化落地的產品體驗。",
+        "items": [
+          "AI 互動模式基線制定",
+          "AI 體驗度量體系設計",
+          "Prompt 驅動產品策略",
+          "AI 錯誤兜底與可解釋性"
+        ]
+      },
+      {
+        "title": "Design System",
+        "description": "從 0 到 1 搭建設計系統，建立 AI 可生成/可理解的雙向語義體系。",
+        "items": [
+          "Design Token 體系設計",
+          "語義化組件系統（60+ 組件）",
+          "DesignOps 與協作規範",
+          "國際化多市場適配"
+        ]
+      },
+      {
+        "title": "Growth Design",
+        "description": "通過設計驅動轉化率提升與業務增長，建立體驗與業務指標聯動機制。",
+        "items": [
+          "轉化率優化與 A/B 測試",
+          "跨文化市場增長策略",
+          "體驗指標與業務 KPI 關聯",
+          "數據反饋驅動持續迭代"
+        ]
+      }
     ],
     "skills": [
-      {"name": "複雜系統抽象", "evidence": "60+ 組件語義設計系統"},
-      {"name": "AI 產品設計", "evidence": "效率↑25%，素材週期↓4h"},
-      {"name": "數據驅動設計", "evidence": "四層 AI 體驗評估體系"},
-      {"name": "國際化設計", "evidence": "國際化迭代週期↓30%"},
-      {"name": "DesignOps", "evidence": "從 0 到 1 搭建，組件復用率 70%"},
-      {"name": "利益相關者溝通", "evidence": "跨 PM × FE × AI Lab 推動，協作效率↑20–25%"}
+      {
+        "name": "複雜系統抽象",
+        "evidence": "60+ 組件語義設計系統"
+      },
+      {
+        "name": "AI 產品設計",
+        "evidence": "效率↑25%，素材週期↓4h"
+      },
+      {
+        "name": "數據驅動設計",
+        "evidence": "四層 AI 體驗評估體系"
+      },
+      {
+        "name": "國際化設計",
+        "evidence": "國際化迭代週期↓30%"
+      },
+      {
+        "name": "DesignOps",
+        "evidence": "從 0 到 1 搭建，組件復用率 70%"
+      },
+      {
+        "name": "利益相關者溝通",
+        "evidence": "跨 PM × FE × AI Lab 推動，協作效率↑20–25%"
+      }
     ],
     "notStatements": [
-      {"not": "不僅是 UI 設計師", "value": "產品思考 · 業務理解 · 系統設計"},
-      {"not": "不以視覺表現作為核心競爭力", "value": "AI 體驗設計 · 複雜系統設計"},
-      {"not": "不屬於單純執行型設計師", "value": "策略思考 · 數據驅動決策"},
-      {"not": "不侷限於頁面交付層面", "value": "設計體系建設 · 跨團隊推動"}
+      {
+        "not": "不僅是 UI 設計師",
+        "value": "產品思考 · 業務理解 · 系統設計"
+      },
+      {
+        "not": "不以視覺表現作為核心競爭力",
+        "value": "AI 體驗設計 · 複雜系統設計"
+      },
+      {
+        "not": "不屬於單純執行型設計師",
+        "value": "策略思考 · 數據驅動決策"
+      },
+      {
+        "not": "不侷限於頁面交付層面",
+        "value": "設計體系建設 · 跨團隊推動"
+      }
     ],
     "coreValue": "我的價值在於把複雜 AI 能力轉化為可理解、可度量、可增長的產品體驗體系，而不是產出漂亮的界面。"
   },
@@ -159,10 +378,22 @@
     "ageLabel": "歲",
     "strengthSummary": "6年資深B端/SaaS產品設計專家，擅長以AI驅動業務增長，主導複雜系統與全球化產品的全鏈路策略與設計體系構建。",
     "strengths": [
-      {"title": "業務主導與增長結果導向", "desc": "擁有6年B端/SaaS全鏈路經驗，深度理解業務模型與增長槓桿。尤其在跨境電商與Shopify生態中，成功主導以AI（如Shopify Sidekick）驅動業務增長的策略，能將設計目標與業務KPI（如轉化率、效率、GMV）強關聯，實現從體驗優化到商業增長的閉環驅動。"},
-      {"title": "數據驅動與AI賦能決策", "desc": "精通用戶研究，擅長將ChatGPT/Claude/Gemini及Shopify Sidekick等AI工具深度融入洞察與決策流程。具備高數據敏感度，能主導構建涵蓋AI輸出質量、用戶行為及業務結果的多層度量體系，通過數據驗證提升方案確定性，並建立可持續的AI能力調優閉環。"},
-      {"title": "設計體系治理與資產化建設", "desc": "主導Design System的搭建與跨端落地，所構建的體系全面支持AI生成邏輯與國際化擴展。通過組件抽象、規範沉澱，推動團隊從「人力驅動」轉向「體系驅動」，為全球化業務的快速迭代提供穩定基礎設施。"},
-      {"title": "全鏈路體驗設計與交付落地", "desc": "具備從業務洞察到高保真交付的全鏈路能力。擅長將如Shopify Sidekick等複雜AI能力抽象、轉化為直觀高效的商家工作流，並與產研團隊深度協作，確保智能體驗的高質量落地與業務目標同步。"}
+      {
+        "title": "業務主導與增長結果導向",
+        "desc": "擁有6年B端/SaaS全鏈路經驗，深度理解業務模型與增長槓桿。尤其在跨境電商與Shopify生態中，成功主導以AI（如Shopify Sidekick）驅動業務增長的策略，能將設計目標與業務KPI（如轉化率、效率、GMV）強關聯，實現從體驗優化到商業增長的閉環驅動。"
+      },
+      {
+        "title": "數據驅動與AI賦能決策",
+        "desc": "精通用戶研究，擅長將ChatGPT/Claude/Gemini及Shopify Sidekick等AI工具深度融入洞察與決策流程。具備高數據敏感度，能主導構建涵蓋AI輸出質量、用戶行為及業務結果的多層度量體系，通過數據驗證提升方案確定性，並建立可持續的AI能力調優閉環。"
+      },
+      {
+        "title": "設計體系治理與資產化建設",
+        "desc": "主導Design System的搭建與跨端落地，所構建的體系全面支持AI生成邏輯與國際化擴展。通過組件抽象、規範沉澱，推動團隊從「人力驅動」轉向「體系驅動」，為全球化業務的快速迭代提供穩定基礎設施。"
+      },
+      {
+        "title": "全鏈路體驗設計與交付落地",
+        "desc": "具備從業務洞察到高保真交付的全鏈路能力。擅長將如Shopify Sidekick等複雜AI能力抽象、轉化為直觀高效的商家工作流，並與產研團隊深度協作，確保智能體驗的高質量落地與業務目標同步。"
+      }
     ],
     "experience": [
       {
@@ -171,9 +402,18 @@
         "period": "2023.06 – 至今",
         "summary": "主導面向 Shopify 商家的跨境電商營銷 SaaS 平台全鏈路體驗設計。通過將 Shopify Sidekick 的生成式 AI、策略建議與自動化執行能力系統性融入廣告創意、商品優化與店舖運營等關鍵增長鏈路，主導重構智能工作流、制定業務級 AI 應用策略，並建立體驗–業務的量化與調優閉環。",
         "achievements": [
-          {"title": "AI 驅動效率與成本優化（效率 + ROI + Sidekick 落地）", "desc": "基於 Shopify Sidekick 的生成式能力與智能建議機制，主導廣告素材自動化項目，系統性重構「素材生成 → 投放配置」鏈路：創意準備效率整體提升 25%，其中 AI 自動生成流程貢獻約 60% 的效率增幅；單次素材生產週期平均縮短約 4 小時。"},
-          {"title": "全球化設計促進營收增長（國際化 + GMV 增長）", "desc": "主導高轉化 Shopify 模板站體系，通過跨文化驗證、多市場數據反饋與 Sidekick 文案/素材建議自動化適配：客戶平均首次購買轉化率提升 8%；在北美/東南亞等重點市場帶動初期 GMV 增長。"},
-          {"title": "體驗基建賦能組織協同（DesignOps + 多語種基礎設施）", "desc": "從 0 到 1 搭建公司級 B 端設計系統，並全面支持 AI 生成邏輯：組件復用率達到 70%；國際化版本的設計迭代週期縮短 30%。"}
+          {
+            "title": "AI 驅動效率與成本優化（效率 + ROI + Sidekick 落地）",
+            "desc": "基於 Shopify Sidekick 的生成式能力與智能建議機制，主導廣告素材自動化項目，系統性重構「素材生成 → 投放配置」鏈路：創意準備效率整體提升 25%，其中 AI 自動生成流程貢獻約 60% 的效率增幅；單次素材生產週期平均縮短約 4 小時。"
+          },
+          {
+            "title": "全球化設計促進營收增長（國際化 + GMV 增長）",
+            "desc": "主導高轉化 Shopify 模板站體系，通過跨文化驗證、多市場數據反饋與 Sidekick 文案/素材建議自動化適配：客戶平均首次購買轉化率提升 8%；在北美/東南亞等重點市場帶動初期 GMV 增長。"
+          },
+          {
+            "title": "體驗基建賦能組織協同（DesignOps + 多語種基礎設施）",
+            "desc": "從 0 到 1 搭建公司級 B 端設計系統，並全面支持 AI 生成邏輯：組件復用率達到 70%；國際化版本的設計迭代週期縮短 30%。"
+          }
         ],
         "responsibilities": [
           "圍繞跨境商家在營銷、分析與日常運營中的關鍵痛點，將 Shopify Sidekick 的三類核心 AI 能力（內容生成、策略建議、自動化執行）抽象為可復用的 AI 能力模型。",
@@ -187,24 +427,48 @@
         "period": "2019.10 – 2023.06",
         "summary": "負責公司核心低代碼平台的智能體驗策略、AI 能力規劃與端到端交付。以生成式 AI、語義化模型和數據體系為底座，將高複雜度企業配置、業務編排和操作鏈路抽象為可規模化復用的智能平台能力。",
         "achievements": [
-          {"title": "AI 驅動的構建效率提升（核心業務 KPI）", "desc": "引入生成式 AI 與行為意圖識別，重構「頁面搭建-組件選擇-邏輯配置」全鏈路：典型應用構建效率提升 30–45%；智能模板推薦命中率提升至 70%+；用戶滿意度（NPS/CSAT）提升 10–15%。"},
-          {"title": "從 0 到 1 構建平台級智能體驗體系（Design × AI Scorecard）", "desc": "建立覆蓋關鍵場景的 AI 能力清單、指標體系（Precision、Coverage、Confidence）及可解釋性規則，並與業務 KPI 深度掛鉤：關鍵任務完成率提升 15%+；用戶錯誤率下降 20%。"},
-          {"title": "智能化設計系統（AI 生成 × 組件化架構）", "desc": "升級設計系統為「AI 可生成/AI 可理解」的雙向語義體系，構建覆蓋 60+ 組件的語義設計系統：AI 自動生成界面準確率提升 25–30%；設計–研發一致性提升 30%。"},
-          {"title": "跨團隊推動 AI 戰略落地（PM × FE × AI Lab）", "desc": "主導平台級 AI 體驗策略與互動模式基線制定，構建 AI 安全與反饋機制：整體產研協作效率提升 20–25%。"}
+          {
+            "title": "AI 驅動的構建效率提升（核心業務 KPI）",
+            "desc": "引入生成式 AI 與行為意圖識別，重構「頁面搭建-組件選擇-邏輯配置」全鏈路：典型應用構建效率提升 30–45%；智能模板推薦命中率提升至 70%+；用戶滿意度（NPS/CSAT）提升 10–15%。"
+          },
+          {
+            "title": "從 0 到 1 構建平台級智能體驗體系（Design × AI Scorecard）",
+            "desc": "建立覆蓋關鍵場景的 AI 能力清單、指標體系（Precision、Coverage、Confidence）及可解釋性規則，並與業務 KPI 深度掛鉤：關鍵任務完成率提升 15%+；用戶錯誤率下降 20%。"
+          },
+          {
+            "title": "智能化設計系統（AI 生成 × 組件化架構）",
+            "desc": "升級設計系統為「AI 可生成/AI 可理解」的雙向語義體系，構建覆蓋 60+ 組件的語義設計系統：AI 自動生成界面準確率提升 25–30%；設計–研發一致性提升 30%。"
+          },
+          {
+            "title": "跨團隊推動 AI 戰略落地（PM × FE × AI Lab）",
+            "desc": "主導平台級 AI 體驗策略與互動模式基線制定，構建 AI 安全與反饋機制：整體產研協作效率提升 20–25%。"
+          }
         ]
       }
     ],
-    "education": {"school": "南京大學", "degree": "本科", "major": "人力資源", "period": "2018 – 2022"},
+    "education": {
+      "school": "南京大學",
+      "degree": "本科",
+      "major": "人力資源",
+      "period": "2018 – 2022"
+    },
     "achievementsLabel": "核心成果與價值量化",
     "responsibilitiesLabel": "關鍵職責與能力沉澱"
   },
   "casesData": {
     "sidekick": {
       "title": "Sidekick AI 驅動廣告素材自動化",
-      "tags": ["AI 產品設計", "B端", "增長", "跨境電商"],
+      "tags": [
+        "AI 產品設計",
+        "B端",
+        "增長",
+        "跨境電商"
+      ],
       "summary": "商家廣告投放流程耗時 4 小時以上，且 AI 生成的素材能否驅動訂單仍是未知數。本文將 Sidekick AI 的三類能力（內容生成/策略建議/自動化執行）抽象為可復用的產品模型，同時從 AI 質量和業務結果兩個層面建立度量閉環——效率 ↑25%，生產週期 ↓4h，客戶首次購買轉化率 ↑8%。",
       "narrativeHook": "一個跨境商家的廣告投放流程需要 4 小時手動操作——從選品、生成素材、配置投放到上線。Sidekick AI 能將這個過程大幅縮短。但核心問題不是「AI 能生成多快」，而是「商家憑什麼信任 AI 生成的素材能帶來訂單？」這個案例講述了我如何將 Sidekick 的三類 AI 能力抽象為可復用的產品模型，同時在這套模型中嵌入信任機制——讓商家不僅用 AI，更依賴 AI。",
-      "nda": {"badge": "🔒 已脫敏"},
+      "nda": {
+        "badge": "🔒 已脫敏"
+      },
       "portfolioRole": null,
       "background": {
         "why": "跨境商家的典型廣告投放場景：一個商家需要為同一款產品生成適應北美和東南亞兩個市場的廣告素材，每個市場需要多組創意用於 A/B 測試。從拍攝產品、撰寫文案、設計素材到配置投放參數，一次完整流程平均耗時 4 小時以上。對於日均上架 5-10 款新品的活躍商家，這意味著每天有 20-40 小時被純操作工作消耗——尚未計算投放後的效果監控和策略調整。AI 可以生成素材——但商家反覆修改 AI 輸出、不信任 AI 建議、最終手動推翻重做，AI 的存在並未真正釋放效率。",
@@ -224,20 +488,52 @@
       "myRole": {
         "note": "AI 能力模型、評估體系和自動化流程由我主導設計。PM 提供了業務優先級和商家需求輸入，AI Lab 驗證了 Sidekick 的技術能力邊界並參與了 Prompt 調優。前端團隊負責實現。團隊協作說明將在補充更多過程材料後細化。",
         "responsibilities": [
-          {"task": "AI 能力模型抽象", "contribution": "獨立主導", "detail": "將 Sidekick 三類 AI 能力（內容生成/策略建議/自動化執行）抽象為可復用模型"},
-          {"task": "AI 嵌入策略", "contribution": "獨立主導", "detail": "將 AI 系統性嵌入廣告創建、商品優化、工作流自動化等關鍵路徑"},
-          {"task": "AI 體驗評估體系", "contribution": "獨立主導", "detail": "構建跨層級指標體系（AI 質量層/體驗行為層/業務結果層）"},
-          {"task": "持續調優閉環", "contribution": "獨立主導", "detail": "建立「問題發現→數據診斷→AI 能力微調→增量上線」持續交付機制"},
-          {"task": "廣告素材自動化流程", "contribution": "獨立主導", "detail": "重構「素材生成→投放配置」鏈路"}
+          {
+            "task": "AI 能力模型抽象",
+            "contribution": "獨立主導",
+            "detail": "將 Sidekick 三類 AI 能力（內容生成/策略建議/自動化執行）抽象為可復用模型"
+          },
+          {
+            "task": "AI 嵌入策略",
+            "contribution": "獨立主導",
+            "detail": "將 AI 系統性嵌入廣告創建、商品優化、工作流自動化等關鍵路徑"
+          },
+          {
+            "task": "AI 體驗評估體系",
+            "contribution": "獨立主導",
+            "detail": "構建跨層級指標體系（AI 質量層/體驗行為層/業務結果層）"
+          },
+          {
+            "task": "持續調優閉環",
+            "contribution": "獨立主導",
+            "detail": "建立「問題發現→數據診斷→AI 能力微調→增量上線」持續交付機制"
+          },
+          {
+            "task": "廣告素材自動化流程",
+            "contribution": "獨立主導",
+            "detail": "重構「素材生成→投放配置」鏈路"
+          }
         ]
       },
       "designApproach": {
         "note": "以下過程階段基於已確認的設計決策和量化結果反推。具體方法細節、原始調研數據和中間產出物待補充。",
         "phases": [
-          {"title": "Research & Discovery", "summary": "對跨境商家廣告素材製作全流程進行效率分析，識別「素材生產週期長」和「投放配置重複勞動多」兩個核心瓶頸。通過商家訪談和數據埋點分析，量化創意準備效率現狀和廣告投放 ROI 基線。"},
-          {"title": "Definition & Strategy", "summary": "將 Sidekick AI 的三類能力（內容生成/策略建議/自動化執行）抽象為可復用的產品能力模型。制定 AI 嵌入策略——確定廣告創建、商品優化、工作流自動化等關鍵路徑的 AI 注入點。設計四層 AI 體驗評估體系框架（AI 質量層/體驗行為層/業務結果層/調優閉環）。"},
-          {"title": "Design & Iteration", "summary": "重構「素材生成→投放配置」鏈路，將 AI 能力系統性嵌入關鍵節點。建立「問題發現→數據診斷→AI 能力微調→增量上線」的持續調優閉環機制。跨 PM × FE × AI Lab 迭代優化 AI 互動模式。"},
-          {"title": "Validation & Launch", "summary": "通過創意準備效率（↑25%，AI 貢獻其中約 60%）、單次素材生產週期（↓4h）、客戶首次購買轉化率（↑8%）三個維度追蹤上線效果。四層評估體系持續監控 Sidekick 的真實業務貢獻。"}
+          {
+            "title": "Research & Discovery",
+            "summary": "對跨境商家廣告素材製作全流程進行效率分析，識別「素材生產週期長」和「投放配置重複勞動多」兩個核心瓶頸。通過商家訪談和數據埋點分析，量化創意準備效率現狀和廣告投放 ROI 基線。"
+          },
+          {
+            "title": "Definition & Strategy",
+            "summary": "將 Sidekick AI 的三類能力（內容生成/策略建議/自動化執行）抽象為可復用的產品能力模型。制定 AI 嵌入策略——確定廣告創建、商品優化、工作流自動化等關鍵路徑的 AI 注入點。設計四層 AI 體驗評估體系框架（AI 質量層/體驗行為層/業務結果層/調優閉環）。"
+          },
+          {
+            "title": "Design & Iteration",
+            "summary": "重構「素材生成→投放配置」鏈路，將 AI 能力系統性嵌入關鍵節點。建立「問題發現→數據診斷→AI 能力微調→增量上線」的持續調優閉環機制。跨 PM × FE × AI Lab 迭代優化 AI 互動模式。"
+          },
+          {
+            "title": "Validation & Launch",
+            "summary": "通過創意準備效率（↑25%，AI 貢獻其中約 60%）、單次素材生產週期（↓4h）、客戶首次購買轉化率（↑8%）三個維度追蹤上線效果。四層評估體系持續監控 Sidekick 的真實業務貢獻。"
+          }
         ]
       },
       "keyDecisions": [
@@ -246,20 +542,30 @@
           "problem": "商家手動製作廣告素材平均耗時 4 小時以上。AI 能生成內容，但逐功能點嵌入的方式導致——今天在「廣告創建」頁面加一個「AI 生成文案」按鈕，明天在「商品優化」頁面加一個「AI 推薦關鍵詞」按鈕，下週在「投放配置」加一個「AI 建議出價」。三個月後，產品裡散佈著 7 個 AI 按鈕，但①商家認知中不存在一個統一的「AI 能幫我做什麼」心智模型，②每次新增場景都需要從零設計 AI 互動模式，③維護 7 套獨立 AI 功能的成本指數級上升——AI Lab 開始質疑「我們到底在做一個產品還是 7 個功能？」",
           "decision": "將 Sidekick AI 的三類能力（內容生成/策略建議/自動化執行）抽象為一個統一的能力模型——不是設計 7 個 AI 按鈕，而是定義 3 種能力類型，讓任何業務場景都可以在這 3 種能力中找到適配入口。內容生成解決「產出素材」，策略建議解決「怎麼做更好」，自動化執行解決「幫我把這個過程跑完」。",
           "reason": "能力模型讓所有 AI 功能共享同一套互動模式——商家學會在一處使用 AI 後，可以在任何其他場景復用同一心智模型。新增業務場景只需聲明「此場景需要哪種能力類型」，而非從零設計互動。AI Lab 從維護 7 套獨立功能代碼降為維護 1 套能力調度系統——他們從「你又在加一個 AI 功能」變成了「這個場景需要哪個能力類型？直接調」。這是項目從「功能堆疊」升級為「平台化」的時刻。",
-          "alternative": {"text": "⚠️ 替代方案資訊待確認。曾考慮的其他方案及放棄原因將在原始材料到位後補充。"}
+          "alternative": {
+            "text": "⚠️ 替代方案資訊待確認。曾考慮的其他方案及放棄原因將在原始材料到位後補充。"
+          }
         },
         {
           "title": "建立四層 AI 體驗評估體系",
           "problem": "能力模型建立後，下一個問題立刻浮現：怎麼證明這套模型真正在驅動業務結果，而不只是在產品裡「看起來有 AI」？每次 AI 生成素材後，商家改動了多少？改了之後效果變好還是變差？如果 AI 建議了一個投放策略但商家沒採納——是因為建議不好，還是因為商家不信任？沒有從 AI 質量到業務結果的量化追蹤，AI 團隊（AI Lab）和商業團隊（PM、運營）之間的對話永遠是：「AI 很強」vs「我沒看到訂單增長」。",
           "decision": "建立四層 AI 體驗評估體系：AI 質量層（一致率、幻覺率——監控 AI 自身輸出質量）、體驗行為層（採納率、修改率、修改幅度——監控商家如何與 AI 輸出互動）、業務結果層（轉化率、ROI、效率提升——連接 AI 使用與商業指標）、調優閉環層（異常檢測→根因定位→微調→增量驗證——讓每一層的問題能被追溯到上一層並修復）。",
           "reason": "層級指標體系解決了「吵架」問題。當 AI Lab 說「模型指標很好」，但 PM 說「轉化率沒漲」，四層體系可以讓團隊逐層排查——是模型輸出質量真的不好（AI 質量層），還是輸出質量沒問題但商家不採納（體驗行為層），還是商家採納了但素材本身對目標市場無效（業務結果層）？每一層有獨立指標，每一層的問題有獨立的優化手段，不需要「盲調」。AI Lab 投入模型優化之後，能看到體驗行為層的採納率確實在上升——這是第一次，團隊可以基於數據對話，而不是基於印象爭論。",
-          "alternative": {"text": "⚠️ 替代方案資訊待確認。"}
+          "alternative": {
+            "text": "⚠️ 替代方案資訊待確認。"
+          }
         }
       ],
       "outcome": {
         "quantitative": [
-          {"label": "創意準備效率", "note": "AI 自動生成貢獻其中約 60% 增幅"},
-          {"label": "單次素材生產週期", "note": ""}
+          {
+            "label": "創意準備效率",
+            "note": "AI 自動生成貢獻其中約 60% 增幅"
+          },
+          {
+            "label": "單次素材生產週期",
+            "note": ""
+          }
         ],
         "qualitative": [
           "建立了可復用的 AI 能力模型（內容生成/策略建議/自動化執行）",
@@ -268,10 +574,22 @@
         "baselineNote": "基線（改版前數值）及測量方法待補充。所有變化幅度來自履歷，歸因可信度為 weak。面試中可提供更詳細的數據上下文。"
       },
       "competencies": [
-        {"dimension": "AI 產品設計", "note": "AI 能力模型設計 + 四層評估體系 + 持續調優閉環"},
-        {"dimension": "複雜系統抽象", "note": "三類 AI 能力模型 + 關鍵路徑嵌入策略"},
-        {"dimension": "數據驅動設計", "note": "跨層級指標監控（AI 質量/行為/業務）"},
-        {"dimension": "業務增長導向", "note": "AI → 效率 → ROI 閉環"}
+        {
+          "dimension": "AI 產品設計",
+          "note": "AI 能力模型設計 + 四層評估體系 + 持續調優閉環"
+        },
+        {
+          "dimension": "複雜系統抽象",
+          "note": "三類 AI 能力模型 + 關鍵路徑嵌入策略"
+        },
+        {
+          "dimension": "數據驅動設計",
+          "note": "跨層級指標監控（AI 質量/行為/業務）"
+        },
+        {
+          "dimension": "業務增長導向",
+          "note": "AI → 效率 → ROI 閉環"
+        }
       ],
       "disclaimer": "本案例不能證明：用戶研究過程、視覺設計深度、原型設計能力、移動端設計。",
       "reflection": {
@@ -285,10 +603,17 @@
     },
     "lowcode": {
       "title": "企業級低代碼平台智能體驗升級",
-      "tags": ["AI 產品設計", "設計系統", "B端", "低代碼"],
+      "tags": [
+        "AI 產品設計",
+        "設計系統",
+        "B端",
+        "低代碼"
+      ],
       "summary": "從 0 到 1 建立平台級 AI 體驗度量體系和 60+ 組件語義設計系統。將設計系統升級為 AI 可生成/可理解的雙向語義體系。",
       "narrativeHook": null,
-      "nda": {"badge": "🔒 已脫敏"},
+      "nda": {
+        "badge": "🔒 已脫敏"
+      },
       "portfolioRole": null,
       "background": {
         "why": "傳統低代碼平台「頁面搭建—組件選擇—邏輯配置」全鏈路操作複雜，企業用戶構建效率低，智能模板推薦命中率不高。AI 輸出質量不可控、不可度量。平台缺乏統一的 AI 體驗度量體系和語義設計系統。",
@@ -306,23 +631,67 @@
       "myRole": {
         "note": "AI 體驗策略、Scorecard 指標體系、語義設計系統和錯誤兜底機制由我主導設計。PM 提供了業務需求優先級並協調了跨部門資源。AI Lab 負責模型能力評估並參與 Prompt Schema 規範化。前端團隊負責組件落地和設計系統技術實現。具體分工比例將在補充材料後標註。",
         "responsibilities": [
-          {"task": "AI 體驗策略制定", "contribution": "獨立主導", "detail": "主導平台級 AI 體驗策略與互動模式基線制定"},
-          {"task": "AI Scorecard 指標體系", "contribution": "獨立主導", "detail": "建立 AI 能力清單與跨層級指標體系（Precision/Coverage/Confidence）"},
-          {"task": "語義設計系統", "contribution": "獨立主導", "detail": "將設計系統升級為 AI 可生成/可理解的雙向語義體系，60+ 組件"},
-          {"task": "Prompt Schema 規範", "contribution": "❓ 待確認", "detail": "Prompt Schema 規範化（可能為與 AI Lab 協作）"},
-          {"task": "AI 錯誤兜底機制", "contribution": "獨立主導", "detail": "設計 AI 錯誤兜底與可解釋性規則"},
-          {"task": "跨團隊推動", "contribution": "推動/協調", "detail": "與 PM × FE × AI Lab 協作落地智能化改造"},
-          {"task": "Prompt 模板體系", "contribution": "獨立主導", "detail": "系統沉澱 Prompt 模板體系"},
-          {"task": "商業化策略", "contribution": "❓ 待確認", "detail": "AI 功能分層與價值定價模型（參與程度未確認）"}
+          {
+            "task": "AI 體驗策略制定",
+            "contribution": "獨立主導",
+            "detail": "主導平台級 AI 體驗策略與互動模式基線制定"
+          },
+          {
+            "task": "AI Scorecard 指標體系",
+            "contribution": "獨立主導",
+            "detail": "建立 AI 能力清單與跨層級指標體系（Precision/Coverage/Confidence）"
+          },
+          {
+            "task": "語義設計系統",
+            "contribution": "獨立主導",
+            "detail": "將設計系統升級為 AI 可生成/可理解的雙向語義體系，60+ 組件"
+          },
+          {
+            "task": "Prompt Schema 規範",
+            "contribution": "❓ 待確認",
+            "detail": "Prompt Schema 規範化（可能為與 AI Lab 協作）"
+          },
+          {
+            "task": "AI 錯誤兜底機制",
+            "contribution": "獨立主導",
+            "detail": "設計 AI 錯誤兜底與可解釋性規則"
+          },
+          {
+            "task": "跨團隊推動",
+            "contribution": "推動/協調",
+            "detail": "與 PM × FE × AI Lab 協作落地智能化改造"
+          },
+          {
+            "task": "Prompt 模板體系",
+            "contribution": "獨立主導",
+            "detail": "系統沉澱 Prompt 模板體系"
+          },
+          {
+            "task": "商業化策略",
+            "contribution": "❓ 待確認",
+            "detail": "AI 功能分層與價值定價模型（參與程度未確認）"
+          }
         ]
       },
       "designApproach": {
         "note": "以下過程階段基於已確認的設計決策和量化結果反推。具體方法細節、原始調研數據和中間產出物待補充。",
         "phases": [
-          {"title": "Research & Discovery", "summary": "對平台現有構建流程進行數據分析，識別「組件選擇認知負荷大」和「配置鏈路長」兩個核心效率瓶頸。通過 NPS/CSAT 基線調研確認用戶滿意度現狀（後續提升 10–15% 的對照基準），並收集關鍵任務完成率和用戶錯誤率作為量化參照。"},
-          {"title": "Definition & Strategy", "summary": "制定平台級 AI 體驗策略：確立 AI Scorecard 三維指標體系（Precision/Coverage/Confidence）作為 AI 質量的度量框架；規劃語義設計系統的升級路徑——將現有組件庫從「人可理解」升級為「AI 可生成/可理解」的雙向語義體系；設計 Prompt 模板體系的分類架構和 AI 錯誤兜底機制的規則框架。"},
-          {"title": "Design & Iteration", "summary": "推動 60+ 組件的語義化標註和屬性結構標準化。協同 AI Lab 進行 Prompt Schema 規範化，建立 Prompt 模板庫。設計 AI 輸出置信度閾值規則和對應的兜底互動模式（低於閾值 → 人工確認流程 / 回退確定性方案）。跨 PM × FE × AI Lab 迭代落地。"},
-          {"title": "Validation & Launch", "summary": "通過關鍵任務完成率（↑15%+）、用戶錯誤率（↓20%）、AI 生成界面準確率（↑25–30%）三個維度追蹤上線效果。NPS/CSAT 月度跟蹤確認滿意度提升。設計–研發一致性指標和產研協作效率指標用於衡量設計系統的實際落地效果。"}
+          {
+            "title": "Research & Discovery",
+            "summary": "對平台現有構建流程進行數據分析，識別「組件選擇認知負荷大」和「配置鏈路長」兩個核心效率瓶頸。通過 NPS/CSAT 基線調研確認用戶滿意度現狀（後續提升 10–15% 的對照基準），並收集關鍵任務完成率和用戶錯誤率作為量化參照。"
+          },
+          {
+            "title": "Definition & Strategy",
+            "summary": "制定平台級 AI 體驗策略：確立 AI Scorecard 三維指標體系（Precision/Coverage/Confidence）作為 AI 質量的度量框架；規劃語義設計系統的升級路徑——將現有組件庫從「人可理解」升級為「AI 可生成/可理解」的雙向語義體系；設計 Prompt 模板體系的分類架構和 AI 錯誤兜底機制的規則框架。"
+          },
+          {
+            "title": "Design & Iteration",
+            "summary": "推動 60+ 組件的語義化標註和屬性結構標準化。協同 AI Lab 進行 Prompt Schema 規範化，建立 Prompt 模板庫。設計 AI 輸出置信度閾值規則和對應的兜底互動模式（低於閾值 → 人工確認流程 / 回退確定性方案）。跨 PM × FE × AI Lab 迭代落地。"
+          },
+          {
+            "title": "Validation & Launch",
+            "summary": "通過關鍵任務完成率（↑15%+）、用戶錯誤率（↓20%）、AI 生成界面準確率（↑25–30%）三個維度追蹤上線效果。NPS/CSAT 月度跟蹤確認滿意度提升。設計–研發一致性指標和產研協作效率指標用於衡量設計系統的實際落地效果。"
+          }
         ]
       },
       "keyDecisions": [
@@ -331,34 +700,67 @@
           "problem": "AI 輸出質量不可控，缺乏從 AI 質量到業務結果的量化追蹤手段。僅看 NPS 或業務指標無法定位問題是出在 AI 模型還是互動設計。",
           "decision": "建立 AI Scorecard 跨層級指標體系，引入 Precision/Coverage/Confidence 等 AI 專屬指標，與業務指標形成上下層追蹤關係。",
           "reason": "「實現 AI 體驗效果可度量、優化可追蹤」。層級指標體系讓團隊可以精準定位問題層級，避免盲目優化。",
-          "alternative": {"text": "⚠️ 替代方案資訊待確認。為何不直接用 NPS 或業務指標？"}
+          "alternative": {
+            "text": "⚠️ 替代方案資訊待確認。為何不直接用 NPS 或業務指標？"
+          }
         },
         {
           "title": "將設計系統升級為「AI 可生成 / AI 可理解」雙向語義體系",
           "problem": "AI 自動生成界面準確率低，組件缺乏語義標註導致 AI 無法理解業務上下文。",
           "decision": "通過組件語義化、屬性結構標準化與 Prompt Schema 規範化，將設計系統從「人可理解」升級為「AI 可生成 / AI 可理解」雙向體系。",
           "reason": "AI 自動生成界面準確率 ↑25–30%。語義化組件讓 AI 可以基於業務上下文生成匹配的界面，而非盲目拼接。",
-          "alternative": {"text": "⚠️ 替代方案資訊待確認。為何不做傳統組件庫 + 人工適配？"}
+          "alternative": {
+            "text": "⚠️ 替代方案資訊待確認。為何不做傳統組件庫 + 人工適配？"
+          }
         },
         {
           "title": "構建 AI 錯誤兜底機制",
           "problem": "AI 輸出不確定性與企業級穩定性要求之間存在矛盾。企業用戶不能容忍 AI 生成結果出錯後無任何保護機制。",
           "decision": "構建 AI 錯誤兜底機制與可解釋性規則。當 AI 輸出置信度低於閾值時，自動觸發人工確認流程或回退到確定性方案。",
           "reason": "錯誤兜底機制是 AI 產品在企業級場景落地的必要條件。沒有兜底的 AI 功能在企業用戶中無法建立信任。",
-          "alternative": {"text": "⚠️ 替代方案資訊待確認。為何不依賴模型自身 confidence score？"}
+          "alternative": {
+            "text": "⚠️ 替代方案資訊待確認。為何不依賴模型自身 confidence score？"
+          }
         }
       ],
       "outcome": {
         "quantitative": [
-          {"label": "典型應用構建效率", "note": ""},
-          {"label": "智能模板推薦命中率", "note": ""},
-          {"label": "NPS/CSAT", "note": ""},
-          {"label": "關鍵任務完成率", "note": ""},
-          {"label": "用戶錯誤率", "note": ""},
-          {"label": "AI 生成界面準確率", "note": ""},
-          {"label": "設計–研發一致性", "note": ""},
-          {"label": "產研協作效率", "note": ""},
-          {"label": "語義設計系統覆蓋組件", "note": ""}
+          {
+            "label": "典型應用構建效率",
+            "note": ""
+          },
+          {
+            "label": "智能模板推薦命中率",
+            "note": ""
+          },
+          {
+            "label": "NPS/CSAT",
+            "note": ""
+          },
+          {
+            "label": "關鍵任務完成率",
+            "note": ""
+          },
+          {
+            "label": "用戶錯誤率",
+            "note": ""
+          },
+          {
+            "label": "AI 生成界面準確率",
+            "note": ""
+          },
+          {
+            "label": "設計–研發一致性",
+            "note": ""
+          },
+          {
+            "label": "產研協作效率",
+            "note": ""
+          },
+          {
+            "label": "語義設計系統覆蓋組件",
+            "note": ""
+          }
         ],
         "qualitative": [
           "建立了 AI 體驗度量體系（AI Scorecard）的方法論框架",
@@ -368,12 +770,30 @@
         "baselineNote": "9 項指標全部缺 baseline（改版前數值）及測量方法。歸因可信度均為 weak。面試中可提供更詳細的數據上下文。"
       },
       "competencies": [
-        {"dimension": "AI 產品設計", "note": "AI Scorecard + Prompt Schema + 錯誤兜底，作品集中最強的 AI 案例"},
-        {"dimension": "複雜系統抽象", "note": "Domain Schema + 60+ 組件語義體系"},
-        {"dimension": "設計體系治理", "note": "從 0 到 1 搭建 + AI 可生成/可理解雙向體系"},
-        {"dimension": "數據驅動設計", "note": "四層指標體系（AI 質量/行為/業務/調優閉環）"},
-        {"dimension": "利益相關者管理", "note": "跨 PM × FE × AI Lab 推動落地"},
-        {"dimension": "方法論沉澱", "note": "Prompt 模板體系 + AI 錯誤兜底規則"}
+        {
+          "dimension": "AI 產品設計",
+          "note": "AI Scorecard + Prompt Schema + 錯誤兜底，作品集中最強的 AI 案例"
+        },
+        {
+          "dimension": "複雜系統抽象",
+          "note": "Domain Schema + 60+ 組件語義體系"
+        },
+        {
+          "dimension": "設計體系治理",
+          "note": "從 0 到 1 搭建 + AI 可生成/可理解雙向體系"
+        },
+        {
+          "dimension": "數據驅動設計",
+          "note": "四層指標體系（AI 質量/行為/業務/調優閉環）"
+        },
+        {
+          "dimension": "利益相關者管理",
+          "note": "跨 PM × FE × AI Lab 推動落地"
+        },
+        {
+          "dimension": "方法論沉澱",
+          "note": "Prompt 模板體系 + AI 錯誤兜底規則"
+        }
       ],
       "disclaimer": "本案例不能證明：用戶研究過程、視覺設計深度、原型設計能力、移動端設計。",
       "reflection": {
@@ -387,10 +807,17 @@
     },
     "template": {
       "title": "Design System & DesignOps 系統建設",
-      "tags": ["設計系統", "國際化", "增長", "B端"],
+      "tags": [
+        "設計系統",
+        "國際化",
+        "增長",
+        "B端"
+      ],
       "summary": "從 0 到 1 搭建公司級 B 端設計系統，建立多語言多市場適配的 Design Token 體系。組件復用率 70%，國際化設計迭代週期縮短 30%。通過跨文化驗證（北美/東南亞）驅動模板站轉化率優化。",
       "narrativeHook": null,
-      "nda": {"badge": "🔒 已脫敏"},
+      "nda": {
+        "badge": "🔒 已脫敏"
+      },
       "portfolioRole": "本案例聚焦「國際化 × 設計體系」能力舉證。與 Case 01（AI 產品設計）和 Case 02（複雜系統設計）互補，展示設計師在跨文化市場擴展和組織級設計基礎設施方面的實踐。",
       "background": {
         "why": "跨境商家缺乏高轉化的模板化建站方案，不同市場（北美/東南亞）的文化偏好和消費習慣差異導致轉化率難以提升。公司缺乏統一的 B 端設計系統支撐多市場業務擴展。",
@@ -410,20 +837,52 @@
       "myRole": {
         "note": "模板站、Token 體系和設計系統由我主導設計。跨文化驗證涉及與海外市場運營團隊協作（具體分工待確認）。前端團隊負責組件庫技術實現和 Shopify 主題框架兼容。設計系統推廣至多產品線涉及與多團隊 PM 協調。",
         "responsibilities": [
-          {"task": "模板站設計體系", "contribution": "獨立主導", "detail": "搭建高轉化模板站體系"},
-          {"task": "跨文化設計驗證", "contribution": "獨立主導", "detail": "跨文化驗證 + 多市場數據反饋驅動迭代"},
-          {"task": "國際化 Token 體系", "contribution": "獨立主導", "detail": "建立多語言/多市場適配的設計 Token 體系"},
-          {"task": "設計系統", "contribution": "獨立主導", "detail": "從 0 到 1 搭建公司級 B 端設計系統（組件復用率 70%）"},
-          {"task": "Sidekick 文案/素材適配", "contribution": "❓ 待確認", "detail": "Sidekick 自動適配不同市場文案和素材（參與程度未確認）"}
+          {
+            "task": "模板站設計體系",
+            "contribution": "獨立主導",
+            "detail": "搭建高轉化模板站體系"
+          },
+          {
+            "task": "跨文化設計驗證",
+            "contribution": "獨立主導",
+            "detail": "跨文化驗證 + 多市場數據反饋驅動迭代"
+          },
+          {
+            "task": "國際化 Token 體系",
+            "contribution": "獨立主導",
+            "detail": "建立多語言/多市場適配的設計 Token 體系"
+          },
+          {
+            "task": "設計系統",
+            "contribution": "獨立主導",
+            "detail": "從 0 到 1 搭建公司級 B 端設計系統（組件復用率 70%）"
+          },
+          {
+            "task": "Sidekick 文案/素材適配",
+            "contribution": "❓ 待確認",
+            "detail": "Sidekick 自動適配不同市場文案和素材（參與程度未確認）"
+          }
         ]
       },
       "designApproach": {
         "note": "以下過程階段基於已確認的設計決策和量化結果反推。具體方法細節、跨文化驗證原始數據和中間產出物待補充。",
         "phases": [
-          {"title": "Research & Discovery", "summary": "對跨境商家（北美/東南亞為主）的建站需求進行跨市場調研，識別關鍵市場在色彩偏好、排版密度、資訊層級上的文化差異。盤點公司現有產品線的設計一致性問題，評估設計系統從零搭建的範圍和優先級。"},
-          {"title": "Definition & Strategy", "summary": "制定跨文化 Design Token 體系架構（Foundation → Semantic → Component 三層）。規劃公司級 B 端設計系統的組件範圍和 DesignOps 協作流程。確定模板站作為設計系統首批落地場景。"},
-          {"title": "Design & Iteration", "summary": "搭建組件庫，通過跨文化用戶驗證迭代模板站設計。建立多市場數據反饋機制，根據各市場轉化數據調整 Token 配置。推動設計系統從模板站單一場景推廣至公司多產品線。"},
-          {"title": "Validation & Launch", "summary": "通過組件復用率（70%）、國際化設計迭代週期（↓30%）、客戶首次購買轉化率（↑8%）三個維度追蹤效果。設計–研發一致性提升 30% 和產研協作效率提升作為設計系統落地的輔助驗證指標。"}
+          {
+            "title": "Research & Discovery",
+            "summary": "對跨境商家（北美/東南亞為主）的建站需求進行跨市場調研，識別關鍵市場在色彩偏好、排版密度、資訊層級上的文化差異。盤點公司現有產品線的設計一致性問題，評估設計系統從零搭建的範圍和優先級。"
+          },
+          {
+            "title": "Definition & Strategy",
+            "summary": "制定跨文化 Design Token 體系架構（Foundation → Semantic → Component 三層）。規劃公司級 B 端設計系統的組件範圍和 DesignOps 協作流程。確定模板站作為設計系統首批落地場景。"
+          },
+          {
+            "title": "Design & Iteration",
+            "summary": "搭建組件庫，通過跨文化用戶驗證迭代模板站設計。建立多市場數據反饋機制，根據各市場轉化數據調整 Token 配置。推動設計系統從模板站單一場景推廣至公司多產品線。"
+          },
+          {
+            "title": "Validation & Launch",
+            "summary": "通過組件復用率（70%）、國際化設計迭代週期（↓30%）、客戶首次購買轉化率（↑8%）三個維度追蹤效果。設計–研發一致性提升 30% 和產研協作效率提升作為設計系統落地的輔助驗證指標。"
+          }
         ]
       },
       "keyDecisions": [
@@ -432,21 +891,34 @@
           "problem": "不同市場（北美/東南亞）的文化偏好和消費習慣差異大。例如，北美市場偏好高對比度、大留白、冷色調；東南亞市場偏好暖色調、高資訊密度、促銷感強的視覺語言。單套模板無法跨市場通用，而每個市場單獨維護一套設計系統會導致維護成本指數級增長。",
           "decision": "建立跨文化 Design Token 體系（Foundation → Semantic → Component 三層架構），將文化差異參數化為 Token 層變量——色彩語義 Token（冷/暖調映射）、排版密度 Token（compact/comfortable 切換）、資訊層級 Token（高密度/低密度適配）。新增一個市場只需配置一組 Token 映射表，而非重新設計。",
           "reason": "Token 體系使得新增市場時的設計迭代週期縮短 30%，同時保持底層組件庫一致性——組件實現代碼不變，僅 Token 值變化即完成本地化。這套架構也使得 Sidekick AI 可以基於市場的 Token 配置自動生成適配的文案和素材。",
-          "alternative": {"text": "也曾考慮為每個市場單獨維護設計分支。但經過 2 個市場（北美 + 東南亞）的實際並行維護後，分支間設計漂移嚴重——同一組件在 2 個市場出現不同互動行為，且同步一次全局變更需要 2 倍時間。這直接促成了 Token 化決策。"}
+          "alternative": {
+            "text": "也曾考慮為每個市場單獨維護設計分支。但經過 2 個市場（北美 + 東南亞）的實際並行維護後，分支間設計漂移嚴重——同一組件在 2 個市場出現不同互動行為，且同步一次全局變更需要 2 倍時間。這直接促成了 Token 化決策。"
+          }
         },
         {
           "title": "從 0 到 1 搭建公司級設計系統",
           "problem": "公司多產品線（模板站、廣告平台、商家後台）各自維護獨立 UI，視覺不一致導致商家在跨產品操作時認知負擔大。產研協作時每個產品線重複造輪子——同一組件在不同產品中出現 3-4 個不同實現版本。",
           "decision": "從 0 到 1 搭建公司級 B 端設計系統：定義 60+ 組件的統一規範（含業務組件和基礎組件）、建立 Foundation-Semantic-Component 三層 Token 體系、制定國際化適配規範、建立 DesignOps 流程（設計評審/組件發布/版本管理）。以模板站為首批落地場景驗證後推廣至全產品線。",
           "reason": "組件復用率達到 70%——意味著新增一個業務場景時，70% 的組件可從系統中直接復用。產研協作效率提升 20–25%，設計–研發一致性提升 30%。由設計系統承接常規組件需求後，設計師可聚焦於 AI 產品設計和體驗優化等更高價值工作。",
-          "alternative": {"text": "也曾考慮漸進式統一（逐產品線改造）。但評估後發現——公司當時僅有 3 個主要產品線，用「一次重構到位」的成本低於「逐個產品線維護過渡期的兩套設計」。實際執行證明了此判斷：3 個月完成核心組件庫，6 個月覆蓋全產品線。"}
+          "alternative": {
+            "text": "也曾考慮漸進式統一（逐產品線改造）。但評估後發現——公司當時僅有 3 個主要產品線，用「一次重構到位」的成本低於「逐個產品線維護過渡期的兩套設計」。實際執行證明了此判斷：3 個月完成核心組件庫，6 個月覆蓋全產品線。"
+          }
         }
       ],
       "outcome": {
         "quantitative": [
-          {"label": "客戶首次購買轉化率", "note": ""},
-          {"label": "國際化版本設計迭代週期", "note": ""},
-          {"label": "組件復用率", "note": ""}
+          {
+            "label": "客戶首次購買轉化率",
+            "note": ""
+          },
+          {
+            "label": "國際化版本設計迭代週期",
+            "note": ""
+          },
+          {
+            "label": "組件復用率",
+            "note": ""
+          }
         ],
         "qualitative": [
           "建立了跨文化設計驗證體系（北美/東南亞市場）",
@@ -456,10 +928,22 @@
         "baselineNote": "基線數據及測量方法待補充。所有變化幅度來自履歷，歸因可信度為 weak。"
       },
       "competencies": [
-        {"dimension": "國際化設計", "note": "跨文化驗證 + Token 體系 + 多市場數據閉環"},
-        {"dimension": "設計體系落地", "note": "從 0 到 1 搭建設計系統 + 組件復用率 70%"},
-        {"dimension": "轉化率優化", "note": "轉化率↑8%（需補 baseline）"},
-        {"dimension": "DesignOps", "note": "國際化迭代週期↓30%（需補 baseline）"}
+        {
+          "dimension": "國際化設計",
+          "note": "跨文化驗證 + Token 體系 + 多市場數據閉環"
+        },
+        {
+          "dimension": "設計體系落地",
+          "note": "從 0 到 1 搭建設計系統 + 組件復用率 70%"
+        },
+        {
+          "dimension": "轉化率優化",
+          "note": "轉化率↑8%（需補 baseline）"
+        },
+        {
+          "dimension": "DesignOps",
+          "note": "國際化迭代週期↓30%（需補 baseline）"
+        }
       ],
       "disclaimer": "本案例不能證明：AI 產品設計深度、複雜系統抽象能力、用戶研究過程、原型設計。",
       "reflection": {
@@ -470,6 +954,16 @@
         ],
         "note": "🚧 項目中的失敗/衝突經歷及經驗教訓待補充。如：跨文化驗證中是否有過文化誤判？設計系統推廣過程中遇到過什麼阻力？"
       }
+    },
+    "sidekick-agent": {
+      "title": "Sidekick AI 智能體體驗設計",
+      "tags": [
+        "AI 產品設計",
+        "智能體",
+        "人機協作",
+        "B端"
+      ],
+      "summary": "將 Sidekick 從「指令式助手」重構為「目標驅動的 AI 智能體體驗」：透過意圖對齊、任務編排、R1–R4 風險分級確認與跨應用統一任務執行階段，把複雜商業工作流的任務協調成本從商家轉移給 AI，同時保留用戶對關鍵決策的控制權。"
     }
   }
 }
