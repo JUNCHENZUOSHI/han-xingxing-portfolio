@@ -102,7 +102,7 @@
 
   /* ── Layout ── */
   --max-width:      1024px;
-  --max-width-text: 680px;
+  --max-width-text: var(--max-width);
   --nav-height:     52px;
 
   /* ── Radius ── */
