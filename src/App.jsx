@@ -24,7 +24,9 @@ export default function App() {
   const location = useLocation();
 
   useEffect(() => {
-    document.body.classList.toggle('theme-dark', location.pathname === '/');
+    const isHome = location.pathname === '/';
+    document.body.classList.toggle('theme-dark', isHome);
+    document.documentElement.classList.toggle('home-page', isHome);
   }, [location.pathname]);
 
   return (

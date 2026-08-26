@@ -101,3 +101,49 @@
   .about-preview__columns { grid-template-columns: 1fr; }
   .contact-cta__actions { flex-direction: column; align-items: center; }
 }
+
+/* ═══════════════════════════════════════
+   Fullpage Scroll — 全屏滚动 + 视差 + 缓动
+   （仅首页，由 html.home-page 作用域触发）
+   ═══════════════════════════════════════ */
+html.home-page {
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+}
+
+html.home-page .hero {
+  min-height: 100vh;
+  scroll-snap-align: start;
+}
+
+html.home-page .section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-snap-align: start;
+  padding-top: var(--space-96);
+  padding-bottom: var(--space-96);
+}
+
+html.home-page .section > .container {
+  width: 100%;
+}
+
+/* ── Reveal on scroll（缓动淡入上移）── */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.home-page { scroll-behavior: auto; }
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+}

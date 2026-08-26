@@ -7,7 +7,7 @@ export default function Hero() {
 
   return (
     <section className="hero">
-      <div className="hero__glow" aria-hidden="true">
+      <div className="hero__glow" data-parallax="0.25" aria-hidden="true">
         <span className="hero__glow-blob hero__glow-blob--1" />
         <span className="hero__glow-blob hero__glow-blob--2" />
         <span className="hero__glow-blob hero__glow-blob--3" />
