@@ -122,7 +122,7 @@
     "sidekick": "Sidekick AI — Ad Creative Automation",
     "lowcode": "Enterprise Low-Code Platform — AI-Powered Experience",
     "template": "Design System & DesignOps — Scalable Infrastructure",
-    "sidekick-agent": "Shopify Sidekick AI — AI Agent Experience Design"
+    "sidekick-agent": "Sidekick AI — AI Agent Experience Design"
   },
   "lang": {
     "zh": "中",
@@ -972,7 +972,7 @@
       }
     },
     "sidekick-agent": {
-      "title": "Shopify Sidekick AI — AI Agent Experience Design",
+      "title": "Sidekick AI — AI Agent Experience Design",
       "tags": [
         "AI Product Design",
         "AI Agent",

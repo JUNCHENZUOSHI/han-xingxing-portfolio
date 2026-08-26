@@ -194,7 +194,7 @@
     "sidekick": "Sidekick AI 驱动广告素材自动化",
     "lowcode": "企业级低代码平台智能体验升级",
     "template": "Design System & DesignOps 系统建设",
-    "sidekick-agent": "Shopify Sidekick AI 智能体体验设计"
+    "sidekick-agent": "Sidekick AI 智能体体验设计"
   },
   "lang": {
     "zh": "中",
@@ -1044,7 +1044,7 @@
       }
     },
     "sidekick-agent": {
-      "title": "Shopify Sidekick AI 智能体体验设计",
+      "title": "Sidekick AI 智能体体验设计",
       "tags": [
         "AI 产品设计",
         "智能体",

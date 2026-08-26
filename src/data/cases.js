@@ -729,7 +729,7 @@ export const cases = {
     featured: false,
 
     /* ── Basic Info ── */
-    title: 'Shopify Sidekick AI 智能体体验设计',
+    title: 'Sidekick AI 智能体体验设计',
     nda: { required: true, badge: '🔒 已脱敏' },
     tags: ['AI 产品设计', '智能体', '人机协作', 'B端'],
     confidence: 'confirmed',
