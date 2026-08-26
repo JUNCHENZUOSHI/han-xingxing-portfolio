@@ -194,7 +194,7 @@
     "sidekick": "Sidekick AI 驱动广告素材自动化",
     "lowcode": "企业级低代码平台智能体验升级",
     "template": "Design System & DesignOps 系统建设",
-    "sidekick-agent": "Sidekick AI 智能体体验设计"
+    "sidekick-agent": "Shopify Sidekick AI 智能体体验设计"
   },
   "lang": {
     "zh": "中",
@@ -1044,14 +1044,14 @@
       }
     },
     "sidekick-agent": {
-      "title": "Sidekick AI 智能体体验设计",
+      "title": "Shopify Sidekick AI 智能体体验设计",
       "tags": [
         "AI 产品设计",
         "智能体",
         "人机协作",
         "B端"
       ],
-      "summary": "将 Sidekick 从「指令式助手」重构为「目标驱动的 AI 智能体体验」：通过意图对齐、任务编排、R1–R4 风险分级确认与跨应用统一任务运行时，把复杂商业工作流的任务协调成本从商家转移给 AI，同时保留用户对关键决策的控制权。最终收敛为「触发 → 理解 → 规划 → 确认 → 执行 → 恢复 → 完成」的完整体验闭环。"
+      "summary": "面向跨境商家，构建目标驱动的 AI 智能体体验：通过可展开任务树、分层上下文、R1–R4 风险分级确认与跨应用统一可见可控，把任务协调成本从用户转移给 AI，同时保障商家对关键业务决策的控制权，收敛为「触发 → 理解 → 规划 → 确认 → 执行 → 恢复 → 完成」的人机协作闭环。"
     }
   }
 }

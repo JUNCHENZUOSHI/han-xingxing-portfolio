@@ -122,7 +122,7 @@
     "sidekick": "Sidekick AI — Ad Creative Automation",
     "lowcode": "Enterprise Low-Code Platform — AI-Powered Experience",
     "template": "Design System & DesignOps — Scalable Infrastructure",
-    "sidekick-agent": "Sidekick AI — AI Agent Experience Design"
+    "sidekick-agent": "Shopify Sidekick AI — AI Agent Experience Design"
   },
   "lang": {
     "zh": "中",
@@ -972,14 +972,14 @@
       }
     },
     "sidekick-agent": {
-      "title": "Sidekick AI — AI Agent Experience Design",
+      "title": "Shopify Sidekick AI — AI Agent Experience Design",
       "tags": [
         "AI Product Design",
         "AI Agent",
         "Human-AI Collaboration",
         "B2B"
       ],
-      "summary": "Redesigning Sidekick from a command-driven assistant into a goal-driven AI agent experience: through intent alignment, task orchestration, R1–R4 risk-graded confirmation, and a unified cross-app task runtime, it shifts task-coordination cost from merchants to the AI while keeping users in control of key decisions — converging on a complete 'trigger → understand → plan → confirm → execute → recover → complete' loop."
+      "summary": "Building a goal-driven AI agent experience for cross-border merchants: through an expandable task tree, layered context, R1–R4 risk-graded confirmation, and unified cross-app visibility & control, it shifts task-coordination cost from users to the AI while safeguarding merchants' control over key business decisions — converging on a 'trigger → understand → plan → confirm → execute → recover → complete' human-AI collaboration loop."
     }
   }
 }
