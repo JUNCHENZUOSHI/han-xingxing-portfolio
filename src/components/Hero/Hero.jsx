@@ -7,6 +7,11 @@ export default function Hero() {
 
   return (
     <section className="hero">
+      <div className="hero__glow" aria-hidden="true">
+        <span className="hero__glow-blob hero__glow-blob--1" />
+        <span className="hero__glow-blob hero__glow-blob--2" />
+        <span className="hero__glow-blob hero__glow-blob--3" />
+      </div>
       <div
         className="hero__bg"
         style={{ backgroundImage: `url(${import.meta.env.BASE_URL}hero-bg.svg)` }}

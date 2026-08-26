@@ -18,6 +18,69 @@
   z-index: 0;
 }
 
+/* ── Aurora glow — blurred gradient blobs ── */
+.hero__glow {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero__glow-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.45;
+  will-change: transform;
+}
+
+.hero__glow-blob--1 {
+  width: 520px; height: 520px;
+  background: radial-gradient(circle, #3B82F6 0%, transparent 70%);
+  top: -140px; left: -100px;
+  animation: glow-float-1 16s ease-in-out infinite;
+}
+
+.hero__glow-blob--2 {
+  width: 460px; height: 460px;
+  background: radial-gradient(circle, #8B5CF6 0%, transparent 70%);
+  top: 18%; right: -120px;
+  animation: glow-float-2 20s ease-in-out infinite;
+}
+
+.hero__glow-blob--3 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, #22D3EE 0%, transparent 70%);
+  bottom: -100px; left: 28%;
+  animation: glow-float-3 18s ease-in-out infinite;
+}
+
+@keyframes glow-float-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(60px, 40px) scale(1.12); }
+}
+@keyframes glow-float-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-50px, -30px) scale(1.15); }
+}
+@keyframes glow-float-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(40px, -50px) scale(1.08); }
+}
+
+/* ── Hero enter — staggered fade-up ── */
+.hero__label,
+.hero__name,
+.hero__statement,
+.hero__cta {
+  animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero__label { animation-delay: 0.05s; }
+.hero__name { animation-delay: 0.15s; }
+.hero__statement { animation-delay: 0.25s; }
+.hero__cta { animation-delay: 0.35s; }
+
 .hero__content {
   max-width: 800px;
   position: relative;

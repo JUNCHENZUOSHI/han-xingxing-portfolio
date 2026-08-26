@@ -12,6 +12,8 @@ body.theme-dark {
   --color-text-tertiary:  rgba(255,255,255,0.40);  /* 说明/注释 40% */
   --color-border:      rgba(255,255,255,0.10);
   --color-border-strong: rgba(255,255,255,0.20);
+  --color-accent:      #3B82F6;
+  --color-accent-hover: #60A5FA;
 }
 
 /* ── 硬编码浅色背景的暗色覆盖 ── */
