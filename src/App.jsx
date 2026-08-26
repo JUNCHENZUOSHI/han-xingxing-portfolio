@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/layout/Navbar/Navbar';
 import Footer from './components/layout/Footer/Footer';
 import Home from './pages/Home/Home';
@@ -20,6 +21,12 @@ function PageLayout({ children }) {
 }
 
 export default function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    document.body.classList.toggle('theme-dark', location.pathname === '/');
+  }, [location.pathname]);
+
   return (
     <Routes>
       <Route
