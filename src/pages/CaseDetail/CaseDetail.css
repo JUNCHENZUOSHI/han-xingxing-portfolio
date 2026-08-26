@@ -57,7 +57,7 @@
   line-height: var(--leading-h1);
   letter-spacing: var(--tracking-h1);
   color: var(--color-text);
-  max-width: 960px;
+  max-width: var(--max-width-text);
   margin-bottom: var(--space-32);
 }
 

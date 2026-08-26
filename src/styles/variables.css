@@ -101,7 +101,7 @@
   --section-pad-mobile: var(--space-96);
 
   /* ── Layout ── */
-  --max-width:      1024px;
+  --max-width:      1200px;
   --max-width-text: var(--max-width);
   --nav-height:     52px;
 
