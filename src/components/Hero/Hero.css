@@ -8,16 +8,6 @@
   overflow: hidden;
 }
 
-.hero__bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  pointer-events: none;
-  z-index: 0;
-}
-
 /* ── Aurora glow — blurred gradient blobs ── */
 .hero__glow {
   position: absolute;

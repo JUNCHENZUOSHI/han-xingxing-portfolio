@@ -12,11 +12,6 @@ export default function Hero() {
         <span className="hero__glow-blob hero__glow-blob--2" />
         <span className="hero__glow-blob hero__glow-blob--3" />
       </div>
-      <div
-        className="hero__bg"
-        style={{ backgroundImage: `url(${import.meta.env.BASE_URL}hero-bg.svg)` }}
-        aria-hidden="true"
-      />
       <div className="hero__content">
         <span className="hero__label">{profile.title}</span>
         <h1 className="hero__name">{t('common.name')}</h1>
