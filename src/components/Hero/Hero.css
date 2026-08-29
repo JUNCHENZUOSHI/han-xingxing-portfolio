@@ -1,62 +1,76 @@
-/* Hero — Apple.com, 90vh */
+/* Hero — deepseek.com/harness banner: one unified banner.
+   Aurora fluid background + dot grid (both mouse-reactive), text content
+   centered within it. Banner height matches the previous version
+   (58vh visual block + content block). */
+
 .hero {
-  min-height: 90vh;
-  display: flex; align-items: center; justify-content: center;
-  text-align: center;
-  padding: var(--space-32);
   position: relative;
   overflow: hidden;
+  /* same total height as before: stage block (58vh, clamped 340–720px) + content block */
+  min-height: calc(clamp(340px, 58vh, 720px) + 480px);
+  display: flex;
+  align-items: center;
+  background: #000000;
+  text-align: center;
 }
 
-/* ── Aurora glow — blurred gradient blobs ── */
-.hero__glow {
+/* ── Layer stack (mirrors the reference hero: z-0 bg / z-5 grid / z-10 text) ── */
+
+.hero__aurora {
   position: absolute;
   inset: 0;
-  overflow: hidden;
-  pointer-events: none;
   z-index: 0;
+  pointer-events: none;
+  will-change: opacity, filter;
+  /* fade the aurora out toward the hero's bottom edge, like the reference */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.988) 0%,
+    rgba(0, 0, 0, 0.91) 8.98%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.988) 0%,
+    rgba(0, 0, 0, 0.91) 8.98%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
-.hero__glow-blob {
+.hero__aurora canvas,
+.hero__grid canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__grid {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(90px);
-  opacity: 0.45;
-  will-change: transform;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.988) 0%,
+    rgba(0, 0, 0, 0.91) 8.98%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.988) 0%,
+    rgba(0, 0, 0, 0.91) 8.98%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
-.hero__glow-blob--1 {
-  width: 520px; height: 520px;
-  background: radial-gradient(circle, #3B82F6 0%, transparent 70%);
-  top: -140px; left: -100px;
-  animation: glow-float-1 16s ease-in-out infinite;
-}
-
-.hero__glow-blob--2 {
-  width: 460px; height: 460px;
-  background: radial-gradient(circle, #8B5CF6 0%, transparent 70%);
-  top: 18%; right: -120px;
-  animation: glow-float-2 20s ease-in-out infinite;
-}
-
-.hero__glow-blob--3 {
-  width: 400px; height: 400px;
-  background: radial-gradient(circle, #22D3EE 0%, transparent 70%);
-  bottom: -100px; left: 28%;
-  animation: glow-float-3 18s ease-in-out infinite;
-}
-
-@keyframes glow-float-1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(60px, 40px) scale(1.12); }
-}
-@keyframes glow-float-2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-50px, -30px) scale(1.15); }
-}
-@keyframes glow-float-3 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(40px, -50px) scale(1.08); }
+/* ── Text content — vertically centered in the banner ── */
+.hero__content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-64) var(--space-32);
 }
 
 /* ── Hero enter — staggered fade-up ── */
@@ -71,16 +85,10 @@
 .hero__statement { animation-delay: 0.25s; }
 .hero__cta { animation-delay: 0.35s; }
 
-.hero__content {
-  max-width: 800px;
-  position: relative;
-  z-index: 1;
-}
-
 /* Eyebrow: 12px / 0.12em / caps */
 .hero__label {
   display: block;
-  font-size: var(--text-caption);                 /* 12px */
+  font-size: var(--text-caption);
   font-weight: var(--weight-medium);
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -90,17 +98,17 @@
 
 /* H1: 72–80px / 700 / -0.04em */
 .hero__name {
-  font-size: var(--text-display);                 /* 72–80px */
+  font-size: var(--text-display);
   font-weight: var(--weight-bold);
-  line-height: var(--leading-display);            /* 1.0 */
-  letter-spacing: var(--tracking-display);        /* -0.04em */
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
   color: var(--color-text);
   margin: 0 0 var(--space-32);
 }
 
 /* Subtitle: 32px / 400 / max-width 720px */
 .hero__statement {
-  font-size: 2rem;                                /* 32px */
+  font-size: 2rem;
   font-weight: var(--weight-normal);
   line-height: var(--leading-body-large);
   color: var(--color-text-secondary);
@@ -109,6 +117,18 @@
 }
 
 .hero__cta {
-  display: flex; justify-content: center; gap: var(--space-20);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-20);
   flex-wrap: wrap;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    /* previous mobile total: 44vh (min 260px) stage + content block */
+    min-height: calc(clamp(260px, 44vh, 720px) + 480px);
+  }
+  .hero__content {
+    padding: var(--space-48) var(--space-24);
+  }
 }

@@ -4,9 +4,14 @@
    白字按透明度分层，遵循 Apple 深色模式标签层级
    ═══════════════════════════════════════════════════ */
 
+/* 页面底色统一为纯黑 #000000（含滚动回弹区域，无分段色带） */
+html.theme-dark {
+  background-color: #000000;
+}
+
 body.theme-dark {
   --color-bg:          #000000;
-  --color-bg-alt:      #0A0A0A;
+  --color-bg-alt:      #000000;  /* unified: no banding between sections */
   --color-text:        #FFFFFF;                    /* 标题 100% */
   --color-text-secondary: rgba(255,255,255,0.60);  /* 副标题 60% */
   --color-text-tertiary:  rgba(255,255,255,0.40);  /* 说明/注释 40% */
@@ -14,6 +19,7 @@ body.theme-dark {
   --color-border-strong: rgba(255,255,255,0.20);
   --color-accent:      #3B82F6;
   --color-accent-hover: #60A5FA;
+  background-color: #000000;
 }
 
 /* ── 硬编码浅色背景的暗色覆盖 ── */
@@ -26,5 +32,5 @@ body.theme-dark .lang-dropdown__menu {
 }
 
 body.theme-dark .case-card {
-  background: #111111;
+  background: #000000;
 }

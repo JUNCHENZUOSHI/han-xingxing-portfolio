@@ -102,33 +102,8 @@
   .contact-cta__actions { flex-direction: column; align-items: center; }
 }
 
-/* ═══════════════════════════════════════
-   Fullpage Scroll — 全屏滚动 + 视差 + 缓动
-   （仅首页，由 html.home-page 作用域触发）
-   ═══════════════════════════════════════ */
-html.home-page {
-  scroll-snap-type: y proximity;
-  scroll-behavior: smooth;
-}
-
-html.home-page .hero {
-  min-height: 100vh;
-  scroll-snap-align: start;
-}
-
-html.home-page .section {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  scroll-snap-align: start;
-  padding-top: var(--space-96);
-  padding-bottom: var(--space-96);
-}
-
-html.home-page .section > .container {
-  width: 100%;
-}
+/* Fullpage scroll-snap removed — the page now flows continuously on a single
+   black background (no segmented panels). The Hero supplies its own height. */
 
 /* ── Reveal on scroll（缓动淡入上移）── */
 [data-reveal] {
@@ -144,6 +119,5 @@ html.home-page .section > .container {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html.home-page { scroll-behavior: auto; }
   [data-reveal] { opacity: 1; transform: none; transition: none; }
 }

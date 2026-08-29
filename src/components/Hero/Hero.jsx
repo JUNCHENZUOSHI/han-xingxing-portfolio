@@ -1,4 +1,6 @@
 import { useI18n, useProfileData } from '../../i18n/context';
+import AuroraBackground from './AuroraBackground';
+import DotGridOverlay from './DotGridOverlay';
 import './Hero.css';
 
 export default function Hero() {
@@ -7,11 +9,9 @@ export default function Hero() {
 
   return (
     <section className="hero">
-      <div className="hero__glow" data-parallax="0.25" aria-hidden="true">
-        <span className="hero__glow-blob hero__glow-blob--1" />
-        <span className="hero__glow-blob hero__glow-blob--2" />
-        <span className="hero__glow-blob hero__glow-blob--3" />
-      </div>
+      {/* z-0: aurora fluid background (deepseek harness style, mouse-reactive) */}
+      <AuroraBackground />
+      {/* z-10: text content — centered in the banner, like the previous version */}
       <div className="hero__content">
         <span className="hero__label">{profile.title}</span>
         <h1 className="hero__name">{t('common.name')}</h1>
@@ -21,6 +21,8 @@ export default function Hero() {
           <a href={`${import.meta.env.BASE_URL}resume.pdf`} className="btn-secondary" download>{t('hero.downloadResume')}</a>
         </div>
       </div>
+      {/* z-5: dot-grid overlay with cursor repulsion */}
+      <DotGridOverlay />
     </section>
   );
 }
