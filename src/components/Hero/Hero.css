@@ -114,6 +114,7 @@
   color: var(--color-text-secondary);
   max-width: 720px;
   margin: 0 auto var(--space-56);
+  white-space: pre-line;
 }
 
 .hero__cta {

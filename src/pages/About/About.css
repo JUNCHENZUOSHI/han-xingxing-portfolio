@@ -13,6 +13,7 @@
   font-size: 2rem; font-weight: var(--weight-normal);
   line-height: var(--leading-body-large);
   color: var(--color-text-secondary); margin: 0 0 var(--space-32);
+  white-space: pre-line;
 }
 
 .text-container { max-width: var(--max-width-text); }
