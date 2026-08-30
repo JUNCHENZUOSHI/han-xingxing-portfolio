@@ -16,6 +16,17 @@
   --color-accent:      #2563EB;
   --color-accent-hover: #1D4ED8;
 
+  /* ── Buttons (deepseek.com/harness) — light theme ── */
+  --btn-primary-bg:          #1a1615;
+  --btn-primary-text:        #ffffff;
+  --btn-primary-border:      transparent;
+  --btn-primary-hover-bg:    hsla(0, 0%, 100%, 0.3);
+  --btn-secondary-bg:        hsla(0, 0%, 100%, 0.4);
+  --btn-secondary-text:      #1e232c;
+  --btn-secondary-border:    rgba(9, 45, 78, 0.18);
+  --btn-secondary-hover-bg:  rgba(0, 0, 0, 0.05);
+  --btn-secondary-hover-border: rgba(9, 45, 78, 0.36);
+
   /* ── Typography — Apple.com Scale ── */
 
   /* Font stack: SF Pro Display → SF Pro Text → PingFang SC */

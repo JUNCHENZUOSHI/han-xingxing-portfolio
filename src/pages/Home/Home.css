@@ -71,9 +71,59 @@
   color: var(--color-text-secondary); margin: 0 0 var(--space-20);
 }
 
-/* ── Contact CTA ── */
-.contact-cta { text-align: center; }
-.contact-cta__inner { max-width: var(--max-width-text); margin: 0 auto; }
+/* ── Contact CTA — deepseek.com/harness blue-glow panel ── */
+.contact-cta {
+  position: relative;
+  overflow: hidden;
+  background: #000000;
+  text-align: center;
+}
+.contact-cta__glow {
+  position: absolute;
+  pointer-events: none;
+}
+.contact-cta__glow--1 {
+  bottom: -100px; left: 10%;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, #1A3870 0%, transparent 70%);
+  filter: blur(80px);
+  opacity: 0.3;
+}
+.contact-cta__glow--2 {
+  bottom: -50px; left: 50%;
+  transform: translateX(-50%);
+  width: 700px; height: 400px;
+  background: radial-gradient(ellipse at center, #2D5F9E 0%, #1A3870 40%, transparent 70%);
+  filter: blur(100px);
+  opacity: 0.4;
+}
+.contact-cta__glow--3 {
+  bottom: -80px; right: 10%;
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, #4A8AC4 0%, #2D5F9E 30%, transparent 70%);
+  filter: blur(60px);
+  opacity: 0.2;
+}
+.contact-cta__inner { position: relative; z-index: 1; max-width: var(--max-width-text); margin: 0 auto; }
+
+/* scroll reveal — blur + rise, deepseek-style */
+.contact-cta [data-reveal] {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(40px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.contact-cta [data-reveal].is-revealed {
+  opacity: 1;
+  filter: blur(0);
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .contact-cta [data-reveal] { opacity: 1; filter: none; transform: none; transition: none; }
+}
 .contact-cta__heading {
   font-size: var(--text-h2); font-weight: var(--weight-bold);
   line-height: var(--leading-h2); letter-spacing: var(--tracking-h2);

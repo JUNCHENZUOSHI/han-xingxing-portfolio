@@ -1,32 +1,51 @@
-/* Footer — Apple visionOS */
+/* Footer — deepseek.com/harness (dark + hairline top border) */
 .footer {
-  padding: var(--space-40) 0;
-  background: var(--color-bg-alt);
-  font-size: var(--text-caption);
-  font-weight: var(--weight-medium);
-  color: var(--color-text-secondary);
-  letter-spacing: var(--tracking-body);
+  background: #0a0a0a;
+  border-top: 1px solid hsla(0, 0%, 100%, 0.08);
+  padding: var(--space-40) 0 var(--space-32);
+  color: hsla(0, 0%, 100%, 0.8);
+  font-size: 14px;
+  font-weight: var(--weight-normal);
+  line-height: 150%;
+  letter-spacing: -0.01em;
 }
 .footer__inner {
-  max-width: var(--max-width); margin: 0 auto;
+  max-width: var(--max-width);
+  margin: 0 auto;
   padding: 0 var(--space-32);
-  display: flex; align-items: center; flex-wrap: wrap;
-  gap: var(--space-16);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+  text-align: center;
 }
 .footer__contact {
-  display: flex; align-items: center; flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: var(--space-8);
 }
-.footer__sep { color: var(--color-border); user-select: none; }
-.footer__actions { margin-left: auto; }
+.footer__sep { color: hsla(0, 0%, 100%, 0.3); user-select: none; }
+
+/* links — white (primary), fade on hover */
+.footer a {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: var(--weight-normal);
+  letter-spacing: -0.01em;
+  transition: opacity 0.2s ease;
+}
+.footer a:hover { opacity: 0.7; }
+
 .footer__copy {
-  width: 100%; margin-top: var(--space-12);
-  color: var(--color-text-tertiary);
-  font-size: var(--text-caption);
-  letter-spacing: var(--tracking-body);
+  color: hsla(0, 0%, 100%, 0.5);
+  font-size: 14px;
+  letter-spacing: -0.01em;
 }
 
+.footer .brand-dots span { background: #3B82F6; }
+
 @media (max-width: 767px) {
-  .footer__inner { flex-direction: column; align-items: flex-start; }
-  .footer__actions { margin-left: 0; }
+  .footer__inner { padding: 0 var(--space-24); }
 }

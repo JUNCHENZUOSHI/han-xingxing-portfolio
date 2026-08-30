@@ -19,16 +19,30 @@ body.theme-dark {
   --color-border-strong: rgba(255,255,255,0.20);
   --color-accent:      #3B82F6;
   --color-accent-hover: #60A5FA;
+
+  /* deepseek.com/harness — dark theme buttons */
+  --btn-primary-bg:          #ffffff;
+  --btn-primary-text:        #0a0a0a;
+  --btn-primary-border:      transparent;
+  --btn-primary-hover-bg:    rgba(0, 0, 0, 0.2);
+  --btn-secondary-bg:        hsla(0, 0%, 100%, 0.06);
+  --btn-secondary-text:      #ffffff;
+  --btn-secondary-border:    hsla(0, 0%, 100%, 0.15);
+  --btn-secondary-hover-bg:  hsla(0, 0%, 100%, 0.2);
+  --btn-secondary-hover-border: hsla(0, 0%, 100%, 0.6);
   background-color: #000000;
 }
 
 /* ── 硬编码浅色背景的暗色覆盖 ── */
-body.theme-dark .navbar {
-  background: rgba(0,0,0,0.6);
+body.theme-dark .navbar__inner::before {
+  background: hsla(0, 0%, 100%, 0.25);
+  border-color: hsla(0, 0%, 100%, 0.06);
 }
 
-body.theme-dark .lang-dropdown__menu {
-  background: rgba(28,28,30,0.98);
+body.theme-dark .lang-toggle__item--active {
+  background: hsla(0, 0%, 100%, 0.25);
+  color: #FFFFFF;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 body.theme-dark .case-card {

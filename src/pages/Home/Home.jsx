@@ -157,15 +157,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="section section--alt contact-cta">
+      {/* Contact CTA — deepseek.com/harness blue-glow panel */}
+      <section className="section contact-cta">
+        <div className="contact-cta__glow contact-cta__glow--1" aria-hidden="true" />
+        <div className="contact-cta__glow contact-cta__glow--2" aria-hidden="true" />
+        <div className="contact-cta__glow contact-cta__glow--3" aria-hidden="true" />
         <div className="container" data-reveal>
           <div className="contact-cta__inner">
             <h2 className="contact-cta__heading">{t('home.letsTalk')}</h2>
             <p className="contact-cta__subtitle">{t('home.letsTalkSub')}</p>
             <div className="contact-cta__actions">
-              <a href={`mailto:${profile.email}`} className="btn-primary">{profile.email}</a>
+              <a href={`mailto:${profile.email}`} className="btn-primary">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <rect x="1.5" y="3" width="13" height="10" rx="2" stroke="currentColor" strokeWidth="1.2" />
+                  <path d="M2 4.5L8 9l6-4.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+                {profile.email}
+              </a>
               <a href={`${import.meta.env.BASE_URL}resume.pdf`} className="btn-secondary" download>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M8 1.5v8M4.5 6.5L8 10l3.5-3.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M2.5 13.5h11" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+                </svg>
                 {t('home.downloadResumePdf')}
               </a>
               <span className="contact-cta__meta">
