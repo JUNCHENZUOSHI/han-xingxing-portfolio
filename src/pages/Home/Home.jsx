@@ -1,10 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useI18n, useProfileData } from '../../i18n/context';
 import { profile } from '../../data/profile';
 import { cases, caseOrder } from '../../data/cases';
 import Hero from '../../components/Hero/Hero';
 import DotGridOverlay from '../../components/Hero/DotGridOverlay';
+import ParticleField from '../../components/Hero/ParticleField';
 import CaseCard from '../../components/CaseCard/CaseCard';
 import './Home.css';
 
@@ -12,6 +13,7 @@ export default function Home() {
   const { t } = useI18n();
   const profileData = useProfileData();
   const trans = t('home.transition') || ['深度', '可迁移性', '宽度'];
+  const [activeCap, setActiveCap] = useState(0);
 
   useEffect(() => {
     // 视差：滚动时让带 data-parallax 的元素按比例慢速漂移
@@ -52,49 +54,33 @@ export default function Home() {
     };
   }, []);
 
+  // scroll-driven active capability (deepseek "一切皆插件" interaction)
+  useEffect(() => {
+    const items = document.querySelectorAll('.capability-item');
+    if (!items.length) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const idx = Array.from(items).indexOf(entry.target);
+            if (idx >= 0) setActiveCap(idx);
+          }
+        });
+      },
+      { rootMargin: '-50% 0px -50% 0px', threshold: 0 }
+    );
+    items.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+
   return (
     <>
       <Hero />
 
-      {/* Transition Guide */}
-      <section className="section section--alt">
-        <div className="container" data-reveal>
-          <p style={{ textAlign: 'center', fontSize: 'var(--text-caption)', color: 'var(--color-text-tertiary)' }}>
-            <span style={{ fontWeight: 'var(--weight-medium)', color: 'var(--color-text-secondary)' }}>{Array.isArray(trans) ? trans[0] : trans}</span>
-            <span style={{ margin: '0 12px', color: 'var(--color-border)' }}>→</span>
-            <span style={{ fontWeight: 'var(--weight-medium)', color: 'var(--color-text-secondary)' }}>{Array.isArray(trans) ? trans[1] : ''}</span>
-            <span style={{ margin: '0 12px', color: 'var(--color-border)' }}>→</span>
-            <span style={{ fontWeight: 'var(--weight-medium)', color: 'var(--color-text-secondary)' }}>{Array.isArray(trans) ? trans[2] : ''}</span>
-          </p>
-        </div>
-      </section>
-
-      {/* Featured Case */}
-      <section className="section" id="work">
-        <div className="container" data-reveal>
-          <span className="section-label">{t('home.featuredCases')}</span>
-          <CaseCard caseData={cases.sidekick} variant="featured" />
-        </div>
-      </section>
-
-      {/* What I Do */}
-      <section className="section section--alt">
-        <div className="container" data-reveal>
-          <span className="section-label">What I Do</span>
-          <h2 className="section-heading">{t('home.capabilities')}</h2>
-          <div className="capability-list">
-            {profileData.homeCapabilities.map((cap) => (
-              <div className="capability-item" key={cap.title}>
-                <h3 className="capability-item__title">{cap.title}</h3>
-                <p className="capability-item__desc">{cap.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Transition Guide — hidden for now (show later) */}
 
       {/* All Cases */}
-      <section className="section">
+      <section className="section" id="work">
         <div className="container" data-reveal>
           <span className="section-label">{t('home.allCases')}</span>
           <div className="case-grid">
@@ -102,6 +88,44 @@ export default function Home() {
               <CaseCard key={slug} caseData={cases[slug]} variant="standard" />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* What I Do — scroll-driven sticky media (deepseek "一切皆插件") */}
+      <section className="section what-i-do">
+        <div className="container">
+          <span className="section-label">What I Do</span>
+          <h2 className="section-heading">{t('home.capabilities')}</h2>
+          <div className="capability-layout">
+            <div className="capability-list">
+              {profileData.homeCapabilities.map((cap, i) => (
+                <div
+                  className={`capability-item${activeCap === i ? ' capability-item--active' : ''}`}
+                  key={cap.title}
+                >
+                  <span className="capability-item__index">0{i + 1}</span>
+                  <h3 className="capability-item__title">{cap.title}</h3>
+                  <p className="capability-item__desc">{cap.description}</p>
+                </div>
+              ))}
+            </div>
+            <div className="capability-media">
+              <div className="capability-media__card" key={activeCap}>
+                <div className="capability-media__frame" aria-hidden="true" />
+                <span className="capability-media__index">0{activeCap + 1} / 0{profileData.homeCapabilities.length}</span>
+                <h3 className="capability-media__title">{profileData.homeCapabilities[activeCap].title}</h3>
+                <p className="capability-media__desc">{profileData.homeCapabilities[activeCap].description}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Case */}
+      <section className="section">
+        <div className="container" data-reveal>
+          <span className="section-label">{t('home.featuredCases')}</span>
+          <CaseCard caseData={cases.sidekick} variant="featured" />
         </div>
       </section>
 
@@ -114,15 +138,15 @@ export default function Home() {
               {t('home.aboutText', { years: profileData.yearsOfExperience })}
             </p>
             <div className="about-preview__columns">
-              <div className="about-preview__col">
-                <h3 className="about-preview__col-title">{t('home.industries')}</h3>
-                <ul className="about-preview__list">
+              <div className="about-card">
+                <h3 className="about-card__title">{t('home.industries')}</h3>
+                <ul className="about-card__list">
                   {profileData.industries.map((ind) => <li key={ind}>{ind}</li>)}
                 </ul>
               </div>
-              <div className="about-preview__col">
-                <h3 className="about-preview__col-title">{t('home.workingStyle')}</h3>
-                <p className="about-preview__col-text">{profileData.workingStyleSummary}</p>
+              <div className="about-card">
+                <h3 className="about-card__title">{t('home.workingStyle')}</h3>
+                <p className="about-card__text">{profileData.workingStyleSummary}</p>
                 <Link to="/about" className="text-link">{t('home.moreAbout')}</Link>
               </div>
             </div>
@@ -154,7 +178,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <p className="experience-status">{profileData.location} · {profileData.status}</p>
+          <p className="experience-status">{profileData.location}</p>
         </div>
       </section>
 
@@ -164,6 +188,7 @@ export default function Home() {
         <div className="contact-cta__glow contact-cta__glow--1" aria-hidden="true" />
         <div className="contact-cta__glow contact-cta__glow--2" aria-hidden="true" />
         <div className="contact-cta__glow contact-cta__glow--3" aria-hidden="true" />
+        <ParticleField className="contact-cta__particles" />
         <div className="container" data-reveal>
           <div className="contact-cta__inner">
             <h2 className="contact-cta__heading">{t('home.letsTalk')}</h2>
@@ -183,9 +208,6 @@ export default function Home() {
                 </svg>
                 {t('home.downloadResumePdf')}
               </a>
-              <span className="contact-cta__meta">
-                {profileData.location} · {profile.phone} · {profileData.status}
-              </span>
             </div>
           </div>
         </div>

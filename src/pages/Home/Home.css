@@ -22,53 +22,132 @@
   gap: var(--space-40);
 }
 
-/* ── What I Do — vertical layout ── */
+/* ── What I Do — scroll-driven sticky media (deepseek "一切皆插件") ── */
+.what-i-do { background: var(--color-bg-alt); }
+.capability-layout {
+  display: grid;
+  grid-template-columns: 42fr 58fr;
+  gap: var(--space-64);
+  align-items: start;
+}
 .capability-list {
-  display: flex; flex-direction: column; gap: var(--space-64);
-  max-width: var(--max-width-text);
+  display: flex;
+  flex-direction: column;
 }
-
 .capability-item {
-  display: flex; flex-direction: column;
+  min-height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   gap: var(--space-12);
+  padding: 11vh 0;
+  opacity: 0.3;
+  transition: opacity 0.5s ease;
 }
-
+.capability-item--active { opacity: 1; }
+.capability-item__index {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  color: var(--color-accent);
+  letter-spacing: 0.08em;
+}
 .capability-item__title {
-  font-size: var(--text-h3);                        /* 28px */
+  font-size: var(--text-h3);
   font-weight: var(--weight-bold);
   line-height: var(--leading-h3);
   letter-spacing: var(--tracking-h3);
   color: var(--color-text);
 }
-
 .capability-item__desc {
-  font-size: var(--text-body);                      /* 19px */
+  font-size: var(--text-body);
   line-height: var(--leading-body);
   color: var(--color-text-secondary);
 }
 
-/* ── About Preview ── */
+/* right — sticky media card */
+.capability-media { position: relative; }
+.capability-media__card {
+  position: sticky;
+  top: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  padding: var(--space-32);
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  animation: fadeUp 0.4s ease both;
+}
+.capability-media__frame {
+  aspect-ratio: 16 / 10;
+  border: 1px dashed rgba(0, 0, 0, 0.15);
+  border-radius: var(--radius-sm);
+  background: rgba(0, 0, 0, 0.02);
+}
+.capability-media__index {
+  font-family: var(--font-mono);
+  font-size: var(--text-caption);
+  color: var(--color-accent);
+  letter-spacing: 0.08em;
+}
+.capability-media__title {
+  font-size: var(--text-h3);
+  font-weight: var(--weight-bold);
+  color: var(--color-text);
+}
+.capability-media__desc {
+  font-size: var(--text-small);
+  line-height: var(--leading-body);
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 767px) {
+  .capability-layout { grid-template-columns: 1fr; }
+  .capability-media { display: none; }
+  .capability-item { min-height: auto; padding: var(--space-32) 0; opacity: 1; }
+}
+
+/* ── About Preview — two cards (deepseek 快速体验/源码安装) ── */
 .about-preview { max-width: var(--max-width-text); }
 .about-preview__text {
   font-size: var(--text-body); line-height: var(--leading-body);
   color: var(--color-text); margin: 0 0 var(--space-48);
 }
 .about-preview__columns {
-  display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-64);
-  padding-top: var(--space-48); border-top: 1px solid var(--color-border);
+  display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-24);
+  align-items: stretch;
 }
-.about-preview__col-title {
-  font-size: var(--text-small); font-weight: var(--weight-medium);
-  color: var(--color-text-secondary); letter-spacing: var(--tracking-caption);
-  margin: 0 0 var(--space-24);
+.about-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+  padding: var(--space-32);
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
-.about-preview__list li {
-  font-size: var(--text-body); line-height: var(--leading-body);
-  color: var(--color-text); padding: var(--space-4) 0;
+.about-card__title {
+  font-size: 18px;
+  font-weight: var(--weight-medium);
+  line-height: 150%;
+  color: var(--color-text);
 }
-.about-preview__col-text {
-  font-size: var(--text-body); line-height: var(--leading-body);
-  color: var(--color-text-secondary); margin: 0 0 var(--space-20);
+.about-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.about-card__list li {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-text);
+  padding: var(--space-4) 0;
+}
+.about-card__text {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-20);
 }
 
 /* ── Contact CTA — deepseek.com/harness blue-glow panel ── */
@@ -128,6 +207,19 @@
   height: 100%;
 }
 
+/* floating particle field */
+.contact-cta__particles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.contact-cta__particles canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 /* scroll reveal — blur + rise, deepseek-style */
 .contact-cta [data-reveal] {
   opacity: 0;
@@ -160,11 +252,6 @@
   display: flex; align-items: center; justify-content: center;
   gap: var(--space-24); flex-wrap: wrap;
 }
-.contact-cta__meta {
-  font-size: var(--text-small); color: var(--color-text-tertiary);
-  width: 100%; margin-top: var(--space-20);
-}
-
 @media (max-width: 1023px) {
   .case-grid { gap: var(--space-32); }
 }

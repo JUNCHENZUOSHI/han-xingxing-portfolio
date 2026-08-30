@@ -31,7 +31,7 @@
     "moreAbout": "了解更多 →",
     "experience": "工作经历",
     "letsTalk": "交流一下",
-    "letsTalkSub": "目前在寻找 Senior Product Designer / AI Product Designer 机会",
+    "letsTalkSub": "目前在寻找 高级产品设计师 / AI 产品设计师 机会",
     "downloadResumePdf": "下载简历 (PDF)"
   },
   "capabilities": {
@@ -212,9 +212,9 @@
       "Design System Thinking"
     ],
     "targetRoles": [
-      "Senior Product Designer",
-      "AI Product Designer",
-      "Senior UX Designer"
+      "高级产品设计师",
+      "AI 产品设计师",
+      "高级 UX 设计师"
     ],
     "status": "随时可入职",
     "education": "南京大学 · 人力资源管理 · 本科 · 2018–2022",
@@ -361,7 +361,7 @@
     ],
     "homeCapabilities": [
       {
-        "title": "UX Strategy",
+        "title": "用户体验策略",
         "description": "将业务目标拆解为设计策略，建立从用户体验到商业结果的量化闭环。",
         "items": [
           "产品策略与商业目标对齐",
@@ -371,7 +371,7 @@
         ]
       },
       {
-        "title": "Enterprise SaaS",
+        "title": "企业级 SaaS",
         "description": "专注 B 端复杂业务系统设计，6 年以上企业级产品经验。",
         "items": [
           "复杂业务流程抽象",
@@ -381,7 +381,7 @@
         ]
       },
       {
-        "title": "AI Product Experience",
+        "title": "AI产品体验",
         "description": "将生成式 AI 能力转化为可理解、可度量、可规模化落地的产品体验。",
         "items": [
           "AI 交互模式基线制定",
@@ -391,7 +391,7 @@
         ]
       },
       {
-        "title": "Design System",
+        "title": "设计系统",
         "description": "从 0 到 1 搭建设计系统，建立 AI 可生成/可理解的双向语义体系。",
         "items": [
           "Design Token 体系设计",
@@ -401,7 +401,7 @@
         ]
       },
       {
-        "title": "Growth Design",
+        "title": "增长设计",
         "description": "通过设计驱动转化率提升与业务增长，建立体验与业务指标联动机制。",
         "items": [
           "转化率优化与 A/B 测试",

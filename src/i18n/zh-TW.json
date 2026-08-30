@@ -31,7 +31,7 @@
     "moreAbout": "了解更多 →",
     "experience": "工作經歷",
     "letsTalk": "交流一下",
-    "letsTalkSub": "目前在尋找 Senior Product Designer / AI Product Designer 機會",
+    "letsTalkSub": "目前在尋找 高級產品設計師 / AI 產品設計師 機會",
     "downloadResumePdf": "下載履歷 (PDF)"
   },
   "about": {
@@ -151,9 +151,9 @@
       "Design System Thinking"
     ],
     "targetRoles": [
-      "Senior Product Designer",
-      "AI Product Designer",
-      "Senior UX Designer"
+      "高級產品設計師",
+      "AI 產品設計師",
+      "高級 UX 設計師"
     ],
     "status": "隨時可入職",
     "education": "南京大學 · 人力資源管理 · 本科 · 2018–2022",
@@ -300,7 +300,7 @@
     ],
     "homeCapabilities": [
       {
-        "title": "UX Strategy",
+        "title": "用戶體驗策略",
         "description": "將業務目標拆解為設計策略，建立從用戶體驗到商業結果的量化閉環。",
         "items": [
           "產品策略與商業目標對齊",
@@ -310,7 +310,7 @@
         ]
       },
       {
-        "title": "Enterprise SaaS",
+        "title": "企業級 SaaS",
         "description": "專注 B 端複雜業務系統設計，6 年以上企業級產品經驗。",
         "items": [
           "複雜業務流程抽象",
@@ -320,7 +320,7 @@
         ]
       },
       {
-        "title": "AI Product Experience",
+        "title": "AI產品體驗",
         "description": "將生成式 AI 能力轉化為可理解、可度量、可規模化落地的產品體驗。",
         "items": [
           "AI 互動模式基線制定",
@@ -330,7 +330,7 @@
         ]
       },
       {
-        "title": "Design System",
+        "title": "設計系統",
         "description": "從 0 到 1 搭建設計系統，建立 AI 可生成/可理解的雙向語義體系。",
         "items": [
           "Design Token 體系設計",
@@ -340,7 +340,7 @@
         ]
       },
       {
-        "title": "Growth Design",
+        "title": "增長設計",
         "description": "通過設計驅動轉化率提升與業務增長，建立體驗與業務指標聯動機制。",
         "items": [
           "轉化率優化與 A/B 測試",

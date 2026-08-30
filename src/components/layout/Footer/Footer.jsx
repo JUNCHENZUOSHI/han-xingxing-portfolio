@@ -18,7 +18,7 @@ export default function Footer() {
           <span className="footer__sep">·</span>
           <span>{profile.phone}</span>
           <span className="footer__sep">·</span>
-          <span>{pd.location} · {pd.status}</span>
+          <span>{pd.location}</span>
         </div>
 
         {/* right — action */}

@@ -1,8 +1,8 @@
 /* Case Card — Apple.com */
 .case-card {
   display: block;
-  background: #FFFFFF;
-  border: 1px solid var(--color-border);
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: var(--radius-lg);
   text-decoration: none;
   overflow: hidden;
