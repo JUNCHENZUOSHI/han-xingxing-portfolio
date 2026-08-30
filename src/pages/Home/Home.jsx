@@ -55,23 +55,33 @@ export default function Home() {
     };
   }, []);
 
-  // scroll-driven active capability (deepseek "一切皆插件" interaction)
+  // scroll-driven active capability — pick the item whose center is closest to the viewport center
   useEffect(() => {
     const items = document.querySelectorAll('.capability-item');
     if (!items.length) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const idx = Array.from(items).indexOf(entry.target);
-            if (idx >= 0) setActiveCap(idx);
-          }
-        });
-      },
-      { rootMargin: '-50% 0px -50% 0px', threshold: 0 }
-    );
-    items.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      const center = window.innerHeight / 2;
+      let bestIdx = 0;
+      let bestDist = Infinity;
+      items.forEach((el, i) => {
+        const rect = el.getBoundingClientRect();
+        const c = rect.top + rect.height / 2;
+        const d = Math.abs(c - center);
+        if (d < bestDist) { bestDist = d; bestIdx = i; }
+      });
+      setActiveCap(bestIdx);
+    };
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    update();
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
   }, []);
 
   return (
@@ -113,9 +123,6 @@ export default function Home() {
             <div className="capability-media">
               <div className="capability-media__card" key={activeCap}>
                 <WireframePlaceholder variant={activeCap} />
-                <span className="capability-media__index">0{activeCap + 1} / 0{profileData.homeCapabilities.length}</span>
-                <h3 className="capability-media__title">{profileData.homeCapabilities[activeCap].title}</h3>
-                <p className="capability-media__desc">{profileData.homeCapabilities[activeCap].description}</p>
               </div>
             </div>
           </div>

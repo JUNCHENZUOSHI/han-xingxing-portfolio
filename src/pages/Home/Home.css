@@ -35,12 +35,12 @@
   flex-direction: column;
 }
 .capability-item {
-  min-height: 35vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: var(--space-12);
-  padding: 11vh 0;
+  padding: 0 var(--space-8);
   opacity: 0.3;
   transition: opacity 0.5s ease, transform 0.5s ease;
   transform: translateX(0);
@@ -76,31 +76,7 @@
 }
 .capability-media__card {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-16);
-  padding: var(--space-24);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 16px;
   animation: fadeUp 0.4s ease both;
-}
-.capability-media__index {
-  font-family: var(--font-mono);
-  font-size: var(--text-caption);
-  color: var(--color-accent);
-  letter-spacing: 0.08em;
-}
-.capability-media__title {
-  font-size: 20px;
-  font-weight: var(--weight-medium);
-  line-height: 150%;
-  color: var(--color-text);
-}
-.capability-media__desc {
-  font-size: var(--text-small);
-  line-height: var(--leading-body);
-  color: var(--color-text-secondary);
 }
 
 /* ── wireframe placeholders (swap for real screenshots later) ── */
@@ -145,7 +121,7 @@
 @media (max-width: 767px) {
   .capability-layout { grid-template-columns: 1fr; }
   .capability-media { display: none; }
-  .capability-item { min-height: auto; padding: var(--space-32) 0; opacity: 1; }
+  .capability-item { height: auto; padding: var(--space-32) 0; opacity: 1; }
 }
 
 /* ── About Preview — two cards (deepseek 快速体验/源码安装) ── */
