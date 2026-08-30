@@ -55,7 +55,10 @@ body.theme-dark .about-card {
 }
 
 body.theme-dark .section-label {
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.95);
+  border: 1px solid transparent;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)) padding-box,
+    linear-gradient(135deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.08) 35%, rgba(255, 255, 255, 0.04) 65%, rgba(255, 255, 255, 0.28) 100%) border-box;
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.08), 0 0 32px rgba(255, 255, 255, 0.04);
 }
