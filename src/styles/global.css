@@ -57,9 +57,8 @@ ul, ol { list-style: none; }
 
 /* ── Layout ── */
 .container {
-  max-width: var(--max-width);
+  width: min(100% - 48px, var(--max-width));
   margin: 0 auto;
-  padding: 0 var(--space-32);
 }
 
 .section {
@@ -350,5 +349,4 @@ ul, ol { list-style: none; }
 @media (max-width: 767px) {
   .experience-item { grid-template-columns: 1fr; gap: var(--space-8); }
   .section-heading { font-size: clamp(1.75rem, 7vw, 2rem); }
-  .container { padding: 0 var(--space-24); }
 }
