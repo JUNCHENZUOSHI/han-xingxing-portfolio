@@ -22,46 +22,36 @@
   gap: var(--space-40);
 }
 
-/* ── What I Do — scroll-driven showcase (transform offset, deepseek "一切皆插件") ── */
-.showcase { position: relative; }
-.showcase__sticky {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  overflow: hidden;
+/* ── What I Do — scroll-driven (deepseek "一切皆插件") ── */
+.what-i-do { background: var(--color-bg-alt); }
+.capability-layout {
+  display: grid;
+  grid-template-columns: 42fr 58fr;
+  gap: var(--space-80);
+}
+.capability-list {
   display: flex;
   flex-direction: column;
 }
-.showcase__header { flex-shrink: 0; }
-.showcase__body {
-  flex: 1;
-  min-height: 0;
+.capability-item {
+  min-height: 35vh;
   display: flex;
-  gap: var(--space-80);
+  flex-direction: column;
+  justify-content: center;
+  padding: 11vh 0;
+  opacity: 0.3;
+  transition: opacity 0.5s ease;
 }
-.feature-list {
-  flex: 0 0 42%;
-  padding-top: 200px;
-  transform: translateY(0);
-  transition: transform 0.1s linear;
-  will-change: transform;
-}
-.feature-item {
-  margin-bottom: 200px;
-  opacity: 0.25;
-  transition: opacity 0.3s ease;
-}
-.feature-item:last-child { margin-bottom: 0; }
-.feature-item--active { opacity: 1; }
-.feature-item__index {
+.capability-item--active { opacity: 1; }
+.capability-item__index {
   font-family: var(--font-mono);
   font-size: var(--text-caption);
   color: var(--color-accent);
   letter-spacing: 0.08em;
   margin-bottom: var(--space-8);
-  transition: color 0.3s ease;
+  transition: color 0.5s ease;
 }
-.feature-item__title {
+.capability-item__title {
   font-size: 22px;
   font-weight: var(--weight-normal);
   line-height: 150%;
@@ -69,35 +59,31 @@
   color: var(--color-text);
   margin-bottom: var(--space-16);
 }
-.feature-item__desc {
+.capability-item__desc {
   font-size: var(--text-body);
   line-height: var(--leading-body);
   color: var(--color-text-secondary);
 }
 
-/* right — visual, centered, slides crossfade */
-.showcase__visual {
-  flex: 1;
-  display: flex;
-  align-items: center;
-}
-.showcase__visual-frame {
-  position: relative;
-  width: 100%;
+/* right — sticky media, crossfade slides (deepseek sticky top:20vh) */
+.capability-media__frame {
+  position: sticky;
+  top: 20vh;
   aspect-ratio: 8 / 5;
+  display: grid;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 10px;
   overflow: hidden;
 }
-.showcase__visual-slide {
-  position: absolute;
-  inset: 0;
+.capability-media__slide {
+  grid-column: 1;
+  grid-row: 1;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease;
 }
-.showcase__visual-slide--active {
+.capability-media__slide--active {
   opacity: 1;
   pointer-events: auto;
 }
@@ -140,13 +126,9 @@
 .wf__circle { width: 56px; height: 56px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.12); border-top-color: rgba(103, 153, 254, 0.6); }
 
 @media (max-width: 767px) {
-  .showcase { height: auto !important; }
-  .showcase__sticky { position: static; height: auto; overflow: visible; }
-  .showcase__body { flex-direction: column; }
-  .showcase__visual { display: none; }
-  .feature-list { flex: auto; padding-top: var(--space-32); transform: none !important; }
-  .feature-item { margin-bottom: var(--space-32); opacity: 1; }
-  .feature-item:last-child { margin-bottom: 0; }
+  .capability-layout { grid-template-columns: 1fr; }
+  .capability-media { display: none; }
+  .capability-item { min-height: auto; padding: var(--space-32) 0; opacity: 1; }
 }
 
 /* ── About Preview — two cards (deepseek 快速体验/源码安装) ── */

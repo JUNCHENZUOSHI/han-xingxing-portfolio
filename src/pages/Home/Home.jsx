@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useI18n, useProfileData } from '../../i18n/context';
 import { profile } from '../../data/profile';
@@ -15,7 +15,6 @@ export default function Home() {
   const profileData = useProfileData();
   const trans = t('home.transition') || ['深度', '可迁移性', '宽度'];
   const [activeCap, setActiveCap] = useState(0);
-  const listRef = useRef(null);
 
   useEffect(() => {
     // 视差：滚动时让带 data-parallax 的元素按比例慢速漂移
@@ -56,29 +55,24 @@ export default function Home() {
     };
   }, []);
 
-  // scroll-driven active capability — transform offset (deepseek style)
+  // scroll-driven active capability — activate item closest to viewport center
   useEffect(() => {
-    const section = document.querySelector('.showcase');
-    const list = listRef.current;
-    const items = document.querySelectorAll('.feature-item');
-    if (!section || !list || !items.length) return;
-    const total = items.length;
-
+    const items = document.querySelectorAll('.capability-item');
+    if (!items.length) return;
     let raf = 0;
     const update = () => {
       raf = 0;
-      const rect = section.getBoundingClientRect();
-      const scrollable = section.offsetHeight - window.innerHeight;
-      let progress = scrollable > 0 ? -rect.top / scrollable : 0;
-      progress = Math.max(0, Math.min(1, progress));
-
-      const offset = -progress * (total - 1) * 200;
-      list.style.transform = `translateY(${offset}px)`;
-
-      const activeIndex = Math.round(progress * (total - 1));
-      setActiveCap(activeIndex);
+      const center = window.innerHeight / 2;
+      let bestIdx = 0;
+      let bestDist = Infinity;
+      items.forEach((el, i) => {
+        const rect = el.getBoundingClientRect();
+        const c = rect.top + rect.height / 2;
+        const d = Math.abs(c - center);
+        if (d < bestDist) { bestDist = d; bestIdx = i; }
+      });
+      setActiveCap(bestIdx);
     };
-
     const onScroll = () => {
       if (!raf) raf = requestAnimationFrame(update);
     };
@@ -108,41 +102,34 @@ export default function Home() {
         </div>
       </section>
 
-      {/* What I Do — scroll-driven showcase (transform offset, deepseek style) */}
-      <section
-        className="showcase"
-        style={{ height: `calc(100vh * ${profileData.homeCapabilities.length})` }}
-      >
-        <div className="showcase__sticky">
-          <div className="container">
-            <header className="showcase__header">
-              <span className="section-label">{t('home.whatIDo')}</span>
-              <h2 className="section-heading">{t('home.capabilities')}</h2>
-            </header>
-            <div className="showcase__body">
-              <div className="feature-list" ref={listRef}>
+      {/* What I Do — scroll-driven (deepseek "一切皆插件") */}
+      <section className="section what-i-do">
+        <div className="container">
+          <span className="section-label">{t('home.whatIDo')}</span>
+          <h2 className="section-heading">{t('home.capabilities')}</h2>
+          <div className="capability-layout">
+            <div className="capability-list">
+              {profileData.homeCapabilities.map((cap, i) => (
+                <div
+                  className={`capability-item${activeCap === i ? ' capability-item--active' : ''}`}
+                  key={cap.title}
+                >
+                  <span className="capability-item__index">0{i + 1}</span>
+                  <h3 className="capability-item__title">{cap.title}</h3>
+                  <p className="capability-item__desc">{cap.description}</p>
+                </div>
+              ))}
+            </div>
+            <div className="capability-media">
+              <div className="capability-media__frame">
                 {profileData.homeCapabilities.map((cap, i) => (
                   <div
-                    className={`feature-item${activeCap === i ? ' feature-item--active' : ''}`}
+                    className={`capability-media__slide${activeCap === i ? ' capability-media__slide--active' : ''}`}
                     key={cap.title}
                   >
-                    <span className="feature-item__index">0{i + 1}</span>
-                    <h3 className="feature-item__title">{cap.title}</h3>
-                    <p className="feature-item__desc">{cap.description}</p>
+                    <WireframePlaceholder variant={i} />
                   </div>
                 ))}
-              </div>
-              <div className="showcase__visual">
-                <div className="showcase__visual-frame">
-                  {profileData.homeCapabilities.map((cap, i) => (
-                    <div
-                      className={`showcase__visual-slide${activeCap === i ? ' showcase__visual-slide--active' : ''}`}
-                      key={cap.title}
-                    >
-                      <WireframePlaceholder variant={i} />
-                    </div>
-                  ))}
-                </div>
               </div>
             </div>
           </div>
