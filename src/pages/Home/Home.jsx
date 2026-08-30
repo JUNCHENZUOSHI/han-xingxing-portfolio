@@ -4,7 +4,6 @@ import { useI18n, useProfileData } from '../../i18n/context';
 import { profile } from '../../data/profile';
 import { cases, caseOrder } from '../../data/cases';
 import Hero from '../../components/Hero/Hero';
-import AuroraBackground from '../../components/Hero/AuroraBackground';
 import DotGridOverlay from '../../components/Hero/DotGridOverlay';
 import CaseCard from '../../components/CaseCard/CaseCard';
 import './Home.css';
@@ -161,8 +160,7 @@ export default function Home() {
 
       {/* Contact CTA — deepseek.com/harness blue-glow panel */}
       <section className="section contact-cta">
-        <AuroraBackground className="contact-cta__aurora" />
-        <DotGridOverlay className="contact-cta__grid" />
+        <DotGridOverlay className="contact-cta__grid" isStatic />
         <div className="contact-cta__glow contact-cta__glow--1" aria-hidden="true" />
         <div className="contact-cta__glow contact-cta__glow--2" aria-hidden="true" />
         <div className="contact-cta__glow contact-cta__glow--3" aria-hidden="true" />

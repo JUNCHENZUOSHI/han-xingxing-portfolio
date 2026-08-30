@@ -9,7 +9,10 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__inner">
-        {/* left — contact identity */}
+        {/* left — copyright */}
+        <p className="footer__copy">&copy; 2026 {t('common.name')}</p>
+
+        {/* center — contact identity */}
         <div className="footer__contact">
           <a href={`mailto:${profile.email}`}>{profile.email}</a>
           <span className="footer__sep">·</span>
@@ -17,9 +20,6 @@ export default function Footer() {
           <span className="footer__sep">·</span>
           <span>{pd.location} · {pd.status}</span>
         </div>
-
-        {/* center — copyright */}
-        <p className="footer__copy">&copy; 2026 {t('common.name')}</p>
 
         {/* right — action */}
         <div className="footer__actions">

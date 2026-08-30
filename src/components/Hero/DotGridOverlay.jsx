@@ -8,7 +8,7 @@ import { useEffect, useRef } from 'react';
  * grow slightly and brighten. Cadence 30fps, idle-stops when nothing moves,
  * hover-capable devices only, dpr capped at 2.
  */
-export default function DotGridOverlay({ className = 'hero__grid' }) {
+export default function DotGridOverlay({ className = 'hero__grid', isStatic = false }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -75,7 +75,7 @@ export default function DotGridOverlay({ className = 'hero__grid' }) {
       mouse.y = e.clientY - rect.top;
       kick();
     };
-    window.addEventListener('mousemove', onMove);
+    if (!isStatic) window.addEventListener('mousemove', onMove);
 
     let last = 0;
     const cadence = 1000 / 30;

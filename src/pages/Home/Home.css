@@ -107,21 +107,21 @@
 }
 .contact-cta__inner { position: relative; z-index: 2; max-width: var(--max-width-text); margin: 0 auto; }
 
-/* aurora fluid + dot grid (deepseek grid + particle effect) */
-.contact-cta__aurora,
+/* dot grid (deepseek "加入 DSH 插件生态" grid, edge-faded) */
 .contact-cta__grid {
   position: absolute;
   inset: 0;
+  z-index: 1;
   pointer-events: none;
+  -webkit-mask-image:
+    linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%),
+    linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+  mask-image:
+    linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%),
+    linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
 }
-.contact-cta__aurora {
-  z-index: 0;
-  will-change: opacity, filter;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.988) 0%, rgba(0, 0, 0, 0.91) 8.98%, rgba(0, 0, 0, 0) 100%);
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.988) 0%, rgba(0, 0, 0, 0.91) 8.98%, rgba(0, 0, 0, 0) 100%);
-}
-.contact-cta__grid { z-index: 1; }
-.contact-cta__aurora canvas,
 .contact-cta__grid canvas {
   display: block;
   width: 100%;
