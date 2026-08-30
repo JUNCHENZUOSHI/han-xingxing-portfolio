@@ -1,7 +1,7 @@
 /* Case Card — Apple.com */
 .case-card {
   display: block;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: var(--radius-lg);
   text-decoration: none;
@@ -82,11 +82,7 @@
 
 /* Metrics → CTA: 20px */
 .case-card__cta {
-  font-size: var(--text-button);                   /* 17px */
-  font-weight: var(--weight-medium);
-  color: var(--color-accent);
+  margin-top: var(--space-8);
 }
-
-.case-card__cta:hover { color: var(--color-accent-hover); }
 
 .capability-pills { display: none; }

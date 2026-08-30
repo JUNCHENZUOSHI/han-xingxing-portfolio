@@ -48,3 +48,8 @@ body.theme-dark .lang-toggle__item--active {
 body.theme-dark .case-card {
   border-color: hsla(0, 0%, 100%, 0.06);
 }
+
+body.theme-dark .about-card {
+  background: hsla(0, 0%, 100%, 0.02);
+  border-color: hsla(0, 0%, 100%, 0.06);
+}

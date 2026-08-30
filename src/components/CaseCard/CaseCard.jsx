@@ -80,7 +80,7 @@ export default function CaseCard({ caseData, variant = 'standard' }) {
             </span>
           ))}
         </div>
-        <span className="case-card__cta">View Case →</span>
+        <span className="case-card__cta btn-secondary">{t('common.learnMore')}</span>
       </div>
     </Link>
   );

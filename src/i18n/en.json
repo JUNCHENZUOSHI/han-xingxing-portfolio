@@ -2,7 +2,8 @@
   "common": {
     "name": "Han Xingxing",
     "nameEn": "Han Xingxing",
-    "slogan": "Good artists copy, great artists steal"
+    "slogan": "Good artists copy, great artists steal",
+    "learnMore": "View Case →"
   },
   "nav": {
     "work": "Work",
