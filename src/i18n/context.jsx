@@ -86,6 +86,7 @@ export function useProfileData() {
     specialization: pd.specialization || [],
     targetRoles: pd.targetRoles || [],
     status: getStr('status'),
+    location: getStr('location'),
     education: getStr('education'),
     yearsOfExperience: getStr('yearsOfExperience'),
     trustHooks: pd.trustHooks || [],

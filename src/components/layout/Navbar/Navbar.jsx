@@ -19,7 +19,10 @@ export default function Navbar() {
   return (
     <nav className={`navbar${scrolled ? ' navbar--scrolled' : ''}`}>
       <div className="navbar__inner">
-        <NavLink to="/" className="navbar__brand">{t('common.name')}</NavLink>
+        <NavLink to="/" className="navbar__brand">
+          <span className="navbar__brand-name">{t('common.name')}</span>
+          <span className="navbar__slogan">{t('common.slogan')}</span>
+        </NavLink>
 
         <div className="navbar__links">
           <NavLink to="/" end className="nav-link">{t('nav.work')}</NavLink>

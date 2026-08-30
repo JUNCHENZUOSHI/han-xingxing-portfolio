@@ -8,7 +8,7 @@ import { useEffect, useRef } from 'react';
  * grow slightly and brighten. Cadence 30fps, idle-stops when nothing moves,
  * hover-capable devices only, dpr capped at 2.
  */
-export default function DotGridOverlay() {
+export default function DotGridOverlay({ className = 'hero__grid' }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -205,7 +205,7 @@ export default function DotGridOverlay() {
   }, []);
 
   return (
-    <div className="hero__grid" aria-hidden="true">
+    <div className={className} aria-hidden="true">
       <canvas ref={canvasRef} />
     </div>
   );

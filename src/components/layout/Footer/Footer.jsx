@@ -1,26 +1,29 @@
-import { useI18n } from '../../../i18n/context';
+import { useI18n, useProfileData } from '../../../i18n/context';
 import { profile } from '../../../data/profile';
 import './Footer.css';
 
 export default function Footer() {
   const { t } = useI18n();
+  const pd = useProfileData();
 
   return (
     <footer className="footer">
       <div className="footer__inner">
+        {/* left — contact identity */}
         <div className="footer__contact">
-          <a href={`mailto:${profile.email}`} className="text-link">{profile.email}</a>
+          <a href={`mailto:${profile.email}`}>{profile.email}</a>
           <span className="footer__sep">·</span>
           <span>{profile.phone}</span>
           <span className="footer__sep">·</span>
-          <span>{profile.location} · {profile.status}</span>
+          <span>{pd.location} · {pd.status}</span>
         </div>
-        <div className="footer__actions">
-          <a href={`${import.meta.env.BASE_URL}resume.pdf`} className="text-link">{t('footer.downloadResume')}</a>
-        </div>
+
+        {/* center — copyright */}
         <p className="footer__copy">&copy; 2026 {t('common.name')}</p>
-        <div className="brand-dots" aria-hidden="true" style={{ marginTop: 'var(--space-8)' }}>
-          <span /><span /><span />
+
+        {/* right — action */}
+        <div className="footer__actions">
+          <a href={`${import.meta.env.BASE_URL}resume.pdf`}>{t('footer.downloadResume')}</a>
         </div>
       </div>
     </footer>

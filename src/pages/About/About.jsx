@@ -154,7 +154,7 @@ export default function About() {
       <section className="section section--alt">
         <div className="container">
           <div className="about-cta">
-            <p className="about-cta__text">{profile.location} · {profile.status}</p>
+            <p className="about-cta__text">{pd.location} · {pd.status}</p>
             <div className="about-cta__actions">
               <Link to="/" className="btn-primary">{t('contact.viewCases')}</Link>
               <a href={`mailto:${profile.email}`} className="btn-secondary">{profile.email}</a>

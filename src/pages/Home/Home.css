@@ -80,6 +80,7 @@
 }
 .contact-cta__glow {
   position: absolute;
+  z-index: 1;
   pointer-events: none;
 }
 .contact-cta__glow--1 {
@@ -104,7 +105,28 @@
   filter: blur(60px);
   opacity: 0.2;
 }
-.contact-cta__inner { position: relative; z-index: 1; max-width: var(--max-width-text); margin: 0 auto; }
+.contact-cta__inner { position: relative; z-index: 2; max-width: var(--max-width-text); margin: 0 auto; }
+
+/* aurora fluid + dot grid (deepseek grid + particle effect) */
+.contact-cta__aurora,
+.contact-cta__grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.contact-cta__aurora {
+  z-index: 0;
+  will-change: opacity, filter;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.988) 0%, rgba(0, 0, 0, 0.91) 8.98%, rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.988) 0%, rgba(0, 0, 0, 0.91) 8.98%, rgba(0, 0, 0, 0) 100%);
+}
+.contact-cta__grid { z-index: 1; }
+.contact-cta__aurora canvas,
+.contact-cta__grid canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 
 /* scroll reveal — blur + rise, deepseek-style */
 .contact-cta [data-reveal] {

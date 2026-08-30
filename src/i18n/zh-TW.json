@@ -1,7 +1,8 @@
 {
   "common": {
     "name": "韓星星",
-    "nameEn": "Han Xingxing"
+    "nameEn": "Han Xingxing",
+    "slogan": "好的藝術家模仿，偉大的藝術家偷"
   },
   "nav": {
     "work": "作品",
@@ -154,7 +155,7 @@
       "AI Product Designer",
       "Senior UX Designer"
     ],
-    "status": "Available now",
+    "status": "隨時可入職",
     "education": "南京大學 · 人力資源管理 · 本科 · 2018–2022",
     "yearsOfExperience": "6–7",
     "trustHooks": [
@@ -393,7 +394,8 @@
         "value": "設計體系建設 · 跨團隊推動"
       }
     ],
-    "coreValue": "我的價值在於把複雜 AI 能力轉化為可理解、可度量、可增長的產品體驗體系，而不是產出漂亮的界面。"
+    "coreValue": "我的價值在於把複雜 AI 能力轉化為可理解、可度量、可增長的產品體驗體系，而不是產出漂亮的界面。",
+    "location": "上海"
   },
   "resumeData": {
     "targetPosition": "UX/互動設計師",

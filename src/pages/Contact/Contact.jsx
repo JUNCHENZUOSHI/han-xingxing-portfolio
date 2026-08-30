@@ -33,11 +33,11 @@ export default function Contact() {
             </div>
             <div className="contact-item">
               <span className="contact-item__label">{t('contact.location')}</span>
-              <span className="contact-item__value">{profile.location}</span>
+              <span className="contact-item__value">{pd.location}</span>
             </div>
             <div className="contact-item">
               <span className="contact-item__label">{t('contact.availability')}</span>
-              <span className="contact-item__value contact-item__value--status">{profile.status}</span>
+              <span className="contact-item__value contact-item__value--status">{pd.status}</span>
             </div>
           </div>
         </div>

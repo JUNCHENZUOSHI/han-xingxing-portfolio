@@ -1,10 +1,11 @@
-import { useI18n, useResumeData } from '../../i18n/context';
+import { useI18n, useProfileData, useResumeData } from '../../i18n/context';
 import { profile } from '../../data/profile';
 import './Resume.css';
 
 export default function Resume() {
   const { t, lang } = useI18n();
   const rd = useResumeData();
+  const pd = useProfileData();
   const isEn = lang === 'en';
 
   return (
@@ -23,7 +24,7 @@ export default function Resume() {
             <span className="resume-hero__sep">·</span>
             <span>{profile.phone}</span>
           </div>
-          <p className="resume-hero__status">{profile.status}</p>
+          <p className="resume-hero__status">{pd.status}</p>
         </div>
       </section>
 

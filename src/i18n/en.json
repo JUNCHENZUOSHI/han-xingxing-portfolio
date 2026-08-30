@@ -1,7 +1,8 @@
 {
   "common": {
     "name": "Han Xingxing",
-    "nameEn": "Han Xingxing"
+    "nameEn": "Han Xingxing",
+    "slogan": "Good artists copy, great artists steal"
   },
   "nav": {
     "work": "Work",
@@ -382,7 +383,8 @@
         "value": "Design system building · Cross-team advocacy"
       }
     ],
-    "coreValue": "My value lies in transforming complex AI capabilities into understandable, measurable, and scalable product experience systems — not in producing beautiful interfaces."
+    "coreValue": "My value lies in transforming complex AI capabilities into understandable, measurable, and scalable product experience systems — not in producing beautiful interfaces.",
+    "location": "Shanghai"
   },
   "resumeData": {
     "targetPosition": "UX/Interaction Designer",

@@ -287,7 +287,7 @@ function hexToRgb(hex) {
   ];
 }
 
-export default function AuroraBackground() {
+export default function AuroraBackground({ className = 'hero__aurora' }) {
   const wrapRef = useRef(null);
   const canvasRef = useRef(null);
 
@@ -590,7 +590,7 @@ export default function AuroraBackground() {
   }, []);
 
   return (
-    <div className="hero__aurora" ref={wrapRef} aria-hidden="true">
+    <div className={className} ref={wrapRef} aria-hidden="true">
       <canvas ref={canvasRef} />
     </div>
   );
