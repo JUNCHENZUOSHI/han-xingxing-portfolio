@@ -178,7 +178,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <p className="experience-status">{profileData.location}</p>
         </div>
       </section>
 
