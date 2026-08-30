@@ -24,6 +24,7 @@
 
 /* ── What I Do — scroll-driven sticky media (deepseek "一切皆插件") ── */
 .what-i-do { background: var(--color-bg-alt); }
+.what-i-do .section-heading { margin-bottom: 0; }
 .capability-layout {
   display: grid;
   grid-template-columns: 42fr 58fr;
@@ -33,14 +34,12 @@
 .capability-list {
   display: flex;
   flex-direction: column;
+  gap: 200px;
+  margin-top: 200px;
 }
 .capability-item {
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: var(--space-12);
-  padding: 0 var(--space-8);
   opacity: 0.3;
   transition: opacity 0.5s ease, transform 0.5s ease;
   transform: translateX(0);
@@ -51,6 +50,7 @@
   font-size: var(--text-caption);
   color: var(--color-accent);
   letter-spacing: 0.08em;
+  margin-bottom: var(--space-8);
   transition: color 0.5s ease;
 }
 .capability-item__title {
@@ -59,6 +59,7 @@
   line-height: 150%;
   letter-spacing: -0.01em;
   color: var(--color-text);
+  margin-bottom: var(--space-20);
 }
 .capability-item__desc {
   font-size: var(--text-body);
@@ -121,7 +122,8 @@
 @media (max-width: 767px) {
   .capability-layout { grid-template-columns: 1fr; }
   .capability-media { display: none; }
-  .capability-item { height: auto; padding: var(--space-32) 0; opacity: 1; }
+  .capability-list { gap: var(--space-32); margin-top: var(--space-32); }
+  .capability-item { padding: 0; opacity: 1; }
 }
 
 /* ── About Preview — two cards (deepseek 快速体验/源码安装) ── */
