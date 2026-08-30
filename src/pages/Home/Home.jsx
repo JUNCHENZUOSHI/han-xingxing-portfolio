@@ -110,7 +110,7 @@ export default function Home() {
         <div className="container">
           <div className="capability-layout">
             <div className="what-i-do__header">
-              <span className="section-label">What I Do</span>
+              <span className="section-label">{t('home.whatIDo')}</span>
               <h2 className="section-heading">{t('home.capabilities')}</h2>
             </div>
             <div className="capability-list">
