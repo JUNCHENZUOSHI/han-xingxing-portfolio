@@ -50,6 +50,6 @@ body.theme-dark .case-card {
 }
 
 body.theme-dark .about-card {
-  background: hsla(0, 0%, 100%, 0.02);
+  background: rgba(255, 255, 255, 0.06);
   border-color: hsla(0, 0%, 100%, 0.06);
 }
