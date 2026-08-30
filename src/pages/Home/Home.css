@@ -164,7 +164,7 @@
 .about-card__list li {
   font-size: var(--text-body);
   line-height: var(--leading-body);
-  color: var(--color-text);
+  color: var(--color-text-secondary);
   padding: var(--space-4) 0;
 }
 .about-card__text {
@@ -172,6 +172,10 @@
   line-height: var(--leading-body);
   color: var(--color-text-secondary);
   margin: 0 0 var(--space-20);
+}
+.about-card__cta {
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 /* ── Contact CTA — deepseek.com/harness blue-glow panel ── */

@@ -162,7 +162,7 @@ export default function Home() {
               <div className="about-card">
                 <h3 className="about-card__title">{t('home.workingStyle')}</h3>
                 <p className="about-card__text">{profileData.workingStyleSummary}</p>
-                <Link to="/about" className="btn-secondary">{t('home.moreAbout')}</Link>
+                <Link to="/about" className="btn-secondary about-card__cta">{t('home.moreAbout')}</Link>
               </div>
             </div>
           </div>
