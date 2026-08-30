@@ -57,7 +57,7 @@ export default function Home() {
 
   // scroll-driven active capability — activate item closest to viewport center
   useEffect(() => {
-    const items = document.querySelectorAll('.feature-item');
+    const items = document.querySelectorAll('.capability-item');
     if (!items.length) return;
     let raf = 0;
     const update = () => {
@@ -102,35 +102,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 能力矩阵 — capability showcase */}
-      <section className="section capability-showcase">
+      {/* 能力矩阵 — scroll-driven (deepseek "一切皆插件") */}
+      <section className="section what-i-do">
         <div className="container">
           <span className="section-label">{t('home.whatIDo')}</span>
           <h2 className="section-heading">{t('home.capabilities')}</h2>
-          <div className="content">
-            <div className="feature-list">
+          <div className="capability-layout">
+            <div className="capability-list">
               {profileData.homeCapabilities.map((cap, i) => (
                 <div
-                  className={`feature-item${activeCap === i ? ' active' : ''}`}
-                  data-index={i}
+                  className={`capability-item${activeCap === i ? ' capability-item--active' : ''}`}
                   key={cap.title}
                 >
-                  <span className="num">0{i + 1}</span>
-                  <h3>{cap.title}</h3>
-                  <p>{cap.description}</p>
+                  <span className="capability-item__index">0{i + 1}</span>
+                  <h3 className="capability-item__title">{cap.title}</h3>
+                  <p className="capability-item__desc">{cap.description}</p>
                 </div>
               ))}
             </div>
-            <div className="visual">
-              {profileData.homeCapabilities.map((cap, i) => (
-                <div
-                  className={`wireframe-panel${activeCap === i ? ' active' : ''}`}
-                  data-index={i}
-                  key={cap.title}
-                >
-                  <WireframePlaceholder variant={i} />
-                </div>
-              ))}
+            <div className="capability-media">
+              <div className="capability-media__frame">
+                {profileData.homeCapabilities.map((cap, i) => (
+                  <div
+                    className={`capability-media__slide${activeCap === i ? ' capability-media__slide--active' : ''}`}
+                    key={cap.title}
+                  >
+                    <WireframePlaceholder variant={i} title={cap.title} />
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
