@@ -22,78 +22,95 @@
   gap: var(--space-40);
 }
 
-/* ── What I Do — scroll-driven sticky media (deepseek "一切皆插件") ── */
-.what-i-do { background: var(--color-bg-alt); }
-.what-i-do .section-heading { margin-bottom: 0; }
-.capability-layout {
-  display: grid;
-  grid-template-columns: 42fr 58fr;
-  column-gap: var(--space-64);
-  align-items: start;
-}
-.what-i-do__header {
-  grid-column: 1 / -1;
-  margin-bottom: 200px;
-}
-.capability-list {
-  display: block;
-}
-.capability-item {
+/* ── What I Do — scroll-driven showcase (transform offset, deepseek "一切皆插件") ── */
+.showcase { position: relative; }
+.showcase__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  margin-bottom: 200px;
-  opacity: 0.3;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  transform: translateX(0);
 }
-.capability-item:last-child { margin-bottom: 0; }
-.capability-item--active { opacity: 1; }
-.capability-item__index {
+.showcase__header { flex-shrink: 0; }
+.showcase__body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  gap: var(--space-80);
+}
+.feature-list {
+  flex: 0 0 42%;
+  padding-top: 200px;
+  transform: translateY(0);
+  transition: transform 0.1s linear;
+  will-change: transform;
+}
+.feature-item {
+  margin-bottom: 200px;
+  opacity: 0.25;
+  transition: opacity 0.3s ease;
+}
+.feature-item:last-child { margin-bottom: 0; }
+.feature-item--active { opacity: 1; }
+.feature-item__index {
   font-family: var(--font-mono);
   font-size: var(--text-caption);
   color: var(--color-accent);
   letter-spacing: 0.08em;
   margin-bottom: var(--space-8);
-  transition: color 0.5s ease;
+  transition: color 0.3s ease;
 }
-.capability-item__title {
+.feature-item__title {
   font-size: 22px;
   font-weight: var(--weight-normal);
   line-height: 150%;
   letter-spacing: -0.01em;
   color: var(--color-text);
-  margin-bottom: var(--space-20);
+  margin-bottom: var(--space-16);
 }
-.capability-item__desc {
+.feature-item__desc {
   font-size: var(--text-body);
   line-height: var(--leading-body);
   color: var(--color-text-secondary);
 }
 
-/* right — sticky showcase (fixed in viewport, card swaps on scroll) */
-.capability-media {
-  position: sticky;
-  top: 0;
-  height: 100vh;
+/* right — visual, centered, slides crossfade */
+.showcase__visual {
+  flex: 1;
   display: flex;
   align-items: center;
 }
-.capability-media__card {
+.showcase__visual-frame {
+  position: relative;
   width: 100%;
-  animation: fadeUp 0.4s ease both;
+  aspect-ratio: 8 / 5;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.showcase__visual-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.showcase__visual-slide--active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* ── wireframe placeholders (swap for real screenshots later) ── */
 .wf {
   width: 100%;
-  aspect-ratio: 16 / 10;
-  border: 1px dashed rgba(255, 255, 255, 0.18);
-  border-radius: 12px;
-  padding: 14px;
+  height: 100%;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(0, 0, 0, 0.2);
   overflow: hidden;
 }
 .wf__bar { height: 12px; border-radius: 4px; background: rgba(255, 255, 255, 0.1); flex-shrink: 0; }
@@ -123,11 +140,13 @@
 .wf__circle { width: 56px; height: 56px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.12); border-top-color: rgba(103, 153, 254, 0.6); }
 
 @media (max-width: 767px) {
-  .capability-layout { grid-template-columns: 1fr; }
-  .capability-media { display: none; }
-  .what-i-do__header { margin-bottom: var(--space-32); }
-  .capability-item { margin-bottom: var(--space-32); padding: 0; opacity: 1; }
-  .capability-item:last-child { margin-bottom: 0; }
+  .showcase { height: auto !important; }
+  .showcase__sticky { position: static; height: auto; overflow: visible; }
+  .showcase__body { flex-direction: column; }
+  .showcase__visual { display: none; }
+  .feature-list { flex: auto; padding-top: var(--space-32); transform: none !important; }
+  .feature-item { margin-bottom: var(--space-32); opacity: 1; }
+  .feature-item:last-child { margin-bottom: 0; }
 }
 
 /* ── About Preview — two cards (deepseek 快速体验/源码安装) ── */
