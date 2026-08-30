@@ -72,29 +72,22 @@ ul, ol { list-style: none; }
 
 /* ── Typography ── */
 
-/* Section label: 12px / 500 / caps */
+/* Section label: capsule eyebrow pill */
 .section-label {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: var(--space-8);
-  font-size: var(--text-caption);       /* 12px */
+  font-size: 13px;
   font-weight: var(--weight-medium);
-  letter-spacing: var(--tracking-caps);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-text-secondary);
-  margin-bottom: var(--space-16);
-}
-
-/* Blue diamond marker — visual identity */
-.section-label::before {
-  content: '';
-  display: inline-block;
-  width: 4px;
-  height: 4px;
-  background: var(--color-accent);
-  opacity: 0.27;
-  transform: rotate(45deg);
-  flex-shrink: 0;
+  color: var(--color-text);
+  background: rgba(0, 0, 0, 0.06);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 999px;
+  padding: 8px 16px;
+  margin-bottom: var(--space-24);
 }
 
 /* Section heading: H2 40px */
