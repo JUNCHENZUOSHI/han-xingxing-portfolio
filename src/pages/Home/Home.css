@@ -28,22 +28,25 @@
 .capability-layout {
   display: grid;
   grid-template-columns: 42fr 58fr;
-  gap: var(--space-64);
+  column-gap: var(--space-64);
   align-items: start;
 }
+.what-i-do__header {
+  grid-column: 1 / -1;
+  margin-bottom: 200px;
+}
 .capability-list {
-  display: flex;
-  flex-direction: column;
-  gap: 200px;
-  margin-top: 200px;
+  display: block;
 }
 .capability-item {
   display: flex;
   flex-direction: column;
+  margin-bottom: 200px;
   opacity: 0.3;
   transition: opacity 0.5s ease, transform 0.5s ease;
   transform: translateX(0);
 }
+.capability-item:last-child { margin-bottom: 0; }
 .capability-item--active { opacity: 1; }
 .capability-item__index {
   font-family: var(--font-mono);
@@ -122,8 +125,9 @@
 @media (max-width: 767px) {
   .capability-layout { grid-template-columns: 1fr; }
   .capability-media { display: none; }
-  .capability-list { gap: var(--space-32); margin-top: var(--space-32); }
-  .capability-item { padding: 0; opacity: 1; }
+  .what-i-do__header { margin-bottom: var(--space-32); }
+  .capability-item { margin-bottom: var(--space-32); padding: 0; opacity: 1; }
+  .capability-item:last-child { margin-bottom: 0; }
 }
 
 /* ── About Preview — two cards (deepseek 快速体验/源码安装) ── */

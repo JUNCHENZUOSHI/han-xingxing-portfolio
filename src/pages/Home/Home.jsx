@@ -103,11 +103,16 @@ export default function Home() {
       </section>
 
       {/* What I Do — scroll-driven sticky media (deepseek "一切皆插件") */}
-      <section className="section what-i-do">
+      <section
+        className="section what-i-do"
+        style={{ minHeight: `calc(100vh + ${(profileData.homeCapabilities.length - 1) * 200}px + 400px)` }}
+      >
         <div className="container">
-          <span className="section-label">What I Do</span>
-          <h2 className="section-heading">{t('home.capabilities')}</h2>
           <div className="capability-layout">
+            <div className="what-i-do__header">
+              <span className="section-label">What I Do</span>
+              <h2 className="section-heading">{t('home.capabilities')}</h2>
+            </div>
             <div className="capability-list">
               {profileData.homeCapabilities.map((cap, i) => (
                 <div
