@@ -6,6 +6,7 @@ import { cases, caseOrder } from '../../data/cases';
 import Hero from '../../components/Hero/Hero';
 import DotGridOverlay from '../../components/Hero/DotGridOverlay';
 import ParticleField from '../../components/Hero/ParticleField';
+import WireframePlaceholder from '../../components/Hero/WireframePlaceholder';
 import CaseCard from '../../components/CaseCard/CaseCard';
 import './Home.css';
 
@@ -111,7 +112,7 @@ export default function Home() {
             </div>
             <div className="capability-media">
               <div className="capability-media__card" key={activeCap}>
-                <div className="capability-media__frame" aria-hidden="true" />
+                <WireframePlaceholder variant={activeCap} />
                 <span className="capability-media__index">0{activeCap + 1} / 0{profileData.homeCapabilities.length}</span>
                 <h3 className="capability-media__title">{profileData.homeCapabilities[activeCap].title}</h3>
                 <p className="capability-media__desc">{profileData.homeCapabilities[activeCap].description}</p>
