@@ -26,7 +26,7 @@ export const profile = {
   phone: '17898872362',
 
   /* ── 2. Professional Identity (profile.md §2-3) ── */
-  title: 'AI-Native Product Designer',
+  title: 'AI Product Designer',
   subtitle: 'B2B AI Product Designer',
   tagline:
     '将 AI 能力、复杂业务系统与商业目标整合为\n可规模化落地的产品体验',

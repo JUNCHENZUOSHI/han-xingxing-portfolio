@@ -29,7 +29,9 @@ export function I18nProvider({ children }) {
   // Sync <html lang> and <title>
   useEffect(() => {
     document.documentElement.lang = lang === 'zh-TW' ? 'zh-Hant' : lang;
-    document.title = `${translations[lang].common.name} — AI-Native Product Designer`;
+    const raw = translations[lang];
+    const title = (raw.profileData || raw).title || 'AI Product Designer';
+    document.title = `${raw.common.name} — ${title}`;
   }, [lang]);
 
   const t = useCallback(
