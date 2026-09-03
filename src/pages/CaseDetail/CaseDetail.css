@@ -41,7 +41,7 @@
   -webkit-backdrop-filter: blur(40px) saturate(180%);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
-  padding: 6px 20px;
+  padding: 6px 0;
   letter-spacing: var(--tracking-body);
 }
 
