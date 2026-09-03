@@ -19,6 +19,9 @@
 
 .cd-hero__badge-row {
   display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  padding-inline: 0;
   gap: var(--space-12);
   margin-bottom: var(--space-24);
   flex-wrap: wrap;
@@ -27,6 +30,9 @@
 .cd-hero__nda-badge {
   display: inline-flex;
   align-items: center;
+  align-self: flex-start;
+  margin-inline: 0;
+  gap: 6px;
   font-size: var(--text-caption);
   font-weight: var(--weight-medium);
   color: var(--color-text-secondary);
@@ -37,6 +43,12 @@
   border-radius: var(--radius-full);
   padding: 6px 20px;
   letter-spacing: var(--tracking-body);
+}
+
+.cd-hero__nda-icon {
+  display: inline-block;
+  flex: 0 0 auto;
+  line-height: 1;
 }
 
 /* Narrative hook: body 21px */

@@ -145,7 +145,10 @@ export default function CaseDetail() {
         <div className="container">
           <div className="cd-hero__badge-row">
             {caseData.nda && (
-              <span className="cd-hero__nda-badge">{displayNdaBadge}</span>
+              <span className="cd-hero__nda-badge">
+                <span className="cd-hero__nda-icon" aria-hidden="true">🔒</span>
+                <span>{displayNdaBadge.replace(/^🔒\s*/, '')}</span>
+              </span>
             )}
           </div>
 
