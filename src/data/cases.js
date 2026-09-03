@@ -973,7 +973,7 @@ export const cases = {
 };
 
 /** Helper: get ordered array of case slugs for iteration */
-export const caseOrder = ['sidekick', 'lowcode', 'template', 'sidekick-agent'];
+export const caseOrder = ['sidekick', 'sidekick-agent', 'lowcode', 'template'];
 
 /** Helper: get case by slug */
 export function getCase(slug) {
