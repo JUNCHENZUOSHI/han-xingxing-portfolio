@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useI18n, useProfileData } from '../../i18n/context';
 import { profile } from '../../data/profile';
+import { hasHiddenMetric } from '../../data/cases';
 import './About.css';
 
 export default function About() {
@@ -72,9 +73,9 @@ export default function About() {
                     <ul className="about-highlights">
                       {exp.highlights.map((h, j) => <li key={j}>{h}</li>)}
                     </ul>
-                    {exp.metrics.length > 0 && (
+                    {exp.metrics.filter((m) => !hasHiddenMetric(m.value)).length > 0 && (
                       <div className="about-metrics">
-                        {exp.metrics.map((m, k) => (
+                        {exp.metrics.filter((m) => !hasHiddenMetric(m.value)).map((m, k) => (
                           <span className="about-metric" key={k}>{m.label}: {m.value}</span>
                         ))}
                       </div>
@@ -121,7 +122,7 @@ export default function About() {
                 <tr><th>{t('about.capabilities')}</th><th>Evidence</th></tr>
               </thead>
               <tbody>
-                {pd.skills.map((s, i) => (
+                {pd.skills.filter((s) => !hasHiddenMetric(s.evidence)).map((s, i) => (
                   <tr key={i}><td>{s.name}</td><td>{s.evidence}</td></tr>
                 ))}
               </tbody>

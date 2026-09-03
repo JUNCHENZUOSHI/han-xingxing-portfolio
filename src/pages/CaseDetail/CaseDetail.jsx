@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { useI18n, useCaseI18n } from '../../i18n/context';
-import { getCase, caseOrder } from '../../data/cases';
+import { getCase, caseOrder, hasHiddenMetric } from '../../data/cases';
 import './CaseDetail.css';
 
 function ConfidenceMarker({ state, note, children }) {
@@ -73,7 +73,7 @@ export default function CaseDetail() {
   const displayTitle = slug === 'sidekick'
     ? caseData.title
     : caseI18n.title || t(`caseTitles.${slug}`) || caseData.title;
-  const displaySummary = ci('summary', caseData.summary);
+  const displaySummary = caseData.publicSummary || ci('summary', caseData.summary);
   const displayTags = ci('tags', caseData.tags);
   const displayBackgroundWhy = ci('background.why', caseData.background.why);
   const displayBackgroundTargetUsers = ci('background.targetUsers', caseData.background.targetUsers);
@@ -114,11 +114,13 @@ export default function CaseDetail() {
     },
   }));
 
-  const outcomeQuant = caseData.outcome.quantitative.map((m, i) => ({
-    ...m,
-    label: ci(`outcome.quantitative.${i}.label`, m.label),
-    note: ci(`outcome.quantitative.${i}.note`, m.note || ''),
-  }));
+  const outcomeQuant = caseData.outcome.quantitative
+    .map((m, i) => ({
+      ...m,
+      label: ci(`outcome.quantitative.${i}.label`, m.label),
+      note: ci(`outcome.quantitative.${i}.note`, m.note || ''),
+    }))
+    .filter((metric) => !hasHiddenMetric(metric.after));
 
   const outcomeQual = caseData.outcome.qualitative.map((item, i) =>
     ci(`outcome.qualitative.${i}`, item)

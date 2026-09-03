@@ -41,6 +41,8 @@ export const cases = {
       'Shopify 已经很好地解决了「怎么配置」，但商家仍需持续判断「应该配置什么」。本项目通过 AI 决策辅助，把经营目标转化为可理解、可调整、可执行的页面方案。',
     summary:
       '通过产品走查、任务拆解、15 次 AI 能力测试、6 名商家访谈和竞品对标，识别成熟编辑能力之上的决策缺口。在既有主题与 Sidekick 能力上增加主题推荐、页面规划和改动控制，使主题选择耗时缩短 50%，页面规划耗时缩短 60%，关键决策节点减少约 44%。',
+    publicSummary:
+      '通过产品走查、任务拆解、15 次 AI 能力测试、6 名商家访谈和竞品对标，识别成熟编辑能力之上的决策缺口。在既有主题与 Sidekick 能力上增加主题推荐、页面规划和改动控制。',
 
     cardMetrics: [
       { label: '主题选择耗时', value: '↓50%', baseline: '真实任务记录' },
@@ -532,6 +534,8 @@ export const cases = {
     /* ── Summary ── */
     summary:
       '从 0 到 1 搭建公司级 B 端设计系统，建立多语言多市场适配的 Design Token 体系。组件复用率 70%，国际化设计迭代周期缩短 30%。通过跨文化验证（北美/东南亚）驱动模板站转化率优化。',
+    publicSummary:
+      '从 0 到 1 搭建公司级 B 端设计系统，建立多语言多市场适配的 Design Token 体系，并通过跨文化验证（北美/东南亚）驱动模板站转化率优化。',
 
     /* ── Metrics ── */
     cardMetrics: [
@@ -974,6 +978,13 @@ export const cases = {
 
 /** Helper: get ordered array of case slugs for iteration */
 export const caseOrder = ['sidekick', 'sidekick-agent', 'lowcode', 'template'];
+
+/** Metrics temporarily withheld from public presentation; retain source data for later restoration. */
+export const hiddenMetricValues = ['↓50%', '↓60%', '↑30–45%', '70%+', '70%', '↓30%'];
+
+export function hasHiddenMetric(value) {
+  return hiddenMetricValues.some((metric) => String(value).includes(metric));
+}
 
 /** Helper: get case by slug */
 export function getCase(slug) {

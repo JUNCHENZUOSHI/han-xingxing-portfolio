@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useI18n, useCaseI18n } from '../../i18n/context';
+import { hasHiddenMetric } from '../../data/cases';
 import './CaseCard.css';
 
 export default function CaseCard({ caseData, variant = 'standard' }) {
@@ -22,14 +23,17 @@ export default function CaseCard({ caseData, variant = 'standard' }) {
   const displayTitle = slug === 'sidekick'
     ? title
     : caseI18n.title || t(`caseTitles.${slug}`) || title;
-  const displaySummary = caseI18n.summary || summary;
+  const displaySummary = caseData.publicSummary || caseI18n.summary || summary;
   const displayTags = caseI18n.tags || tags;
   const displayNdaBadge = caseI18n.nda?.badge || nda?.badge;
 
   const isFeatured = variant === 'featured';
-  const metrics = isFeatured && featuredMetrics.length > 0
+  const metrics = (isFeatured && featuredMetrics.length > 0
     ? featuredMetrics
-    : cardMetrics;
+    : cardMetrics).filter((metric) => !hasHiddenMetric(metric.value));
+  const visibleVisualPills = cardVisualPills?.filter(
+    (pill) => !hasHiddenMetric(pill.metric)
+  );
 
   const summaryClass = isFeatured
     ? 'case-card__summary case-card__summary--expanded'
@@ -49,10 +53,10 @@ export default function CaseCard({ caseData, variant = 'standard' }) {
             className="case-card__img"
             loading="lazy"
           />
-        ) : cardVisualPills && cardVisualPills.length > 0 ? (
+        ) : visibleVisualPills && visibleVisualPills.length > 0 ? (
           <div className="case-card__visual-inner">
             <div className="capability-pills">
-              {cardVisualPills.map((pill) => (
+              {visibleVisualPills.map((pill) => (
                 <div className="capability-pill" key={pill.label}>
                   <span className="capability-pill__label">{pill.label}</span>
                   <span className="capability-pill__metric">{pill.metric}</span>
