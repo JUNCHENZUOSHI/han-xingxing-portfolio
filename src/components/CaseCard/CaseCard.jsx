@@ -4,7 +4,8 @@ import './CaseCard.css';
 
 export default function CaseCard({ caseData, variant = 'standard' }) {
   const { t } = useI18n();
-  const caseI18n = useCaseI18n(caseData.slug);
+  const localizedCase = useCaseI18n(caseData.slug);
+  const caseI18n = caseData.slug === 'sidekick' ? {} : localizedCase;
   const {
     slug,
     title,
@@ -18,7 +19,9 @@ export default function CaseCard({ caseData, variant = 'standard' }) {
     featuredMetrics,
   } = caseData;
 
-  const displayTitle = caseI18n.title || t(`caseTitles.${slug}`) || title;
+  const displayTitle = slug === 'sidekick'
+    ? title
+    : caseI18n.title || t(`caseTitles.${slug}`) || title;
   const displaySummary = caseI18n.summary || summary;
   const displayTags = caseI18n.tags || tags;
   const displayNdaBadge = caseI18n.nda?.badge || nda?.badge;

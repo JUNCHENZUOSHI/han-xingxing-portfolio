@@ -16,8 +16,8 @@
 
 export const cases = {
   /* ================================================================
-     Case 01 — Shopify AI / Sidekick
-     Source: cases.md §案例2 — slug: shopify-sidekick-ai
+     Case 01 — Shopify 主题智能建站体验升级
+     Source: Cases 4 — slug preserved as sidekick
      Priority: P0 · Featured case on Home
      ================================================================ */
   sidekick: {
@@ -25,231 +25,223 @@ export const cases = {
     priority: 'P0',
     featured: true,
 
-    /* ── Basic Info ── */
-    title: 'Sidekick AI 驱动广告素材自动化',
-    nda: { required: true, badge: '🔒 已脱敏' },
-    tags: ['AI 产品设计', 'B端', '增长', '跨境电商'],
+    title: 'Shopify 主题智能建站体验升级',
+    nda: null,
+    tags: ['AI 产品设计', 'SaaS', '跨境电商', '复杂系统'],
     confidence: 'confirmed',
-    role: '交互设计专家',
-    timeline: '2023.06 – 至今',
-    platform: 'Web (B端)',
-    industry: '跨境电商 SaaS',
-    team: 'PM × 前端 × AI Lab',
+    role: '产品体验设计 / UI/UX 设计',
+    timeline: '概念项目',
+    platform: 'Web（B端）',
+    industry: '跨境电商 SaaS / AI 产品',
+    team: '独立设计',
     cardAccent: 'var(--card-accent-sidekick)',
     coverImage: 'case-sidekick.jpeg',
 
-    /* ── Narrative Hook (displayed on case detail header, not card) ── */
     narrativeHook:
-      '一个跨境商家的广告投放流程需要 4 小时手动操作——从选品、生成素材、配置投放到上线。Sidekick AI 能将这个过程大幅缩短。但核心问题不是「AI 能生成多快」，而是「商家凭什么信任 AI 生成的素材能带来订单？」这个案例讲述了我如何将 Sidekick 的三类 AI 能力抽象为可复用的产品模型，同时在这套模型中嵌入信任机制——让商家不仅用 AI，更依赖 AI。',
-
-    /* ── Summary ── */
+      'Shopify 的主题发现、编辑、AI 生成和跨端预览能力已经相当成熟。真正值得解决的，不是再造一个主题编辑器，而是降低商家在这些成熟能力之间做出正确选择的成本。',
     summary:
-      '商家广告投放流程耗时 4 小时以上，且 AI 生成的素材能否驱动订单仍是未知数。本文将 Sidekick AI 的三类能力（内容生成/策略建议/自动化执行）抽象为可复用的产品模型，同时从 AI 质量和业务结果两个层面建立度量闭环——效率 ↑25%，生产周期 ↓4h，客户首次购买转化率 ↑8%。',
+      '基于 Shopify 主题完整产品链路，对主题发现、选择、编辑、AI 辅助、跨端预览与上线过程进行系统性走查。在现有体系之上提出 AI 决策辅助层，帮助商家把经营目标转化为主题选择、页面规划与可控的 AI 修改。',
 
-    /* ── Metrics (Home card hooks) ── */
     cardMetrics: [
-      { label: '效率', value: '↑25%', baseline: null },
-      { label: '周期', value: '↓4h', baseline: null },
+      { label: '主题决策耗时', value: '↓40%–55%', baseline: '方向性测算' },
+      { label: '页面规划耗时', value: '↓50%–65%', baseline: '方向性测算' },
     ],
     featuredMetrics: [
-      { label: '效率', value: '↑25%', baseline: null },
-      { label: '周期', value: '↓4h', baseline: null },
-      { label: '转化率', value: '↑8%', baseline: null },
+      { label: '主题决策耗时', value: '↓40%–55%', baseline: '方向性测算' },
+      { label: '页面规划耗时', value: '↓50%–65%', baseline: '方向性测算' },
+      { label: '配置节点', value: '↓35%–50%', baseline: '方向性测算' },
     ],
-
-    /* ── Visual Entry Zone (capability pills on cards) ── */
     cardVisualPills: [
-      { label: '内容生成', metric: '↑25%' },
-      { label: '策略建议', metric: 'ROI' },
-      { label: '自动化执行', metric: '↓4h' },
+      { label: '主题决策', metric: '↓40%–55%' },
+      { label: '页面规划', metric: '↓50%–65%' },
+      { label: 'AI 改动控制', metric: '≥80%' },
     ],
 
-    /* ── Background (🔮 inferred from resume) ── */
     background: {
-      state: 'inferred',
-      note: '以下背景信息基于量化结果和简历内容反推，尚未经原始项目文档直接确认。',
-      why: '跨境商家的典型广告投放场景：一个商家需要为同一款产品生成适应北美和东南亚两个市场的广告素材，每个市场需要多组创意用于 A/B 测试。从拍摄产品、撰写文案、设计素材到配置投放参数，一次完整流程平均耗时 4 小时以上。对于日均上架 5-10 款新品的活跃商家，这意味着每天有 20-40 小时被纯操作工作消耗——尚未计算投放后的效果监控和策略调整。AI 可以生成素材——但商家反复修改 AI 输出、不信任 AI 建议、最终手动推翻重做，AI 的存在并未真正释放效率。',
-      targetUsers:
-        'Shopify 跨境商家、广告投放运营人员。🔮 具体 Persona 待确认。',
-      businessGoals:
-        '通过 AI 自动化降低素材生产的人力成本与时间成本，提升广告投放的整体 ROI。',
+      state: 'confirmed',
+      note: null,
+      why: 'Shopify 主题连接商品、品牌资产与消费者商店前台。商家需要完成主题理解、页面搭建、内容组织、商品展示、跨端适配与最终上线。完整产品走查显示，主题发现、可组合编辑、Sidekick 自然语言修改、AI 区块生成、跨端预览与保存撤销等能力都已较成熟，因此项目范围从「界面优化」收敛为「建站决策优化」。',
+      targetUsers: '缺乏专业建站经验、需要自主完成品牌商店搭建与运营的 Shopify 商家。',
+      businessGoals: '降低商家建站门槛与完成成本，更高效地建立符合品牌、商品和经营目标的在线商店。',
       constraints: [
-        '必须集成 Shopify Sidekick 的现有能力边界',
-        '多语言市场（至少中 + 英）',
-        '❓ 技术/时间/资源约束待确认',
+        '不推翻 Shopify 已成熟的主题商店与主题编辑器',
+        '复用 Sidekick、AI 生成、预览、保存和撤销等既有能力',
+        '探索性测试结论不等同于全量用户研究或正式产品能力评估',
       ],
     },
 
-    /* ── Challenge (🔮 inferred) ── */
     challenge: {
-      state: 'inferred',
-      userProblem:
-        '广告素材制作重复劳动多，从创意到上线周期长，商家投放启动慢。',
-      businessProblem:
-        '人力成本高，AI 能力未被有效利用于广告投放全流程。',
-      designChallenge:
-        'Sidekick AI 有能力生成素材、给出策略建议、甚至自动化执行操作——但商家面对 AI 输出的第一反应是「改一改再用」，第二反应是「算了还是我自己来」。核心设计挑战不是「AI 能不能做」，而是双重信任问题：① 商家如何相信 AI 生成的素材质量不会损害自己的广告表现？② 团队（PM、AI Lab、前端）如何相信这套 AI 能力模型可以规模化而非一次性集成？第一个问题关乎「商家愿不愿意用」，第二个关乎「组织愿不愿意持续投入」。',
+      state: 'partial',
+      userProblem: '主题信息虽然充分，但商家仍需自行完成「业务需求→商品特征→建站需求→主题能力→最终选择」的复杂映射。',
+      businessProblem: '成熟的编辑能力没有直接降低建站决策成本；用户仍需把经营目标跨越多个专业判断层，才能转化为可执行配置。',
+      designChallenge: '如何在不重做主题编辑器的前提下，建立一个可解释、可执行、可撤销的 AI 决策辅助层，同时解决主题选择、页面规划与复杂 AI 改动控制三个问题。',
     },
 
-    /* ── My Role ── */
     myRole: {
       responsibilities: [
         {
-          task: 'AI 能力模型抽象',
+          task: '端到端产品走查',
           contribution: '独立主导',
           confidence: 'confirmed',
-          detail:
-            '将 Sidekick 三类 AI 能力（内容生成/策略建议/自动化执行）抽象为可复用模型',
+          detail: '梳理主题商店、主题管理、编辑器、分区、区块、AI 辅助、预览与上线的完整链路。',
         },
         {
-          task: 'AI 嵌入策略',
+          task: '问题定义与范围收敛',
           contribution: '独立主导',
           confidence: 'confirmed',
-          detail:
-            '将 AI 系统性嵌入广告创建、商品优化、工作流自动化等关键路径',
+          detail: '基于产品证据修正初始假设，将方向从编辑器重设计收敛为建站决策优化。',
         },
         {
-          task: 'AI 体验评估体系',
-          contribution: '独立主导',
+          task: 'Sidekick 能力探索',
+          contribution: '独立完成',
           confidence: 'confirmed',
-          detail:
-            '构建跨层级指标体系（AI 质量层/体验行为层/业务结果层）',
+          detail: '在同一 Horizon 主题和首页环境下完成 5 组探索性提示词测试。',
         },
         {
-          task: '持续调优闭环',
+          task: 'AI 决策辅助方案',
           contribution: '独立主导',
           confidence: 'confirmed',
-          detail:
-            '建立「问题发现→数据诊断→AI 能力微调→增量上线」持续交付机制',
+          detail: '设计主题推荐、页面规划、原因解释与既有执行能力衔接的产品结构。',
         },
         {
-          task: '广告素材自动化流程',
-          contribution: '独立主导',
-          confidence: 'confirmed',
-          detail: '重构「素材生成→投放配置」链路',
+          task: '验证框架',
+          contribution: '独立制定',
+          confidence: 'partial',
+          detail: '定义任务耗时、方案采纳、推荐理解与 AI 改动理解等后续验证指标。',
         },
       ],
-      note: 'AI 能力模型、评估体系和自动化流程由我主导设计。PM 提供了业务优先级和商家需求输入，AI Lab 验证了 Sidekick 的技术能力边界并参与了 Prompt 调优。前端团队负责实现。团队协作说明将在补充更多过程材料后细化。',
+      note: '本项目以产品体验分析与概念方案为主，测算指标和验证目标需要通过真实用户测试与产品数据进一步验证。',
     },
 
-    /* ── Design Approach (partial — reconstructed from confirmed outcomes) ── */
     designApproach: {
-      state: 'partial',
-      note: '以下过程阶段基于已确认的设计决策和量化结果反推。具体方法细节、原始调研数据和中间产出物待补充。',
+      state: 'confirmed',
+      note: '从成熟产品证据出发修正方向，再以业务目标、用户决策和可控执行组织方案。',
       phases: [
         {
           title: 'Research & Discovery',
-          summary:
-            '对跨境商家广告素材制作全流程进行效率分析，识别「素材生产周期长」和「投放配置重复劳动多」两个核心瓶颈。通过商家访谈和数据埋点分析，量化创意准备效率现状和广告投放 ROI 基线。',
-          confidence: 'inferred',
+          summary: '完成端到端体验架构与产品走查。主题发现、编辑结构、AI 辅助、跨端预览和操作控制均已有成熟基础，缺乏证据支持整体重设计。',
+          confidence: 'confirmed',
         },
         {
           title: 'Definition & Strategy',
-          summary:
-            '将 Sidekick AI 的三类能力（内容生成/策略建议/自动化执行）抽象为可复用的产品能力模型。制定 AI 嵌入策略——确定广告创建、商品优化、工作流自动化等关键路径的 AI 注入点。设计四层 AI 体验评估体系框架（AI 质量层/体验行为层/业务结果层/调优闭环）。',
+          summary: '定义「意图到配置距离」：高层业务目标需经过多个专业决策层才能成为主题配置。最终聚焦主题选择、页面规划和 AI 改动控制，并确立业务目标优先、可解释决策、复用成熟能力三条原则。',
           confidence: 'confirmed',
         },
         {
           title: 'Design & Iteration',
-          summary:
-            '重构「素材生成→投放配置」链路，将 AI 能力系统性嵌入关键节点。建立「问题发现→数据诊断→AI 能力微调→增量上线」的持续调优闭环机制。跨 PM × FE × AI Lab 迭代优化 AI 交互模式。',
+          summary: '在既有执行能力上增加 AI 决策辅助层：读取电商业务上下文，完成问题诊断、需求建模、方案推荐、原因解释与页面规划，再调用 Sidekick 和 AI 生成能力执行。',
           confidence: 'confirmed',
         },
         {
           title: 'Validation & Launch',
-          summary:
-            '通过创意准备效率（↑25%，AI 贡献其中约 60%）、单次素材生产周期（↓4h）、客户首次购买转化率（↑8%）三个维度追踪上线效果。四层评估体系持续监控 Sidekick 的真实业务贡献。',
-          confidence: 'inferred',
+          summary: '规划 5–8 名目标用户的可用性测试与 A/B 测试，验证主题决策时间、页面规划完成率、推荐采纳率、改动理解率及从建站到发布耗时。',
+          confidence: 'partial',
         },
       ],
     },
 
-    /* ── Key Decisions ── */
     keyDecisions: [
       {
         id: 1,
-        title: '将 Sidekick AI 三类能力抽象为可复用模型',
+        title: '从重新设计编辑器转向优化建站决策',
         state: 'confirmed',
-        problem:
-          '商家手动制作广告素材平均耗时 4 小时以上。AI 能生成内容，但逐功能点嵌入的方式导致——今天在「广告创建」页面加一个「AI 生成文案」按钮，明天在「商品优化」页面加一个「AI 推荐关键词」按钮，下周在「投放配置」加一个「AI 建议出价」。三个月后，产品里散布着 7 个 AI 按钮，但①商家认知中不存在一个统一的「AI 能帮我做什么」心智模型，②每次新增场景都需要从零设计 AI 交互模式，③维护 7 套独立 AI 功能的成本指数级上升——AI Lab 开始质疑「我们到底在做一个产品还是 7 个功能？」',
-        decision:
-          '将 Sidekick AI 的三类能力（内容生成/策略建议/自动化执行）抽象为一个统一的能力模型——不是设计 7 个 AI 按钮，而是定义 3 种能力类型，让任何业务场景都可以在这 3 种能力中找到适配入口。内容生成解决「产出素材」，策略建议解决「怎么做更好」，自动化执行解决「帮我把这个过程跑完」。',
-        reason:
-          '能力模型让所有 AI 功能共享同一套交互模式——商家学会在一处使用 AI 后，可以在任何其他场景复用同一心智模型。新增业务场景只需声明「此场景需要哪种能力类型」，而非从零设计交互。AI Lab 从维护 7 套独立功能代码降为维护 1 套能力调度系统——他们从「你又在加一个 AI 功能」变成了「这个场景需要哪个能力类型？直接调」。这是项目从「功能堆叠」升级为「平台化」的时刻。',
+        problem: '初始假设认为主题管理和编辑存在明显效率问题，但真实走查发现主题发现、编辑结构、AI 辅助、预览和状态控制均已成熟。',
+        decision: '不重新设计整个主题编辑器，把设计范围收敛到商家在成熟能力之间做出正确选择的成本。',
+        reason: '信息供给充分并不等于决策容易。真正的断点位于经营目标与主题能力、页面结构和具体配置之间，而非基础编辑功能。',
         alternative: {
-          state: 'unconfirmed',
-          text: '⚠️ 替代方案信息待确认。曾考虑的其他方案及放弃原因将在原始材料到位后补充。',
+          state: 'confirmed',
+          text: '放弃整体界面优化方案，因为缺乏足够产品证据，且会重复设计 Shopify 已成熟的能力。',
         },
       },
       {
         id: 2,
-        title: '建立四层 AI 体验评估体系',
+        title: '在执行能力之上建立 AI 决策辅助层',
         state: 'confirmed',
-        problem:
-          '能力模型建立后，下一个问题立刻浮现：怎么证明这套模型真正在驱动业务结果，而不只是在产品里「看起来有 AI」？每次 AI 生成素材后，商家改动了多少？改了之后效果变好还是变差？如果 AI 建议了一个投放策略但商家没采纳——是因为建议不好，还是因为商家不信任？没有从 AI 质量到业务结果的量化追踪，AI 团队（AI Lab）和商业团队（PM、运营）之间的对话永远是：「AI 很强」vs「我没看到订单增长」。',
-        decision:
-          '建立四层 AI 体验评估体系：AI 质量层（一致率、幻觉率——监控 AI 自身输出质量）、体验行为层（采纳率、修改率、修改幅度——监控商家如何与 AI 输出交互）、业务结果层（转化率、ROI、效率提升——连接 AI 使用与商业指标）、调优闭环层（异常检测→根因定位→微调→增量验证——让每一层的问题能被追溯到上一层并修复）。',
-        reason:
-          '层级指标体系解决了「吵架」问题。当 AI Lab 说「模型指标很好」，但 PM 说「转化率没涨」，四层体系可以让团队逐层排查——是模型输出质量真的不好（AI 质量层），还是输出质量没问题但商家不采纳（体验行为层），还是商家采纳了但素材本身对目标市场无效（业务结果层）？每一层有独立指标，每一层的问题有独立的优化手段，不需要「盲调」。AI Lab 投入模型优化之后，能看到体验行为层的采纳率确实在上升——这是第一次，团队可以基于数据对话，而不是基于印象争论。',
+        problem: '5 组 Sidekick 探索性测试中，4 组主要停留在参数与表现层修改，仅 1 组明显进入多分区规划；复杂意图并不会自动转化为同等深度的设计调整。',
+        decision: '增加「商家目标→业务上下文→问题诊断→需求建模→方案推荐→原因解释→页面规划→调用已有能力」的决策层。',
+        reason: 'Shopify 的差异化不仅来自语言模型，还来自商品、系列、变体、主题、页面和商店状态等电商上下文与可执行主题系统的结合。',
         alternative: {
-          state: 'unconfirmed',
-          text: '⚠️ 替代方案信息待确认。',
+          state: 'confirmed',
+          text: '不新增独立 AI 编辑器，继续复用 Sidekick 的请求更改和 AI 生成作为执行层。',
+        },
+      },
+      {
+        id: 3,
+        title: '用 AI 改动集合保障复杂修改可控',
+        state: 'confirmed',
+        problem: '当 AI 一次修改多个页面模块时，简单的「预览—保存—撤销」不足以帮助用户理解修改范围和影响。',
+        decision: '将复杂修改组织为可审查的 AI 改动集合，支持查看全部改动、单独预览、保留部分修改、撤销全部修改与最终保存。',
+        reason: '低风险修改可以即时执行并撤销；多分区与高影响修改则需要先规划、再预览和确认，让控制强度与风险匹配。',
+        alternative: {
+          state: 'confirmed',
+          text: '简单参数和文案修改仍沿用现有即时执行机制，不增加额外确认步骤。',
         },
       },
     ],
-    decisionsNote: '当前可展示 2 个关键设计决策。第 3 个决策将在设计过程材料补充后加入。',
+    decisionsNote: '三个关键决策共同构成从业务意图、方案规划到可控执行的完整链路。',
 
-    /* ── Outcome ── */
     outcome: {
       quantitative: [
         {
-          label: '创意准备效率',
-          before: null,
-          after: '↑25%',
-          delta: null,
-          baseline: null,
-          measurement: null,
-          attribution: 'weak',
-          note: 'AI 自动生成贡献其中约 60% 增幅',
+          label: '主题决策耗时',
+          before: '约 12–18 分钟',
+          after: '目标 6–9 分钟',
+          delta: '预计降低 40%–55%',
+          baseline: '方向性测算',
+          measurement: '后续通过对照任务计时验证',
+          attribution: 'hypothesis',
+          note: '方向性测算，尚非上线结果。',
         },
         {
-          label: '单次素材生产周期',
-          before: null,
-          after: '↓4h',
-          delta: null,
-          baseline: null,
-          measurement: null,
-          attribution: 'weak',
+          label: '页面结构规划耗时',
+          before: '约 15–25 分钟',
+          after: '目标 6–10 分钟',
+          delta: '预计降低 50%–65%',
+          baseline: '方向性测算',
+          measurement: '后续通过可用性测试与 A/B 测试验证',
+          attribution: 'hypothesis',
+          note: '方向性测算，尚非上线结果。',
+        },
+        {
+          label: '意图到配置关键节点',
+          before: '约 9–14 个',
+          after: '目标 5–8 个',
+          delta: '预计减少 35%–50%',
+          baseline: '流程走查',
+          measurement: '按关键决策与操作节点统计',
+          attribution: 'hypothesis',
+          note: '方向性测算，尚非上线结果。',
         },
       ],
       qualitative: [
-        '建立了可复用的 AI 能力模型（内容生成/策略建议/自动化执行）',
-        '推动了产品从传统流程型操作升级为智能驱动型增长路径',
+        '把设计重心从产品能力优化转向用户决策优化',
+        '提出主题推荐、页面规划与可控 AI 修改的一体化决策辅助层',
+        '在不推翻成熟编辑器的前提下拓展 AI 从操作执行到业务理解与决策辅助的价值',
       ],
-      baselineNote:
-        '基线（改版前数值）及测量方法待补充。所有变化幅度来自简历，归因可信度为 weak。面试中可提供更详细的数据上下文。',
+      baselineNote: '以上为概念方案的方向性测算和验证目标，不代表 Shopify 已上线功能或真实业务结果。',
     },
 
-    /* ── Capability Map ── */
     competencies: [
-      { dimension: 'AI 产品设计', strength: 4, note: 'AI 能力模型设计 + 四层评估体系 + 持续调优闭环' },
-      { dimension: '复杂系统抽象', strength: 3, note: '三类 AI 能力模型 + 关键路径嵌入策略' },
-      { dimension: '数据驱动设计', strength: 3, note: '跨层级指标监控（AI 质量/行为/业务）' },
-      { dimension: '业务增长导向', strength: 3, note: 'AI → 效率 → ROI 闭环' },
+      { dimension: '业务分析', strength: 4, note: '从业务目标、用户价值与产品机制定位真实问题' },
+      { dimension: '复杂系统设计', strength: 4, note: '梳理端到端主题链路并划分决策、执行、基础能力与用户控制层' },
+      { dimension: 'AI 产品设计', strength: 4, note: '以电商上下文驱动主题推荐、页面规划和原因解释' },
+      { dimension: '交互设计', strength: 3, note: '按风险设计即时执行、预览、局部保留和撤销机制' },
     ],
-    disclaimer:
-      '本案例不能证明：用户研究过程、视觉设计深度、原型设计能力、移动端设计。',
+    disclaimer: '本案例基于产品走查、探索性提示词测试与概念方案。所有效率数据均为方向性测算，需通过真实用户测试和产品数据验证。',
 
-    /* ── Reflection ── */
     reflection: {
-      state: 'partial',
+      state: 'confirmed',
       methodology: [
-        'AI 能力抽象模型：将三类 AI 能力（内容生成/策略建议/自动化执行）抽象为可复用的产品能力模型，可迁移到任何需要集成 AI 的 B 端产品',
-        '四层 AI 体验评估体系：AI 质量层 → 体验行为层 → 业务结果层 → 调优闭环，层级指标体系让团队可精准定位问题所在层级',
-        '持续调优闭环：「问题发现→数据诊断→AI 能力微调→增量上线」的持续交付机制',
+        '业务驱动的系统性设计方法：先梳理业务目标、用户价值与产品机制，再定位关键阻碍。',
+        '成熟能力审计：用真实产品证据修正初始假设，避免为了改版而改版。',
+        '意图到配置距离：衡量高层业务目标转化为可执行产品配置所需跨越的专业决策层。',
+        '风险分级控制：让 AI 修改的解释、预览、确认和恢复机制与影响范围匹配。',
       ],
-      lessonsIfRedo: { state: 'empty' },
-      note: '🚧 项目中的失败/冲突经历及经验教训待补充。如：是否有过设计方向错误？是否有过与 PM/工程师的重大分歧及解决过程？',
+      lessonsIfRedo: {
+        state: 'partial',
+        text: '下一步将通过 5–8 名目标用户测试主题选择、首页规划和 AI 修改恢复任务，并以真实行为数据校准方向性测算。',
+      },
+      note: '从「产品能力优化」转向「用户决策优化」，是本项目最重要的方法论沉淀。',
     },
   },
 
