@@ -6,7 +6,7 @@ import './CaseCard.css';
 export default function CaseCard({ caseData, variant = 'standard' }) {
   const { t } = useI18n();
   const localizedCase = useCaseI18n(caseData.slug);
-  const caseI18n = caseData.slug === 'sidekick' ? {} : localizedCase;
+  const caseI18n = ['sidekick', 'novabot'].includes(caseData.slug) ? {} : localizedCase;
   const {
     slug,
     title,
@@ -20,7 +20,7 @@ export default function CaseCard({ caseData, variant = 'standard' }) {
     featuredMetrics,
   } = caseData;
 
-  const displayTitle = slug === 'sidekick'
+  const displayTitle = ['sidekick', 'novabot'].includes(slug)
     ? title
     : caseI18n.title || t(`caseTitles.${slug}`) || title;
   const displaySummary = caseData.publicSummary || caseI18n.summary || summary;

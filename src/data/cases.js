@@ -974,10 +974,125 @@ export const cases = {
         '核心认知：企业级 AI 的信任来自可预测，而非完全自动化。商业价值预期：降低任务创建成本，提升自动化采纳意愿。结束语：将「用户下达指令，AI 执行」重新定义为「用户提出目标，AI 理解、规划、执行，并在关键节点交还控制权」。',
     },
   },
+
+  /* ================================================================
+     Case 05 — Novabot 智能割草机 App 体验重构
+     Source: cases 5 Novabot_Portfolio_Content_V9.md
+     ================================================================ */
+  novabot: {
+    slug: 'novabot',
+    priority: 'P1',
+    featured: false,
+
+    title: 'Novabot 智能割草机 App 体验重构',
+    nda: { required: true, badge: '🔒 已脱敏' },
+    tags: ['智能硬件', 'IoT App', 'UX/UI'],
+    confidence: 'confirmed',
+    role: 'UX/UI 设计师',
+    timeline: '2025',
+    platform: 'Mobile App',
+    industry: '智能硬件 / 户外设备',
+    team: '业务 / 运营 / 三维建模 / 视频 / 开发',
+    cardAccent: 'var(--color-accent)',
+    coverImage: 'case-novabot.png',
+
+    portfolioRole:
+      '本案例展示智能硬件体验设计：将物理设备、网络环境与数字地图中的复杂依赖，组织为用户可理解、可控制、可恢复的任务体验。',
+    narrativeHook:
+      '机器人能够自主割草，并不等于用户愿意放手。首次激活、空间建图与异常恢复中，用户需要始终知道设备是否准备就绪、正在做什么，以及出现问题后如何介入。',
+    summary:
+      '面向北美住宅草坪用户，重构智能割草机器人从设备激活、连接、建图到日常任务控制的完整链路，让用户更安心地把草坪维护交给机器人。',
+
+    cardMetrics: [],
+    featuredMetrics: [],
+    cardVisualPills: [
+      { label: '设备激活', metric: '可继续' },
+      { label: '空间建图', metric: '可验证' },
+      { label: '异常恢复', metric: '可处理' },
+    ],
+
+    background: {
+      state: 'confirmed',
+      note: null,
+      why: 'Novabot 是面向家庭草坪维护场景的智能割草机器人。原 App 将硬件安装、网络连接、地图创建和远程控制拆分为低反馈步骤；用户需要同时理解物理设备、环境条件与数字操作，首次使用成本高，也削弱了对自主作业的信任。',
+      targetUsers: '北美郊区独立住宅用户，35–54 岁，拥有庭院及草坪维护需求的中高收入家庭。',
+      businessGoals: '缩短“开箱到首次自动割草”的关键路径，降低设备激活和地图创建门槛，并减少由连接、建图与设备状态不清引起的支持需求。',
+      constraints: [
+        '户外强光、单手操作与园艺手套带来高认知和误触风险',
+        '树木遮挡、庭院边缘网络衰减会影响定位与连接稳定性',
+        '设计稿、用户数据与商业信息须按保密协议脱敏处理',
+      ],
+    },
+
+    challenge: {
+      state: 'confirmed',
+      userProblem: '首次激活链路碎片化，连接失败缺乏可行动的诊断；建图时地图、位置、进度与风险反馈不清；任务异常后，用户难以快速判断原因并恢复。',
+      businessProblem: '产品承诺减少草坪维护时间，但高学习成本与低状态透明度削弱了用户对自动化的采纳和信任。',
+      designChallenge: '将复杂、不可见的设备配置与空间操作，转化为用户可理解、可确认、可恢复的自主割草体验。',
+    },
+
+    myRole: {
+      responsibilities: [
+        { task: '端到端体验诊断', contribution: '参与主导', confidence: 'confirmed', detail: '参与用户访谈与调研整合，梳理首次激活、建图与任务控制的关键断点。' },
+        { task: '核心任务流与信息架构', contribution: '主导', confidence: 'confirmed', detail: '负责认证与设备激活、扫码与网络连接、首页状态、建图 / 割草引导的体验结构。' },
+        { task: '交互与高保真设计', contribution: '主导', confidence: 'confirmed', detail: '完成核心流程交互设计、高保真页面与可交互原型。' },
+        { task: '跨职能交付协作', contribution: '协作', confidence: 'confirmed', detail: '协同业务、运营、三维建模、视频与开发相关角色推进交付。' },
+      ],
+      note: '我的工作覆盖用户访谈与调研整合、体验诊断、信息架构、核心任务流、交互设计、高保真界面与可交互原型。',
+    },
+
+    designApproach: {
+      state: 'confirmed',
+      note: null,
+      phases: [
+        { title: '调研 · 任务诊断', summary: '整合用户访谈与调研：用户认可简洁直观的界面，但认为初始设置复杂；自动割草、路线规划、草坪状态查看是高频诉求。将问题收敛为激活碎片化、连接反馈滞后、空间操作不可见与基础体验不适配。', confidence: 'confirmed' },
+        { title: '定义 · 体验策略', summary: '以“交付任务、检查结果、处理异常”定义 App 价值：系统承担复杂性，用户始终知道下一步，并在开始任务、发布地图与异常处理等关键时刻保有决定权。', confidence: 'confirmed' },
+        { title: '设计 · 核心任务流', summary: '将安装环境、连接设备、创建地图、验证地图、启动任务与异常恢复连成一条可继续的任务路径；认证、帮助与设置作为贯穿全程的基础体验层。', confidence: 'confirmed' },
+        { title: '交付 · 原型与协作', summary: '输出认证、安装规划、设备连接、扫码、首页、建图、首次割草、视频帮助与个人中心的高保真方案及关键交互原型，并与跨职能角色协作推进。', confidence: 'confirmed' },
+      ],
+    },
+
+    keyDecisions: [
+      { id: 1, title: '将设备安装与连接组织为可继续的激活任务', state: 'confirmed', problem: '安装地点、扫码、充电桩、Wi‑Fi、蓝牙和机器人连接散落在多个页面，用户无法判断进度或从中断处恢复。', decision: '以统一步骤链呈现当前进度、连接对象与完成状态；退出后可从未完成节点继续。', reason: '把物理设备、网络与 App 的多重依赖收束为用户可追踪的单一任务。', alternative: { state: 'confirmed', text: '淘汰继续以独立页面承载每个连接动作的方式：它会让失败后的恢复成本回到用户身上。' } },
+      { id: 2, title: '用可行动的诊断替代单纯失败提示', state: 'confirmed', problem: '连接失败只给出结果，用户无法判断是网络名称、密码、信号、设备状态还是蓝牙距离导致。', decision: '在失败状态中同时说明原因、信号或设备状态，以及“重试连接 / 查看连接指引”等下一步。', reason: '连接反馈必须帮助用户完成修复，而非只宣告失败。', alternative: { state: 'confirmed', text: '淘汰仅使用错误码或通用“连接失败”提示的方案。' } },
+      { id: 3, title: '将建图设计为跟随、验证与恢复的连续过程', state: 'confirmed', problem: '用户需要在真实庭院中处理边界、障碍区和通道，但地图对象、机器人位置、扫描进度与风险不够清晰。', decision: '竖屏用于跟随进度与快速查看；仅在精细编辑和发布前验证时进入横屏。发布前预览路线、风险与影响范围；出现问题时定位未覆盖区域并提供补边界、回充或重试。', reason: '建图不是遥控机器人，而是确认草坪范围能否被安全、稳定地自主完成。', alternative: { state: 'confirmed', text: '淘汰始终横屏编辑与依靠设备陀螺仪自动旋转的方式，避免户外行走中意外中断任务。' } },
+      { id: 4, title: '首页随任务状态改变主操作优先级', state: 'confirmed', problem: '设备展示页在就绪、割草中和异常时仍展示同一批入口，用户难以找到当前最需要的操作。', decision: '按机器人状态与任务状态分层：就绪时优先开始和计划；割草中优先暂停和回充；异常时压暗无关内容，给出沉浸式恢复面板。', reason: '首页应是当前任务的控制中心，让帮助出现在任务发生处。', alternative: { state: 'confirmed', text: '淘汰静态功能入口式首页：它无法在异常发生时提供明确的恢复路径。' } },
+    ],
+    decisionsNote: null,
+
+    outcome: {
+      quantitative: [],
+      qualitative: [
+        '覆盖认证、安装规划、设备连接、扫码、首页、建图、首次割草、视频帮助与个人中心的高保真方案与交互原型',
+        '建立深色视觉系统、表单校验、状态反馈、图文教程与横竖屏任务模式',
+        '将分散的设备配置和空间操作重构为面向任务的体验链路',
+      ],
+      baselineNote: '本案例不展示未经执行的可用性测试门槛或假设 KPI。后续验证将围绕首次激活、地图发布、首次任务理解与异常恢复等任务进行观察。',
+    },
+
+    competencies: [
+      { dimension: '智能硬件体验', strength: 4, note: '统筹物理设备、网络环境、空间地图与移动端控制体验' },
+      { dimension: '复杂任务流', strength: 4, note: '从首次激活到任务恢复的端到端路径重构' },
+      { dimension: '交互与信息架构', strength: 4, note: '状态优先级、诊断反馈、可继续任务与异常恢复' },
+      { dimension: 'UX/UI 设计', strength: 3, note: '户外可读性、高对比反馈与移动端高保真原型' },
+    ],
+    disclaimer: '本案例基于真实商业项目，设计稿、用户数据与商业信息均已按保密协议脱敏或示意化处理；不将未执行的验证计划或假设 KPI 包装为结果。',
+
+    reflection: {
+      state: 'confirmed',
+      methodology: [
+        '用任务而非功能入口组织智能硬件体验',
+        '把状态解释、下一步行动与恢复路径放在同一处',
+        '自动化不等于隐藏控制：关键节点保留清晰的确认与介入入口',
+      ],
+      lessonsIfRedo: { state: 'present' },
+      note: '智能硬件体验的复杂性不在单个页面，而在于用户跨越物理环境、设备状态、网络条件与数字地图。可信的自动化不是隐藏控制，而是让用户随时知道系统状态并能轻松介入。',
+    },
+  },
 };
 
 /** Helper: get ordered array of case slugs for iteration */
-export const caseOrder = ['sidekick', 'sidekick-agent', 'lowcode', 'template'];
+export const caseOrder = ['sidekick', 'sidekick-agent', 'lowcode', 'template', 'novabot'];
 
 /** Metrics temporarily withheld from public presentation; retain source data for later restoration. */
 export const hiddenMetricValues = ['↓50%', '↓60%', '↑30–45%', '70%+', '70%', '↓30%'];
