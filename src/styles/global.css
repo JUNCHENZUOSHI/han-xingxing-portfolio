@@ -21,6 +21,11 @@ body {
   letter-spacing: var(--tracking-body);
 }
 
+.site-shell { isolation: isolate; }
+.site-shell > nav,
+.site-shell > main,
+.site-shell > footer { position: relative; z-index: 3; }
+
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
 ul, ol { list-style: none; }

@@ -7,16 +7,18 @@ import CaseDetail from './pages/CaseDetail/CaseDetail';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Resume from './pages/Resume/Resume';
+import ConstellationBackground from './components/ConstellationBackground/ConstellationBackground';
 
 function PageLayout({ children }) {
   return (
-    <>
+    <div className="site-shell">
+      <ConstellationBackground />
       <Navbar />
       <main>{children}</main>
       <footer>
         <Footer />
       </footer>
-    </>
+    </div>
   );
 }
 

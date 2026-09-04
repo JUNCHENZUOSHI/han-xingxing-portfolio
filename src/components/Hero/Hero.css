@@ -71,6 +71,13 @@
   max-width: 800px;
   margin: 0 auto;
   padding: var(--space-64) var(--space-32);
+  animation: hero-content-rise 4.8s cubic-bezier(0.16, 1, 0.3, 1) 1.1s both;
+}
+
+@keyframes hero-content-rise {
+  from { transform: translateY(42vh); opacity: 0.3; }
+  22% { opacity: 1; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 /* ── Hero enter — staggered fade-up ── */
@@ -132,4 +139,14 @@
   .hero__content {
     padding: var(--space-48) var(--space-24);
   }
+
+  @keyframes hero-content-rise {
+    from { transform: translateY(34vh); opacity: 0.3; }
+    22% { opacity: 1; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__content { animation: none; }
 }
