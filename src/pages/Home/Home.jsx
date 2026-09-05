@@ -145,7 +145,7 @@ export default function Home() {
       </section>
 
       {/* About */}
-      <section className="section section--alt">
+      <section className="section section--alt about-section">
         <div className="container" data-reveal>
           <span className="section-label">{t('home.about')}</span>
           <div className="about-preview">
@@ -176,6 +176,7 @@ export default function Home() {
           <div className="experience-list experience-list--cards">
             {profileData.experience.map((exp, i) => (
               <div key={i}>
+                {i > 0 && <hr className="divider divider--subtle" />}
                 <div className="experience-item">
                   <div className="experience-item__meta">
                     <span className="experience-item__period">{exp.period}</span>

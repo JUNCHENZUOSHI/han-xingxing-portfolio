@@ -50,12 +50,12 @@ body.theme-dark .case-card {
 }
 
 body.theme-dark .about-card {
-  background: rgba(255, 255, 255, 0.06);
+  background: #0F0F0F;
   border-color: hsla(0, 0%, 100%, 0.06);
 }
 
-body.theme-dark .experience-list--cards .experience-item {
-  background: rgba(255, 255, 255, 0.06);
+body.theme-dark .experience-list--cards {
+  background: #0F0F0F;
   border-color: hsla(0, 0%, 100%, 0.06);
 }
 

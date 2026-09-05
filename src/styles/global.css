@@ -22,7 +22,6 @@ body {
 }
 
 .site-shell { isolation: isolate; }
-.site-shell > nav,
 .site-shell > main,
 .site-shell > footer { position: relative; z-index: 3; }
 

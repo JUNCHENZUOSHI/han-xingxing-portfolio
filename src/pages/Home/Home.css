@@ -23,7 +23,8 @@
 }
 
 /* ── 能力矩阵 — scroll-driven (deepseek "一切皆插件") ── */
-.what-i-do { background: var(--color-bg-alt); }
+.what-i-do,
+.about-section { background: transparent; }
 .capability-layout {
   display: grid;
   grid-template-columns: 42fr 58fr;
@@ -244,7 +245,7 @@
   flex-direction: column;
   gap: var(--space-12);
   padding: var(--space-32);
-  background: rgba(0, 0, 0, 0.03);
+  background: #0F0F0F;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }
@@ -276,17 +277,18 @@
   align-self: flex-start;
 }
 
-/* ── Experience cards — match the About preview cards ── */
+/* ── Experience card — match the About preview cards ── */
 .experience-list--cards {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-24);
+  background: #0F0F0F;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
 }
 .experience-list--cards .experience-item {
   padding: var(--space-32);
-  background: rgba(0, 0, 0, 0.03);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+}
+.experience-list--cards .divider {
+  margin-inline: var(--space-32);
 }
 
 /* ── Contact CTA — deepseek.com/harness blue-glow panel ── */

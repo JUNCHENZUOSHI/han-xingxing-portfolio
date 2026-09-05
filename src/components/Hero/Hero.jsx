@@ -9,7 +9,6 @@ export default function Hero() {
 
   return (
     <section className="hero">
-      {/* z-0: aurora fluid background (deepseek harness style, mouse-reactive) */}
       <AuroraBackground />
       {/* z-10: text content — centered in the banner, like the previous version */}
       <div className="hero__content">
