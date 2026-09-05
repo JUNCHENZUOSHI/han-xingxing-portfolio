@@ -54,6 +54,11 @@ body.theme-dark .about-card {
   border-color: hsla(0, 0%, 100%, 0.06);
 }
 
+body.theme-dark .experience-list--cards .experience-item {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: hsla(0, 0%, 100%, 0.06);
+}
+
 body.theme-dark .section-label {
   color: rgba(255, 255, 255, 0.95);
   border: 1px solid transparent;

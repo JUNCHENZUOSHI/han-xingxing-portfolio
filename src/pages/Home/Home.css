@@ -276,6 +276,19 @@
   align-self: flex-start;
 }
 
+/* ── Experience cards — match the About preview cards ── */
+.experience-list--cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+.experience-list--cards .experience-item {
+  padding: var(--space-32);
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
 /* ── Contact CTA — deepseek.com/harness blue-glow panel ── */
 .contact-cta {
   position: relative;
