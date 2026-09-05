@@ -23,8 +23,8 @@
 }
 
 /* ── 能力矩阵 — scroll-driven (deepseek "一切皆插件") ── */
-.what-i-do,
-.about-section { background: transparent; }
+.section.what-i-do,
+.section.about-section { background: transparent; }
 .capability-layout {
   display: grid;
   grid-template-columns: 42fr 58fr;

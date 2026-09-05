@@ -10,7 +10,7 @@
   min-height: calc(clamp(340px, 58vh, 720px) + 480px);
   display: flex;
   align-items: center;
-  background: linear-gradient(180deg, #DCEAF4 0%, #9FB4C3 42%, #1B232A 78%, #000000 100%);
+  background: #000000;
   text-align: center;
 }
 
