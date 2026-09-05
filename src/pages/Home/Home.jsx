@@ -137,10 +137,28 @@ export default function Home() {
       </section>
 
       {/* Featured Case */}
-      <section className="section">
+      <section className="section workflow-section">
         <div className="container" data-reveal>
-          <span className="section-label">{t('home.featuredCases')}</span>
-          <CaseCard caseData={cases.sidekick} variant="featured" />
+          <h2 className="contact-cta__heading workflow-section__heading">
+            {t('home.featuredCases')}
+          </h2>
+          <Link
+            to={`/case/${cases.sidekick.slug}`}
+            className="workflow-video"
+            aria-label={cases.sidekick.title}
+          >
+            <img
+              src={`${import.meta.env.BASE_URL}${cases.sidekick.coverImage}`}
+              alt=""
+              className="workflow-video__image"
+              loading="lazy"
+            />
+            <span className="workflow-video__play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5.5v13l11-6.5-11-6.5Z" />
+              </svg>
+            </span>
+          </Link>
         </div>
       </section>
 

@@ -230,6 +230,51 @@
   .capability-item { min-height: auto; padding: var(--space-32) 0; opacity: 1; }
 }
 
+/* ── Workflow video — preserve the original featured image ── */
+.workflow-section__heading {
+  margin: 0 0 var(--space-48);
+  text-align: center;
+}
+.workflow-video {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 8;
+  overflow: hidden;
+  background: #0F0F0F;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 0 48px rgba(255, 255, 255, 0.04);
+}
+.workflow-video__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.workflow-video__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: 72px;
+  height: 72px;
+  place-items: center;
+  color: #FFFFFF;
+  background: rgba(5, 10, 18, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+  transform: translate(-50%, -50%);
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.workflow-video__play svg { width: 24px; height: 24px; }
+.workflow-video:hover .workflow-video__play {
+  background: rgba(12, 20, 32, 0.86);
+  border-color: rgba(255, 255, 255, 0.36);
+  transform: translate(-50%, -50%) scale(1.04);
+}
+
 /* ── About Preview — two cards (deepseek 快速体验/源码安装) ── */
 .about-preview { max-width: var(--max-width-text); }
 .about-preview__text {
@@ -399,6 +444,7 @@
 @media (max-width: 767px) {
   .case-grid { grid-template-columns: 1fr; }
   .about-preview__columns { grid-template-columns: 1fr; }
+  .workflow-video__play { width: 60px; height: 60px; }
   .contact-cta__actions { flex-direction: column; align-items: center; }
 }
 
