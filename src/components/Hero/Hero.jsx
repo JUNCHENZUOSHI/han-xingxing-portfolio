@@ -1,6 +1,5 @@
 import { useI18n, useProfileData } from '../../i18n/context';
-import AuroraBackground from './AuroraBackground';
-import DotGridOverlay from './DotGridOverlay';
+import ConstellationBackground from '../ConstellationBackground/ConstellationBackground';
 import './Hero.css';
 
 export default function Hero() {
@@ -9,9 +8,7 @@ export default function Hero() {
 
   return (
     <section className="hero">
-      {/* z-0: aurora fluid background (deepseek harness style, mouse-reactive) */}
-      <AuroraBackground />
-      {/* z-10: text content — centered in the banner, like the previous version */}
+      <ConstellationBackground variant="hero" />
       <div className="hero__content">
         <span className="hero__label">{profile.title}</span>
         <h1 className="hero__name">{t('common.name')}</h1>
@@ -32,8 +29,6 @@ export default function Hero() {
           </a>
         </div>
       </div>
-      {/* z-5: dot-grid overlay with cursor repulsion */}
-      <DotGridOverlay />
     </section>
   );
 }

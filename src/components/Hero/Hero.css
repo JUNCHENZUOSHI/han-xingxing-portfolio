@@ -1,7 +1,4 @@
-/* Hero — deepseek.com/harness banner: one unified banner.
-   Aurora fluid background + dot grid (both mouse-reactive), text content
-   centered within it. Banner height matches the previous version
-   (58vh visual block + content block). */
+/* Hero — constellation intro based on the supplied motion reference. */
 
 .hero {
   position: relative;
@@ -12,55 +9,6 @@
   align-items: center;
   background: #000000;
   text-align: center;
-}
-
-/* ── Layer stack (mirrors the reference hero: z-0 bg / z-5 grid / z-10 text) ── */
-
-.hero__aurora {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  will-change: opacity, filter;
-  /* fade the aurora out toward the hero's bottom edge, like the reference */
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.988) 0%,
-    rgba(0, 0, 0, 0.91) 8.98%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.988) 0%,
-    rgba(0, 0, 0, 0.91) 8.98%,
-    rgba(0, 0, 0, 0) 100%
-  );
-}
-
-.hero__aurora canvas,
-.hero__grid canvas {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.hero__grid {
-  position: absolute;
-  inset: 0;
-  z-index: 5;
-  pointer-events: none;
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.988) 0%,
-    rgba(0, 0, 0, 0.91) 8.98%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.988) 0%,
-    rgba(0, 0, 0, 0.91) 8.98%,
-    rgba(0, 0, 0, 0) 100%
-  );
 }
 
 /* ── Text content — vertically centered in the banner ── */
