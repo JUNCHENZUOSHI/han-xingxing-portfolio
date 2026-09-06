@@ -1,4 +1,5 @@
 import { useI18n, useProfileData } from '../../i18n/context';
+import ConstellationBackground from '../ConstellationBackground/ConstellationBackground';
 import AuroraBackground from './AuroraBackground';
 import DotGridOverlay from './DotGridOverlay';
 import './Hero.css';
@@ -10,6 +11,7 @@ export default function Hero() {
   return (
     <section className="hero">
       <AuroraBackground />
+      <ConstellationBackground variant="banner" />
       {/* z-10: text content — centered in the banner, like the previous version */}
       <div className="hero__content">
         <span className="hero__label">{profile.title}</span>

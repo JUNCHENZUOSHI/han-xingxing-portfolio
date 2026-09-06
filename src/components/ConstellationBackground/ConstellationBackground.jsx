@@ -22,6 +22,24 @@ export default function ConstellationBackground({ variant = 'sides' }) {
       if (variant === 'sides') {
         const count = Math.max(260, Math.min(620, Math.round(width * height / 3400)));
         for (let i = 0; i < count; i += 1) { const left = Math.random() < .5; const edge = Math.pow(Math.random(), 1.65); particles.push({ x: left ? width * (.006 + edge * .3) : width * (.994 - edge * .3), y: Math.random() * height, r: .26 + Math.pow(Math.random(), 3.2) * 1.9, a: .12 + Math.random() * .62, d: .15 + Math.random() * 1.15, c: colors[Math.floor(Math.random() * colors.length)], phase: Math.random() * 7, speed: .3 + Math.random() }); }
+      } else if (variant === 'banner') {
+        const count = Math.max(72, Math.min(150, Math.round(width * height / 15000)));
+        for (let i = 0; i < count; i += 1) {
+          const band = .58 + Math.random() * .42;
+          particles.push({
+            orbit: true,
+            angle: Math.random() * Math.PI * 2,
+            orbitX: width * (.22 + Math.random() * .27) * band,
+            orbitY: height * (.17 + Math.random() * .25) * band,
+            orbitSpeed: (.012 + Math.random() * .035) * (Math.random() < .5 ? -1 : 1),
+            r: .32 + Math.pow(Math.random(), 2.8) * 1.9,
+            a: .14 + Math.random() * .58,
+            d: .2 + Math.random() * 1.1,
+            c: colors[Math.floor(Math.random() * colors.length)],
+            phase: Math.random() * 7,
+            speed: .3 + Math.random(),
+          });
+        }
       } else {
         const mask = document.createElement('canvas'); const mw = Math.min(width * .62, 720); const mh = Math.min(height * .76, 780); mask.width = mw; mask.height = mh; const mctx = mask.getContext('2d');
         mctx.strokeStyle = '#fff'; mctx.lineWidth = Math.max(22, mw * .048); mctx.font = `700 ${Math.round(mh * .9)}px Arial`; mctx.textAlign = 'center'; mctx.textBaseline = 'middle'; mctx.strokeText('6', mw * .5, mh * .51);
@@ -35,7 +53,29 @@ export default function ConstellationBackground({ variant = 'sides' }) {
     const draw = (now) => {
       ctx.clearRect(0, 0, width, height);
       if (variant === 'hero') { const haze = ctx.createRadialGradient(width * .5, height * .5, 0, width * .5, height * .5, Math.min(width, height) * .43); haze.addColorStop(0, 'rgba(53,116,158,.19)'); haze.addColorStop(.55, 'rgba(9,32,49,.1)'); haze.addColorStop(1, 'rgba(0,0,0,0)'); ctx.fillStyle = haze; ctx.fillRect(0, 0, width, height); }
-      particles.forEach((p, i) => { const pulse = reduced ? 1 : .72 + Math.sin(now * .001 * p.speed + p.phase) * .28; const x = p.x + pointer.x * -p.d * (variant === 'hero' ? 30 : 20); const y = p.y + pointer.y * -p.d * (variant === 'hero' ? 22 : 14); const alpha = p.a * pulse; ctx.globalAlpha = alpha; if (p.r > 1.5) crossStar(ctx, x, y, p.r, p.c, alpha); ctx.fillStyle = `rgb(${p.c})`; ctx.beginPath(); ctx.arc(x, y, Math.max(.28, p.r), 0, Math.PI * 2); ctx.fill(); if (variant === 'hero' && i % 103 === 0) crossStar(ctx, x, y, Math.max(1.4, p.r), p.c, alpha); });
+      particles.forEach((p, i) => {
+        const pulse = reduced ? 1 : .72 + Math.sin(now * .001 * p.speed + p.phase) * .28;
+        let x = p.x;
+        let y = p.y;
+        if (p.orbit) {
+          const t = reduced ? 0 : now * .001;
+          const angle = p.angle + t * p.orbitSpeed;
+          x = width * .5 + Math.cos(angle) * p.orbitX + Math.sin(t * .19 + p.phase) * p.d * 4;
+          y = height * .48 + Math.sin(angle) * p.orbitY + Math.cos(t * .15 + p.phase) * p.d * 3;
+        }
+        const parallaxX = variant === 'hero' ? 30 : variant === 'banner' ? 18 : 20;
+        const parallaxY = variant === 'hero' ? 22 : variant === 'banner' ? 12 : 14;
+        x += pointer.x * -p.d * parallaxX;
+        y += pointer.y * -p.d * parallaxY;
+        const alpha = p.a * pulse;
+        ctx.globalAlpha = alpha;
+        if (p.r > (variant === 'banner' ? 1.1 : 1.5)) crossStar(ctx, x, y, p.r, p.c, alpha);
+        ctx.fillStyle = `rgb(${p.c})`;
+        ctx.beginPath();
+        ctx.arc(x, y, Math.max(.28, p.r), 0, Math.PI * 2);
+        ctx.fill();
+        if (variant === 'hero' && i % 103 === 0) crossStar(ctx, x, y, Math.max(1.4, p.r), p.c, alpha);
+      });
       ctx.globalAlpha = 1; frame = requestAnimationFrame(draw);
     };
     resize(); window.addEventListener('resize', resize); window.addEventListener('pointermove', move, { passive: true }); frame = requestAnimationFrame(draw);
