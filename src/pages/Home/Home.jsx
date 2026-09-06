@@ -216,11 +216,13 @@ export default function Home() {
 
       {/* Contact CTA — deepseek.com/harness blue-glow panel */}
       <section className="section contact-cta">
-        <DotGridOverlay className="contact-cta__grid" isStatic />
-        <div className="contact-cta__glow contact-cta__glow--1" aria-hidden="true" />
-        <div className="contact-cta__glow contact-cta__glow--2" aria-hidden="true" />
-        <div className="contact-cta__glow contact-cta__glow--3" aria-hidden="true" />
-        <ParticleField className="contact-cta__particles" />
+        <div className="contact-cta__backdrop" aria-hidden="true">
+          <DotGridOverlay className="contact-cta__grid" isStatic />
+          <div className="contact-cta__glow contact-cta__glow--1" />
+          <div className="contact-cta__glow contact-cta__glow--2" />
+          <div className="contact-cta__glow contact-cta__glow--3" />
+          <ParticleField className="contact-cta__particles" />
+        </div>
         <div className="container" data-reveal>
           <div className="contact-cta__inner">
             <h2 className="contact-cta__heading">{t('home.letsTalk')}</h2>
