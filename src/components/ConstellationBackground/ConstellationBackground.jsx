@@ -15,6 +15,7 @@ export default function ConstellationBackground({ variant = 'sides' }) {
   useEffect(() => {
     const canvas = canvasRef.current; const ctx = canvas.getContext('2d');
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const startedAt = performance.now();
     let width = 0; let height = 0; let frame; let pointer = { x: 0, y: 0 }; const particles = [];
     const resize = () => {
       const rect = canvas.getBoundingClientRect(); const scale = Math.min(window.devicePixelRatio || 1, 2);
@@ -75,14 +76,15 @@ export default function ConstellationBackground({ variant = 'sides' }) {
         let x = p.x;
         let y = p.y;
         if (p.orbit) {
-          const t = reduced ? 0 : now * .001;
+          const t = reduced ? 0 : Math.max(0, (now - startedAt) * .001 - 3.6);
           const angle = p.angle + t * p.orbitSpeed;
           x = width * .5 + Math.cos(angle) * p.orbitX + Math.sin(t * .19 + p.phase) * p.d * 4;
           y = height * .48 + Math.sin(angle) * p.orbitY + Math.cos(t * .15 + p.phase) * p.d * 3;
         } else if (p.bannerEdge) {
-          const t = reduced ? 0 : now * .001;
-          x += Math.sin(t * p.moveSpeed + p.phase) * p.d * 12;
-          y += Math.cos(t * p.moveSpeed * .78 + p.phase) * p.d * 8;
+          const t = reduced ? 0 : Math.max(0, (now - startedAt) * .001 - 3.6);
+          const angle = t * p.moveSpeed + p.phase;
+          x += Math.cos(angle) * p.d * 14;
+          y += Math.sin(angle) * p.d * 9;
         }
         const parallaxX = variant === 'hero' ? 30 : variant === 'banner' ? 18 : 20;
         const parallaxY = variant === 'hero' ? 22 : variant === 'banner' ? 12 : 14;

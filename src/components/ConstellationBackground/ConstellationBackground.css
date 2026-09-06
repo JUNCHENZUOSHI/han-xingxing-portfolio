@@ -2,17 +2,23 @@
 .constellation canvas { display: block; width: 100%; height: 100%; }
 .constellation--sides { position: fixed; inset: 0; z-index: 2; opacity: .65; }
 .constellation--banner {
+  --banner-star-opacity: .55;
   position: absolute;
   inset: 0;
   z-index: 3;
-  opacity: .65;
+  opacity: 0;
+  animation: banner-stars-in 3.6s ease-out forwards;
   -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
   mask-image: linear-gradient(to bottom, #000 0%, #000 72%, transparent 100%);
 }
+@keyframes banner-stars-in { from { opacity: 0; } to { opacity: var(--banner-star-opacity); } }
 .constellation--hero { position: absolute; inset: 0; z-index: 3; background: radial-gradient(ellipse 70% 70% at 50% 48%, #07131c 0%, #010508 60%, #000 100%); opacity: 0; animation: hero-galaxy-in 1.5s cubic-bezier(.16,1,.3,1) .1s forwards; }
 @keyframes hero-galaxy-in { from { opacity: 0; filter: blur(7px); transform: scale(1.035); } to { opacity: 1; filter: blur(0); transform: scale(1); } }
 @media (max-width: 767px) {
   .constellation--sides { opacity: .57; }
-  .constellation--banner { opacity: .57; }
+  .constellation--banner { --banner-star-opacity: .47; }
 }
-@media (prefers-reduced-motion: reduce) { .constellation--hero { animation: none; opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .constellation--hero { animation: none; opacity: 1; }
+  .constellation--banner { animation: none; opacity: var(--banner-star-opacity); }
+}
