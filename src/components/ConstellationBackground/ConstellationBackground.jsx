@@ -40,6 +40,23 @@ export default function ConstellationBackground({ variant = 'sides' }) {
             speed: .3 + Math.random(),
           });
         }
+        const edgeCount = Math.max(44, Math.min(80, Math.round(width / 20)));
+        for (let i = 0; i < edgeCount; i += 1) {
+          const left = Math.random() < .5;
+          const edge = Math.pow(Math.random(), 1.65);
+          particles.push({
+            bannerEdge: true,
+            x: left ? width * (.006 + edge * .18) : width * (.994 - edge * .18),
+            y: height * (.04 + Math.random() * .84),
+            r: .26 + Math.pow(Math.random(), 3.2) * 1.9,
+            a: .12 + Math.random() * .62,
+            d: .15 + Math.random() * 1.15,
+            c: colors[Math.floor(Math.random() * colors.length)],
+            phase: Math.random() * 7,
+            speed: .3 + Math.random(),
+            moveSpeed: .12 + Math.random() * .22,
+          });
+        }
       } else {
         const mask = document.createElement('canvas'); const mw = Math.min(width * .62, 720); const mh = Math.min(height * .76, 780); mask.width = mw; mask.height = mh; const mctx = mask.getContext('2d');
         mctx.strokeStyle = '#fff'; mctx.lineWidth = Math.max(22, mw * .048); mctx.font = `700 ${Math.round(mh * .9)}px Arial`; mctx.textAlign = 'center'; mctx.textBaseline = 'middle'; mctx.strokeText('6', mw * .5, mh * .51);
@@ -62,6 +79,10 @@ export default function ConstellationBackground({ variant = 'sides' }) {
           const angle = p.angle + t * p.orbitSpeed;
           x = width * .5 + Math.cos(angle) * p.orbitX + Math.sin(t * .19 + p.phase) * p.d * 4;
           y = height * .48 + Math.sin(angle) * p.orbitY + Math.cos(t * .15 + p.phase) * p.d * 3;
+        } else if (p.bannerEdge) {
+          const t = reduced ? 0 : now * .001;
+          x += Math.sin(t * p.moveSpeed + p.phase) * p.d * 12;
+          y += Math.cos(t * p.moveSpeed * .78 + p.phase) * p.d * 8;
         }
         const parallaxX = variant === 'hero' ? 30 : variant === 'banner' ? 18 : 20;
         const parallaxY = variant === 'hero' ? 22 : variant === 'banner' ? 12 : 14;
