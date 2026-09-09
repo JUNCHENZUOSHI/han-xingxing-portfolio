@@ -56,7 +56,7 @@
 @keyframes hero-path-node { to { opacity: 1; } }
 @keyframes hero-path-breathe { 50% { opacity: .72; } }
 .hero__ai-path { position: absolute; inset: 0; z-index: 4; width: 100%; height: 100%; overflow: visible; pointer-events: none; color: #9cb1c8; }
-.hero__ai-path path { fill: none; stroke: currentColor; vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; will-change: stroke-dashoffset; animation: hero-path-draw var(--path-duration, 1.5s) cubic-bezier(.22,.75,.3,1) var(--path-delay, 1.85s) forwards; }
+.hero__ai-path path { fill: none; stroke: url(#hero-ai-path-fade); vector-effect: non-scaling-stroke; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; will-change: stroke-dashoffset; animation: hero-path-draw var(--path-duration, 1.5s) cubic-bezier(.22,.75,.3,1) var(--path-delay, 1.85s) forwards; }
 .hero__ai-path-main { stroke-width: 1px; opacity: .16; }
 .hero__ai-path-branch { stroke-width: .7px; opacity: .095; }
 .hero__ai-path-far { stroke-width: .45px; opacity: .04; }
@@ -76,6 +76,9 @@
   .hero__tags { gap: 7px 12px; font-size: 8px; }
   .hero__tags li + li::before { display: none; }
   .hero__segue { margin-top: 22px; }
+}
+@media (min-width: 1600px) and (min-height: 900px) {
+  .hero__content { top: calc(64.5% - 14px); }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero *, .hero *::before, .hero *::after { animation: none !important; transition: none !important; }

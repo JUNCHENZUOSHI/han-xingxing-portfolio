@@ -12,6 +12,29 @@ import CaseCard from '../../components/CaseCard/CaseCard';
 import WorkflowAnimation from '../../components/WorkflowAnimation/WorkflowAnimation';
 import './Home.css';
 
+function WorkPathContinuation() {
+  return (
+    <svg className="work-ai-path" viewBox="0 0 1000 360" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <g>
+        <path d="M282 0 C270 36 235 48 216 82 C195 119 160 128 139 165 C119 201 83 218 57 254 C39 279 25 307 12 340" />
+        <path d="M184 0 C207 27 209 62 235 88 C261 114 262 151 286 182 C307 209 306 244 332 279" />
+        <path d="M75 0 C66 29 62 56 49 83 C35 112 26 148 21 189" className="work-ai-path__far" />
+        <path d="M659 0 C642 29 650 62 635 94 C619 128 629 163 614 198 C600 231 608 266 590 304" />
+        <path d="M754 0 C780 29 778 67 805 94 C834 122 833 160 862 190 C890 218 890 258 919 292 C940 316 953 337 970 355" />
+        <path d="M847 0 C868 20 891 23 910 48 C931 74 954 75 973 99 C986 116 993 138 999 164" className="work-ai-path__far" />
+      </g>
+      <g className="work-ai-path__nodes">
+        <circle cx="216" cy="82" r="1" /><circle cx="139" cy="165" r=".72" /><circle cx="57" cy="254" r=".52" />
+        <circle cx="235" cy="88" r=".86" /><circle cx="286" cy="182" r=".62" /><circle cx="332" cy="279" r=".44" />
+        <circle cx="49" cy="83" r=".48" /><circle cx="21" cy="189" r=".36" />
+        <circle cx="635" cy="94" r=".9" /><circle cx="614" cy="198" r=".58" /><circle cx="590" cy="304" r=".4" />
+        <circle cx="805" cy="94" r=".82" /><circle cx="862" cy="190" r=".58" /><circle cx="919" cy="292" r=".42" />
+        <circle cx="910" cy="48" r=".5" /><circle cx="973" cy="99" r=".38" />
+      </g>
+    </svg>
+  );
+}
+
 export default function Home() {
   const { lang, t } = useI18n();
   const content = getHomeContent(lang);
@@ -93,7 +116,8 @@ export default function Home() {
       {/* Transition Guide — hidden for now (show later) */}
 
       {/* Selected work */}
-      <section className="section" id="work">
+      <section className="section work-section" id="work">
+        <WorkPathContinuation />
         <div className="container" data-reveal>
           <span className="section-label">{content.casesHeading}</span>
           <div className="case-grid">
@@ -215,6 +239,10 @@ export default function Home() {
             {contactSupporting && <p className="contact-cta__supporting">{contactSupporting}</p>}
             <div className="contact-cta__actions">
               <a href={`mailto:${profile.email}`} className="btn-primary contact-cta__email">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
+                  <rect x="1.5" y="3" width="13" height="10" rx="2" stroke="currentColor" strokeWidth="1.2" />
+                  <path d="M2 4.5 8 9l6-4.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
                 {profile.email}
               </a>
               <a href={resumeUrl} className="btn-secondary" download>

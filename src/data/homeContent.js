@@ -14,7 +14,7 @@ const homeContent = {
       title: '我的工作流',
       subtitle: '以业务目标为起点，从问题定义走向验证落地。',
       human: 'HUMAN · 判断与方向',
-      ai: 'AI · 研究、探索、实现与质量辅助',
+      ai: 'AI · 研究 / 探索 / 实现 / QA',
       tools: ['ChatGPT｜信息整理与洞察辅助', 'Figma｜交互与视觉原型', 'Codex｜实现、联调与质量检查'],
       replay: '再次播放',
       phases: [
