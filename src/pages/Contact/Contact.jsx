@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useI18n, useProfileData } from '../../i18n/context';
 import { profile } from '../../data/profile';
+import { resumeUrl } from '../../data/site';
 import './Contact.css';
 
 export default function Contact() {
@@ -49,7 +50,7 @@ export default function Contact() {
             <h2 className="section-heading">{t('contact.resumeHeading')}</h2>
             <div className="contact-resume__inner">
               <p className="contact-resume__text">{t('contact.resumeText')}</p>
-              <a href={`${import.meta.env.BASE_URL}resume.pdf`} className="btn-primary" download>
+              <a href={resumeUrl} className="btn-primary" download>
                 {t('contact.downloadResume')}
               </a>
             </div>

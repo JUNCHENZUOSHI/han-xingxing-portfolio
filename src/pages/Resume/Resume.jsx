@@ -1,5 +1,6 @@
 import { useI18n, useProfileData, useResumeData } from '../../i18n/context';
 import { profile } from '../../data/profile';
+import { resumeUrl } from '../../data/site';
 import './Resume.css';
 
 export default function Resume() {
@@ -107,7 +108,7 @@ export default function Resume() {
       <section className="section resume-download">
         <div className="container">
           <p className="resume-download__text">{t('resume.downloadHint')}</p>
-          <a href={`${import.meta.env.BASE_URL}resume.pdf`} className="btn-primary" download>
+          <a href={resumeUrl} className="btn-primary" download>
             {t('resume.downloadPdf')}
           </a>
         </div>

@@ -111,6 +111,50 @@ ul, ol { list-style: none; }
 }
 .text-link:hover { color: var(--color-accent-hover); }
 
+/* ── Dark-surface action link ── */
+.action-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: var(--weight-normal);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+.action-link::after {
+  position: absolute;
+  right: 0;
+  bottom: -4px;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  content: '';
+  opacity: 0.65;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+.action-link:hover { opacity: 0.7; }
+.action-link:hover::after { transform: scaleX(1); }
+.action-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 5px;
+  border-radius: 2px;
+}
+.action-link__icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 1.05em;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+.action-link:hover .action-link__icon--forward { transform: translateX(2px); }
+.action-link:hover .action-link__icon--download { transform: translateY(1px); }
+
 /* ── Divider ── */
 .divider { border: none; margin: 0; }
 .divider--subtle { height: 1px; background: var(--color-border); }

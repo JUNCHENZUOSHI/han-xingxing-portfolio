@@ -89,6 +89,12 @@
   opacity: 1;
   pointer-events: auto;
 }
+.capability-media__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 /* ── wireframe cards (5 color themes) ── */
 .wf {
@@ -230,49 +236,53 @@
   .capability-item { min-height: auto; padding: var(--space-32) 0; opacity: 1; }
 }
 
-/* ── Workflow video — preserve the original featured image ── */
+/* ── Workflow ── */
 .workflow-section__heading {
-  margin: 0 0 var(--space-48);
+  margin: 0 0 var(--space-16);
   text-align: center;
 }
-.workflow-video {
+.workflow-section__subtitle {
+  max-width: 520px;
+  margin: 0 auto var(--space-40);
+  color: var(--color-text-secondary);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  text-align: center;
+}
+.workflow-animation {
   position: relative;
-  display: block;
-  aspect-ratio: 16 / 8;
+  display: grid;
+  min-height: 420px;
+  aspect-ratio: 16 / 9;
+  padding: clamp(24px, 4vw, 56px);
   overflow: hidden;
   background: #0F0F0F;
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-lg);
   box-shadow: 0 0 48px rgba(255, 255, 255, 0.04);
 }
-.workflow-video__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.workflow-video__play {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  display: grid;
-  width: 72px;
-  height: 72px;
-  place-items: center;
-  color: #FFFFFF;
-  background: rgba(5, 10, 18, 0.68);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
-  transform: translate(-50%, -50%);
-  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-.workflow-video__play svg { width: 24px; height: 24px; }
-.workflow-video:hover .workflow-video__play {
-  background: rgba(12, 20, 32, 0.86);
-  border-color: rgba(255, 255, 255, 0.36);
-  transform: translate(-50%, -50%) scale(1.04);
+.workflow-animation::before { position: absolute; inset: 14% 8%; background: radial-gradient(circle at 50% 40%, rgba(83, 133, 192, .12), transparent 55%); content: ''; pointer-events: none; }
+.workflow-animation__roles, .workflow-animation__steps, .workflow-animation__tools, .workflow-animation__replay { position: relative; z-index: 1; }
+.workflow-animation__roles { display: flex; justify-content: space-between; gap: var(--space-24); align-self: start; color: var(--color-text-secondary); font-size: var(--text-caption); letter-spacing: .04em; }
+.workflow-animation__roles span:last-child { text-align: right; }
+.workflow-animation__steps { display: grid; grid-template-columns: repeat(5, 1fr); align-items: center; align-self: center; margin: 0; }
+.workflow-animation__steps li { position: relative; min-width: 0; padding: 0 12px 0 18px; opacity: .48; transition: opacity .38s ease, color .38s ease; }
+.workflow-animation__steps li::before { position: absolute; top: 15px; right: -1px; left: -1px; height: 1px; background: rgba(255, 255, 255, .16); content: ''; }
+.workflow-animation__steps li:first-child::before { left: 50%; }
+.workflow-animation__steps li:last-child::before { right: 50%; }
+.workflow-animation__steps li::after { position: absolute; top: 9px; left: 8px; width: 12px; height: 12px; background: #586473; border: 2px solid #0F0F0F; border-radius: 50%; content: ''; transition: background-color .38s ease, box-shadow .38s ease; }
+.workflow-animation__steps li.is-active { opacity: 1; }
+.workflow-animation__steps li.is-active::after { background: #b9d1e9; box-shadow: 0 0 16px rgba(185, 209, 233, .4); }
+.workflow-animation__index { display: block; margin: 32px 0 9px; color: var(--color-text-tertiary); font-family: var(--font-mono); font-size: 11px; }
+.workflow-animation__steps strong { display: block; color: var(--color-text); font-size: 16px; font-weight: var(--weight-medium); }
+.workflow-animation__steps small { display: block; margin-top: 8px; color: var(--color-text-secondary); font-size: 12px; line-height: 1.55; }
+.workflow-animation__tools { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 18px; align-self: end; color: var(--color-text-secondary); font-size: 12px; }
+.workflow-animation__replay { justify-self: center; align-self: end; margin-top: var(--space-16); padding: 0; color: var(--color-text); background: none; border: 0; border-bottom: 1px solid currentColor; cursor: pointer; font: inherit; font-size: 13px; }
+.workflow-animation__replay:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 5px; }
+.workflow-animation__replay:hover { color: var(--color-accent-hover); }
+@media (prefers-reduced-motion: reduce) {
+  .workflow-animation__steps li { opacity: 1; transition: none; }
+  .workflow-animation__steps li::after { background: #b9d1e9; box-shadow: none; transition: none; }
 }
 
 /* ── About Preview — two cards (deepseek 快速体验/源码安装) ── */
@@ -282,7 +292,7 @@
   color: var(--color-text); margin: 0 0 var(--space-48);
 }
 .about-preview__columns {
-  display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-24);
+  display: grid; grid-template-columns: 1fr; gap: var(--space-24);
   align-items: stretch;
 }
 .about-card {
@@ -382,7 +392,7 @@
   filter: blur(60px);
   opacity: 0.2;
 }
-.contact-cta__inner { position: relative; z-index: 2; max-width: var(--max-width-text); margin: 0 auto; }
+.contact-cta__inner { position: relative; z-index: 2; max-width: 960px; margin: 0 auto; }
 
 /* dot grid (deepseek "加入 DSH 插件生态" grid, edge-faded) */
 .contact-cta__grid {
@@ -437,18 +447,27 @@
   .contact-cta [data-reveal] { opacity: 1; filter: none; transform: none; transition: none; }
 }
 .contact-cta__heading {
-  font-size: var(--text-h2); font-weight: var(--weight-bold);
-  line-height: var(--leading-h2); letter-spacing: var(--tracking-h2);
-  margin: 0 0 var(--space-20);
+  font-size: clamp(48px, 4vw, 56px); font-weight: var(--weight-bold);
+  line-height: 1.08; letter-spacing: var(--tracking-h2);
+  margin: 0 0 44px;
 }
-.contact-cta__subtitle {
-  font-size: var(--text-body-large); font-weight: var(--weight-normal);
-  line-height: var(--leading-body-large);
-  color: var(--color-text-secondary); margin: 0 0 var(--space-48);
+.contact-cta__lead {
+  margin: 0 0 32px; font-size: clamp(20px, 1.7vw, 22px);
+  font-weight: var(--weight-normal); line-height: 1.55; color: var(--color-text);
+}
+.contact-cta__supporting {
+  margin: 0 0 44px; font-size: clamp(18px, 1.5vw, 20px);
+  font-weight: var(--weight-normal); line-height: 1.6; color: var(--color-text-secondary);
 }
 .contact-cta__actions {
   display: flex; align-items: center; justify-content: center;
-  gap: var(--space-24); flex-wrap: wrap;
+  gap: 22px; flex-wrap: wrap;
+}
+.contact-cta__actions .btn-primary,
+.contact-cta__actions .btn-secondary {
+  min-height: 54px;
+  padding: 0 27px;
+  font-size: 16px;
 }
 @media (max-width: 1023px) {
   .case-grid { gap: var(--space-32); }
@@ -456,7 +475,20 @@
 @media (max-width: 767px) {
   .case-grid { grid-template-columns: 1fr; }
   .about-preview__columns { grid-template-columns: 1fr; }
-  .workflow-video__play { width: 60px; height: 60px; }
+  .workflow-animation { min-height: 0; aspect-ratio: auto; }
+  .workflow-animation__roles { flex-direction: column; gap: 6px; }
+  .workflow-animation__roles span:last-child { text-align: left; }
+  .workflow-animation__steps { grid-template-columns: 1fr; gap: 14px; }
+  .workflow-animation__steps li { padding: 0 0 0 28px; }
+  .workflow-animation__steps li::before { top: -14px; bottom: -14px; left: 13px; width: 1px; height: auto; }
+  .workflow-animation__steps li:first-child::before { top: 15px; }
+  .workflow-animation__steps li:last-child::before { bottom: 15px; }
+  .workflow-animation__steps li::after { top: 4px; left: 7px; }
+  .workflow-animation__index { margin: 0 0 5px; }
+  .workflow-animation__tools { justify-content: flex-start; margin-top: var(--space-24); }
+  .contact-cta__heading { font-size: clamp(38px, 11vw, 48px); margin-bottom: 40px; }
+  .contact-cta__lead { margin-bottom: 28px; font-size: 20px; }
+  .contact-cta__supporting { margin-bottom: 40px; font-size: 18px; }
   .contact-cta__actions { flex-direction: column; align-items: center; }
 }
 

@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useI18n, useProfileData } from '../../i18n/context';
 import { profile } from '../../data/profile';
 import { hasHiddenMetric } from '../../data/cases';
+import { resumeUrl } from '../../data/site';
 import './About.css';
 
 export default function About() {
@@ -159,7 +160,7 @@ export default function About() {
             <div className="about-cta__actions">
               <Link to="/" className="btn-primary">{t('contact.viewCases')}</Link>
               <a href={`mailto:${profile.email}`} className="btn-secondary">{profile.email}</a>
-              <a href={`${import.meta.env.BASE_URL}resume.pdf`} className="btn-secondary" download>{t('about.downloadResume')}</a>
+              <a href={resumeUrl} className="btn-secondary" download>{t('about.downloadResume')}</a>
             </div>
           </div>
         </div>

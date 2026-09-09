@@ -3,7 +3,7 @@ import { useI18n, useCaseI18n } from '../../i18n/context';
 import { hasHiddenMetric } from '../../data/cases';
 import './CaseCard.css';
 
-export default function CaseCard({ caseData, variant = 'standard' }) {
+export default function CaseCard({ caseData, homeCopy, variant = 'standard' }) {
   const { t } = useI18n();
   const localizedCase = useCaseI18n(caseData.slug);
   const caseI18n = ['sidekick', 'novabot'].includes(caseData.slug) ? {} : localizedCase;
@@ -20,11 +20,11 @@ export default function CaseCard({ caseData, variant = 'standard' }) {
     featuredMetrics,
   } = caseData;
 
-  const displayTitle = ['sidekick', 'novabot'].includes(slug)
+  const displayTitle = homeCopy?.title || (['sidekick', 'novabot'].includes(slug)
     ? title
-    : caseI18n.title || t(`caseTitles.${slug}`) || title;
-  const displaySummary = caseData.publicSummary || caseI18n.summary || summary;
-  const displayTags = caseI18n.tags || tags;
+    : caseI18n.title || t(`caseTitles.${slug}`) || title);
+  const displaySummary = homeCopy?.summary || caseData.publicSummary || caseI18n.summary || summary;
+  const displayTags = homeCopy?.tags || caseI18n.tags || tags;
   const displayNdaBadge = caseI18n.nda?.badge || nda?.badge;
 
   const isFeatured = variant === 'featured';
@@ -49,7 +49,7 @@ export default function CaseCard({ caseData, variant = 'standard' }) {
         {coverImage ? (
           <img
             src={`${import.meta.env.BASE_URL}${coverImage}`}
-            alt=""
+            alt={homeCopy?.alt || ''}
             className="case-card__img"
             loading="lazy"
           />
@@ -68,9 +68,9 @@ export default function CaseCard({ caseData, variant = 'standard' }) {
       </div>
 
       <div className="case-card__body">
-        {nda && (
+        {(homeCopy?.projectType || nda) && (
           <span className="badge badge--nda" style={{ marginBottom: 'var(--space-8)' }}>
-            {displayNdaBadge}
+            {homeCopy?.projectType || displayNdaBadge}
           </span>
         )}
         <div className="case-card__tags">
@@ -87,7 +87,7 @@ export default function CaseCard({ caseData, variant = 'standard' }) {
             </span>
           ))}
         </div>
-        <span className="case-card__cta btn-secondary">{t('common.learnMore')}</span>
+        <span className="case-card__cta btn-secondary">{homeCopy?.cta || t('common.learnMore')}</span>
       </div>
     </Link>
   );

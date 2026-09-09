@@ -1,19 +1,21 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useI18n, useProfileData } from '../../i18n/context';
+import { useI18n } from '../../i18n/context';
 import { profile } from '../../data/profile';
 import { cases, caseOrder } from '../../data/cases';
+import { getHomeContent } from '../../data/homeContent';
+import { resumeUrl } from '../../data/site';
 import Hero from '../../components/Hero/Hero';
 import DotGridOverlay from '../../components/Hero/DotGridOverlay';
 import ParticleField from '../../components/Hero/ParticleField';
-import WireframePlaceholder from '../../components/Hero/WireframePlaceholder';
 import CaseCard from '../../components/CaseCard/CaseCard';
+import WorkflowAnimation from '../../components/WorkflowAnimation/WorkflowAnimation';
 import './Home.css';
 
 export default function Home() {
-  const { t } = useI18n();
-  const profileData = useProfileData();
-  const trans = t('home.transition') || ['深度', '可迁移性', '宽度'];
+  const { lang, t } = useI18n();
+  const content = getHomeContent(lang);
+  const [contactLead, contactSupporting] = content.contact.subtitle.split('\n\n');
   const [activeCap, setActiveCap] = useState(0);
 
   useEffect(() => {
@@ -90,26 +92,26 @@ export default function Home() {
 
       {/* Transition Guide — hidden for now (show later) */}
 
-      {/* All Cases */}
+      {/* Selected work */}
       <section className="section" id="work">
         <div className="container" data-reveal>
-          <span className="section-label">{t('home.allCases')}</span>
+          <span className="section-label">{content.casesHeading}</span>
           <div className="case-grid">
             {caseOrder.map((slug) => (
-              <CaseCard key={slug} caseData={cases[slug]} variant="standard" />
+              <CaseCard key={slug} caseData={cases[slug]} homeCopy={content.cases[slug]} variant="standard" />
             ))}
           </div>
         </div>
       </section>
 
-      {/* 能力矩阵 — scroll-driven (deepseek "一切皆插件") */}
+      {/* Core capabilities */}
       <section className="section what-i-do">
         <div className="container">
-          <span className="section-label">{t('home.whatIDo')}</span>
-          <h2 className="section-heading">{t('home.capabilities')}</h2>
+          <span className="section-label">{content.capabilitiesLabel}</span>
+          <h2 className="section-heading">{content.capabilitiesTitle}</h2>
           <div className="capability-layout">
             <div className="capability-list">
-              {profileData.homeCapabilities.map((cap, i) => (
+              {content.capabilities.map((cap, i) => (
                 <div
                   className={`capability-item${activeCap === i ? ' capability-item--active' : ''}`}
                   key={cap.title}
@@ -122,12 +124,18 @@ export default function Home() {
             </div>
             <div className="capability-media">
               <div className="capability-media__frame">
-                {profileData.homeCapabilities.map((cap, i) => (
+                {content.capabilities.map((cap, i) => (
                   <div
                     className={`capability-media__slide${activeCap === i ? ' capability-media__slide--active' : ''}`}
                     key={cap.title}
                   >
-                    <WireframePlaceholder variant={i} title={cap.title} />
+                    <img
+                      className="capability-media__image"
+                      src={`${import.meta.env.BASE_URL}capabilities/capability-${String(i + 1).padStart(2, '0')}.png`}
+                      alt=""
+                      aria-hidden="true"
+                      draggable="false"
+                    />
                   </div>
                 ))}
               </div>
@@ -136,29 +144,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Case */}
+      {/* Workflow */}
       <section className="section workflow-section">
         <div className="container" data-reveal>
-          <h2 className="contact-cta__heading workflow-section__heading">
-            {t('home.featuredCases')}
-          </h2>
-          <Link
-            to={`/case/${cases.sidekick.slug}`}
-            className="workflow-video"
-            aria-label={cases.sidekick.title}
-          >
-            <img
-              src={`${import.meta.env.BASE_URL}${cases.sidekick.coverImage}`}
-              alt=""
-              className="workflow-video__image"
-              loading="lazy"
-            />
-            <span className="workflow-video__play" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5.5v13l11-6.5-11-6.5Z" />
-              </svg>
-            </span>
-          </Link>
+          <h2 className="section-heading workflow-section__heading">{content.workflow.title}</h2>
+          <p className="workflow-section__subtitle">{content.workflow.subtitle}</p>
+          <WorkflowAnimation content={content.workflow} />
         </div>
       </section>
 
@@ -167,20 +158,14 @@ export default function Home() {
         <div className="container" data-reveal>
           <span className="section-label">{t('home.about')}</span>
           <div className="about-preview">
-            <p className="about-preview__text">
-              {t('home.aboutText', { years: profileData.yearsOfExperience })}
-            </p>
+            <p className="about-preview__text">{content.about.intro}</p>
             <div className="about-preview__columns">
               <div className="about-card">
-                <h3 className="about-card__title">{t('home.industries')}</h3>
+                <h3 className="about-card__title">{content.about.domainTitle}</h3>
                 <ul className="about-card__list">
-                  {profileData.industries.map((ind) => <li key={ind}>{ind}</li>)}
+                  {content.about.industries.map((ind) => <li key={ind}>{ind}</li>)}
                 </ul>
-              </div>
-              <div className="about-card">
-                <h3 className="about-card__title">{t('home.workingStyle')}</h3>
-                <p className="about-card__text">{profileData.workingStyleSummary}</p>
-                <Link to="/about" className="btn-secondary about-card__cta">{t('home.moreAbout')}</Link>
+                <Link to="/about" className="btn-secondary about-card__cta">{content.about.more}</Link>
               </div>
             </div>
           </div>
@@ -192,7 +177,7 @@ export default function Home() {
         <div className="container" data-reveal>
           <span className="section-label">{t('home.experience')}</span>
           <div className="experience-list experience-list--cards">
-            {profileData.experience.map((exp, i) => (
+            {content.experience.map((exp, i) => (
               <div key={i}>
                 {i > 0 && <hr className="divider divider--subtle" />}
                 <div className="experience-item">
@@ -204,7 +189,7 @@ export default function Home() {
                     <h3 className="experience-item__role">{exp.role}</h3>
                     <p className="experience-item__company">{exp.company}</p>
                     <p className="experience-item__desc">
-                      {exp.highlights.slice(0, 2).join('。')}。
+                      {exp.description}
                     </p>
                   </div>
                 </div>
@@ -225,22 +210,19 @@ export default function Home() {
         </div>
         <div className="container" data-reveal>
           <div className="contact-cta__inner">
-            <h2 className="contact-cta__heading">{t('home.letsTalk')}</h2>
-            <p className="contact-cta__subtitle">{t('home.letsTalkSub')}</p>
+            <h2 className="contact-cta__heading">{content.contact.title}</h2>
+            <p className="contact-cta__lead">{contactLead}</p>
+            {contactSupporting && <p className="contact-cta__supporting">{contactSupporting}</p>}
             <div className="contact-cta__actions">
-              <a href={`mailto:${profile.email}`} className="btn-primary">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                  <rect x="1.5" y="3" width="13" height="10" rx="2" stroke="currentColor" strokeWidth="1.2" />
-                  <path d="M2 4.5L8 9l6-4.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
+              <a href={`mailto:${profile.email}`} className="btn-primary contact-cta__email">
                 {profile.email}
               </a>
-              <a href={`${import.meta.env.BASE_URL}resume.pdf`} className="btn-secondary" download>
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <a href={resumeUrl} className="btn-secondary" download>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">
                   <path d="M8 1.5v8M4.5 6.5L8 10l3.5-3.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
                   <path d="M2.5 13.5h11" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
                 </svg>
-                {t('home.downloadResumePdf')}
+                {content.contact.resume}
               </a>
             </div>
           </div>

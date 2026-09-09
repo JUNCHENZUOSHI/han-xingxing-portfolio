@@ -34,17 +34,7 @@
 }
 .footer__actions { justify-self: end; }
 .footer__sep { color: hsla(0, 0%, 100%, 0.3); user-select: none; }
-
-/* links — white (primary), fade on hover */
-.footer a {
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: var(--weight-normal);
-  letter-spacing: -0.01em;
-  white-space: nowrap;
-  transition: opacity 0.2s ease;
-}
-.footer a:hover { opacity: 0.7; }
+.footer__email-icon { width: 15px; height: 15px; flex: 0 0 auto; stroke: currentColor; }
 
 @media (max-width: 767px) {
   .footer__inner {
