@@ -1,6 +1,6 @@
-.hero { position: relative; isolation: isolate; overflow: hidden; min-height: 860px; height: 100svh; background: #050608; color: #eceef2; text-align: center; display: flex; flex-direction: column; align-items: center; }
+.hero { position: relative; isolation: isolate; overflow: hidden; min-height: 860px; height: 100svh; background: #000; color: #eceef2; text-align: center; display: flex; flex-direction: column; align-items: center; }
 .hero__scene { position: absolute; inset: 0; pointer-events: none; filter: brightness(var(--hero-brightness, 1)); }
-.hero__background { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse at 50% 36%, #19202a66, transparent 48%), #050608; animation: hero-fade .6s both; transform: translate(calc(var(--parallax-x, 0px) * 1.3), calc(var(--parallax-y, 0px) * 1.3)); }
+.hero__background { position: absolute; inset: 0; z-index: 0; background: radial-gradient(ellipse 60% 48% at 50% 30%, rgba(25, 32, 42, .26) 0%, rgba(12, 16, 22, .10) 42%, transparent 72%), #000; animation: hero-fade .6s both; transform: translate(calc(var(--parallax-x, 0px) * 1.3), calc(var(--parallax-y, 0px) * 1.3)); }
 .hero__floor { position: absolute; width: 76%; height: 18%; left: 12%; top: 48%; background: radial-gradient(ellipse, #59718f14, transparent 65%); transform: perspective(400px) rotateX(55deg); }
 .hero__atmosphere { position: absolute; inset: 0; z-index: 1; animation: hero-fade .7s .5s both; }
 .hero__fog { position: absolute; inset: 12% 6% 25%; background: radial-gradient(ellipse at 35% 58%, #8294ac0d, transparent 48%), radial-gradient(ellipse at 68% 45%, #9cb0d10c, transparent 42%); filter: blur(28px); animation: hero-fog 32s ease-in-out infinite alternate; }
