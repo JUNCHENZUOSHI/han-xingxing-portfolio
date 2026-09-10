@@ -16,10 +16,7 @@ export default function WorkflowAnimation({ content }) {
   const status = isEnglish
     ? { pending: 'Queued', active: 'In progress', complete: 'Complete' }
     : { pending: '待开始', active: '进行中', complete: '完成' };
-  const toolLabels = isEnglish
-    ? ['Insight support', 'Interaction & visual', 'Implementation & QA']
-    : ['洞察辅助', '交互与视觉', '实现与质检'];
-  const stageTools = [['ChatGPT'], ['ChatGPT'], ['ChatGPT'], ['ChatGPT', 'Figma'], ['ChatGPT', 'Figma', 'Codex']];
+  const stageToolLabel = isEnglish ? 'AI support · Human-led decisions' : content.human.includes('判') ? 'AI 輔助 · 人主導決策' : 'AI 辅助 · 人主导决策';
 
   const clearTimers = useCallback(() => {
     timers.current.forEach(clearTimeout);
@@ -103,7 +100,7 @@ export default function WorkflowAnimation({ content }) {
                   ))}
                 </ul>
                 <div className="workflow-animation__tool-chips" aria-label={isEnglish ? 'Stage tools' : '阶段工具'}>
-                  {stageTools[index].map((tool) => <span key={tool}>{tool}</span>)}
+                  <span>{stageToolLabel}</span>
                 </div>
               </li>
             );
@@ -111,10 +108,9 @@ export default function WorkflowAnimation({ content }) {
         </ol>
 
         <p className="workflow-animation__legend">
-          <span>ChatGPT · {toolLabels[0]}</span>
-          <span>Figma · {toolLabels[1]}</span>
-          <span>Codex · {toolLabels[2]}</span>
+          {content.tools.map((tool) => <span key={tool}>{tool}</span>)}
         </p>
+        <p className="workflow-animation__tool-note">{content.toolNote}</p>
       </div>
 
       {(phase === -1 || complete) && (

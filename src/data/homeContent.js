@@ -14,8 +14,9 @@ const homeContent = {
       title: '我的工作流',
       subtitle: '以业务目标为起点，从洞察问题到设计验证。',
       human: '人 · 判断与方向',
-      ai: 'AI · 研究 / 探索 / 实现 / 质检',
-      tools: ['ChatGPT｜信息整理与洞察辅助', 'Figma｜交互与视觉原型', 'Codex｜实现、联调与质量检查'],
+      ai: 'AI · 研究 / 推演 / 设计 / 实现 / 验证',
+      tools: ['ChatGPT · 研究与推演', 'Figma · 映射、设计与原型', 'Codex · 文件、实现、测试与迭代'],
+      toolNote: '工具按任务组合使用，贯穿整个设计流程。',
       replay: '再次播放',
       phases: [
         { title: '启动', detail: '组织人员 · 统一信息 · 盘点资源' },
@@ -58,7 +59,7 @@ const homeContent = {
       { title: 'Design System / DesignOps', description: 'Use design tokens, component semantics and operating practices to scale multilingual product delivery.' },
       { title: 'Validation & Data', description: 'Validate design value through research, usability testing and business metrics to improve efficiency, conversion and experience.' },
     ],
-    workflow: { title: 'My Workflow', subtitle: 'Start with business goals, then move from problem definition to validated delivery.', human: 'HUMAN · Judgment / Direction', ai: 'AI · Research / Exploration / Implementation / QA', tools: ['ChatGPT｜Research synthesis & insight support', 'Figma｜Interaction & visual prototypes', 'Codex｜Implementation, integration & QA'], replay: 'Play again', phases: [{ title: 'Start', detail: 'Business goals · scope · success metrics' }, { title: 'Research', detail: 'User interviews · service map · market context' }, { title: 'Define', detail: 'Key problems · priorities · design principles' }, { title: 'Prototype', detail: 'Task flows · interaction · high-fidelity prototype' }, { title: 'Validate', detail: 'Usability · data review · iteration' }] },
+    workflow: { title: 'My Workflow', subtitle: 'Start with business goals, then move from problem definition to validated delivery.', human: 'HUMAN · Judgment / Direction', ai: 'AI · Research / Reasoning / Design / Implementation / Validation', tools: ['ChatGPT · Research & reasoning', 'Figma · Mapping, design & prototyping', 'Codex · Files, implementation, testing & iteration'], toolNote: 'Tools are combined by task throughout the design process.', replay: 'Play again', phases: [{ title: 'Start', detail: 'Business goals · scope · success metrics' }, { title: 'Research', detail: 'User interviews · service map · market context' }, { title: 'Define', detail: 'Key problems · priorities · design principles' }, { title: 'Prototype', detail: 'Task flows · interaction · high-fidelity prototype' }, { title: 'Validate', detail: 'Usability · data review · iteration' }] },
     about: { domainTitle: 'Domain Experience', description: 'Focused on AI products and complex business systems, creating clear, controllable and scalable product experiences.', domains: [{ title: 'Enterprise SaaS', detail: 'Nearly 7 years' }, { title: 'Cross-border Commerce', detail: '3+ years' }, { title: 'Low-code Platforms', detail: 'Nearly 4 years' }, { title: 'AI Agent', detail: 'AI Product Experience', isAi: true }], more: 'Learn more →' },
     experience: [{ period: 'Jun 2023—Present', location: 'Shanghai', role: 'Interaction Design Specialist', company: 'Cross-border E-commerce SaaS Platform', description: 'Own end-to-end experience design for Shopify merchants, bringing AI into asset generation, campaign setup, AI site building and merchant operations.' }, { period: 'Oct 2019—Jun 2023', location: 'Shanghai', role: 'Interaction Designer', company: 'Enterprise Low-code Platform', description: 'Designed core low-code experiences spanning business modeling, complex configuration, template reuse, enterprise workflows and design systems.' }],
     contact: { title: "Let's Talk", subtitle: 'Currently considering Senior Product Designer / AI Product Designer opportunities.\n\nFocused on AI products, Enterprise SaaS, and complex business systems.', emailAction: 'Send email', resume: 'Download Resume (PDF)' },
@@ -92,6 +93,13 @@ zhTraditionalContent.about.domainTitle = '領域經驗';
 zhTraditionalContent.about.description = '聚焦 AI 產品與複雜業務系統，建立清晰、可控、可規模化的產品體驗。';
 zhTraditionalContent.about.domains = [{ title: '企業級 SaaS', detail: '近 7 年' }, { title: '跨境電商', detail: '3 年+' }, { title: '低程式碼平台', detail: '近 4 年' }, { title: 'AI Agent', detail: 'AI 產品體驗', isAi: true }];
 zhTraditionalContent.contact.subtitle = '目前考慮高級產品設計師 / AI 產品設計師機會。\n\n專注 AI 產品、企業級 SaaS 與複雜業務系統。';
+zhTraditionalContent.workflow = {
+  ...homeContent.zh.workflow,
+  human: '人 · 判斷與方向',
+  ai: 'AI · 研究 / 推演 / 設計 / 實現 / 驗證',
+  tools: ['ChatGPT · 研究與推演', 'Figma · 映射、設計與原型', 'Codex · 文件、實現、測試與迭代'],
+  toolNote: '工具按任務組合使用，貫穿整個設計流程。',
+};
 zhTraditionalContent.cases.sidekick.tags[1] = 'Enterprise SaaS';
 zhTraditionalContent.cases.lowcode.tags[1] = 'Enterprise SaaS';
 zhTraditionalContent.cases.template.tags = ['Design System', 'DesignOps'];
