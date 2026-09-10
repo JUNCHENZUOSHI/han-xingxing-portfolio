@@ -136,3 +136,26 @@
 }
 
 @media (prefers-reduced-motion: reduce) { .hero__background { transform: none; } }
+
+/* Intro effects stay inside the existing positioning container. */
+.hero-art-motion { position: absolute; inset: 0; transform-origin: 50% 100%; }
+.hero--intro-active { --intro-time: 3.1s; }
+.hero--intro-active .hero-art-motion { animation: art-reveal var(--intro-time) both; }
+.hero--intro-active .hero-art-motion .hero__visual__brantley,
+.hero--intro-active .hero-art-motion .hero__visual__guardians { animation: none; }
+.hero--intro-active .hero__visual__glow--brantley { animation: contour-reveal var(--intro-time) both; }
+.hero--intro-active .hero__visual__glow--guardians { animation: contour-reveal var(--intro-time) both; --glow-peak: .35; }
+.hero--intro-active .hero__intro-light,
+.hero--intro-active .hero__intro-light i { animation-duration: var(--intro-time); animation-delay: 0s; }
+.hero--intro-active .hero__statement { animation: copy-reveal var(--intro-time) both; }
+.hero--intro-active .hero__details { animation: none; }
+.hero--intro-active .hero__description { animation: description-reveal var(--intro-time) both; }
+.hero--intro-active .hero__cta { animation: cta-reveal var(--intro-time) both; }
+.hero--intro-complete .hero__description,
+.hero--intro-complete .hero__cta { animation: none; }
+@keyframes art-reveal { 0%, 32% { opacity: 0; transform: translateY(20px) scale(.92); } 71%, 100% { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes contour-reveal { 0%, 26% { opacity: 0; } 45% { opacity: var(--glow-peak, .7); } 84%, 100% { opacity: 0; } }
+@keyframes copy-reveal { 0%, 65% { opacity: 0; transform: translateY(12px); } 90%, 100% { opacity: 1; transform: translateY(0); } }
+@keyframes cta-reveal { 0%, 77% { opacity: 0; transform: translateY(12px); } 94%, 100% { opacity: 1; transform: translateY(0); } }
+@keyframes description-reveal { 0%, 71% { opacity: 0; transform: translateY(12px); } 92%, 100% { opacity: 1; transform: translateY(0); } }
+@media (max-width: 700px) { .hero--intro-active { --intro-time: 1.5s; } }

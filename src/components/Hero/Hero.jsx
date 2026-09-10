@@ -29,14 +29,16 @@ export default function Hero() {
       setIntroDone(true);
       try { sessionStorage.setItem('hero-intro-played', '1'); } catch { /* storage may be unavailable */ }
     };
-    const duration = window.matchMedia('(max-width: 700px)').matches ? 1500 : 2800;
+    const duration = window.matchMedia('(max-width: 700px)').matches ? 1500 : 3100;
     const timer = window.setTimeout(complete, duration);
     window.addEventListener('scroll', complete, { passive: true, once: true });
-    ref.current?.addEventListener('pointerdown', complete, { passive: true });
+    window.addEventListener('pointerdown', complete, { passive: true });
+    window.addEventListener('click', complete);
     return () => {
       window.clearTimeout(timer);
       window.removeEventListener('scroll', complete);
-      ref.current?.removeEventListener('pointerdown', complete);
+      window.removeEventListener('pointerdown', complete);
+      window.removeEventListener('click', complete);
     };
   }, [introDone]);
   useEffect(() => {

@@ -20,6 +20,7 @@ export default function HeroScene() {
           <i className="hero__grounding-shadow hero__grounding-shadow--lion" />
           <i className="hero__grounding-shadow hero__grounding-shadow--scorpio" />
         </div>
+        <div className="hero-art-motion">
         <img className="hero__visual__glow hero__visual__glow--guardians" src={`${heroBase}Guardian Group.png`} width="3652" height="3072" alt="" aria-hidden="true" draggable="false" />
         <img className="hero__visual__glow hero__visual__glow--brantley" src={`${heroBase}Brantley.png`} width="3652" height="3072" alt="" aria-hidden="true" draggable="false" />
         <picture>
@@ -59,6 +60,7 @@ export default function HeroScene() {
             fetchpriority="high"
           />
         </picture>
+        </div>
         <div className="hero__reflection" aria-hidden="true">
           <picture>
             <source
