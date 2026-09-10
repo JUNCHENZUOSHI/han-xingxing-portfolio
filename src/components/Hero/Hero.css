@@ -29,6 +29,7 @@
 .hero__system-nodes { fill: currentColor; }
 .hero__foreground { position: absolute; inset: 0; z-index: 7; animation: hero-fade 1.2s .5s both; }
 .hero__foreground i { position: absolute; width: 5px; height: 5px; background: #829bb726; filter: blur(3px); border-radius: 50%; top: 55%; left: 20%; }
+.hero__foreground i:first-child { display: none; }
 .hero__foreground i:nth-child(2) { display: none; }
 .hero__foreground i:nth-child(3) { top: 60%; left: 86%; width: 8px; filter: blur(5px); }
 .hero__content { position: absolute; z-index: 6; top: calc(67% + 6px); width: min(1000px, calc(100% - 40px)); transform: translateY(40px); }
