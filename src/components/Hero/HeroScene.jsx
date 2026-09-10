@@ -84,12 +84,6 @@ export default function HeroScene() {
             <stop offset="100%" stopColor="#788b9e" stopOpacity="0" />
           </linearGradient>
         </defs>
-        <g className="hero__ai-path-lines">
-          <path pathLength="1" className="hero__ai-path-main" d="M600 600 C592 613 602 625 593 639" />
-          <path pathLength="1" className="hero__ai-path-branch" style={{ '--path-delay': '2.35s', '--path-duration': '1.65s' }} d="M593 639 C558 655 543 680 508 691 C472 703 455 734 416 747 C375 761 353 790 310 805 C282 815 258 837 229 858" />
-          <path pathLength="1" className="hero__ai-path-branch" style={{ '--path-delay': '2.55s', '--path-duration': '1.8s' }} d="M593 639 C626 653 643 677 677 689 C712 701 730 728 767 741 C807 755 827 785 868 800 C905 813 937 838 972 862" />
-          <path pathLength="1" className="hero__ai-path-far" style={{ '--path-delay': '2.78s', '--path-duration': '1.55s' }} d="M677 689 C698 676 719 680 740 665 C762 650 785 655 807 643" />
-        </g>
       </svg>
       <svg className="hero__system-texture" viewBox="0 0 1000 900" preserveAspectRatio="none" focusable="false">
         <g className="hero__system-nodes">
