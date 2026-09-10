@@ -140,7 +140,7 @@
 .wf-01 .node .t { width: 55%; height: 9px; background: rgba(255,255,255,0.25); border-radius: 2px; }
 .wf-01 .node.highlight .t { background: #60A5FA; }
 .wf-01 .node .s { width: 35%; height: 7px; background: rgba(255,255,255,0.1); border-radius: 2px; }
-.wf-01 .arrow { color: #3B82F6; font-size: 18px; font-weight: bold; }
+.wf-01 .arrow { color: #3B82F6; font-size: 18px; font-weight: 500; }
 .wf-01 .loop-arrow { width: 2px; height: 24px; background: rgba(59,130,246,0.4); margin: 0 auto; position: relative; }
 .wf-01 .loop-arrow::after { content: ''; position: absolute; bottom: -1px; left: -4px; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid rgba(59,130,246,0.5); }
 .wf-01 .metric-row { display: flex; justify-content: center; gap: 14px; }
@@ -564,6 +564,12 @@ body.theme-dark .about-section .about-card { background: transparent; border-col
   min-height: 54px;
   padding: 0 27px;
   font-size: 16px;
+}
+/* Keep the About preview's "Domain Experience" heading at the shared
+   desktop first-level size; this follows its component base rule so it cannot
+   fall back to the 26px clamp. */
+@media (min-width: 768px) {
+  .about-card__title { font-size: 40px; line-height: 1.35; }
 }
 @media (max-width: 1023px) {
   .case-grid { gap: var(--space-32); }
