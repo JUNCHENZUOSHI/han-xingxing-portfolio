@@ -92,11 +92,6 @@ export default function HeroScene() {
         </g>
       </svg>
       <svg className="hero__system-texture" viewBox="0 0 1000 900" preserveAspectRatio="none" focusable="false">
-        <g className="hero__system-links">
-          <path d="M78 318 142 283 206 305 252 270" />
-          <path d="M118 366 176 337 231 356" />
-          <path d="M104 535h62m-62 0v44m62-44v22" />
-        </g>
         <g className="hero__system-nodes">
           <circle cx="78" cy="318" r="2" /><circle cx="142" cy="283" r="1.5" /><circle cx="206" cy="305" r="1.2" /><circle cx="252" cy="270" r="1" />
           <circle cx="118" cy="366" r="1.4" /><circle cx="176" cy="337" r="1" /><circle cx="231" cy="356" r="1.6" />
