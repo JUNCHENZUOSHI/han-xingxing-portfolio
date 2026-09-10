@@ -76,21 +76,6 @@ export default function HeroScene() {
           </picture>
         </div>
       </div>
-      <svg className="hero__ai-path" viewBox="0 0 1000 900" preserveAspectRatio="none" focusable="false">
-        <defs>
-          <linearGradient id="hero-ai-path-fade" x1="0" y1="600" x2="0" y2="900" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor="#9cb1c8" stopOpacity="1" />
-            <stop offset="42%" stopColor="#8ea5bc" stopOpacity=".5" />
-            <stop offset="100%" stopColor="#788b9e" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-      </svg>
-      <svg className="hero__system-texture" viewBox="0 0 1000 900" preserveAspectRatio="none" focusable="false">
-        <g className="hero__system-nodes">
-          <circle cx="78" cy="318" r="2" /><circle cx="142" cy="283" r="1.5" /><circle cx="206" cy="305" r="1.2" /><circle cx="252" cy="270" r="1" />
-          <circle cx="118" cy="366" r="1.4" /><circle cx="176" cy="337" r="1" /><circle cx="231" cy="356" r="1.6" />
-        </g>
-      </svg>
       <div className="hero__foreground"><i /><i /><i /></div>
     </div>
   );
