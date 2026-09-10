@@ -12,30 +12,35 @@ const homeContent = {
     ],
     workflow: {
       title: '我的工作流',
-      subtitle: '以业务目标为起点，从问题定义走向验证落地。',
-      human: 'HUMAN · 判断与方向',
-      ai: 'AI · 研究 / 探索 / 实现 / QA',
+      subtitle: '以业务目标为起点，从洞察问题到设计验证。',
+      human: '人 · 判断与方向',
+      ai: 'AI · 研究 / 探索 / 实现 / 质检',
       tools: ['ChatGPT｜信息整理与洞察辅助', 'Figma｜交互与视觉原型', 'Codex｜实现、联调与质量检查'],
       replay: '再次播放',
       phases: [
-        { title: '启动', detail: '业务目标 · 项目边界 · 成功指标' },
-        { title: '调查', detail: '用户访谈 · 业务图谱 · 竞品与现状' },
-        { title: '定义', detail: '关键问题 · 需求优先级 · 设计原则' },
-        { title: '原型', detail: '任务流程 · 交互方案 · 高保真原型' },
-        { title: '验证', detail: '可用性验证 · 数据复盘 · 方案迭代' },
+        { title: '启动', detail: '组织人员 · 统一信息 · 盘点资源' },
+        { title: '调查', detail: '明确需求 · 了解业务 · 了解用户 · 了解产品' },
+        { title: '聚焦', detail: '确定目标 · 确定原则 · 确定指标' },
+        { title: '设计', detail: '列举方案 · 对比方案 · 产出原型' },
+        { title: '评估', detail: '验证设计 · 资料归档' },
       ],
     },
     about: {
-      intro: '近 7 年企业级产品设计经验，现居上海，专注 AI 产品体验与企业级 SaaS。经历覆盖低代码平台、跨境电商与 Shopify 生态、智能硬件 App，具备从业务分析、体验策略到交互设计、设计系统建设与验证落地的完整项目经验。',
       domainTitle: '领域经验',
-      industries: ['企业级 SaaS｜近 7 年', '跨境电商 / Shopify 生态｜3 年+', '低代码平台｜近 4 年', 'AI Agent / Copilot', '智能硬件 / IoT App'],
+      description: '聚焦 AI 产品与复杂业务系统，建立清晰、可控、可规模化的产品体验。',
+      domains: [
+        { title: '企业级 SaaS', detail: '近 7 年' },
+        { title: '跨境电商', detail: '3 年+' },
+        { title: '低代码平台', detail: '近 4 年' },
+        { title: 'AI Agent', detail: 'AI 产品体验', isAi: true },
+      ],
       more: '了解更多 →',
     },
     experience: [
       { period: '2023.06—至今', location: '上海', role: '交互设计专家', company: '跨境电商 SaaS 平台', description: '负责面向 Shopify 商家的跨境电商 SaaS 全链路体验设计，推进 AI 在素材生成、投放配置、智能建站与商家运营场景中的产品化落地。' },
       { period: '2019.10—2023.06', location: '上海', role: '交互设计师', company: '企业级低代码平台', description: '负责企业级低代码平台核心体验设计，覆盖业务建模、复杂配置、模板复用、企业级工作流与设计系统建设。' },
     ],
-    contact: { title: '一起聊聊', subtitle: '目前考虑高级产品设计师 / AI 产品设计师机会。\n\n如果你的团队正在构建 AI 产品、企业级 SaaS 或复杂业务系统，欢迎联系我。', resume: '下载简历 (PDF)' },
+    contact: { title: '一起聊聊', subtitle: '目前考虑高级产品设计师 / AI 产品设计师机会。\n\n专注 AI 产品、企业级 SaaS 与复杂业务系统。', resume: '下载简历 (PDF)' },
     cases: {
       sidekick: { projectType: '商业项目 · 已脱敏', tags: ['AI 建站', '企业级 SaaS'], title: 'Shopify 主题智能建站体验升级', summary: '面向 Shopify 商家的智能建站场景，通过产品走查、商家访谈与 15 次 AI 能力测试，定位主题选择、页面规划和改动控制中的决策缺口；基于 Theme 与 Sidekick 现有能力，构建从智能推荐、结构规划到安全执行的建站体验。', alt: 'Shopify 主题智能建站体验方案预览', cta: '查看案例 →' },
       'sidekick-agent': { projectType: '体验探索', tags: ['AI Agent', '多应用协同'], title: 'Shopify Sidekick AI 运营工作台体验设计', summary: '面向跨境商家的跨应用复杂运营任务，构建涵盖任务规划、上下文管理、风险确认、执行反馈与失败恢复的 AI 运营工作台，让执行计划清晰可见、过程可干预、失败可恢复。', alt: 'Shopify Sidekick AI 运营工作台方案预览', cta: '查看案例 →' },
@@ -54,9 +59,9 @@ const homeContent = {
       { title: 'Validation & Data', description: 'Validate design value through research, usability testing and business metrics to improve efficiency, conversion and experience.' },
     ],
     workflow: { title: 'My Workflow', subtitle: 'Start with business goals, then move from problem definition to validated delivery.', human: 'HUMAN · Judgment / Direction', ai: 'AI · Research / Exploration / Implementation / QA', tools: ['ChatGPT｜Research synthesis & insight support', 'Figma｜Interaction & visual prototypes', 'Codex｜Implementation, integration & QA'], replay: 'Play again', phases: [{ title: 'Start', detail: 'Business goals · scope · success metrics' }, { title: 'Research', detail: 'User interviews · service map · market context' }, { title: 'Define', detail: 'Key problems · priorities · design principles' }, { title: 'Prototype', detail: 'Task flows · interaction · high-fidelity prototype' }, { title: 'Validate', detail: 'Usability · data review · iteration' }] },
-    about: { intro: 'Nearly seven years in enterprise product design, based in Shanghai and focused on AI product experience and Enterprise SaaS. My experience spans low-code platforms, cross-border commerce and the Shopify ecosystem, and smart-device apps—from business analysis and experience strategy to interaction design, design systems and validated delivery.', domainTitle: 'Domain Experience', industries: ['Enterprise SaaS｜Nearly 7 years', 'Cross-border commerce / Shopify｜3+ years', 'Low-code platforms｜Nearly 4 years', 'AI Agent / Copilot', 'Smart devices / IoT apps'], more: 'Learn more →' },
+    about: { domainTitle: 'Domain Experience', description: 'Focused on AI products and complex business systems, creating clear, controllable and scalable product experiences.', domains: [{ title: 'Enterprise SaaS', detail: 'Nearly 7 years' }, { title: 'Cross-border Commerce', detail: '3+ years' }, { title: 'Low-code Platforms', detail: 'Nearly 4 years' }, { title: 'AI Agent', detail: 'AI Product Experience', isAi: true }], more: 'Learn more →' },
     experience: [{ period: 'Jun 2023—Present', location: 'Shanghai', role: 'Interaction Design Specialist', company: 'Cross-border E-commerce SaaS Platform', description: 'Own end-to-end experience design for Shopify merchants, bringing AI into asset generation, campaign setup, AI site building and merchant operations.' }, { period: 'Oct 2019—Jun 2023', location: 'Shanghai', role: 'Interaction Designer', company: 'Enterprise Low-code Platform', description: 'Designed core low-code experiences spanning business modeling, complex configuration, template reuse, enterprise workflows and design systems.' }],
-    contact: { title: "Let's Talk", subtitle: 'Open to Senior Product Designer / AI Product Designer opportunities.\n\nIf your team is building AI products, Enterprise SaaS or complex business systems, I would be glad to connect.', emailAction: 'Send email', resume: 'Download Resume (PDF)' },
+    contact: { title: "Let's Talk", subtitle: 'Currently considering Senior Product Designer / AI Product Designer opportunities.\n\nFocused on AI products, Enterprise SaaS, and complex business systems.', emailAction: 'Send email', resume: 'Download Resume (PDF)' },
     cases: {
       sidekick: { projectType: 'Commercial project · Redacted', tags: ['AI Site Building', 'Enterprise SaaS'], title: 'Shopify Theme AI Site-building Experience', summary: 'For Shopify merchants, identified decision gaps in theme selection, page planning and change control through product review, merchant research and 15 AI capability tests; then designed a site-building experience from recommendations and structure planning to safe execution.', alt: 'Shopify theme AI site-building experience preview', cta: 'View Case →' },
       'sidekick-agent': { projectType: 'Experience exploration', tags: ['AI Agent', 'Multi-app orchestration'], title: 'Shopify Sidekick AI Operations Workbench', summary: 'For complex cross-application operations, designed an AI workbench for planning, context, risk confirmation, feedback and recovery—making plans visible, interventions possible and failures recoverable.', alt: 'Shopify Sidekick AI operations workbench preview', cta: 'View Case →' },
@@ -73,7 +78,7 @@ const homeContent = {
 const zhTraditionalContent = {
   ...homeContent.zh,
   capabilities: homeContent.zh.capabilities.map((capability) => ({ ...capability })),
-  about: { ...homeContent.zh.about, industries: [...homeContent.zh.about.industries] },
+  about: { ...homeContent.zh.about, domains: homeContent.zh.about.domains.map((domain) => ({ ...domain })) },
   contact: { ...homeContent.zh.contact },
   cases: Object.fromEntries(Object.entries(homeContent.zh.cases).map(([slug, caseContent]) => [
     slug,
@@ -83,9 +88,10 @@ const zhTraditionalContent = {
 
 zhTraditionalContent.capabilities[1].title = 'Enterprise SaaS 设计';
 zhTraditionalContent.capabilities[3].title = 'Design System / DesignOps';
-zhTraditionalContent.about.intro = '近 7 年企业级产品设计经验，现居上海，专注 AI 产品体验与 Enterprise SaaS。经历覆盖低代码平台、跨境电商与 Shopify 生态、智能硬件 App，具备从业务分析、体验策略到交互设计、设计系统建设与验证落地的完整项目经验。';
-zhTraditionalContent.about.industries[0] = 'Enterprise SaaS｜近 7 年';
-zhTraditionalContent.contact.subtitle = '目前考虑高级产品设计师 / AI 产品设计师机会。\n\n如果你的团队正在构建 AI 产品、Enterprise SaaS 或复杂业务系统，欢迎联系我。';
+zhTraditionalContent.about.domainTitle = '領域經驗';
+zhTraditionalContent.about.description = '聚焦 AI 產品與複雜業務系統，建立清晰、可控、可規模化的產品體驗。';
+zhTraditionalContent.about.domains = [{ title: '企業級 SaaS', detail: '近 7 年' }, { title: '跨境電商', detail: '3 年+' }, { title: '低程式碼平台', detail: '近 4 年' }, { title: 'AI Agent', detail: 'AI 產品體驗', isAi: true }];
+zhTraditionalContent.contact.subtitle = '目前考慮高級產品設計師 / AI 產品設計師機會。\n\n專注 AI 產品、企業級 SaaS 與複雜業務系統。';
 zhTraditionalContent.cases.sidekick.tags[1] = 'Enterprise SaaS';
 zhTraditionalContent.cases.lowcode.tags[1] = 'Enterprise SaaS';
 zhTraditionalContent.cases.template.tags = ['Design System', 'DesignOps'];

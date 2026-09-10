@@ -182,14 +182,20 @@ export default function Home() {
         <div className="container" data-reveal>
           <span className="section-label">{t('home.about')}</span>
           <div className="about-preview">
-            <p className="about-preview__text">{content.about.intro}</p>
             <div className="about-preview__columns">
               <div className="about-card">
                 <h3 className="about-card__title">{content.about.domainTitle}</h3>
-                <ul className="about-card__list">
-                  {content.about.industries.map((ind) => <li key={ind}>{ind}</li>)}
-                </ul>
+                <p className="about-card__text">{content.about.description}</p>
                 <Link to="/about" className="btn-secondary about-card__cta">{content.about.more}</Link>
+              </div>
+              <div className="about-domains">
+                {content.about.domains.map((domain, index) => (
+                  <article className={`about-domain${domain.isAi ? ' about-domain--ai' : ''}`} key={domain.title}>
+                    <span className="about-domain__index">0{index + 1}</span>
+                    <h3 className="about-domain__title">{domain.title}</h3>
+                    <p className="about-domain__detail">{domain.detail}</p>
+                  </article>
+                ))}
               </div>
             </div>
           </div>
@@ -235,8 +241,10 @@ export default function Home() {
         <div className="container" data-reveal>
           <div className="contact-cta__inner">
             <h2 className="contact-cta__heading">{content.contact.title}</h2>
-            <p className="contact-cta__lead">{contactLead}</p>
-            {contactSupporting && <p className="contact-cta__supporting">{contactSupporting}</p>}
+            <p className="contact-cta__copy">
+              <span className="contact-cta__lead">{contactLead}</span>
+              {contactSupporting && <span className="contact-cta__supporting">{contactSupporting}</span>}
+            </p>
             <div className="contact-cta__actions">
               <a href={`mailto:${profile.email}`} className="btn-primary contact-cta__email">
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false">

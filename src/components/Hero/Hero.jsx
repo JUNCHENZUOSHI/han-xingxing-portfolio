@@ -5,12 +5,10 @@ import HeroScene from './HeroScene';
 import './Hero.css';
 
 const copy = {
-  en: { description: 'Start with business goals and user value, then integrate AI into product mechanisms to move from problem definition to validated delivery.' },
-  zh: { description: '从业务目标与用户价值出发，将 AI 能力融入产品机制，推动方案从问题定义走向落地验证。' },
-  'zh-TW': { description: '從業務目標與使用者價值出發，將 AI 能力融入產品機制，推動方案從問題定義走向落地驗證。' },
+  en: { description: 'Integrating AI into product mechanisms to make complex business clear, controllable, and ready to deliver.' },
+  zh: { description: '将 AI 能力融入产品机制，让复杂业务变得清晰、可控、可落地。' },
+  'zh-TW': { description: '將 AI 能力融入產品機制，讓複雜業務變得清晰、可控、可落地。' },
 };
-const tags = ['AI Product Design', 'B2B SaaS', 'UX Strategy', 'Design Systems'];
-
 export default function Hero() {
   const { lang, t } = useI18n();
   const content = copy[lang] || copy.en;
@@ -19,9 +17,6 @@ export default function Hero() {
   const descriptionVariant = isTraditional
     ? 'hero__description--traditional'
     : lang === 'en' ? 'hero__description--en' : '';
-  const visibleTags = isChinese
-    ? (isTraditional ? ['AI 產品設計', '企業級 SaaS', '使用者體驗策略', '設計系統'] : ['AI 产品设计', '企业级 SaaS', '用户体验策略', '设计系统'])
-    : tags;
   const ref = useRef(null);
   useEffect(() => {
     const el = ref.current;
@@ -76,7 +71,6 @@ export default function Hero() {
         </h1>
         <div className="hero__details">
           <p className={`hero__description ${descriptionVariant}`}>{content.description}</p>
-          <ul className="hero__tags" lang={isChinese ? 'zh-CN' : 'en'}>{visibleTags.map(tag => <li key={tag}>{tag}</li>)}</ul>
           <div className="hero__cta">
             <a href="#work" className="hero__button hero__button--primary" aria-label={t('hero.viewCases')}>
               <span className="hero__button-content">
