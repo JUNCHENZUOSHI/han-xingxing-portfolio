@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useI18n } from '../../i18n/context';
 import { resumeUrl } from '../../data/site';
 import HeroScene from './HeroScene';
@@ -18,6 +18,27 @@ export default function Hero() {
     ? 'hero__description--traditional'
     : lang === 'en' ? 'hero__description--en' : '';
   const ref = useRef(null);
+  const [introDone, setIntroDone] = useState(() => {
+    try {
+      return window.matchMedia('(prefers-reduced-motion: reduce)').matches || sessionStorage.getItem('hero-intro-played') === '1';
+    } catch { return false; }
+  });
+  useEffect(() => {
+    if (introDone) return undefined;
+    const complete = () => {
+      setIntroDone(true);
+      try { sessionStorage.setItem('hero-intro-played', '1'); } catch { /* storage may be unavailable */ }
+    };
+    const duration = window.matchMedia('(max-width: 700px)').matches ? 1500 : 2800;
+    const timer = window.setTimeout(complete, duration);
+    window.addEventListener('scroll', complete, { passive: true, once: true });
+    ref.current?.addEventListener('pointerdown', complete, { passive: true });
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener('scroll', complete);
+      ref.current?.removeEventListener('pointerdown', complete);
+    };
+  }, [introDone]);
   useEffect(() => {
     const el = ref.current;
     const reduced = matchMedia('(prefers-reduced-motion: reduce)');
@@ -63,7 +84,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="hero" ref={ref} aria-labelledby="hero-name">
+    <section className={`hero ${introDone ? 'hero--intro-complete' : 'hero--intro-active'}`} ref={ref} aria-labelledby="hero-name">
       <HeroScene />
       <div className="hero__content">
         <h1 className={`hero__statement${isChinese ? ' hero__statement--zh' : ''}`} id="hero-name" lang={isChinese ? 'zh-CN' : 'en'}>

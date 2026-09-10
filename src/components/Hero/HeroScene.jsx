@@ -7,6 +7,7 @@ export default function HeroScene() {
   return (
     <div className="hero__scene" aria-hidden="true">
       <div className="hero__background"><div className="hero__floor" /></div>
+      <div className="hero__intro-light" aria-hidden="true"><i /><i /></div>
       <div className="hero__atmosphere">
         <div className="hero__fog" />
         <div className="hero__dust">{Array.from({ length: 28 }, (_, i) => <i key={i} style={{ left: `${8 + i * 137 % 84}%`, top: `${12 + i * 71 % 64}%`, '--delay': `${-i * 1.7}s`, '--size': `${i % 5 === 0 ? 2 : 1}px` }} />)}</div>
