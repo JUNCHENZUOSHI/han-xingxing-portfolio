@@ -19,6 +19,11 @@
 .hero__grounding-shadow--lion { left: 67%; top: 78%; width: 27%; height: 7%; opacity: .31; filter: blur(14px); }
 .hero__grounding-shadow--scorpio { left: 4%; top: 67%; width: 31%; height: 6%; opacity: .12; filter: blur(16px); }
 .hero__visual__guardians, .hero__visual__brantley { position: absolute; inset: 0; display: block; width: 100%; height: 100%; max-width: 100%; object-fit: contain; pointer-events: none; user-select: none; }
+.hero__visual__glow { position: absolute; inset: 0; z-index: 1; display: block; width: 100%; height: 100%; object-fit: contain; pointer-events: none; opacity: 0; filter: brightness(1.5) blur(10px) drop-shadow(0 0 12px rgba(190,215,255,.35)) drop-shadow(0 0 28px rgba(120,145,255,.14)); -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 58%, rgba(0,0,0,.28) 82%, transparent 100%); mask-image: linear-gradient(to bottom, #000 0%, #000 58%, rgba(0,0,0,.28) 82%, transparent 100%); }
+.hero__visual__glow--guardians { z-index: 0; opacity: 0; filter: brightness(1.35) blur(9px) drop-shadow(0 0 10px rgba(190,215,255,.2)); }
+.hero--intro-active .hero__visual__glow--brantley { animation: hero-art-glow 2.8s ease-out .8s both; }
+.hero--intro-active .hero__visual__glow--guardians { animation: hero-art-glow-guardians 2.8s ease-out .8s both; }
+.hero--intro-complete .hero__visual__glow { display: none; }
 .hero__reflection { position: absolute; z-index: 0; top: 98%; left: 0; width: 100%; height: 12%; overflow: hidden; pointer-events: none; -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, .92) 0%, rgba(0, 0, 0, .48) 46%, transparent 100%); mask-image: linear-gradient(to bottom, rgba(0, 0, 0, .92) 0%, rgba(0, 0, 0, .48) 46%, transparent 100%); }
 .hero__reflection picture { position: absolute; inset: 0; display: block; }
 .hero__reflection img { position: absolute; top: 100%; left: 0; display: block; width: 100%; height: 833.333%; object-fit: contain; transform: scaleY(-.12); transform-origin: top center; }
@@ -75,6 +80,8 @@
 @keyframes hero-intro-light { 0%, 12% { opacity: 0; } 28% { opacity: .9; } 70% { opacity: .36; } 100% { opacity: 0; } }
 @keyframes hero-intro-beam { 0% { transform: translate(-50%, -22%); opacity: 0; } 28% { opacity: 1; } 72% { transform: translate(-50%, 28%); opacity: .45; } 100% { transform: translate(-50%, 48%); opacity: 0; } }
 @keyframes hero-intro-ground { 0% { opacity: 0; transform: translate(-50%, -50%) scale(.5); } 35% { opacity: .95; transform: translate(-50%, -50%) scale(1); } 100% { opacity: .1; transform: translate(-50%, -50%) scale(1.12); } }
+@keyframes hero-art-glow { 0%, 20% { opacity: 0; } 44% { opacity: .72; } 60% { opacity: .9; } 84% { opacity: .18; } 100% { opacity: 0; } }
+@keyframes hero-art-glow-guardians { 0%, 20% { opacity: 0; } 44% { opacity: .3; } 60% { opacity: .45; } 84% { opacity: .08; } 100% { opacity: 0; } }
 @keyframes hero-system { from { opacity: 0; } to { opacity: .045; } }
 @keyframes hero-fog { to { transform: translate(2%, -1%); } }
 @keyframes hero-drift { to { transform: translate(5px, -12px); opacity: .08; } }
@@ -96,6 +103,7 @@
   .hero__content { top: 560px; width: 350px; }
   .hero__intro-light, .hero__intro-light i:first-child { animation-duration: 1.5s; }
   .hero__intro-light i:last-child { animation-duration: 1.5s; animation-delay: .35s; }
+  .hero__visual__glow { filter: brightness(1.35) blur(6px) drop-shadow(0 0 8px rgba(190,215,255,.24)); }
   .hero--intro-active .hero__statement { animation-delay: .95s; }
   .hero--intro-active .hero__details { animation-delay: 1.12s; }
   .hero__ai-path { transform: translateY(-72px); }
