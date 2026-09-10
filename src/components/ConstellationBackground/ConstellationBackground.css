@@ -1,7 +1,7 @@
 .constellation { overflow: hidden; pointer-events: none; }
 .constellation canvas { display: block; width: 100%; height: 100%; }
 .constellation--sides { position: fixed; inset: 0; z-index: 2; opacity: .65; }
-.constellation--hero-sides { position: absolute; inset: 0; z-index: 2; opacity: .65; }
+.constellation--hero-sides, .constellation--hero-right { position: absolute; inset: 0; z-index: 2; opacity: .65; }
 .constellation--banner {
   --banner-star-opacity: .55;
   position: absolute;

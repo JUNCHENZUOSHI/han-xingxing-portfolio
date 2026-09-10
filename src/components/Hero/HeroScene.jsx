@@ -12,7 +12,7 @@ export default function HeroScene() {
         <div className="hero__fog" />
         <div className="hero__dust">{Array.from({ length: 28 }, (_, i) => <i key={i} style={{ left: `${8 + i * 137 % 84}%`, top: `${12 + i * 71 % 64}%`, '--delay': `${-i * 1.7}s`, '--size': `${i % 5 === 0 ? 2 : 1}px` }} />)}</div>
       </div>
-      <ConstellationBackground variant="hero-sides" />
+      <ConstellationBackground variant="hero-right" />
       <div className="hero__visual">
         <div className="hero__grounding" aria-hidden="true">
           <i className="hero__grounding-shadow hero__grounding-shadow--collective" />

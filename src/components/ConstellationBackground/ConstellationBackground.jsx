@@ -20,9 +20,9 @@ export default function ConstellationBackground({ variant = 'sides' }) {
     const resize = () => {
       const rect = canvas.getBoundingClientRect(); const scale = Math.min(window.devicePixelRatio || 1, 2);
       width = rect.width; height = rect.height; canvas.width = Math.round(width * scale); canvas.height = Math.round(height * scale); ctx.setTransform(scale, 0, 0, scale, 0, 0); particles.length = 0;
-      if (variant === 'sides' || variant === 'hero-sides') {
+      if (variant === 'sides' || variant === 'hero-sides' || variant === 'hero-right') {
         const count = Math.max(260, Math.min(620, Math.round(width * height / 3400)));
-        for (let i = 0; i < count; i += 1) { const left = Math.random() < .5; const edge = Math.pow(Math.random(), 1.65); particles.push({ x: left ? width * (.006 + edge * .3) : width * (.994 - edge * .3), y: Math.random() * height, r: .26 + Math.pow(Math.random(), 3.2) * 1.9, a: .12 + Math.random() * .62, d: .15 + Math.random() * 1.15, c: colors[Math.floor(Math.random() * colors.length)], phase: Math.random() * 7, speed: .3 + Math.random() }); }
+        for (let i = 0; i < count; i += 1) { const left = variant !== 'hero-right' && Math.random() < .5; const edge = Math.pow(Math.random(), 1.65); particles.push({ x: left ? width * (.006 + edge * .3) : width * (.994 - edge * .3), y: Math.random() * height, r: .26 + Math.pow(Math.random(), 3.2) * 1.9, a: .12 + Math.random() * .62, d: .15 + Math.random() * 1.15, c: colors[Math.floor(Math.random() * colors.length)], phase: Math.random() * 7, speed: .3 + Math.random() }); }
       } else if (variant === 'banner') {
         const count = Math.max(72, Math.min(150, Math.round(width * height / 15000)));
         for (let i = 0; i < count; i += 1) {
