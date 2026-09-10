@@ -28,7 +28,7 @@
 .hero__foreground i:nth-child(2) { display: none; }
 .hero__foreground i:nth-child(3) { top: 60%; left: 86%; width: 8px; filter: blur(5px); }
 .hero__content { position: absolute; z-index: 6; top: calc(67% + 6px); width: min(1000px, calc(100% - 40px)); transform: translateY(40px); }
-.hero__statement { font-size: clamp(28px, 3vw, 40px); line-height: 1.16; font-weight: 450; letter-spacing: -.035em; margin: 0; animation: hero-fade .8s 2.7s both; }
+.hero__statement { font-size: var(--text-h3); line-height: var(--leading-h3); font-weight: var(--weight-bold); letter-spacing: var(--tracking-h3); margin: 0; animation: hero-fade .8s 2.7s both; }
 .hero__statement span { color: #acbfd7; }
 .hero__details { animation: hero-fade .6s 3.1s both; }
 .hero__description { max-width: 480px; margin: 15px auto 0; font-size: 12px; line-height: 1.85; color: #a7b1bf; }
@@ -72,7 +72,6 @@
   .hero__system-texture { opacity: .03; }
   .hero__content { top: calc(61% + 8px); }
   .hero__ai-path { transform: translateY(-72px); }
-  .hero__statement { font-size: clamp(25px, 6.6vw, 32px); }
   .hero__description { max-width: 330px; font-size: 12px; }
   .hero__tags { gap: 7px 12px; font-size: 8px; }
   .hero__tags li + li::before { display: none; }
@@ -91,14 +90,13 @@
   .hero__ai-path path { stroke-dashoffset: 0; }
 }
 
-.hero__statement--zh { font-size: clamp(24px, 2.3vw, 32px); font-weight: 450; line-height: 1.5; letter-spacing: .065em; color: #e4e7eb; }
+.hero__statement--zh { color: #e4e7eb; }
 .hero__tags:lang(zh-CN) { font-size: 10px; letter-spacing: .09em; }
 .hero__details { animation: none; }
 .hero__description { animation: hero-fade .6s 3.1s both; }
 .hero__tags { animation: hero-fade .6s 3.1s both; }
 .hero__cta { animation: fadeUp .8s cubic-bezier(.22, 1, .36, 1) .35s both; }
 @media (max-width: 700px) {
-  .hero__statement--zh { font-size: clamp(20px, 5.5vw, 28px); letter-spacing: .025em; }
   .hero__tags:lang(zh-CN) { font-size: 9px; gap: 7px 10px; }
 }
 
