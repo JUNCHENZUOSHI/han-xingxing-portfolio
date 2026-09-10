@@ -85,9 +85,10 @@ export default function Hero() {
 
   return (
     <section className={`hero ${introDone ? 'hero--intro-complete' : 'hero--intro-active'}`} ref={ref} aria-labelledby="hero-name">
-      <div className="hero-composition">
-        <HeroScene />
-        <div className="hero__content">
+      <div className="hero-stage-shell">
+        <div className="hero-stage">
+          <HeroScene />
+          <div className="hero__content">
         <h1 className={`hero__statement${isChinese ? ' hero__statement--zh' : ''}`} id="hero-name" lang={isChinese ? 'zh-CN' : 'en'}>
           {isChinese ? <>{isTraditional ? <>借助 <span>AI</span>，為複雜系統<br />打造清晰的產品體驗</> : <>借助 <span>AI</span>，为复杂系统<br />打造清晰的产品体验</>}</> : <>Designing clarity for<br />complex systems <span>with AI.</span></>}
         </h1>
@@ -117,6 +118,7 @@ export default function Hero() {
             </a>
           </div>
         </div>
+          </div>
         </div>
       </div>
       <div className="hero__segue" hidden aria-hidden="true">SELECTED WORK <span>↓</span></div>
