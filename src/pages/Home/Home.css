@@ -106,6 +106,7 @@
   height: 100%;
   object-fit: cover;
 }
+.capability-item__mobile-image { display: none; }
 
 /* ── wireframe cards (5 color themes) ── */
 .wf {
@@ -242,9 +243,32 @@
 .wf-05 .funnel .step:nth-child(5) { width: 35%; background: #10B981; }
 
 @media (max-width: 767px) {
+  :root {
+    --home-mobile-section-title: 28px;
+    --home-mobile-item-title: 28px;
+  }
+  /* Keep mobile section rhythm owned by the section boundary itself: 40px
+     bottom + 40px top = 80px between visible module content. */
+  .work-section,
+  .what-i-do,
+  .workflow-section,
+  .about-section,
+  .experience-section,
+  .contact-cta {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  /* Hero -> Selected Work is a measured 48px exception. */
+  .work-section { padding-top: 0; }
+  .what-i-do .section-heading { margin-bottom: 32px; }
+  .workflow-section__subtitle { margin-bottom: 32px; }
   .capability-layout { grid-template-columns: 1fr; }
   .capability-media { display: none; }
-  .capability-item { min-height: auto; padding: var(--space-32) 0; opacity: 1; }
+  .capability-item { min-height: auto; padding: 32px 0; opacity: 1; }
+  .capability-item + .capability-item { border-top: 1px solid rgba(255,255,255,.08); }
+  .capability-item__title { font-size: var(--home-mobile-item-title); line-height: 1.35; }
+  .capability-item__mobile-image { display: block; width: 100%; height: auto; margin-top: 20px; border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius-lg); }
+  .capability-item__mobile-image + * { margin-top: 32px; }
 }
 
 /* ── Workflow ── */
@@ -502,7 +526,7 @@ body.theme-dark .about-section .about-card { background: transparent; border-col
   .contact-cta [data-reveal] { opacity: 1; filter: none; transform: none; transition: none; }
 }
 .contact-cta__heading {
-  font-size: clamp(48px, 4vw, 56px); font-weight: var(--weight-bold);
+  font-size: 40px; font-weight: var(--weight-bold);
   line-height: 1.08; letter-spacing: var(--tracking-h2);
   margin: 0 0 44px;
 }
@@ -534,7 +558,7 @@ body.theme-dark .about-section .about-card { background: transparent; border-col
 @media (max-width: 767px) {
   .case-grid { grid-template-columns: 1fr; }
   .about-preview__columns { grid-template-columns: 1fr; }
-  .workflow-animation { min-height: 780px; aspect-ratio: auto; }
+  .workflow-animation { min-height: 0; aspect-ratio: auto; }
   .workflow-animation__console { position: relative; gap: 18px; padding: 18px; }
   .workflow-animation__statusbar { grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 12px; }
   .workflow-animation__counter { display: none; }
@@ -542,11 +566,16 @@ body.theme-dark .about-section .about-card { background: transparent; border-col
   .workflow-animation__stage { min-height: 0; padding: 16px; }
   .workflow-animation__stage:not(:last-child)::after { top: 100%; bottom: auto; left: 24px; width: 1px; height: 10px; background: linear-gradient(rgba(148, 168, 190, .2), rgba(148, 168, 190, .04)); }
   .workflow-animation__stage > strong { margin-top: 14px; }
-  .workflow-animation__items { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-top: 14px; }
-  .workflow-animation__items li { font-size: 10px; }
-  .workflow-animation__legend { gap: 5px 12px; font-size: 8px; }
-  .workflow-animation__play { width: 64px; height: 64px; }
-  .contact-cta__heading { font-size: clamp(38px, 11vw, 48px); margin-bottom: 40px; }
+  .workflow-animation__items { grid-template-columns: 1fr; gap: 8px; margin-top: 14px; }
+  .workflow-animation__items li { font-size: 14px; line-height: 1.5; }
+  .workflow-animation__legend { gap: 7px 14px; font-size: 12px; line-height: 1.5; }
+  .workflow-animation__play { position: relative; top: auto; left: auto; margin: 0 auto 18px; transform: none; width: 64px; height: 64px; }
+  .what-i-do .section-heading,
+  .workflow-section .workflow-section__heading,
+  .about-card__title,
+  .contact-cta__heading { font-size: var(--home-mobile-section-title) !important; line-height: 1.35 !important; }
+  .about-domain__title { font-size: var(--home-mobile-item-title); line-height: 1.35; }
+  .contact-cta__heading { margin-bottom: 40px; }
   .contact-cta__copy { margin-bottom: 40px; }
   .contact-cta__lead, .contact-cta__supporting { font-size: 20px; }
   .contact-cta__actions { flex-direction: column; align-items: center; }

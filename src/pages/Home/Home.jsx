@@ -143,6 +143,13 @@ export default function Home() {
                   <span className="capability-item__index">0{i + 1}</span>
                   <h3 className="capability-item__title">{cap.title}</h3>
                   <p className="capability-item__desc">{cap.description}</p>
+                  <img
+                    className="capability-item__mobile-image"
+                    src={`${import.meta.env.BASE_URL}capabilities/capability-${String(i + 1).padStart(2, '0')}.png`}
+                    alt=""
+                    aria-hidden="true"
+                    draggable="false"
+                  />
                 </div>
               ))}
             </div>
@@ -203,7 +210,7 @@ export default function Home() {
       </section>
 
       {/* Experience */}
-      <section className="section">
+      <section className="section experience-section">
         <div className="container" data-reveal>
           <span className="section-label">{t('home.experience')}</span>
           <div className="experience-list experience-list--cards">

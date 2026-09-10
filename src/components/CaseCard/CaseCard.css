@@ -85,4 +85,12 @@
   margin-top: var(--space-8);
 }
 
+@media (max-width: 767px) {
+  .case-card__body { padding: 20px 18px 24px; }
+  .case-card__title { font-size: var(--home-mobile-title, 28px); line-height: 1.35; }
+  .case-card__summary { display: block; font-size: 15px; line-height: 1.6; }
+  .case-card:hover { transform: none; box-shadow: none; }
+  .case-card:active { transform: scale(.985); }
+}
+
 .capability-pills { display: none; }
