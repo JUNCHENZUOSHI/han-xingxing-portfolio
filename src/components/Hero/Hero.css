@@ -131,7 +131,7 @@
 
 .hero__statement--zh { color: #e4e7eb; }
 @media (min-width: 900px) {
-  .hero__statement { font-size: 40px; line-height: 1.15; }
+  .hero__statement { font-size: 40px; line-height: 1.35; }
 }
 .hero__tags:lang(zh-CN) { font-size: 10px; letter-spacing: .09em; }
 .hero__details { animation: none; }
