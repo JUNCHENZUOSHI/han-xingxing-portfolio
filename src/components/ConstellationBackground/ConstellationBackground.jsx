@@ -60,7 +60,7 @@ export default function ConstellationBackground({ variant = 'sides' }) {
         }
       } else {
         const mask = document.createElement('canvas'); const mw = Math.min(width * .62, 720); const mh = Math.min(height * .76, 780); mask.width = mw; mask.height = mh; const mctx = mask.getContext('2d');
-        mctx.strokeStyle = '#fff'; mctx.lineWidth = Math.max(22, mw * .048); mctx.font = `700 ${Math.round(mh * .9)}px Arial`; mctx.textAlign = 'center'; mctx.textBaseline = 'middle'; mctx.strokeText('6', mw * .5, mh * .51);
+        mctx.strokeStyle = '#fff'; mctx.lineWidth = Math.max(22, mw * .048); mctx.font = `500 ${Math.round(mh * .9)}px Arial`; mctx.textAlign = 'center'; mctx.textBaseline = 'middle'; mctx.strokeText('6', mw * .5, mh * .51);
         const pixels = mctx.getImageData(0, 0, mw, mh).data; const candidates = [];
         for (let y = 0; y < mh; y += 3) for (let x = 0; x < mw; x += 3) if (pixels[(y * mw + x) * 4 + 3] > 100) candidates.push([x, y]);
         for (let i = 0; i < 950; i += 1) { const p = candidates[Math.floor(Math.random() * candidates.length)]; particles.push({ x: width * .5 + p[0] - mw * .5, y: height * .51 + p[1] - mh * .5, r: .32 + Math.pow(Math.random(), 3) * 2.25, a: .24 + Math.random() * .72, d: .35 + Math.random() * 1.25, c: colors[Math.floor(Math.random() * colors.length)], phase: Math.random() * 7, speed: .35 + Math.random() * 1.3, hero: true }); }

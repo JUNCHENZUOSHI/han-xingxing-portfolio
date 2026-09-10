@@ -569,7 +569,7 @@ body.theme-dark .about-section .about-card { background: transparent; border-col
    desktop first-level size; this follows its component base rule so it cannot
    fall back to the 26px clamp. */
 @media (min-width: 768px) {
-  .about-card__title { font-size: 40px; line-height: 1.35; }
+  .about-card__title { font-size: 40px !important; line-height: 1.35 !important; }
 }
 @media (max-width: 1023px) {
   .case-grid { gap: var(--space-32); }
