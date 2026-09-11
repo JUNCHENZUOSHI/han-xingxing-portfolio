@@ -7,7 +7,7 @@
 
 .capability-card__title {
   font-size: var(--text-h4);
-  font-weight: var(--weight-semibold);
+  font-weight: var(--weight-normal);
   line-height: var(--leading-h4);
   color: var(--color-text-primary);
   margin: 0 0 var(--space-16) 0;

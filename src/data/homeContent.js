@@ -48,6 +48,7 @@ const homeContent = {
       lowcode: { projectType: '商业项目 · 已脱敏', tags: ['低代码', '企业级 SaaS'], title: '企业级低代码平台体验升级', summary: '围绕业务建模、复杂配置与模板复用重构低代码核心流程，降低企业用户的理解与搭建成本，使搭建效率提升 30%–45%，模板命中率超过 70%。', alt: '企业级低代码平台体验升级方案预览', cta: '查看案例 →' },
       template: { projectType: '商业项目 · 已脱敏', tags: ['设计系统', '设计运维'], title: '企业级设计系统与设计运维建设', summary: '从 0 到 1 建立企业级设计系统，通过 Design Token、组件规范与协作机制支撑多产品、多语言交付；组件复用率达到 70%，国际化迭代周期缩短 30%。', alt: '企业级设计系统与设计运维方案预览', cta: '查看案例 →' },
       novabot: { projectType: '商业项目 · 已脱敏', tags: ['IoT', 'Mobile App'], title: 'Novabot 智能割草机 App 体验重构', summary: '面向北美住宅草坪用户，重构设备激活、网络连接、地图构建、任务控制与异常恢复链路，让复杂硬件状态清晰、可控、可恢复，使用户更安心地将草坪维护交给机器人。', alt: 'Novabot 智能割草机 App 体验方案预览', cta: '查看案例 →' },
+      'sidekick-ai-app': { projectType: '体验探索', tags: ['体验探索 · AI Agent', '移动端产品设计'], title: 'Shopify Sidekick AI App', summary: '从对话助手到可控经营任务系统。识别真实经营阻塞，支撑安全决策，让每一次执行都有结果、可回退。', alt: 'Shopify Sidekick AI App 体验方案预览', cta: '查看案例 →' },
     },
   },
   en: {
@@ -69,6 +70,7 @@ const homeContent = {
       lowcode: { projectType: 'Commercial project · Redacted', tags: ['Low-code', 'Enterprise SaaS'], title: 'Enterprise Low-code Platform Experience Upgrade', summary: 'Reworked core low-code flows around business modeling, complex configuration and template reuse, improving clarity and build efficiency by 30–45% with template adoption above 70%.', alt: 'Enterprise low-code platform experience preview', cta: 'View Case →' },
       template: { projectType: 'Commercial project · Redacted', tags: ['Design System', 'DesignOps'], title: 'Enterprise Design System & DesignOps', summary: 'Built an enterprise design system from zero with design tokens, component standards and collaboration practices, achieving 70% component reuse and a 30% shorter localization cycle.', alt: 'Enterprise Design System and DesignOps preview', cta: 'View Case →' },
       novabot: { projectType: 'Commercial project · Redacted', tags: ['IoT', 'Mobile App'], title: 'Novabot Smart Mower App Experience', summary: 'Reworked activation, network connection, mapping, task control and recovery for North American homeowners, making complex device states clear, controllable and recoverable.', alt: 'Novabot smart mower app experience preview', cta: 'View Case →' },
+      'sidekick-ai-app': { projectType: 'Experience exploration', tags: ['体验探索 · AI Agent', '移动端产品设计'], title: 'Shopify Sidekick AI App', summary: '从对话助手到可控经营任务系统。识别真实经营阻塞，支撑安全决策，让每一次执行都有结果、可回退。', alt: 'Shopify Sidekick AI App experience preview', cta: 'View Case →' },
     },
   },
 };

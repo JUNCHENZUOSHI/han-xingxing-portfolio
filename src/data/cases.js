@@ -1089,10 +1089,98 @@ export const cases = {
       note: '智能硬件体验的复杂性不在单个页面，而在于用户跨越物理环境、设备状态、网络条件与数字地图。可信的自动化不是隐藏控制，而是让用户随时知道系统状态并能轻松介入。',
     },
   },
+
+  /* ================================================================
+     Case 06 — Shopify Sidekick AI App
+     Source: 00_context/case-06-shopify-sidekick-ai-app.md
+     ================================================================ */
+  'sidekick-ai-app': {
+    slug: 'sidekick-ai-app',
+    priority: 'P0',
+    featured: false,
+    title: 'Shopify Sidekick AI App',
+    nda: { required: false, badge: '' },
+    tags: ['体验探索 · AI Agent', '移动端产品设计'],
+    confidence: 'confirmed',
+    role: '独立完成体验走查、产品定义、交互流程与界面设计。',
+    timeline: '',
+    platform: 'Shopify App × 实际用户商店（开店准备阶段）',
+    industry: 'AI Agent / 移动端产品设计',
+    team: '',
+    cardAccent: 'var(--card-accent-sidekick-agent)',
+    coverImage: '',
+    portfolioRole: '独立完成体验走查、产品定义、交互流程与界面设计。',
+    narrativeHook: '开店准备、商品修复和首页调整不是孤立任务，而是围绕“商店能否开始交易”的连续决策。',
+    summary: '从对话助手到可控经营任务系统。识别真实经营阻塞，支撑安全决策，让每一次执行都有结果、可回退。',
+    publicSummary: '从对话助手到可控经营任务系统。识别真实经营阻塞，支撑安全决策，让每一次执行都有结果、可回退。',
+    cardMetrics: [],
+    featuredMetrics: [],
+    cardVisualPills: [],
+    background: {
+      state: 'confirmed', note: null,
+      why: '开店准备、商品修复和首页调整不是孤立任务，而是围绕“商店能否开始交易”的连续决策。',
+      targetUsers: '', businessGoals: '',
+      constraints: [
+        '实际走查环境｜Shopify App × 实际用户商店（开店准备阶段）',
+        '任务 1｜检查上线条件：校验支付、公开访问、店铺政策与销售条件',
+        '任务 2｜修复商品：库存、媒体、无标题草稿与商品可售性',
+        '任务 3｜规划首页：主题结构、首购路径、事实校验与改动范围',
+        '本轮不纳入：订单、发货、退款、真实支付提交与复杂主题代码编辑',
+      ],
+    },
+    challenge: {
+      state: 'confirmed',
+      userProblem: '问题不在于 AI 回答得是否足够长，而在于经营信息、任务状态、关键确认与工具结果都被混在同一条聊天流中。',
+      businessProblem: '聊天流同时承载状态、计划、确认与执行结果，商家无法有效识别风险、管控变更、核验操作结果。',
+      designChallenge: '解决方案不是为 Sidekick 增加更多功能，而是把“看状态、做决策、执行操作”从混杂的聊天流中拆出来。',
+    },
+    myRole: {
+      note: null,
+      responsibilities: [
+        { task: '体验走查', contribution: '独立完成', detail: '实际走查环境与任务路径', confidence: 'confirmed' },
+        { task: '产品定义', contribution: '独立完成', detail: '上线诊断、计划机制与商品就绪规则', confidence: 'confirmed' },
+        { task: '交互流程', contribution: '独立完成', detail: '任务信息收集、安全确认与结果回执', confidence: 'confirmed' },
+        { task: '界面设计', contribution: '独立完成', detail: '将任务状态与执行结果转化为可读界面', confidence: 'confirmed' },
+      ],
+    },
+    designApproach: {
+      state: 'confirmed', note: null,
+      phases: [
+        { title: '启动', summary: '项目背景｜开店准备、商品修复和首页调整围绕商店能否开始交易的连续决策。', confidence: 'confirmed' },
+        { title: '调查', summary: '体验走查｜诊断、计划、确认与结果被混在同一条聊天流中。', confidence: 'confirmed' },
+        { title: '定义', summary: '问题定义｜把看状态、做决策、执行操作从混杂聊天流中拆出来。', confidence: 'confirmed' },
+        { title: '定义', summary: '上线诊断｜店铺经营就绪检查与下一层商品经营就绪度。', confidence: 'confirmed' },
+        { title: '定义', summary: '计划机制｜说明什么变了、为什么变、基于什么数据、接下来由谁处理。', confidence: 'confirmed' },
+        { title: '定义', summary: '商品就绪｜同时检查交易条件与展示质量。', confidence: 'confirmed' },
+        { title: '原型', summary: '信息收集｜P0 优先处理，P1 可并行准备，不阻塞交易条件修复。', confidence: 'confirmed' },
+        { title: '原型', summary: '安全确认｜展示对象、前后差异、生效范围、不修改项与恢复方式。', confidence: 'confirmed' },
+        { title: '原型', summary: '结果回执｜转译为用户可理解的业务结果与下一步。', confidence: 'confirmed' },
+        { title: '定义', summary: '主题诊断｜先读取主题结构，再校验商品状态与商业事实。', confidence: 'confirmed' },
+        { title: '原型', summary: '改动预览｜移动端轻量、可预览、可回退的原生区块改动。', confidence: 'confirmed' },
+        { title: '验证', summary: '走查结论｜完成单店任务走查，界定现有能力与体验断裂。', confidence: 'confirmed' },
+        { title: '验证', summary: '项目复盘｜状态诊断—任务计划—受控执行—可回退回执的完整闭环。', confidence: 'confirmed' },
+      ],
+    },
+    keyDecisions: [
+      { title: '诊断不清', problem: '应看到基于实时状态的交易结论；实际只看到 0/5 通用待办，所有事项同权。', decision: '店铺经营就绪检查', reason: '先回答能不能对外完成交易，再展开下一层对象。', alternative: '' },
+      { title: '计划不透明', problem: '应看到新增任务、优先级和变化原因；实际任务由 0/5 变为 0/8，无完整说明。', decision: '动态计划机制', reason: '说明什么变了、为什么变、基于什么数据、接下来由谁处理。', alternative: '' },
+      { title: '确认信息不足', problem: '应看到库存 0 → 20、默认地点与未修改项；实际只有商品名、数字 20 和勾选按钮。', decision: '库存安全确认', reason: '提交前看清对象、前后差异、生效范围、不修改项与恢复方式。', alternative: '' },
+      { title: '结果不可读', problem: '实际暴露工具原始响应标签、英文日志、JSON 与内部标识。', decision: '结果回执', reason: '转译为用户可理解的业务结果。', alternative: '' },
+    ],
+    decisionsNote: null,
+    outcome: {
+      quantitative: [],
+      qualitative: ['店铺经营就绪检查', '动态计划机制', '商品就绪规则', '任务信息收集', '库存安全确认', '执行结果回执'],
+      baselineNote: null,
+    },
+    competencies: [],
+    disclaimer: '',
+    reflection: { state: 'confirmed', methodology: [], lessonsIfRedo: { state: 'present' }, note: null },
+  },
 };
 
 /** Helper: get ordered array of case slugs for iteration */
-export const caseOrder = ['sidekick', 'sidekick-agent', 'lowcode', 'template', 'novabot'];
+export const caseOrder = ['sidekick', 'sidekick-agent', 'lowcode', 'template', 'novabot', 'sidekick-ai-app'];
 
 /** Metrics temporarily withheld from public presentation; retain source data for later restoration. */
 export const hiddenMetricValues = ['↓50%', '↓60%', '↑30–45%', '70%+', '70%', '↓30%'];

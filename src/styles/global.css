@@ -13,7 +13,7 @@ html {
 
 body {
   font-family: var(--font-sans);
-  font-size: var(--text-body);          /* 19px */
+  font-size: var(--text-body);          /* 18px */
   font-weight: var(--weight-normal);
   line-height: var(--leading-body);     /* 1.47059 */
   color: var(--color-text);
@@ -80,8 +80,8 @@ ul, ol { list-style: none; }
 .section-label {
   display: inline-flex;
   align-items: center;
-  font-size: 13px;
-  font-weight: var(--weight-medium);
+  font-size: 14px;
+  font-weight: var(--weight-normal);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-text);
@@ -105,9 +105,9 @@ ul, ol { list-style: none; }
 /* ── Text Link ── */
 .text-link {
   color: var(--color-accent);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-normal);
   transition: color var(--transition-fast);
-  font-size: var(--text-button);        /* 17px */
+  font-size: var(--text-button);        /* 16px */
 }
 .text-link:hover { color: var(--color-accent-hover); }
 
@@ -185,10 +185,10 @@ ul, ol { list-style: none; }
   justify-content: center;
   gap: 6px;
   font-family: var(--font-sans);
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 120%;
-  padding: 11px 18px;
+  padding: 12px 18px;
   border-radius: var(--radius-full);
   cursor: pointer;
   text-decoration: none;
@@ -239,7 +239,7 @@ ul, ol { list-style: none; }
 .tag {
   display: inline-flex; align-items: center;
   font-size: var(--text-caption);       /* 12px */
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-normal);
   color: var(--color-text-secondary);
   background: none;
   padding: 2px 0;
@@ -249,7 +249,7 @@ ul, ol { list-style: none; }
 .badge--nda {
   display: inline-flex; align-items: center;
   font-size: var(--text-caption);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-normal);
   color: var(--color-text-secondary);
   background: rgba(0,0,0,0.04);
   border-radius: var(--radius-full);
@@ -257,16 +257,16 @@ ul, ol { list-style: none; }
   letter-spacing: var(--tracking-caption);
 }
 
-/* ── Experience (shared) — 14px meta / 19px body ── */
+/* ── Experience (shared) — 14px meta / 18px body ── */
 .experience-list { max-width: var(--max-width-text); }
 .experience-item {
   display: grid; grid-template-columns: 160px 1fr;
   gap: var(--space-32); padding: var(--space-32) 0;
 }
 .experience-item__meta { display: flex; flex-direction: column; gap: var(--space-4); }
-.experience-item__period { font-size: var(--text-small); font-weight: var(--weight-medium); color: var(--color-text-secondary); }
+.experience-item__period { font-size: var(--text-small); font-weight: var(--weight-normal); color: var(--color-text-secondary); }
 .experience-item__location { font-size: var(--text-small); color: var(--color-text-tertiary); }
-.experience-item__role { font-size: var(--text-body); font-weight: var(--weight-medium); color: var(--color-text); margin: 0 0 var(--space-4); }
+.experience-item__role { font-size: var(--text-body); font-weight: var(--weight-normal); color: var(--color-text); margin: 0 0 var(--space-4); }
 .experience-item__company { font-size: var(--text-small); color: var(--color-text-secondary); margin: 0 0 var(--space-8); }
 .experience-item__desc { font-size: var(--text-body); line-height: var(--leading-body); color: var(--color-text-secondary); }
 .experience-status { margin-top: var(--space-24); font-size: var(--text-small); color: var(--color-text-tertiary); }
@@ -339,7 +339,7 @@ ul, ol { list-style: none; }
 
 .case-h3 {
   font-size: var(--text-h3);
-  font-weight: var(--weight-semibold);
+  font-weight: var(--weight-normal);
   letter-spacing: var(--tracking-h3);
   color: var(--color-text);
   margin-bottom: var(--space-12);

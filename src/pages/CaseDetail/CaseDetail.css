@@ -34,7 +34,7 @@
   margin-inline: 0;
   gap: 6px;
   font-size: var(--text-caption);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-normal);
   color: var(--color-text-secondary);
   background: rgba(255,255,255,0.72);
   backdrop-filter: blur(40px) saturate(180%);
@@ -51,7 +51,7 @@
   line-height: 1;
 }
 
-/* Narrative hook: body 21px */
+/* Narrative hook: body 18px */
 .cd-hero__hook {
   font-size: var(--text-body);
   font-weight: var(--weight-normal);
@@ -73,7 +73,7 @@
   margin-bottom: var(--space-32);
 }
 
-/* Subtitle: body 21px */
+/* Subtitle: body 18px */
 .cd-hero__subtitle {
   font-size: var(--text-body);
   font-weight: var(--weight-normal);
@@ -94,14 +94,14 @@
   display: inline-flex;
   align-items: center;
   font-size: var(--text-caption);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-normal);
   color: var(--color-text-secondary);
   background: rgba(255,255,255,0.72);
   backdrop-filter: blur(40px) saturate(180%);
   -webkit-backdrop-filter: blur(40px) saturate(180%);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-full);
-  padding: 7px 20px;
+  padding: 7px 18px;
   letter-spacing: var(--tracking-body);
 }
 
@@ -111,7 +111,7 @@
 .cd-hero-img {
   width: 100%;
   border-radius: 24px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  box-shadow: 0 18px 60px rgba(0,0,0,0.08);
   margin: 56px 0 100px;
   display: block;
 }
@@ -137,7 +137,7 @@
   position: absolute;
   top: -2rem;
   left: -0.02em;
-  font-size: clamp(4rem, 8vw, 6rem);
+  font-size: 40px;
   font-weight: var(--weight-bold);
   line-height: 1;
   color: #F0F0F0;
@@ -195,7 +195,7 @@
    Sub-headings & Body Text — visionOS
    ═══════════════════════════════════════ */
 
-/* Subheading: H3 28px */
+/* Subheading: H3 26px */
 .cd-subheading {
   font-size: var(--text-h3);
   font-weight: var(--weight-bold);
@@ -209,7 +209,7 @@
   margin-top: 0;
 }
 
-/* Body text: 21px / 400 / 1.7 */
+/* Body text: 18px / 400 / 1.7 */
 .cd-text {
   font-size: var(--text-body);
   font-weight: var(--weight-normal);
@@ -288,7 +288,7 @@
 .cd-meta-grid__label {
   display: block;
   font-size: var(--text-caption);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-normal);
   color: var(--color-text-secondary);
   text-transform: uppercase;
   letter-spacing: var(--tracking-caps);
@@ -297,7 +297,7 @@
 
 .cd-meta-grid__value {
   font-size: var(--text-body);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-normal);
   color: var(--color-text);
 }
 
@@ -332,7 +332,7 @@
 
 .cd-responsibility__task {
   font-size: var(--text-body);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-normal);
   color: var(--color-text);
   line-height: var(--leading-body);
   letter-spacing: var(--tracking-body);
@@ -341,7 +341,7 @@
 .cd-responsibility__contribution {
   font-family: var(--font-mono);
   font-size: var(--text-caption);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-normal);
   color: var(--color-text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.03em;
@@ -398,7 +398,7 @@
 .cd-phase-card__number {
   display: block;
   font-family: var(--font-mono);
-  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-size: 26px;
   font-weight: var(--weight-bold);
   color: #E8E8ED;
   letter-spacing: -0.03em;
@@ -452,7 +452,7 @@
   display: block;
   font-family: var(--font-mono);
   font-size: var(--text-caption);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-normal);
   color: var(--color-accent);
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -481,7 +481,7 @@
 .cd-decision__label {
   display: block;
   font-size: var(--text-caption);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-normal);
   color: var(--color-text-secondary);
   text-transform: uppercase;
   letter-spacing: var(--tracking-caps);
@@ -528,7 +528,7 @@
 .cd-metric-card__value {
   display: block;
   font-family: var(--font-mono);
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: 26px;
   font-weight: var(--weight-bold);
   color: var(--color-accent);
   letter-spacing: -0.03em;
@@ -540,7 +540,7 @@
 .cd-metric-card__label {
   display: block;
   font-size: var(--text-body);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-normal);
   color: var(--color-text);
   letter-spacing: var(--tracking-body);
 }
@@ -610,7 +610,7 @@
 
 .cd-competency-card__dimension {
   font-size: var(--text-body);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-normal);
   color: var(--color-text);
   margin-bottom: var(--space-16);
   letter-spacing: var(--tracking-body);
@@ -653,7 +653,7 @@
 }
 
 .cd-disclaimer strong {
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-normal);
   color: var(--color-text-secondary);
 }
 
@@ -686,7 +686,7 @@
 
 .cd-nav__link {
   font-size: var(--text-button);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-normal);
   color: var(--color-accent);
   transition: color var(--transition-fast);
 }
@@ -705,7 +705,7 @@
   }
 
   .cd-hero__title {
-    font-size: clamp(2rem, 8vw, 3rem);
+    font-size: 26px;
   }
 
   .cd-section {
@@ -714,12 +714,12 @@
   }
 
   .cd-section-header__number {
-    font-size: clamp(3rem, 12vw, 5rem);
+    font-size: 40px;
     top: -1.5rem;
   }
 
   .cd-section-header__title {
-    font-size: clamp(2rem, 7vw, 2.75rem);
+    font-size: 26px;
   }
 
   /* Meta grid → 2x2 */

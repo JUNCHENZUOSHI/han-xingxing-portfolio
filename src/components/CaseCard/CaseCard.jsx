@@ -6,7 +6,7 @@ import './CaseCard.css';
 export default function CaseCard({ caseData, homeCopy, variant = 'standard' }) {
   const { t } = useI18n();
   const localizedCase = useCaseI18n(caseData.slug);
-  const caseI18n = ['sidekick', 'novabot'].includes(caseData.slug) ? {} : localizedCase;
+  const caseI18n = ['sidekick', 'novabot', 'sidekick-ai-app'].includes(caseData.slug) ? {} : localizedCase;
   const {
     slug,
     title,
@@ -20,7 +20,7 @@ export default function CaseCard({ caseData, homeCopy, variant = 'standard' }) {
     featuredMetrics,
   } = caseData;
 
-  const displayTitle = homeCopy?.title || (['sidekick', 'novabot'].includes(slug)
+  const displayTitle = homeCopy?.title || (['sidekick', 'novabot', 'sidekick-ai-app'].includes(slug)
     ? title
     : caseI18n.title || t(`caseTitles.${slug}`) || title);
   const displaySummary = homeCopy?.summary || caseData.publicSummary || caseI18n.summary || summary;

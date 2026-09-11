@@ -10,13 +10,13 @@
 }
 .contact-item__label {
   display: block;
-  font-size: var(--text-caption); font-weight: var(--weight-medium);
+  font-size: var(--text-caption); font-weight: var(--weight-normal);
   color: var(--color-text-secondary);
   letter-spacing: var(--tracking-caption);
   margin-bottom: var(--space-12);
 }
 .contact-item__link { font-size: var(--text-body); }
-.contact-item__value { font-size: var(--text-body); font-weight: var(--weight-medium); }
+.contact-item__value { font-size: var(--text-body); font-weight: var(--weight-normal); }
 .contact-resume { max-width: var(--max-width-text); }
 .contact-resume__inner {
   display: flex; align-items: center; justify-content: space-between;

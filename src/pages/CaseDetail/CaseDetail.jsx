@@ -35,7 +35,7 @@ export default function CaseDetail() {
   const caseData = getCase(slug);
   const localizedCase = useCaseI18n(slug);
   // These source cases are Chinese-only. Skip legacy translations so they cannot override them.
-  const caseI18n = ['sidekick', 'novabot'].includes(slug) ? {} : localizedCase;
+  const caseI18n = ['sidekick', 'novabot', 'sidekick-ai-app'].includes(slug) ? {} : localizedCase;
 
   if (!caseData) {
     return (
@@ -69,7 +69,7 @@ export default function CaseDetail() {
   const displayNdaBadge = ci('nda.badge', caseData.nda?.badge);
   const displayPortfolioRole = ci('portfolioRole', caseData.portfolioRole);
   const displayNarrativeHook = ci('narrativeHook', caseData.narrativeHook);
-  const displayTitle = ['sidekick', 'novabot'].includes(slug)
+  const displayTitle = ['sidekick', 'novabot', 'sidekick-ai-app'].includes(slug)
     ? caseData.title
     : caseI18n.title || t(`caseTitles.${slug}`) || caseData.title;
   const displaySummary = caseData.publicSummary || ci('summary', caseData.summary);

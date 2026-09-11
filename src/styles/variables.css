@@ -35,35 +35,35 @@
                "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-mono: "SF Mono", "Menlo", "Monaco", "Courier New", monospace;
 
-  /* Display: 80px desktop / 72px mobile / 700 */
-  --text-display: clamp(4.5rem, 7.5vw, 5rem);         /*  72–80px  */
+  /* Unified type scale: 40/500, 26/500, 18/400, 16/400, 14/400, 12/400 */
+  --text-display: 2.5rem;
 
   /* H1: 56px / 700 / -0.03em */
-  --text-h1: clamp(2.75rem, 5vw, 3.5rem);             /*  44–56px  */
+  --text-h1: 2.5rem;
 
   /* H2: 40px / 700 / -0.02em */
-  --text-h2: clamp(2rem, 4vw, 2.5rem);                /*  32–40px  */
+  --text-h2: 2.5rem;
 
-  /* H3: 28px / 600 / -0.01em */
-  --text-h3: 1.75rem;                                  /*  28px     */
+  /* H3: 26px / 600 / -0.01em */
+  --text-h3: 1.625rem;
 
-  /* BodyL: 21px / 400 / 1.5 */
-  --text-body-large: 1.3125rem;                        /*  21px     */
+  /* BodyL: 18px / 400 / 1.5 */
+  --text-body-large: 1.125rem;
 
-  /* Body: 19px / 400 / 1.47059 */
-  --text-body: 1.1875rem;                              /*  19px     */
+  /* Body: 18px / 400 / 1.47059 */
+  --text-body: 1.125rem;
 
   /* Small: 14px / 400 */
-  --text-small: 0.875rem;                              /*  14px     */
+  --text-small: 1rem;
 
   /* Caption: 12px / 400 */
   --text-caption: 0.75rem;                             /*  12px     */
 
   /* Nav link: 14px */
-  --text-nav: 0.875rem;                                /*  14px     */
+  --text-nav: 1rem;
 
-  /* Button text: 17px */
-  --text-button: 1.0625rem;                            /*  17px     */
+  /* Button text: 16px */
+  --text-button: 1rem;
 
   /* Leading */
   --leading-display:    1.0;
@@ -124,7 +124,7 @@
 
   /* ── Shadow ── */
   --shadow-sm:   0 1px 3px rgba(0,0,0,0.04);
-  --shadow-card: 0 20px 60px rgba(0,0,0,0.08);
+  --shadow-card: 0 18px 60px rgba(0,0,0,0.08);
   --shadow-hover: 0 24px 60px rgba(0,0,0,0.08);
 
   /* ── Transition ── */
