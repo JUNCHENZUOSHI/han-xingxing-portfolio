@@ -1108,7 +1108,7 @@ export const cases = {
     industry: 'AI Agent / 移动端产品设计',
     team: '',
     cardAccent: 'var(--card-accent-sidekick-agent)',
-    coverImage: '',
+    coverImage: 'case-sidekick-ai-app.png',
     portfolioRole: '独立完成体验走查、产品定义、交互流程与界面设计。',
     narrativeHook: '开店准备、商品修复和首页调整不是孤立任务，而是围绕“商店能否开始交易”的连续决策。',
     summary: '从对话助手到可控经营任务系统。识别真实经营阻塞，支撑安全决策，让每一次执行都有结果、可回退。',
