@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 372" role="img" aria-labelledby="title">
+<title id="title">TIDE / FIELD 原创海岸冲浪场景</title>
+<defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#c9d6c7"/><stop offset="1" stop-color="#e6e6d5"/></linearGradient><linearGradient id="sea" x2="0" y2="1"><stop stop-color="#5c8782"/><stop offset="1" stop-color="#183b3f"/></linearGradient></defs>
+<path fill="url(#sky)" d="M0 0h300v372H0z"/>
+<circle cx="220" cy="80" r="35" fill="#f6e8be" opacity=".9"/>
+<path d="M0 153q55-12 98 0t105-8q52-8 97 3v224H0z" fill="#9bb8ad"/>
+<path d="M0 190q48-23 101-6t101-5q58-20 98 8v185H0z" fill="url(#sea)"/>
+<path d="M-20 238q61-52 127-19t126 2q38-13 87-2v32q-52 7-82 26-43 27-108 2Q56 247-20 290z" fill="#e6e9da"/>
+<path d="M-10 275q78-26 142 5t134-5q25-12 44-9v105H-10z" fill="#34636a"/>
+<path d="M18 293q62-21 117 4t123-6" fill="none" stroke="#9abbb6" stroke-width="3" opacity=".6"/>
+<path d="M102 224q63-22 133-3" fill="none" stroke="#f2eee2" stroke-width="8" stroke-linecap="round"/>
+<path d="M143 213l20-13 11-36 16 6-4 43-20 18z" fill="#263c37"/>
+<circle cx="180" cy="157" r="11" fill="#b77f5f"/>
+<path d="M181 176l-31 20-24 3M182 178l20 25 30 12" fill="none" stroke="#263c37" stroke-width="9" stroke-linecap="round"/>
+<path d="M160 217l-24 32M173 218l28 29" fill="none" stroke="#293c36" stroke-width="10" stroke-linecap="round"/>
+<path d="M94 231q57-25 119 1" fill="none" stroke="#d9b476" stroke-width="5" stroke-linecap="round"/>
+<path d="M4 342q40-14 80 5m120-14q38-10 79 6" fill="none" stroke="#8aafa5" stroke-width="3" opacity=".6"/>
+</svg>
