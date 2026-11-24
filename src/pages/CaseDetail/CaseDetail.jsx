@@ -427,6 +427,73 @@ function ThemeStorefrontPreview({ theme, lang, full = false }) {
   return <div className={`skv-theme-page skv-theme-page--${theme.toLowerCase()}${full?' is-full':''}`}><header className="skv-theme-page__bar"><b>TIDE / FIELD</b><nav>{copy.nav}</nav><span>{copy.bag}</span></header>{content}<footer>TIDE / FIELD <span>{english?'Thoughtful equipment for the coast':traditional?'為海岸生活而設計':'为海岸生活而设计'}</span></footer></div>;
 }
 
+function ThemeDecisionComparison({ lang }) {
+  const traditional = lang === 'zh-TW'; const english = lang === 'en';
+  const copy = english ? {
+    label:'Design decision review', title:'Theme recommendation: from candidate filtering to business-fit explanation',
+    judgment:'Reducing options lowers browsing effort, but does not resolve the business-fit judgment on its own. The final approach adds matching rationale and preview choice so merchants understand why a theme is worth choosing.',
+    alternative:'Alternative · Not adopted', alternativeTitle:'Only reduce theme options', alternativeText:'It narrows the browsing range, but merchants still need to judge whether a theme fits their business.',
+    adopted:'Final approach', adoptedTitle:'Recommendation + business-fit explanation', recommended:'Recommended',
+    goal:'Business goal', goalText:'Bring the new collection forward', products:'Product presentation', productsText:'Hero and featured products work together', brand:'Brand expression', brandText:'Keeps the coastal TIDE / FIELD tone', choice:'Preview the theme; the merchant keeps the final choice.'
+  } : traditional ? {
+    label:'設計決策復盤', title:'主題推薦：從候選篩選到業務匹配解釋',
+    judgment:'減少候選可以降低瀏覽成本，但無法單獨解決業務匹配判斷。因此，最終方案增加推薦依據與預覽選擇，讓商家理解為什麼值得選擇。',
+    alternative:'備選思路 · 未採用', alternativeTitle:'僅縮減主題候選', alternativeText:'減少瀏覽範圍，但商家仍需自行判斷主題是否適合業務。',
+    adopted:'最終採用', adoptedTitle:'推薦 + 業務匹配解釋', recommended:'推薦',
+    goal:'經營目標', goalText:'提升新品曝光', products:'商品展示', productsText:'首屏與精選商品順序', brand:'品牌風格', brandText:'保持 TIDE / FIELD 海岸調性', choice:'可預覽主題，商家保留最終選擇。'
+  } : {
+    label:'设计决策复盘', title:'主题推荐：从候选筛选到业务匹配解释',
+    judgment:'减少候选可以降低浏览成本，但无法单独解决业务匹配判断。因此，最终方案增加推荐依据与预览选择，让商家理解为什么值得选择。',
+    alternative:'备选思路 · 未采用', alternativeTitle:'仅缩减主题候选', alternativeText:'减少浏览范围，但商家仍需自行判断主题是否适合业务。',
+    adopted:'最终采用', adoptedTitle:'推荐 + 业务匹配解释', recommended:'推荐',
+    goal:'经营目标', goalText:'提升新品曝光', products:'商品展示', productsText:'首屏与精选商品顺序', brand:'品牌风格', brandText:'保持 TIDE / FIELD 海岸调性', choice:'可预览主题，商家保留最终选择。'
+  };
+  const base = `${import.meta.env.BASE_URL}case-sidekick/illustrations/`;
+  const themes = ['Sense', 'Craft', 'Dawn'];
+  const candidates = (recommended = false) => <div className="skv-theme-decision__candidates">{themes.map((theme) => <div className={`skv-theme-decision__candidate${recommended && theme === 'Sense' ? ' is-recommended' : ''}`} key={theme}><img src={`${base}theme-choice-${theme.toLowerCase()}.svg`} alt="" /><b>{theme}</b>{recommended && theme === 'Sense' && <span>{copy.recommended}</span>}</div>)}</div>;
+  return <section className="skv-theme-decision" aria-label={copy.title}>
+    <header className="skv-theme-decision__header"><span className="skv__eyebrow">{copy.label}</span><h4>{copy.title}</h4><p>{copy.judgment}</p></header>
+    <div className="skv-theme-decision__cards">
+      <article className="skv-theme-decision__card is-alternative"><span className="skv-theme-decision__badge">{copy.alternative}</span><h5>{copy.alternativeTitle}</h5>{candidates()}<p className="skv-theme-decision__note">{copy.alternativeText}</p></article>
+      <span className="skv-theme-decision__arrow" aria-hidden="true">→</span>
+      <article className="skv-theme-decision__card is-final"><span className="skv-theme-decision__badge">{copy.adopted}</span><h5>{copy.adoptedTitle}</h5><div className="skv-theme-decision__final-content"><div>{candidates(true)}</div><ul><li><b>{copy.goal}</b><span>{copy.goalText}</span></li><li><b>{copy.products}</b><span>{copy.productsText}</span></li><li><b>{copy.brand}</b><span>{copy.brandText}</span></li></ul></div><p className="skv-theme-decision__choice">{copy.choice}</p></article>
+    </div>
+  </section>;
+}
+
+function AiControlDecisionComparison({ lang }) {
+  const traditional = lang === 'zh-TW'; const english = lang === 'en';
+  const copy = english ? {
+    label:'Design decision review', title:'AI edit control: from batch confirmation to risk-based review', subtitle:'Same task: increase new-product visibility while preserving the brand.',
+    alternative:'Alternative · Not adopted', alternativeTitle:'Confirm the entire change set', alternativeProblem:'The merchant cannot inspect or choose edits individually.', applyAll:'Apply all', cancelAll:'Cancel all',
+    adopted:'Final approach', adoptedTitle:'Risk levels + change set', preview:'Preview impact', keep:'Keep', remove:'Remove', confirm:'Final confirmation', undo:'Undo after applying',
+    risks:['Low · execute','Medium · preview + confirm','High · item-by-item review'], conclusion:'Confirmation strength should match risk. Low-risk tasks execute quickly, medium-risk tasks are previewed and confirmed, and high-risk tasks are reviewed item by item—so users keep choice before consequential actions.',
+    changes:['Strengthen the new-collection visual focus','Move the new-product area forward','Adjust the brand-content order']
+  } : traditional ? {
+    label:'設計決策復盤', title:'AI 修改控制：從整組確認到風險分級審查', subtitle:'同一任務：提升首頁新品曝光，同時保持品牌表達。',
+    alternative:'備選思路 · 未採用', alternativeTitle:'整組確認修改', alternativeProblem:'無法逐項審查與選擇。', applyAll:'全部套用', cancelAll:'全部取消',
+    adopted:'最終採用', adoptedTitle:'風險分級 + 修改集', preview:'影響預覽', keep:'保留', remove:'移除', confirm:'最終確認', undo:'套用後可撤銷',
+    risks:['低風險 · 直接執行','中風險 · 預覽確認','高風險 · 逐項審查'], conclusion:'確認強度應與風險相匹配。低風險快速執行，中風險預覽確認，高風險逐項審查，讓使用者在關鍵操作前保有選擇權。',
+    changes:['強化新品系列視覺重點','將新品商品區域提前','調整品牌內容順序']
+  } : {
+    label:'设计决策复盘', title:'AI 修改控制：从整组确认到风险分级审查', subtitle:'同一任务：提升首页新品曝光，同时保持品牌表达。',
+    alternative:'备选思路 · 未采用', alternativeTitle:'整组确认修改', alternativeProblem:'无法逐项审查与选择。', applyAll:'全部应用', cancelAll:'全部取消',
+    adopted:'最终采用', adoptedTitle:'风险分级 + 修改集', preview:'影响预览', keep:'保留', remove:'移除', confirm:'最终确认', undo:'应用后可撤销',
+    risks:['低风险 · 直接执行','中风险 · 预览确认','高风险 · 逐项审查'], conclusion:'确认强度应与风险相匹配。低风险快速执行，中风险预览确认，高风险逐项审查，让用户在关键操作前保有选择权。',
+    changes:['强化新品系列视觉重点','将新品商品区域提前','调整品牌内容顺序']
+  };
+  const changes = (final = false) => <ol className="skv-ai-decision__changes">{copy.changes.map((change, index) => <li key={change}><span>0{index + 1}</span><b>{change}</b>{final ? <div><em>{copy.preview}</em><em className={index === 2 ? 'is-removed' : ''}>{index === 2 ? copy.remove : copy.keep}</em></div> : <i aria-hidden="true">✓</i>}</li>)}</ol>;
+  return <section className="skv-theme-decision skv-ai-decision" aria-label={copy.title}>
+    <header className="skv-theme-decision__header"><span className="skv__eyebrow">{copy.label}</span><h4>{copy.title}</h4><p>{copy.subtitle}</p></header>
+    <div className="skv-theme-decision__cards">
+      <article className="skv-theme-decision__card is-alternative"><span className="skv-theme-decision__badge">{copy.alternative}</span><h5>{copy.alternativeTitle}</h5>{changes()}<p className="skv-theme-decision__note">{copy.alternativeProblem}</p><div className="skv-ai-decision__all-actions"><span>{copy.applyAll}</span><span>{copy.cancelAll}</span></div></article>
+      <span className="skv-theme-decision__arrow" aria-hidden="true">→</span>
+      <article className="skv-theme-decision__card is-final"><span className="skv-theme-decision__badge">{copy.adopted}</span><h5>{copy.adoptedTitle}</h5><div className="skv-ai-decision__risk-levels">{copy.risks.map((risk, index) => <span className={index === 2 ? 'is-active' : ''} key={risk}>{risk}</span>)}</div>{changes(true)}<div className="skv-ai-decision__final-actions"><b>{copy.confirm}</b><span>{copy.undo}</span></div></article>
+    </div>
+    <p className="skv-ai-decision__conclusion">{copy.conclusion}</p>
+  </section>;
+}
+
 function SidekickSolutionShowcase({ lang }) {
   const traditional = lang === 'zh-TW'; const english = lang === 'en';
   const t = english ? { intro:'Turn merchant goals into explainable, reviewable plans for theme selection, page structure, and controlled AI edits.',solution:'Solution',themeTitle:'Recommend a theme with clear business-fit reasons',themeMatch:'Theme match',goal:'Business goal · build a homepage for a new collection',reasons:'Why it fits',preview:'Preview theme',hidePreview:'Close preview',generated:'Page plan generated',generate:'Generate page plan',pageGoal:'Increase new-product visibility while preserving the brand',beforeAfter:'Before / after',before:'Before',after:'After',beforeState:'Homepage order unchanged',keep:'Keep',removed:'Removed',selected:'Selected',review:'Review before applying',apply:'Apply selected changes',applied:'Selected changes applied',discard:'Undo / discard',planTitle:'Plan the page before configuring sections',planDesc:'Create a complete page structure, then move into section-level editing.',riskTitle:'Match control strength to risk',changeSet:'Change Set',reviewing:'review',designDecision:'Design rationale',notChosen:'Not chosen',controlPrinciple:'Control principle',complexEdits:'Complex edit handling',impact:'Impact area',applyCopy:'Let the merchant inspect each edit before applying it.' } : traditional ? { intro:'圍繞主題選擇、頁面規劃與複雜 AI 修改控制，將經營目標逐步轉化為可解釋、可審查、可執行的方案。',solution:'最終方案',themeTitle:'推薦主題並清楚說明業務適配依據',themeMatch:'主題匹配',goal:'經營目標 · 為新品系列建立首頁',reasons:'推薦依據',preview:'預覽主題',hidePreview:'收起主題預覽',generated:'頁面規劃方案已生成',generate:'生成頁面規劃方案',pageGoal:'提升新品曝光，同時保持品牌表達',beforeAfter:'修改前後對比',before:'修改前',after:'修改後',beforeState:'首頁內容順序未調整',keep:'保留',removed:'已移除',selected:'已選',review:'套用前可逐項檢查',apply:'套用所選修改',applied:'所選修改已套用',discard:'撤銷 / 放棄',planTitle:'先規劃頁面，再進行分區配置',planDesc:'先形成完整頁面方案，再進入分區編輯。',riskTitle:'依風險分級匹配控制強度',changeSet:'修改集',reviewing:'審查',designDecision:'設計判斷',notChosen:'未採用',controlPrinciple:'控制原則',complexEdits:'複雜修改機制',impact:'影響範圍',applyCopy:'讓商家在套用前逐項檢查修改。' } : { intro:'围绕主题选择、页面规划与复杂 AI 修改控制，将经营目标逐步转化为可解释、可审查、可执行的方案。',solution:'最终方案',themeTitle:'推荐主题并说明业务匹配依据',themeMatch:'主题匹配',goal:'经营目标 · 为新品系列建立首页',reasons:'推荐依据',preview:'预览主题',hidePreview:'收起主题预览',generated:'页面规划方案已生成',generate:'生成页面规划方案',pageGoal:'提升新品曝光，同时保持品牌表达',beforeAfter:'修改前后对比',before:'修改前',after:'修改后',beforeState:'首页内容顺序未调整',keep:'保留',removed:'已移除',selected:'已选',review:'应用前可逐项检查',apply:'应用所选修改',applied:'所选修改已应用',discard:'撤销 / 放弃',planTitle:'先规划页面，再进行分区配置',planDesc:'先形成完整页面方案，再进入分区级编辑。',riskTitle:'按风险分级匹配控制强度',changeSet:'修改集',reviewing:'审查',designDecision:'设计判断',notChosen:'未采用',controlPrinciple:'控制原则',complexEdits:'复杂修改机制',impact:'影响范围',applyCopy:'让商家在应用前逐项检查修改。' };
@@ -494,8 +561,7 @@ function SidekickSolutionShowcase({ lang }) {
   return <section className="skv skv-solution" aria-label={t.solution}>
     <header className="skv-solution__intro"><span className="skv__eyebrow">{t.solution}</span><p>{t.intro}</p><p>{english?'The following interactive interfaces are anonymized reconstructions of the implemented solutions, shown to demonstrate their design and workflows.':traditional?'以下互動介面根據實際落地方案脫敏重建，用於展示設計與操作流程。':'以下交互界面根据实际落地方案脱敏重建，用于展示设计与操作流程。'}</p></header>
     <div className="skv-solution__main"><span className="skv__eyebrow">01 · {t.recommendation}</span><h4>{t.themeTitle}</h4><div className="skv-solution__ui skv-solution__theme-ui"><aside><b>{t.themeMatch}</b>{themes.map(({name,desc})=><button type="button" key={name} className={selectedTheme===name?'skv-solution__selected':''} onClick={()=>{setSelectedTheme(name);setThemePreviewOpen(false);setChosenTheme(null)}} aria-pressed={selectedTheme===name}>{name}<small>{desc}</small></button>)}</aside><main><span>{misc.objective}</span><h5>{selectedTheme} · {english?'Theme interface preview':traditional?'主題介面預覽':'主题界面预览'}</h5><div className={`skv-solution__theme-viewport${themePreviewOpen?' is-expanded':''}`}><ThemeStorefrontPreview theme={selectedTheme} lang={lang} full={themePreviewOpen} /></div><div className="skv-solution__theme-fit"><b>{t.reasons}</b><p>{activeTheme.reason}</p></div><div className="skv-solution__theme-actions"><button type="button" onClick={()=>setThemePreviewOpen(open=>{requestAnimationFrame(()=>document.querySelector('.skv-solution__theme-viewport')?.scrollTo(0,0));return !open})}>{themePreviewOpen?t.hidePreview:t.preview}</button><button type="button" className="is-primary" onClick={()=>setChosenTheme(selectedTheme)} aria-pressed={chosenTheme===selectedTheme}>{chosenTheme===selectedTheme?(english?'Selected':traditional?'已選擇':'已选择'):(english?'Choose this theme':traditional?'選擇此主題':'选择此主题')}</button></div>{chosenTheme&&<p className="skv-solution__theme-success" role="status">{english?`${chosenTheme} selected for this local demo. You can still switch themes.`:traditional?`已在本地演示中選擇 ${chosenTheme}，仍可切換其他主題。`:`已在本地演示中选择 ${chosenTheme}，仍可切换其他主题。`}</p>}</main></div></div>
-    <aside className="skv-solution__why"><span>{misc.why}</span><p>01　{misc.w1}</p><p>02　{misc.w2}</p><p>03　{misc.w3}</p><p>04　{misc.w4}</p></aside>
-    <div className="skv-solution__decision"><b>{misc.decision}</b><p>{misc.decisionText}</p><b>{misc.not}</b><p>{misc.notText}</p></div>
+    <ThemeDecisionComparison lang={lang} />
     <article className="skv-solution__plan"><span className="skv__eyebrow">02 · {english?'Page planning':traditional?'頁面規劃':'页面规划'}</span><h4>{t.planTitle}</h4><p>{t.planDesc}</p><div className="skv-solution__plan-ui"><section className="skv-plan__goal"><small>{english?'Business goal':traditional?'經營目標':'经营目标'}</small><b>{t.pageGoal}</b><button type="button" onClick={()=>setResetConfirm(true)} disabled={!planIsAdjusted}>{english?'Reset plan':traditional?'重置規劃':'重置规划'}</button>{resetConfirm&&<div className="skv-plan__reset-confirm" role="group" aria-label={english?'Confirm reset':traditional?'確認重置':'确认重置'}><span>{english?'Discard the current order and restore the default plan?':traditional?'放棄目前排序並恢復預設規劃？':'放弃当前排序并恢复默认规划？'}</span><button type="button" onClick={resetPlan}>{english?'Confirm reset':traditional?'確認重置':'确认重置'}</button><button type="button" onClick={()=>setResetConfirm(false)}>{english?'Cancel':traditional?'取消':'取消'}</button></div>}{planGenerated&&<div className="skv-plan__detail" aria-live="polite"><small>{english?'Selected section':traditional?'目前選中分區':'当前选中分区'} · {String(planOrder.indexOf(selectedPlanSection)+1).padStart(2,'0')}</small><b>{selectedPlan[0]}</b><span>{english?'Page task':traditional?'頁面任務':'页面任务'}：{selectedPlan[1]}</span><span>{english?'Reason':traditional?'推薦原因':'推荐原因'}：{selectedPlan[2]}</span></div>}</section><div className="skv-plan__builder"><header><b>{english?'Six-section page plan':traditional?'六分區頁面方案':'六分区页面方案'}</b><small>{planGenerated?(planConfirmed?(english?'Confirmed · editing':traditional?'已確認 · 編輯中':'已确认 · 编辑中'):(english?'Select a section to inspect and reorder':traditional?'選擇分區查看依據並調整順序':'选择分区查看依据并调整顺序')):(english?'Generate the plan to begin':traditional?'生成方案後查看完整結構':'生成方案后查看完整结构')}</small></header>{planGenerated?<ol className="skv-plan__list">{orderedPlanSections.map(([name,task,reason],i)=>{const sectionIndex=planOrder[i];return <li className={selectedPlanSection===sectionIndex?'is-selected':''} key={name}><button type="button" className="skv-plan__select" onClick={()=>setSelectedPlanSection(sectionIndex)} aria-pressed={selectedPlanSection===sectionIndex}><span>{String(i+1).padStart(2,'0')}</span><b>{name}</b><small>{task}<br/>{reason}</small></button><div className="skv-plan__reorder"><button type="button" onClick={()=>movePlanSection(sectionIndex,-1)} disabled={i===0||planConfirmed} aria-label={`${name}${english?' move up':traditional?'上移':'上移'}`}>↑</button><button type="button" onClick={()=>movePlanSection(sectionIndex,1)} disabled={i===planOrder.length-1||planConfirmed} aria-label={`${name}${english?' move down':traditional?'下移':'下移'}`}>↓</button></div></li>})}</ol>:<p className="skv-plan__empty">{english?'Your page structure will appear here.':traditional?'完整頁面結構將顯示於此。':'完整页面结构将在此显示。'}</p>}{planGenerated&&<footer className="skv-plan__actions">{planConfirmed?<><span>{english?'Confirmed structure is ready for section editing.':traditional?'已確認頁面結構，可進入分區編輯。':'页面结构已确认，可进入分区编辑。'}</span><button type="button" onClick={()=>setPlanConfirmed(false)}>{english?'Back to planning':traditional?'返回修改規劃':'返回修改规划'}</button></>:<button type="button" className="is-primary" onClick={()=>setPlanConfirmed(true)}>{english?'Confirm page plan':traditional?'確認頁面規劃':'确认页面规划'}</button>}</footer>}</div></div>{planGenerated&&<section className="skv-plan__preview"><header><div><small>{english?'Full-page structure preview':traditional?'整頁結構預覽':'整页结构预览'}</small><b>{planConfirmed?(english?'Confirmed page · editing':traditional?'已確認頁面 · 編輯中':'已确认页面 · 编辑中'):(english?'Scroll to explore all six sections':traditional?'滾動查看六個分區':'滚动查看六个分区')}</b></div></header><div className="skv-plan__viewport" tabIndex="0" aria-label={english?'Scrollable storefront page preview':traditional?'可捲動的整頁商店預覽':'可滚动的整页商店预览'}><TideFieldStorePage lang={lang} order={planOrder} selectedSection={selectedPlanSection} onSelect={setSelectedPlanSection} /></div></section>}</article>
     <div className="skv-solution__decision"><b>{misc.decision}</b><p>{misc.planWhy}</p><b>{misc.not}</b><p>{misc.planNot}</p></div>
     <article className="skv-solution__control"><span className="skv__eyebrow">03 · {english?'Controlled AI edits':traditional?'可控 AI 修改':'可控 AI 修改'}</span><h4>{t.riskTitle}</h4>
@@ -509,8 +575,7 @@ function SidekickSolutionShowcase({ lang }) {
       <footer><span aria-live="polite">{actionFeedback|| (changesApplied?t.applied:t.review)}</span>{pendingConfirmation?<><button type="button" onClick={()=>applyEdits(selectedIds)} disabled={!selectedIds.length}>{english?'Confirm and apply':traditional?'確認並套用':'确认并应用'}</button><button type="button" onClick={()=>setPendingConfirmation(false)}>{english?'Cancel':traditional?'取消':'取消'}</button></>:<button type="button" onClick={primaryEditAction} disabled={!selectedIds.length||(riskLevel==='high'&&planReviewed&&!selectedIds.every(i=>reviewedChangeIds.includes(i)))}>{riskLevel==='low'?(english?'Execute one edit':traditional?'執行單項修改':'执行单项修改'):riskLevel==='medium'?(english?'Review final scope':traditional?'查看最終修改範圍':'查看最终修改范围'):!planReviewed?(english?'Review plan and impact':traditional?'審查計畫與影響':'审查计划与影响'):(english?'Final confirmation':traditional?'進入最終確認':'进入最终确认')}</button>}<button type="button" onClick={()=>{setKeptChanges([false,false,false]);setPendingConfirmation(false);setPreviewedChange(null);setReviewedChangeIds([]);setActionFeedback(english?'Unapplied suggestions discarded.':traditional?'尚未套用的建議已放棄。':'尚未应用的建议已放弃。')}}>{english?'Discard draft':traditional?'放棄未套用修改':'放弃未应用修改'}</button>{appliedChangeIds.length>0&&<button type="button" onClick={()=>{setAppliedChangeIds([]);setChangesApplied(false);setActionFeedback(english?'Applied edits undone; the original page is restored.':traditional?'已撤銷套用，頁面已恢復原狀。':'已撤销应用，页面已恢复原状。')}}>{english?'Undo applied edits':traditional?'撤銷已套用修改':'撤销已应用修改'}</button>}</footer></div>
       <section className="skv-solution__live-preview"><header><div><small>{english?'Storefront preview':traditional?'商店頁面預覽':'商店页面预览'}</small><b>{appliedChangeIds.length?(english?'Applied changes':traditional?'已套用修改':'已应用修改'):(english?'Original page':traditional?'原始頁面':'原始页面')}</b></div><span>{english?'TIDE / FIELD · Interactive demo':traditional?'TIDE / FIELD · 互動演示':'TIDE / FIELD · 交互演示'}</span></header><div className="skv-solution__live-viewport" tabIndex="0" aria-label={english?'Scrollable page preview':traditional?'可捲動頁面預覽':'可滚动页面预览'}><TideFieldStorePage lang={lang} order={appliedOrder} appliedChanges={appliedChangeIds} /></div></section>
     </article>
-    <div className="skv-solution__decision"><b>{misc.principle}</b><p>{misc.principleText}</p><b>{misc.mechanism}</b><p>{misc.mechanismText}</p><b>{misc.not}</b><p>{misc.notAll}</p></div>
-    <p className="skv-decision-layer__rule">{t.applyCopy}</p>
+    <AiControlDecisionComparison lang={lang} />
   </section>;
 }
 
@@ -624,6 +689,31 @@ function SidekickResults({ lang }) {
       <footer>{copy.footer}</footer>
     </section>
   );
+}
+
+function ResultsMeasurementMethod({ lang }) {
+  const traditional = lang === 'zh-TW'; const english = lang === 'en';
+  const copy = english ? {
+    title:'Metric definitions and calculation check', definitions:'Metric definitions', calculation:'Calculation check', midpoint:'Range midpoint = (lower bound + upper bound) ÷ 2', reduction:'Reduction = (before midpoint − after midpoint) ÷ before midpoint',
+    items:[['Theme selection time','Time from entering the theme-selection task to confirming a theme.'],['Page planning time','Time from entering the page-planning task to confirming the page structure.'],['Key decision steps','Key judgments from a business goal to specific page configuration; not the number of clicks.']],
+    checked:[['Theme selection','15 → 7.5 min','50%'],['Page planning','20 → 8 min','60%'],['Decision steps','11.5 → 6.5','≈ 43.5% · shown as ~44%']], note:'These figures are a mathematical check of the currently anonymized ranges; the original project’s specific calculation method and task-by-task records cannot currently be independently traced.'
+  } : traditional ? {
+    title:'指標定義與計算複核', definitions:'指標定義', calculation:'計算與複核', midpoint:'區間中點＝（下限＋上限）÷ 2', reduction:'縮減比例＝（優化前中點－優化後中點）÷ 優化前中點',
+    items:[['主題選擇耗時','從進入主題選擇任務到確認主題的時間。'],['頁面規劃耗時','從進入頁面規劃任務到確認頁面結構的時間。'],['關鍵決策節點','從經營目標到具體頁面配置過程中需要完成的關鍵判斷，不等於點擊次數。']],
+    checked:[['主題選擇','15 → 7.5 分鐘','50%'],['頁面規劃','20 → 8 分鐘','60%'],['決策節點','11.5 → 6.5 個','約 43.5%，展示為約 44%']], note:'以上按現有脫敏區間進行數學複核；原專案具體統計方法與逐任務記錄目前無法獨立追溯。'
+  } : {
+    title:'指标定义与计算复核', definitions:'指标定义', calculation:'计算与复核', midpoint:'区间中点＝（下限＋上限）÷ 2', reduction:'缩减比例＝（优化前中点－优化后中点）÷ 优化前中点',
+    items:[['主题选择耗时','从进入主题选择任务到确认主题的时间。'],['页面规划耗时','从进入页面规划任务到确认页面结构的时间。'],['关键决策节点','从经营目标到具体页面配置过程中需要完成的关键判断，不等于点击次数。']],
+    checked:[['主题选择','15 → 7.5 分钟','50%'],['页面规划','20 → 8 分钟','60%'],['决策节点','11.5 → 6.5 个','约 43.5%，展示为约 44%']], note:'以上按现有脱敏区间进行数学复核；原项目具体统计方法与逐任务记录目前无法独立追溯。'
+  };
+  return <section className="skv-results__method" aria-label={copy.title}>
+    <header><span className="skv__eyebrow">{copy.calculation}</span><h5>{copy.title}</h5></header>
+    <div className="skv-results__method-grid">
+      <section className="skv-results__definitions"><h6>{copy.definitions}</h6>{copy.items.map(([label, text], index) => <article key={label}><span>0{index + 1}</span><div><b>{label}</b><p>{text}</p></div></article>)}</section>
+      <section className="skv-results__formula"><h6>{copy.calculation}</h6><p>{copy.midpoint}</p><p>{copy.reduction}</p><dl>{copy.checked.map(([label, value, result]) => <div key={label}><dt>{label}</dt><dd><b>{value}</b><span>{result}</span></dd></div>)}</dl></section>
+    </div>
+    <p className="skv-results__method-note">{copy.note}</p>
+  </section>;
 }
 
 export default function CaseDetail() {
@@ -1289,6 +1379,7 @@ export default function CaseDetail() {
             <div className="cd-sidekick-results">
               <p className="cd-text">{lang === 'en' ? 'Three solutions were launched: theme-fit recommendations, page planning, and AI edit risk levels with a change set.' : lang === 'zh-TW' ? '已上線主題適配推薦、頁面規劃，以及 AI 修改風險分級與修改集三套方案。' : '已上线主题适配推荐、页面规划，以及 AI 修改风险分级与修改集三套方案。'}</p>
               <SidekickResults lang={lang} />
+              <ResultsMeasurementMethod lang={lang} />
             </div>
           ) : (
             <>
